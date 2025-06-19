@@ -1,0 +1,37 @@
+{
+  "name": "film.kace.dev",
+  "short_name": "film.kace.dev",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#120f1d",
+  "lang": "en",
+  "scope": "/",
+  "description": "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)",
+  "theme_color": "#120f1d",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "public/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
