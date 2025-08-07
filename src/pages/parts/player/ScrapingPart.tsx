@@ -1,4 +1,4 @@
-import { ProviderControls, ScrapeMedia } from "@movie-web/providers";
+import { ProviderControls, ScrapeMedia } from "@p-stream/providers";
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -9,6 +9,7 @@ import {
   scrapePartsToProviderMetric,
   useReportProviders,
 } from "@/backend/helpers/report";
+import { Button } from "@/components/buttons/Button";
 import { Loading } from "@/components/layout/Loading";
 import {
   ScrapeCard,
@@ -103,8 +104,7 @@ export function ScrapingPart(props: ScrapingProps) {
       ) : null}
       <div
         className={classNames({
-          "absolute transition-[transform,opacity] opacity-0 dir-neutral:left-0":
-            true,
+          "absolute transition-[transform,opacity] opacity-0 dir-neutral:left-0": true,
           "!opacity-100": renderedOnce,
         })}
         ref={listRef}
@@ -151,6 +151,47 @@ export function ScrapingPart(props: ScrapingProps) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+export function ScrapingPartInterruptButton() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="flex gap-3 pb-3">
+      <Button
+        href="/"
+        theme="secondary"
+        padding="md:px-17 p-3"
+        className="mt-6"
+      >
+        {t("notFound.goHome")}
+      </Button>
+      <Button
+        onClick={() => window.location.reload()}
+        theme="purple"
+        padding="md:px-17 p-3"
+        className="mt-6"
+      >
+        {t("notFound.reloadButton")}
+      </Button>
+    </div>
+  );
+}
+
+export function Tips() {
+  const { t } = useTranslation();
+  const [tip] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * 21) + 1;
+    return t(`player.scraping.tips.${randomIndex}`);
+  });
+
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="text-type-secondary text-center text-sm text-bold">
+        Tip: {tip}
+      </p>
     </div>
   );
 }

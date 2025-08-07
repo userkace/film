@@ -12,6 +12,26 @@ export type DisplayError = {
   key?: string;
   errorName: string;
   type: DisplayErrorType;
+  hls?: {
+    details: string;
+    fatal: boolean;
+    level?: number;
+    levelDetails?: {
+      url: string;
+      width: number;
+      height: number;
+      bitrate: number;
+    };
+    frag?: {
+      url: string;
+      baseurl: string;
+      duration: number;
+      start: number;
+      sn: number | string;
+    };
+    type: string;
+    url?: string;
+  };
 };
 
 export type DisplayInterfaceEvents = {

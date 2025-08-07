@@ -32,7 +32,7 @@ class Particle {
     canvas: HTMLCanvasElement,
     options: LightbarOptions = {
       horizontalMotion: false,
-      sizeRange: [10, 10],
+      sizeRange: [10, 15],
     },
   ) {
     if (options.imgSrc) {
@@ -52,9 +52,9 @@ class Particle {
 
     this.radius = 1 + Math.floor(Math.random() * 0.5);
     this.direction = (Math.random() * Math.PI) / 2 + Math.PI / 4;
-    this.speed = 0.02 + Math.random() * 0.08;
+    this.speed = 0.02 + Math.random() * 0.085;
 
-    const second = 60;
+    const second = 65;
     this.lifetime = second * 3 + Math.random() * (second * 30);
 
     this.size = this.options.sizeRange
@@ -107,8 +107,14 @@ class Particle {
       ctx.translate(this.x, this.y);
       const w = this.size;
       const h = (this.image.naturalWidth / this.image.naturalHeight) * w;
-      ctx.rotate(this.direction - Math.PI);
-      ctx.drawImage(this.image, -w / 2, h, h, w);
+      if (this.image.src.includes("shark")) {
+        const flip = this.direction === Math.PI ? 1 : -1;
+        ctx.scale(flip, 1);
+        ctx.drawImage(this.image, (-w / 2) * flip, -h / 2, w, h);
+      } else {
+        ctx.rotate(this.direction - Math.PI);
+        ctx.drawImage(this.image, -w / 2, h, h, w);
+      }
     } else {
       ctx.ellipse(
         this.x,
@@ -138,59 +144,223 @@ function ParticlesCanvas() {
     canvas.height = canvas.scrollHeight;
 
     // Basic particle config
-    const particleCount = 20;
-    let imageParticleCount = particleCount;
+    const particleCount = 265;
 
-    // Holiday overrides
     let imageOverride: { image: string; sizeRange?: [number, number] }[] = [];
     const date = new Date();
     const month = date.getMonth();
     const day = date.getDate();
-    if (month === 11 && day >= 24 && day <= 26) {
-      imageOverride = [
-        {
-          image: "/lightbar-images/snowflake.svg",
-          sizeRange: [4, 15] as [number, number],
-        },
-        {
-          image: "/lightbar-images/santa.png",
-          sizeRange: [15, 30] as [number, number],
-        },
-      ];
-    }
+    let imageParticleCount = particleCount;
 
-    if (month === 9 && day >= 29 && day <= 31) {
-      imageOverride = [
-        {
-          image: "/lightbar-images/ghost.png",
-          sizeRange: [20, 33] as [number, number],
-        },
-        {
-          image: "/lightbar-images/pumpkin.png",
-          sizeRange: [25, 35] as [number, number],
-        },
-      ];
-    }
+    switch (true) {
+      case (month === 11 && day >= 24 && day <= 26) || Math.random() < 0.051:
+        imageOverride = [
+          {
+            image: "/lightbar-images/snowflake.svg",
+            sizeRange: [12, 20] as [number, number],
+          },
+          {
+            image: "/lightbar-images/santa.png",
+            sizeRange: [25, 35] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount * 0.1;
+        break;
 
-    if (month === 3 && day === 20) {
-      imageOverride = [
-        {
-          image: "/lightbar-images/weed.png",
-          sizeRange: [32, 40] as [number, number],
-        },
-      ];
-    }
+      case (month === 9 && day >= 29 && day <= 31) || Math.random() < 0.05:
+        imageOverride = [
+          {
+            image: "/lightbar-images/ghost.png",
+            sizeRange: [20, 33] as [number, number],
+          },
+          {
+            image: "/lightbar-images/pumpkin.png",
+            sizeRange: [25, 35] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount * 0.0879;
+        break;
 
-    // Fish easter egg
-    const shouldShowFishie = Math.floor(Math.random() * 600) === 69;
-    if (shouldShowFishie) {
-      imageOverride = [
-        {
-          image: "/lightbar-images/fishie.png",
-          sizeRange: [10, 11] as [number, number],
-        },
-      ];
-      imageParticleCount = particleCount / 2;
+      case Math.random() < 0.1:
+        imageOverride = [
+          {
+            image: "/lightbar-images/fishie.png",
+            sizeRange: [10, 13] as [number, number],
+          },
+          {
+            image: "/lightbar-images/shark.png",
+            sizeRange: [48, 56] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount * 0.075;
+        break;
+
+      case month + 1 === 4 && day === 20:
+        imageOverride = [
+          {
+            image: "/lightbar-images/weed.png",
+            sizeRange: [32, 40] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 6.25;
+        break;
+
+      case month + 1 === 6 && day === 9:
+        imageOverride = [
+          {
+            image: "/lightbar-images/heart.svg",
+            sizeRange: [32, 14] as [number, number],
+          },
+          {
+            image: "/lightbar-images/wine.png",
+            sizeRange: [15, 35] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 6.25;
+        break;
+
+      case Math.random() < 0.2:
+        imageOverride = [
+          {
+            image: "/lightbar-images/cat.png",
+            sizeRange: [30, 38] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 6.6;
+        break;
+
+      case Math.random() < 0.3:
+        imageOverride = [
+          {
+            image: "/lightbar-images/camera.png",
+            sizeRange: [24, 32] as [number, number],
+          },
+          {
+            image: "/lightbar-images/popcorn.png",
+            sizeRange: [18, 27] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 7.85;
+        break;
+
+      case Math.random() < 0.08:
+        imageOverride = [
+          {
+            image: "/lightbar-images/cock.png",
+            sizeRange: [25, 32] as [number, number],
+          },
+          {
+            image: "/lightbar-images/egg.png",
+            sizeRange: [18, 24] as [number, number],
+          },
+          {
+            image: "/lightbar-images/barn.png",
+            sizeRange: [32, 38] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 9;
+        break;
+
+      case Math.random() < 0.06:
+        imageOverride = [
+          {
+            image: "/lightbar-images/money-sack.png",
+            sizeRange: [24, 32] as [number, number],
+          },
+          {
+            image: "/lightbar-images/money.png",
+            sizeRange: [13, 23] as [number, number],
+          },
+          {
+            image: "/lightbar-images/coin.png",
+            sizeRange: [8, 20] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 8.45;
+        break;
+
+      case Math.random() < 0.075:
+        imageOverride = [
+          {
+            image: "/lightbar-images/skull.png",
+            sizeRange: [20, 28] as [number, number],
+          },
+          {
+            image: "/lightbar-images/ship.png",
+            sizeRange: [23, 27] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 10;
+        break;
+
+      case Math.random() < 0.03:
+        imageOverride = [
+          {
+            image: "/lightbar-images/ts.png",
+            sizeRange: [20, 32] as [number, number],
+          },
+          {
+            image: "/lightbar-images/git.png",
+            sizeRange: [20, 28] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 9;
+        break;
+
+      case Math.random() < 0.7:
+        imageOverride = [
+          {
+            image: "/lightbar-images/beer.png",
+            sizeRange: [15, 35] as [number, number],
+          },
+          {
+            image: "/lightbar-images/beer-bottle.png",
+            sizeRange: [10, 38] as [number, number],
+          },
+          {
+            image: "/lightbar-images/wine.png",
+            sizeRange: [15, 35] as [number, number],
+          },
+          // Stop smoking 🗣️
+          // {
+          //   image: "/lightbar-images/cigarette.png",
+          //   sizeRange: [10, 38] as [number, number],
+          // },
+          // {
+          //   image: "/lightbar-images/cigarette2.png",
+          //   sizeRange: [15, 35] as [number, number],
+          // },
+        ];
+        imageParticleCount = particleCount / 11;
+        break;
+
+      case Math.random() < 0.05:
+        imageOverride = [
+          {
+            image: "/lightbar-images/auto-gun.png",
+            sizeRange: [28, 36] as [number, number],
+          },
+          {
+            image: "/lightbar-images/gun.png",
+            sizeRange: [23, 30] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 11.6;
+        break;
+
+      case Math.random() < 0.15:
+        imageOverride = [
+          {
+            image: "/lightbar-images/star.png",
+            sizeRange: [18, 28] as [number, number],
+          },
+        ];
+        imageParticleCount = particleCount / 6.6;
+        break;
+
+      default:
+        // Default case
+        break;
     }
 
     // HOIST THE SAIL (of particles)!
@@ -201,7 +371,7 @@ function ParticlesCanvas() {
       const src = imageOverride[randomImageIndex]?.image;
       const particle = new Particle(canvas, {
         imgSrc: isImageParticle ? src : undefined,
-        horizontalMotion: src?.includes("fishie"),
+        horizontalMotion: src?.includes("fishie") || src?.includes("shark"),
         sizeRange,
       });
       particles.push(particle);
@@ -243,13 +413,13 @@ function ParticlesCanvas() {
   return <canvas className="particles" ref={canvasRef} />;
 }
 
-export function Lightbar(props: { className?: string }) {
+export function Lightbar(props: { className?: string; noParticles?: boolean }) {
   return (
     <div className="absolute inset-0 w-full h-[680px] overflow-hidden pointer-events-none -mt-64">
       <div className="max-w-screen w-full h-[680px] relative pt-64">
         <div className={props.className}>
           <div className="lightbar">
-            <ParticlesCanvas />
+            {!props.noParticles && <ParticlesCanvas />}
             <div className="lightbar-visual" />
           </div>
         </div>

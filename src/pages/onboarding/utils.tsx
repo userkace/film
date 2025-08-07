@@ -14,8 +14,7 @@ export function Card(props: {
     <div
       className={classNames(
         {
-          "bg-onboarding-card duration-300 border border-onboarding-border rounded-lg p-7":
-            true,
+          "bg-onboarding-card duration-300 border border-onboarding-border rounded-lg p-7": true,
           "hover:bg-onboarding-cardHover transition-colors cursor-pointer":
             !!props.onClick,
         },
@@ -56,6 +55,43 @@ export function CardContent(props: {
         </Paragraph>
       </div>
       <div>{props.children}</div>
+    </div>
+  );
+}
+
+export function MiniCardContent(props: {
+  title: ReactNode;
+  description: ReactNode;
+  subtitle: ReactNode;
+  colorClass: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <div className="grid grid-rows-[1fr,auto] h-full">
+      <div className="flex">
+        <div className="flex flex-col">
+          <Heading3
+            className={classNames(
+              "!mt-0 !mb-0 !text-xs uppercase !mr-2",
+              props.colorClass,
+            )}
+          >
+            {props.subtitle}
+          </Heading3>
+          <Heading2 className="!mb-0 !mt-1 !text-sm">{props.title}</Heading2>
+        </div>
+        <Icon
+          icon={Icons.ARROW_RIGHT}
+          className={classNames(
+            "text-3xl mb-4 ml-auto block",
+            props.colorClass,
+          )}
+        />
+      </div>
+      <Paragraph className="max-w-[320px] !my-2 text-sm">
+        {props.description}
+      </Paragraph>
+      <div className="text-sm">{props.children}</div>
     </div>
   );
 }

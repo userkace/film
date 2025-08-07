@@ -28,4 +28,3 @@ package-lock.json
 
 # config
 .env
-.vercel

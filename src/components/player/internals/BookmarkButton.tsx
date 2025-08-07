@@ -24,7 +24,7 @@ export function BookmarkButton() {
       onClick={() => toggleBookmark()}
       icon={isBookmarked ? Icons.BOOKMARK : Icons.BOOKMARK_OUTLINE}
       iconSizeClass="text-base"
-      className="p-3"
+      className="p-2"
     />
   );
 }

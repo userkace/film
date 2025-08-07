@@ -9,7 +9,7 @@ import {
   useInternalOverlayRouter,
   useRouterAnchorUpdate,
 } from "@/hooks/useOverlayRouter";
-import { TurnstileProvider } from "@/stores/turnstile";
+import { TurnstileProvider, getTurnstile } from "@/stores/turnstile";
 
 export interface OverlayProps {
   id: string;
@@ -21,20 +21,26 @@ function TurnstileInteractive() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    getTurnstile();
+  }, []);
+
   // this may not rerender with different dom structure, must be exactly the same always
   return (
     <div
       className={classNames(
-        "absolute w-10/12 max-w-[800px] bg-background-main p-20 rounded-lg select-none z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform",
+        "absolute w-full max-w-[43em] max-h-full p-5 md:p-10 rounded-lg bg-dropdown-altBackground select-none z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform overflow-auto",
         show ? "" : "hidden",
       )}
     >
-      <div className="w-full grid lg:grid-cols-[1fr,auto] gap-12 items-center">
+      <div className="w-full h-full grid lg:grid-cols-[1fr,auto] gap-6 md:gap-7 items-center">
         <div className="text-left">
-          <h2 className="text-type-emphasis font-bold text-xl mb-6">
+          <h2 className="text-type-emphasis font-bold text-lg md:text-xl mb-4 md:mb-6">
             {t("player.turnstile.title")}
           </h2>
-          <p>{t("player.turnstile.description")}</p>
+          <p className="text-type-emphasis">
+            {t("player.turnstile.description")}
+          </p>
         </div>
         <TurnstileProvider
           isInPopout
@@ -70,14 +76,56 @@ export function OverlayPortal(props: {
   darken?: boolean;
   show?: boolean;
   close?: () => void;
+  durationClass?: string;
+  zIndex?: number;
 }) {
   const [portalElement, setPortalElement] = useState<Element | null>(null);
+  const [isReady, setIsReady] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const close = props.close;
+  const zIndex = props.zIndex ?? 999;
 
   useEffect(() => {
     const element = ref.current?.closest(".popout-location");
     setPortalElement(element ?? document.body);
+
+    // Ensure DOM is ready before enabling focus trap
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 100); // Increased delay to ensure DOM is fully rendered
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Add global error handler for unhandled promise rejections
+  useEffect(() => {
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      if (
+        event.reason &&
+        typeof event.reason === "object" &&
+        "message" in event.reason
+      ) {
+        const message = event.reason.message;
+        if (
+          message &&
+          typeof message === "string" &&
+          message.includes("matches.call")
+        ) {
+          console.warn(
+            "Caught focus-trap matches.call error, preventing crash:",
+            event.reason,
+          );
+          event.preventDefault();
+        }
+      }
+    };
+
+    window.addEventListener("unhandledrejection", handleUnhandledRejection);
+    return () =>
+      window.removeEventListener(
+        "unhandledrejection",
+        handleUnhandledRejection,
+      );
   }, []);
 
   return (
@@ -85,8 +133,23 @@ export function OverlayPortal(props: {
       {portalElement
         ? createPortal(
             <Transition show={props.show} animation="none">
-              <FocusTrap>
-                <div className="popout-wrapper fixed overflow-hidden pointer-events-auto inset-0 z-[999] select-none">
+              <FocusTrap
+                active={isReady && !!props.show}
+                focusTrapOptions={{
+                  allowOutsideClick: true,
+                  clickOutsideDeactivates: true,
+                  fallbackFocus: () => document.body,
+                  returnFocusOnDeactivate: true,
+                  escapeDeactivates: true,
+                  preventScroll: true,
+                  // Disable the problematic check that causes the matches.call error
+                  checkCanFocusTrap: () => Promise.resolve(),
+                }}
+              >
+                <div
+                  className="popout-wrapper fixed overflow-hidden pointer-events-auto inset-0 select-none"
+                  style={{ zIndex }}
+                >
                   <Transition animation="fade" isChild>
                     <div
                       onClick={close}
@@ -100,6 +163,7 @@ export function OverlayPortal(props: {
                     animation="slide-up"
                     className="absolute inset-0 pointer-events-none"
                     isChild
+                    durationClass={props.durationClass ?? "duration-200"}
                   >
                     {/* a tabable index that does nothing - used so focus trap doesn't error when nothing is rendered yet */}
                     <div

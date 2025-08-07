@@ -1,0 +1,1084 @@
+{
+    "about": {
+        "description": "film.kace.dev isch e Abspaltig vo movie-web und wird sichergstellt, dass es au no lauft, wenn movie-web.app nüm verfügbar isch. film.kace.dev lauft uf eme private, selbstghostete VPS. Ich betreib die Site mit Verlust – ohni Werbig, will ich a freiji Medie glaub.",
+        "faqTitle": "Hüfig gstelti Froge",
+        "q1": {
+            "body": "film.kace.dev hostet kei Inhalt selber. Wenn du öpis zum Luege aaklicksch, wird s’Internet nach dem usgwählte Medium dürsuecht (uf em Ladebildschirm ond im Tab „Videoquellen“ gsesch, weli Quelle grad brucht wird). Medie wird nie vo film.kace.dev ufelade – alles lauft über die Suechfunktion.",
+            "title": "Woher stamme die Videos?",
+            "section": "generel"
+        },
+        "q2": {
+            "body": "Es isch nöd möglich, e Serie oder e Film z'wünsche, will film.kace.dev kei Inhalt verwaltet. Alles wird über Quellen im Internet agluegt.",
+            "title": "Wo chan ich en Serie oder en Felm afroge?",
+            "section": "suechi"
+        },
+        "q3": {
+            "body": "Üsi Suechergebnis chöme fo The Movie Database (TMDB) ond werde au azeigt, wenn üsi Quellene dä Inhalt vellecht tatsächlech net hend.",
+            "title": "T Suechergäbnis zeige t Serie ond t Felme, wiso chani si net abspele?",
+            "section": "suech"
+        },
+        "title": "Öber film.kace.dev (^▽^)",
+        "q4": {
+            "title": "Was esch met mine Date und em Stuff?",
+            "body": "Alli Date werdet met der Community-Backend synchronisiert, ond jede cha die au notze.",
+            "section": "generel"
+        },
+        "q5": {
+            "title": "Wie chani me usefende?",
+            "body": "film.kace.dev het en Discord server, me fendet en zoberscht of de Website!",
+            "section": "generel"
+        },
+        "q9": {
+            "body": "Nei—wel mer kei Medie selber hei. Alli Medie basiere of däm, was öber d‘Suechfonktion öffentlich zuegänglech isch.",
+            "title": "Die Medie fehle / Chani si afroge?",
+            "section": "suech"
+        },
+        "q6": {
+            "body": "Momentan noni, aber du chasch en PWA (Progressive Web App) installiere. Of iOS, benotz Safari → Share → Add to Home Screen. Of Andriod, benotz Chrome → 3 dots → Add to Home Screen. En Beta fonere APK esch of üsem Discord verfüegbar, aber es werd net empfole.",
+            "title": "Gets en film.kace.dev app?",
+            "section": "generel"
+        },
+        "q15": {
+            "body": "Stel secher, das s‘Grät stom gschalte esch ond wächsle t Sources. Audio problem chöne fo de Source entsto.",
+            "title": "Wiso hani kei Audio?",
+            "section": "Wedergob"
+        },
+        "q13": {
+            "body": "Nem mol en anderi Source. D‘Qualität fo de Provider mängisch onterschedlech; FED API het öfters me Optione.",
+            "title": "D‘Video qualität esch net die woni erwartet ha.",
+            "section": "Wedergob"
+        },
+        "help": "Fendisch kei antwort? <0>Bechom en Antwort.</0>",
+        "searchPlaceholder": "Suech FAQ…",
+        "sections": {
+            "general": "Generel",
+            "playback": "Wedergobe Fehler",
+            "connections": "Verbendige",
+            "language": "Sproche & Ontertetel Ischtelige",
+            "search": "Suechi & Content verfüegbarkeit"
+        },
+        "q7": {
+            "title": "Wie mach ich en Account?",
+            "body": "Dröck “Sync to Cloud“ im dropdown menu oder gang it Ischtelige zom erstelle oder sync en community account.",
+            "section": "generel"
+        },
+        "q10": {
+            "title": "Ich cha der Felm/Serie net fende!",
+            "body": "TMDB betribt üsi Suechi. Versuech mol s‘🔎 icon az‘klicke för erwitereti suech optione, fals t ergäbnis net steme.",
+            "section": "suechi"
+        },
+        "q11": {
+            "title": "Wiso gseni en Black-Screen?",
+            "body": "Wahrschindlech ein beschädigts Video. Versuech en anderi Quelle.",
+            "section": "Wedergot"
+        },
+        "q12": {
+            "title": "D‘Episode woni lueg stemt net.",
+            "body": "Due zonere andere Source wächsle. Mer hei kei iflos of d‘Medie wo for Sources chöme.",
+            "section": "Wedergob"
+        },
+        "q14": {
+            "title": "4K esch net verfüegbar.",
+            "body": "Wen 4K net azeigt werd, esches warschindlech fo de Source net verfüegbar.",
+            "section": "Wedergob"
+        },
+        "q16": {
+            "title": "S‘Video esch blass oder verschwome."
+        }
+    },
+    "actions": {
+        "copied": "Kopieret",
+        "copy": "Kopiere"
+    },
+    "auth": {
+        "createAccount": "Hesch no kei Account? <0>Erschtel eine.</0>",
+        "deviceNameLabel": "Grätename",
+        "deviceNamePlaceholder": "Persöndlechs Natel",
+        "generate": {
+            "description": "Dini Passphrase fonktioniert wie din Benotzername ond s'Passwort. Heb sorg dezue, will du muesch si iigäh, um dich i din Konto iizlogge. <bold>Verlier dini Passphrase OF KEI FALL!</bold>",
+            "next": "Ich han mi Passphrase g'spicheret",
+            "passphraseFrameLabel": "Passphrase",
+            "title": "Din Passphrase"
+        },
+        "hasAccount": "Du hesch bereits en Account? <0>Do Amälde.</0>",
+        "login": {
+            "description": "Geb din Passphrase a, om dich in di Account i z'logge",
+            "deviceLengthError": "Geb en Grätename i",
+            "passphraseLabel": "12-Word Passphrase",
+            "passphrasePlaceholder": "Passphrase",
+            "submit": "Amälde",
+            "title": "Mäld dich i dim Konto a",
+            "validationError": "Falsches oder onvollständigi Passphrase"
+        },
+        "register": {
+            "information": {
+                "color1": "Profilfarb 1",
+                "color2": "Profilfarb 2",
+                "header": "Geb dim Grät en Namet, den wärsch en Farb ond es Benotzericon!",
+                "icon": "Symbol",
+                "next": "Witer",
+                "title": "Account Informatione"
+            }
+        },
+        "trust": {
+            "failed": {
+                "text": "Hesch du’s richtig konfiguriert?",
+                "title": "Server esch net erreichbar"
+            },
+            "host": "Du verbendisch di met <0>{{hostname}}</0> - stell secher das du im Server vertrausch, bevor du en Account erstellsch...",
+            "no": "Zrog",
+            "noHost": "Do der Server net igstellt esch, chasch kei Account erstelle",
+            "noHostTitle": "Server esch net Igstellt!",
+            "title": "Vertrousch däm Server?",
+            "yes": "I vertrou däm Server 🤞"
+        },
+        "verify": {
+            "description": "Bitte geb din Passphrase vo forher i, um z’beschtätige, das du in gspicheret hesch, ond zom Konto erstelle",
+            "invalidData": "T Date send ongöltig",
+            "noMatch": "Passphrase stemt net ö ber’i",
+            "passphraseLabel": "Din 12-Wort Passphrase",
+            "recaptchaFailed": "ReCaptcha Verifizierig esch felgschlage",
+            "register": "Account erstelle",
+            "title": "Beschtätige din Passphrase"
+        }
+    },
+    "errors": {
+        "badge": "Kaputt",
+        "details": "Fehler Deteils",
+        "reloadPage": "Lad t’Site neu",
+        "showError": "Zeig t Fehlerdeteils a",
+        "title": "En Fehler esch uftaucht!"
+    },
+    "footer": {
+        "legal": {
+            "disclaimer": "Hewis",
+            "disclaimerText": "Bitte beacht: film.kace.dev host kei Date selber, sondern zeigt nor Inhalt vo Drittabieter a. Rechtlichi Froge sete metem Abieter klärt werde."
+        },
+        "links": {
+            "discord": "Discord",
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Zwetschere",
+            "funding": "Onterstötz üs"
+        },
+        "tagline": "Lueg dini lieblings Serie ond Felme gratis ohni Werbig z’gse! (っ'ヮ'c)"
+    },
+    "global": {
+        "name": "film.kace.dev",
+        "pages": {
+            "about": "Öber",
+            "legal": "Legal / DMCA",
+            "login": "Amälde",
+            "onboarding": "Irechte",
+            "pagetitle": "{{title}} - film.kace.dev",
+            "register": "Regischtriere",
+            "settings": "Ischtelige",
+            "discover": "Entdecke",
+            "support": "Onterstötze",
+            "migration": "Account öberträge",
+            "jip": "Jip"
+        }
+    },
+    "home": {
+        "bookmarks": {
+            "sectionTitle": "Läsezeiche"
+        },
+        "continueWatching": {
+            "sectionTitle": "Witer luege…"
+        },
+        "mediaList": {
+            "stopEditing": "Bearbeitig beände"
+        },
+        "search": {
+            "allResults": "Dasch esch alle…",
+            "failed": "Fäler bem fende fo de Medie, versuechs nomol!",
+            "loading": "Werd glade...",
+            "noResults": "Mer hei nüt gfonde :(",
+            "placeholder": {
+                "default": "Was welsch aluege?",
+                "extra": [
+                    "I was för nere Stemig besch grad?",
+                    "Sölle mer dini Browser-Historie lösche?",
+                    "Was möchtisch gern luege?",
+                    "film.kace.dev esch die bescht Site ever!",
+                    "Was esch of dim Felm ToDo Zetteli?",
+                    "Wie esch din Tag gse?",
+                    "Min Fähler, t’Site fonktioniert nie…",
+                    "film.kace.dev esch die bescht Site, oder?",
+                    ">ᴗ<"
+                ]
+            },
+            "sectionTitle": "Suechergebniss",
+            "empty": {
+                "default": "Wiiilkommme, do chasch Medie zom aluege fende!",
+                "extra": [
+                    "Do gets nüt :(",
+                    "so leer do...",
+                    "So en leeri do.",
+                    "Hallo, du cooli Socke :3"
+                ]
+            },
+            "discoverMore": "Entdeck mee",
+            "discover": "Entnecke"
+        },
+        "titles": {
+            "day": {
+                "default": "Was möchtisch a däm schöne nomitag aluege?",
+                "extra": [
+                    "Viva la film.kace.dev e ciao Svizzera"
+                ]
+            },
+            "morning": {
+                "default": "Was welsch a däm morge aluege?",
+                "extra": [
+                    "Viva la film.kace.dev!"
+                ]
+            },
+            "night": {
+                "default": "Besch no wach? Was möchtisch luege?",
+                "extra": [
+                    "Viva la ﻿﻿Svizzera!"
+                ]
+            },
+            "69": {
+                "default": "Hesch loscht of öpis scharfs?",
+                "extra": [
+                    "Schöne 69. Tag 😘!"
+                ]
+            },
+            "420": {
+                "default": "Gets öpis, wodu am 4/20 welsch luege?",
+                "extra": [
+                    "Fröhleche 4/20 🥳!"
+                ]
+            }
+        },
+        "mediaCard": {
+            "moreInfo": "Me Infos",
+            "copyLink": "Link Kopiere",
+            "close": "Zuemache"
+        }
+    },
+    "media": {
+        "episodeDisplay": "S{{season}} E{{episode}}",
+        "types": {
+            "movie": "Felm",
+            "show": "Serie"
+        },
+        "unreleased": "Noni veröffentlicht",
+        "episodeShort": "E",
+        "seasonShort": "S"
+    },
+    "navigation": {
+        "banner": {
+            "offline": "Check mol dini Internet verbendig, silly goose! 🦢"
+        },
+        "menu": {
+            "about": "Öber üs",
+            "logout": "Abmälde",
+            "register": "Synchronisiert zo der Wolche",
+            "settings": "Ischtelige",
+            "support": "Support",
+            "discover": "Entdecke",
+            "development": "Entwecklig"
+        }
+    },
+    "notFound": {
+        "badge": "Net gfonde",
+        "goHome": "Zrog zo Home",
+        "message": "Mir hei überall gluegt: unter de Chübeli, im Chaschte, hinterem Proxy – aber mir hei die Seite, wo du suechsch, leider nöd gfunde. (ಥ﹏ಥ)",
+        "title": "T Site heimer net gfonde",
+        "reloadButton": "Versuechs nomol"
+    },
+    "onboarding": {
+        "defaultConfirm": {
+            "cancel": "Abbräche",
+            "confirm": "Standard-Setup verwände",
+            "description": "S Standart Setup het net die beschte Streams. Du verpassisch die beschte Quellene!",
+            "title": "Besch secher?"
+        },
+        "extension": {
+            "back": "Gang zrog",
+            "explainer": "Mit dr Browser-Erweiterig chasch du d’beschte Streams nutze, wo mir z’biete hei – mit nur enere einfache Installierig. 👌",
+            "explainerIos": "Leider chasch t Browser-Erwiterig onter IOS net bruche. Klick uf <bold>Zrog</bold>, om en anderi Option z wähle.",
+            "extensionHelp": "Wenn du d’Erweiterig installiert hesch, sie aber nöd erkannt wird, <bold>öffne sie über s’Erweiterigs-Menü vo dim Browser</bold> und folg de Schritt uf em Bildschirm.",
+            "linkChrome": "Chrome Erweiterig installiere",
+            "linkFirefox": "Firefox Erweiterig installiere",
+            "notDetecting": "Uf Chrome installiert, aber d’Site erkennt sie nöd? Versuech d’Seite neu z’lade!",
+            "notDetectingAction": "Site neu lade",
+            "status": {
+                "disallowed": "Erwiterig esch för die Site net aktiviert (,,>﹏<,,)",
+                "disallowedAction": "Aktivier Erwiterig",
+                "failed": "Status afrog esch Fehlgschlage",
+                "loading": "Warte of dich, bes du d‘Erwiterig installiert hesch",
+                "outdated": "Erwiterig het en zu alti version",
+                "success": "D‘Erwiterig fonktioniert wie usem Näichäschtli!"
+            },
+            "submit": "Witer",
+            "title": "Lass üs met der Erwiterig starte"
+        },
+        "proxy": {
+            "back": "Zrog go",
+            "explainer": "Mit dr Proxy-Methode chasch super Qualität-Streams kriege, indem du e Self-Service-Proxy iirichtisch.",
+            "input": {
+                "errorConnection": "Chan net metem Proxy verbende",
+                "errorInvalidUrl": "Kei gültigi URL",
+                "errorNotProxy": "Esch esch en Proxy erwartet worde, aber es esch e Website cho",
+                "label": "Proxy-URL",
+                "placeholder": "https://"
+            },
+            "link": "Lehr, wie me en Proxy macht",
+            "submit": "Proxy irechte",
+            "title": "Lass üs e neue Proxy mache"
+        },
+        "start": {
+            "explainer": "Lass üs die beschte Streams hole. Du muesch uswehle, weli streaming methode du welsch ne.",
+            "options": {
+                "default": {
+                    "text": "Ich möcht kei gueti Streaming qualität, den chasch s‘standart Setup bruche"
+                },
+                "extension": {
+                    "action": "Installier t‘Erwiterig",
+                    "description": "Installier d’Browser-Erweiterig, um Zuegriff uf zuesätzlechi Quellen z’überchun! Aber denk dra, sie für die Site z’aktiviere.",
+                    "quality": "Beschti Qually + me Quellene",
+                    "title": "Browser Erwitterig"
+                },
+                "proxy": {
+                    "action": "Proxy istelle",
+                    "description": "Erstell en gratis Proxy in 5Min! Verbesserti ladezite!",
+                    "quality": "Gute Qualität",
+                    "title": "Eigene Proxy"
+                },
+                "or": "oder"
+            },
+            "title": "Lass üs metem istelle fo film.kace.dev starte 🥳",
+            "moreInfo": {
+                "explainer": {
+                    "default": "3. Standart Istelige",
+                    "extensionDescription": "D’Erweiterig git der Zuegriff uf d’meiste Quellen. Si funktioniert wie en lokale Proxy und cha Site verwände, wo spezielli Cookies oder Header bruuche zum Lade.",
+                    "intro": "film.kace.dev hostet kei Videos. Es isch uf Drittanbieter-Websites angewiese für d’Inhalt, drum muesch du wähle, wie s sich mit dene Site verbindet.",
+                    "fedapi": {
+                        "fedapiDescription": "Bring din eigene gratis Febbox-Account mit, zum Zuegriff uf d’FED API (Privat) z’übercho. Die beschti Quälle mit 4K-Qualität, Dolby Atmos, Intro Skip ond superschnälle Ladezyte! Wörklich sehr zom Empfehle!",
+                        "fedapi": "Optional: FED API (Private) token"
+                    },
+                    "defaultDescription": "Bruchsch der integrierti film.kace.dev Proxy. Es isch der eifachscht Option, chönnt aber langsamer si weg der teilte Bandbreite.",
+                    "options": "Dini Optione:",
+                    "extension": "1. Erwiterig",
+                    "proxy": "2. Proxy",
+                    "proxyDescription": "Dr Proxy scrape Medien vo andere Websites. Er umgoh Browser-Einschränkige (wie CORS), um s’Scrape z’ermögliche.",
+                    "outro": "Wenn du meh Froge hesch, wie das funktioniert, chasch gärn uf em <0>film.kace.dev Discord\\</0>-Server frage!"
+                },
+                "button": "Me Info",
+                "title": "Es Setup versto",
+                "recommended": {
+                    "title": "Net secher, was de uswähle welsch?",
+                    "desktop": {
+                        "title": "Schribtesch:",
+                        "description": "Erwiterig + FED API (Private)"
+                    },
+                    "iOS": {
+                        "title": "iOS:",
+                        "description": "Eigene Proxy + FED API (Private)"
+                    },
+                    "android": {
+                        "title": "Android:",
+                        "description": "Erwiterig + FED API (Private)"
+                    },
+                    "subtitle": "Empfohleni Konfiguratione:"
+                }
+            }
+        }
+    },
+    "overlays": {
+        "close": "Schliesse"
+    },
+    "player": {
+        "back": {
+            "default": "Zrog zor Start-Site",
+            "short": "Zrog"
+        },
+        "casting": {
+            "enabled": "Casting to device 🎬"
+        },
+        "menus": {
+            "downloads": {
+                "copyHlsPlaylist": "Kopier HLS-Playlist Link",
+                "disclaimer": "Downloads chömed direkt vom Anbieter. film.kace.dev het kei Kontroll drüber, wie die Downloads zur Verfüegig gstellt werde.",
+                "downloadSubtitle": "Aktuelle Untertitel ablade",
+                "downloadVideo": "Video abelade",
+                "hlsDisclaimer": "Downloads chömed direkt vom Anbieter. film.kace.dev het kei Kontroll drüber, wie die Downloads zur Verfüegig gstellt werde. <br /><br />Bitte beachte, dass du e HLS-Playlist abeladsch, <bold>es wird nöd empfohle zum abelade, wenn du dich mit fortgschrittliche Streaming-Formate nöd uskennsch</bold>. Versuech anderi Quellen für anderi Formate.",
+                "onAndroid": {
+                    "1": "Om of Android abezlade, klick ofe abelad chnopf, <bold>Klick ond halt</bold> ofs Video, den wählsch <bold>save</bold>us.",
+                    "shortTitle": "Abelade / Android",
+                    "title": "Of Android abelade"
+                },
+                "onIos": {
+                    "1": "Zum Abelaade uf iOS: Klick uf dr Download-Button, denn uf dr neue Seite klick uf <bold><ios_share /></bold> und nachher uf <bold>In Dateien sichern<ios_files /></bold>.",
+                    "shortTitle": "Abelade / iOS",
+                    "title": "Of iOS abelade"
+                },
+                "onPc": {
+                    "1": "Uf PC, Klicksch ofe abelad Chnopf, den of ne neue Site, rächts klick ofs Video ond wählsch <bold>Save video as</bold>",
+                    "shortTitle": "Abelade / PC",
+                    "title": "Of PC abelade"
+                },
+                "title": "Abelade",
+                "button": "Versuech zom abelade",
+                "hlsDownloader": "Oder, goh uf d’<0>HLS Downloader-Website\\</0> und füeg die Playlist-URL vo unten ei."
+            },
+            "episodes": {
+                "button": "Folg",
+                "emptyState": "Do si kei Folge i dere Staffle, lueg spöter nomol verbi (sorry :3)…",
+                "episodeBadge": "E{{episode}}",
+                "loadingError": "Fehler bem lade fo de Staffle",
+                "loadingList": "Werd glase...",
+                "loadingTitle": "Werd glade...",
+                "unairedEpisodes": "Ei oder meh Episodä in däre Staffel sind deaktiviert worde, will sie no nöd usgstrahlt worde sind.",
+                "seasons": "Staffle",
+                "showMore": "Zeig me",
+                "showLess": "Zeig weniger",
+                "markAsWatched": "Markiers als agluegt",
+                "markAsUnwatched": "Markier als net agluegt"
+            },
+            "playback": {
+                "speedLabel": "Wedergabegschwendigkeit",
+                "title": "Wedergab Istellig",
+                "disabled": "(In watch party usschalte)"
+            },
+            "quality": {
+                "automaticLabel": "Automatischi Quallität",
+                "hint": "Du chasch <0>d’Quelle wechsle</0>, um anderi Qualität-Optione z’überchun.",
+                "iosNoQuality": "Wäge vo Apple definierti (typisch iOS L) Einschränkige isch s’Wähle vo dr Qualität bi däre Quelle uf iOS nöd verfügbar. Du chasch <0>uf e anderi Quelle wechsle</0>, um verschideni Qualitäte z’überchun.",
+                "title": "Qualität",
+                "auto": "Auto"
+            },
+            "settings": {
+                "audioItem": "Audio",
+                "downloadItem": "Abelade",
+                "enableSubtitles": "Ontertetel aktiviere",
+                "experienceSection": "Azeige Erläbnis",
+                "playbackItem": "Wedergabe Istellig",
+                "qualityItem": "Qualität",
+                "sourceItem": "Quelle",
+                "subtitleItem": "Ontertetel",
+                "videoSection": "Felmli Ischtelige"
+            },
+            "sources": {
+                "failed": {
+                    "text": "Do esch en Fehler bem versuech Felmli z fende… Versuech mol en anderi Quelle",
+                    "title": "Fehler bem Lade"
+                },
+                "noEmbeds": {
+                    "text": "Mir hei kei Embeds gfunde, bitte versuech en anderi Quelle.",
+                    "title": "Kei Embeds gefonde"
+                },
+                "noStream": {
+                    "text": "Die Quelle het kei Streams för dä Felm oder Serie.",
+                    "title": "Kei Stream :("
+                },
+                "title": "Quellene",
+                "unknownOption": "Onbekannt",
+                "editOrder": "Bestellig bearbeite"
+            },
+            "subtitles": {
+                "customChoice": "Drop oder lad dis File ufe",
+                "customizeLabel": "Apasse",
+                "dropSubtitleFile": "Leg din Ontertetel do ab! >_<",
+                "offChoice": "Us",
+                "settings": {
+                    "backlink": "Eigeni Ontertetel",
+                    "delay": "Ontertitelverzögerig",
+                    "fixCapitals": "Grossschribig korrigiere"
+                },
+                "title": "Ontertitel",
+                "unknownLanguage": "Onbekannt",
+                "OpenSubtitlesChoice": "OpenSubtitles",
+                "notFound": "Kei vo de verfüegbare Optionä stimmt mit dinere Suchi öberi",
+                "SourceChoice": "Quelle agab",
+                "empty": "Do si kei Ontertetel verfüegbar.",
+                "scrapeButton": "Ontertitel scrapen",
+                "onChoice": "Aa",
+                "useNativeSubtitles": "Benotz nativi Video-Ontertetel",
+                "useNativeSubtitlesDescription": "Cha d‘Ontertetel bi Casting ond im PiP behebe"
+            },
+            "watchparty": {
+                "watchpartyItem": "Watch Party",
+                "notice": "Watch Party esch felecht net för alli Quellene verfüegbar",
+                "legacyWatchparty": "Bruch die alti Watch Party"
+            },
+            "audio": {
+                "default": "Standard"
+            }
+        },
+        "metadata": {
+            "api": {
+                "text": "Het API Metadata net chöne lade. Bitte check dini Internet verbendig.",
+                "title": "API Metadata het net chöne lade"
+            },
+            "legal": {
+                "badge": "Entfärne",
+                "text": "Die Medie isch nüm verfügbar wäge eme Takedown-Notice oder eme Urheberrechtsanspruch. 😨",
+                "title": "D‘Medie si glöscht worde"
+            },
+            "extensionPermission": {
+                "badge": "D‘Berächtigong fält",
+                "button": "Bruch d‘Erwiterig",
+                "text": "Du hesch t Browser-Erwiterig, aber mer bruche dini Berächtigong zom si bruche. (¬_¬)",
+                "title": "Konfigurier d‘Erwiterig"
+            },
+            "failed": {
+                "badge": "Fählgschlage",
+                "homeButton": "Zrog zor Start-Site",
+                "text": "Het d‘Metadate fo TMDB net chöne lade. Öberprüef ob entweder TMDB down esch oder öb si ächt of dim Internet blockiert esch.",
+                "title": "Lade fo de Metadate fehlgschlage"
+            },
+            "notFound": {
+                "badge": "Net gfonde",
+                "homeButton": "Zrog zor Start-Site",
+                "text": "Mer hei d'Medie, wo du gfrogt hesch, nöd gfunde. Entweder isch es entfernt worde oder du hesch d'URL veränderet (mei, mei, mei).",
+                "title": "Het d‘Medie net chöne fende."
+            }
+        },
+        "nextEpisode": {
+            "next": "Nächschti Folg",
+            "replay": "Wederholig",
+            "nextSeason": "Nächschti Staffle"
+        },
+        "playbackError": {
+            "badge": "Wedergabe Fehler",
+            "errors": {
+                "errorAborted": "S‘abrüefe fo de Medie esch vom Benotzer abbroche worde.",
+                "errorDecode": "Obwohl es vorher als benutzbar bestimmt worde esch, esch e Fehler aufgetrete, während em Versuech, die Medienressource z'dekodiere, was zu eme Fehler gführt het.",
+                "errorGenericMedia": "Onbekannte Medie Fehler oftrete.",
+                "errorNetwork": "Es isch en Netzwerkfehler auftrete, wo verhindert het, dass d‘Medie erfolgrich abgerüft werde chöi, obwohl es vorher verfügbar gse esch.",
+                "errorNotSupported": "S‘Medie oder de Medie-Anbieter wird nöd onterstützt."
+            },
+            "homeButton": "Zrog zor Start-Site",
+            "text": "Do esch en Fehler bem abspele fo de Medie 😖. Bitte versuechs nomol oder benotz en anderi Quelle!",
+            "title": "Upsi, Fehler bem abspele!"
+        },
+        "scraping": {
+            "extensionFailure": {
+                "badge": "Erwiterig deaktiviert",
+                "enableExtension": "Erwiterig aktiviere",
+                "homeButton": "Gang heime",
+                "text": "Du hescht film.kace.dev Erwiterig installiert. Demet du si chasch benotze, muesch si aktiviere.",
+                "title": "Bitte aktivier t Erwiterig"
+            },
+            "items": {
+                "failure": "En Fehler esch ufträte",
+                "notFound": "Mer hei s‘Video net (╥﹏╥)",
+                "pending": "Sueche nach Videos…"
+            },
+            "notFound": {
+                "badge": "Net gfonde",
+                "detailsButton": "Deteils azeige",
+                "homeButton": "Gang zor Start-Site",
+                "text": "Mir hei d'Anbieter durchsuecht und chönd d‘Medie, wo du suechsch, nöd finde! Mir hoste kei Medie und hei kei Kontroll über das, was verfügbar isch. Bitte klick uf „Details zeige“ unten für meh Informatione.",
+                "title": "Chöne mer net fende",
+                "discoverButton": "Entdeck me"
+            },
+            "tips": {
+                "7": "Halt SHIFT und klick uf den Titel, um de Link mit der Zeit z'kopiere!",
+                "2": "Klick ufe Titel zom der link z kopiere!",
+                "12": "Dröck SPACE oder K zom abspele/pausiere!",
+                "19": "Drück . ond , um Frame für Frame z'bewege, wenn's pausiert esch!",
+                "3": "Halt SHIFT für Breitbild statt Vollbild!",
+                "4": "Gwössi Quellene fonktioniere besser wie anderi!",
+                "5": "Hol der t Erwiterig för me Quellene!",
+                "6": "Halt Lesezeichä, um sie z'ändere oder z'lösche!",
+                "8": "Wähl en eigeni Ontertetel Farb!",
+                "9": "Migrier dis Konto zonere neue Backend i de Einstellungen!",
+                "10": "Tret em Discord bi!",
+                "11": "Bruch [ und ], om d‘Ontertitel-Ziit z'ändere!",
+                "14": "Benotz J ond L zom 10 sekonde z'Skipe!",
+                "15": "Dröck F, om Vollbeld ei- oder uszschalte!",
+                "16": "Dröck M zom Stomschalte!",
+                "17": "Benotz UP ond DOWN Taschte om t Lutsterchi z ändere!",
+                "18": "Drück < und >, um d'Wiedergabegschwindigkeit z'ändere!",
+                "20": "Dröck C om der Ontertetel i- oder uszschalte!",
+                "21": "Dröck R, om en Barrel Roll z mache!",
+                "1": "Klick uf s‘Zahnradsymbol, um d‘Quellen z‘wechse!",
+                "13": "Benotz die LENKI oder RÄCHTI Pfiltaschte om 5 sekomde z‘Skipe!"
+            }
+        },
+        "time": {
+            "regular": "{{timeWatched}} / {{duration}}",
+            "remaining": "{{timeLeft}} Öbrig • Fertig am {{timeFinished, datetime}}",
+            "shortRegular": "{{timeWatched}}",
+            "shortRemaining": "-{{timeLeft}}"
+        },
+        "turnstile": {
+            "description": "Halt, stop. Besch du en Mönsch? Bewis dini Mönschlechkeit indem du schnell en Challenge abschliesch – das dient zor Sicherheit vo film.kace.dev.",
+            "error": "Du hesch der Tescht net gschaft- Stream het net chöne lade. Ler din Cache und versuech’s nomol, oder wechsle zue ere andere Quelle (tipp uf s’Zahnrad).",
+            "title": "Besch du en Roboter?",
+            "verifyingHumanity": "Verifizier dini Mönschlechkeit… (^▽^)👍"
+        }
+    },
+    "screens": {
+        "legal": {
+            "title": "Legal / DMCA"
+        },
+        "loadingApp": "D‘App werd glade",
+        "loadingUser": "Dis Profil werd glade",
+        "loadingUserError": {
+            "logout": "Abmälde",
+            "reset": "Eigene Server zrogsetze",
+            "text": "Bem lade fo din Profil esch en Fehler uftaucht",
+            "textWithReset": "Profil het nöd vo dim eigene Server glade werde chöne – wotsch zum Standardserver zrogwechsle?",
+            "reload": "Neu lade"
+        },
+        "migration": {
+            "failed": "Bem öberträge esch en Fehler ufträte. 😿",
+            "inProgress": "Bitte wart en momänt, mer öberträge dini Date. Es set net lang go…"
+        }
+    },
+    "settings": {
+        "account": {
+            "accountDetails": {
+                "deviceNameLabel": "Gräte name",
+                "deviceNamePlaceholder": "Natel",
+                "editProfile": "Bearbeite",
+                "logoutButton": "Abmälde"
+            },
+            "actions": {
+                "delete": {
+                    "button": "Account lösche",
+                    "confirmButton": "Account lösche",
+                    "confirmDescription": "Welsch der Account wörklech lösche? All dini Date göi verlore! ૮₍˶Ó﹏Ò ⑅₎ა",
+                    "confirmTitle": "Besch secher?",
+                    "text": "Die Aktion cha net röckgängig gmacht wärde. Alli date werne glöscht ond chöne net wederhergstellt werde.",
+                    "title": "Account lösche"
+                },
+                "title": "Aktione",
+                "logoutAllDevices": {
+                    "title": "Alli Grät abmälde",
+                    "text": "Das werd all dini Grät abmälde wo met dim Account verbonde si.",
+                    "button": "Wo allne Grät abmälde"
+                },
+                "migration": {
+                    "text": "Öberträg din Account zu eme neue Server oder lad dini Date abe.",
+                    "title": "Account öberträge",
+                    "button": "Öberträg de Account"
+                }
+            },
+            "devices": {
+                "deviceNameLabel": "Geräte name",
+                "failed": "Lade vo der Setzige Fehlgschlage",
+                "removeDevice": "Entfärne",
+                "title": "Geräte"
+            },
+            "profile": {
+                "finish": "Bearbeite beänden",
+                "firstColor": "Profilfarb 1",
+                "secondColor": "Profilfarb 2",
+                "title": "Profilbeld bearbeiten",
+                "userIcon": "Symbol"
+            },
+            "register": {
+                "cta": "Los goht's",
+                "text": "Teil din watch progress met dine andere Grät ond palt si Synchronisiert. ( ̧⸝⸝⍢⸝⸝)ෆ",
+                "title": "Met der Cloud synchronisiere"
+            },
+            "title": "Account",
+            "admin": {
+                "title": "Admin-Zentrale",
+                "text": "Notz d‘Wärchzüg wo deför do si, der zuestand vo film.kace.dev z öberprüefe.",
+                "button": "Check es us"
+            }
+        },
+        "appearance": {
+            "activeTheme": "Aktiv",
+            "themes": {
+                "blue": "Blau",
+                "default": "Standard",
+                "gray": "Grau",
+                "red": "Rot",
+                "teal": "Türkis",
+                "green": "Grüen",
+                "mocha": "Mokka ☕️",
+                "pink": "Pink",
+                "classic": "Klassisch",
+                "ember": "Ember",
+                "acid": "Säure",
+                "spark": "Funke",
+                "grape": "Traube",
+                "forest": "Wald",
+                "wolverine": "Wolverine",
+                "popsicle": "Popsicle",
+                "hulk": "Hulk",
+                "spiderman": "Spinnen Mann",
+                "noir": "Noir"
+            },
+            "title": "Erschinigsbeld",
+            "options": {
+                "discoverLabel": "Abschnett „Entdecke“",
+                "discover": "Abschnett „Entdecke“",
+                "discoverDescription": "Zeig d‘Entdeckigs-Sektion of der Startsite unter dine gspicherete Medie a. Standartmässig eschs Aktiviert.",
+                "modal": "Deteil-Fenschter",
+                "modalLabel": "Detail-Fenschter",
+                "modalDescription": "Zeigt s‘Deteil-Fenschter wen du of d‘Mediecharte klicksch anschtat diräckt luege. Före Traile esch en Proxy oder en Erwiterig nötig. Standartmässig deaktiviert.",
+                "logosDescription": "Zeigt Beld-Logos stat Texttitel im Deteilfenschter ond im Entdecke-Bereich.",
+                "featured": "Vorgschlageni Medie",
+                "featuredLabel": "Vorgschlagni Medie",
+                "logos": "Beld Logos",
+                "logosNotice": "Meischtens, si d‘Logos nome of Englisch. För anderi Sproche welsch es felecht abschalte!",
+                "logosLabel": "Beld-Logos",
+                "featuredDescription": "Zeigt es Karussell met empohlene Felme ond Serie, zobersch of der Start-Site! Standardmässig usgschalte.",
+                "carouselView": "Karussell asecht",
+                "carouselViewDescription": "Zeigt dini Watch-Fortschret ond d‘gspicherete Felme imene Karrussel, anstell vonere Raschterasecht. Standartmässig usgschalte.",
+                "carouselViewLabel": "Karussell asecht",
+                "forceCompactEpisodeView": "Erzweng kompakte Episoden ansicht",
+                "forceCompactEpisodeViewDescription": "Erzweng die klassisch kompakt Asecht vom Episodekarussell im Player. Isch standartmässig deaktiviert.",
+                "forceCompactEpisodeViewLabel": "Kompakti Episodene"
+            }
+        },
+        "connections": {
+            "server": {
+                "description": "Falls du dich met enere eigene Backend verbende welsch, um deine Daten zu speichern. Aktivier das ond geb din URL i. <0>Awisig.</0>",
+                "label": "Eigene Server",
+                "urlLabel": "Eigene Server-URL",
+                "migration": {
+                    "link": "Öberträg mini Date",
+                    "description": "<0>Dini Date öberträge</0> ofene neue Server."
+                },
+                "documentation": "Backend-Dokumentation"
+            },
+            "setup": {
+                "doSetup": "Irechte",
+                "errorStatus": {
+                    "description": "Es gset so us, als würdi ei oder meh Element in däre Konfiguration dini Ufmärksamkeit bruuche.",
+                    "title": "Öpis brucht dini Ufmerksamkeit 😱"
+                },
+                "itemError": "Do stemt öpis net met dene Ischtelige. Mach dis Setup erneut, zoms Problem z‘fixe. (ᴗ_ ᴗ。)",
+                "items": {
+                    "default": "Standart Ischtelig",
+                    "extension": "Erwiterig",
+                    "proxy": "Eigene Proxy"
+                },
+                "redoSetup": "Erneut Irechte",
+                "successStatus": {
+                    "description": "Alles esch barat. Du chasch jetzt dini lieblings Medie aluege. (๑>◡<๑)",
+                    "title": "Alles Igrechtet!!"
+                },
+                "unsetStatus": {
+                    "description": "Klick ofe Chnopf rechts, om metem setup z‘starte.",
+                    "title": "Du heschs setup noni gmacht"
+                }
+            },
+            "title": "Verbendig",
+            "workers": {
+                "addButton": "Neue Worker hinzuefüege",
+                "description": "Damit d’Applikation funktioniert, wird de gesamt Dateverkehr über en Proxys gleitet. Aktivier das, wenn du dini eigene Workers mitbringe wotsch. <0>Anweisungen.</0>",
+                "emptyState": "Kei Worker vorhande (｡•́︿•̀｡), du muesch eine hinzuefüege",
+                "label": "Verwänd en eigene Worker-Proxys",
+                "urlLabel": "Worker-URLs",
+                "urlPlaceholder": "https://",
+                "proxyTMDB": {
+                    "title": "Proxy TMDB",
+                    "description": "Nome den nötig, wen du kei direkte Zuegreff of TheMovieDB hesch, zom Bischpel wenn dini Internetabieter si Blockiere. Es wird empfohle, d‘Entdecke-Sektion z‘deaktiviere, om d‘Leischtig z‘verbessere."
+                },
+                "documentation": "Proxy Dokumentation"
+            }
+        },
+        "preferences": {
+            "language": "App-Sproch",
+            "languageDescription": "D‘Sprach wird uf d’ganzi App agwändet – nor Englisch ond Schwitzerdütsch het so lostige Sache drin.",
+            "thumbnail": "Miniaturbeld generiere",
+            "thumbnailDescription": "Meistens hei d’Videos kei Vorschaubilder. Du chasch die Option aktiviere, zum sie spontan generiere lo, aber das cha s’Video langsamer mache.",
+            "thumbnailLabel": "Miniaturasecht generiere",
+            "title": "Preferences",
+            "autoplayLabel": "Autoplay",
+            "skipCredits": "Abspann öbersprenge",
+            "skipCreditsDescription": "Wenn aktiviert, wird die nöchscht Episode abgschpelt, wen 99% vo de Episode abgschlosse esch, om d‘Credits z‘öbersprenge. Wenn deaktiviert, wird gwartet bes d‘Episode vollständig fertig esch.",
+            "sourceOrder": "Quelle neu a‘ordne",
+            "sourceOrderEnableLabel": "Benutzerdefinierti Quellreihenfolg",
+            "autoplay": "Autoplay",
+            "autoplayDescription": "Spelt automatisch die nöchscht Episode inere Serie ab, sobald s‘Endo erreicht esch. Chan aktiviert werde vo Notzer met dr Browser-Erwiterig, eme eigene Proxy oder mit dr Standart-Irechtig, wenn s‘vom Host erlaubt isch.",
+            "sourceOrderDescription": "Per Drag & Drop chasch t Quelle neu a‘ordne. Das bestimmt d‘Reihenfolg fo de Quelle wo abgsuecht wärde. Wenn e Quelle grau isch, heisst das, d’<bold>Erweiterig</bold> isch för die Quelle nötig. <br><br> <strong>(D’Standard-Reihenfolg isch für di meiste Notzer am beste)</strong>",
+            "skipCreditsLabel": "Skip d‘credits",
+            "lowPerformanceMode": "Performenc/bandwiti Modus",
+            "lowPerformanceModeDescription": "Optimiert d‘Application för schwachi verbendige met em drossle for Bandwiti feature. Dä Modus schränkt der Dateverbruch i, ohni d‘Hauptsuechi ond fonktione zom luege izschränke. ",
+            "lowPerformanceModeLabel": "Performenc Mode"
+        },
+        "reset": "Zurogsetze",
+        "save": "Spichere",
+        "sidebar": {
+            "info": {
+                "appVersion": "App-Version",
+                "backendUrl": "Backend-URL",
+                "backendVersion": "Backend-Version",
+                "hostname": "Hostname",
+                "insecure": "Onsicher",
+                "notLoggedIn": "Du besch net agmäldet",
+                "secure": "Secher",
+                "title": "App Status",
+                "unknownVersion": "Onbekannt",
+                "userId": "Nutzer-ID"
+            }
+        },
+        "subtitles": {
+            "backgroundBlurLabel": "Hentergrundonscherfi",
+            "backgroundLabel": "Hentergrond deckkraft",
+            "colorLabel": "Farbe",
+            "previewQuote": "Vom Läbe überzeugt, dass es sinnlos isch, fehlt mir doch dr Muet, drüber z’stah.",
+            "textSizeLabel": "Schriftgrößi",
+            "title": "Ontertitel",
+            "textBoldLabel": "Fettdrockte Text",
+            "default": "Standard",
+            "low": "Nedrig",
+            "textStyle": {
+                "default": "Standard",
+                "raised": "Ufzoge",
+                "uniform": "Uniform",
+                "dropShadow": "Schatteworf",
+                "title": "Text stil",
+                "depressed": "Deprimiert"
+            },
+            "verticalPositionLabel": "Vertikali position"
+        },
+        "unsaved": "Du hesch onspreichereti änderige…"
+    },
+    "migration": {
+        "start": {
+            "title": "Öberträg dini date",
+            "options": {
+                "or": "oder",
+                "direct": {
+                    "title": "diräkti öberträgig",
+                    "quality": "Liechtischti ond schnällschti",
+                    "action": "Date öberträge",
+                    "description": "Das öbertreit dini Date direkt uf de neue Server. Das isch d’schnällsti Option. <br /><br /> Das erlaubt der au, der Passphrase z‘phalte!"
+                },
+                "download": {
+                    "description": "Das lädet dini Date uf dis Gerät abe. Du chasch sie nachher uf de neue Server ufelade oder si einfach zur Sicheriheit behalte.",
+                    "title": "Date abelade",
+                    "quality": "Me technisches",
+                    "action": "Date abelade"
+                },
+                "upload": {
+                    "title": "Date ufelade",
+                    "description": "Lad dini vorher exportierti Datei ufe, um dini Lesezeichä und t‘Fortschritt uf däm Account wiederherzustelle.",
+                    "quality": "Stell dis Backup weder her",
+                    "action": "Date ufelade"
+                }
+            },
+            "explainer": "Wen du dini Date öberträge oder es Backup mache welsch, Chasch das met de folgende Optione mache. Demet paltisch du dini Date bem wächsel fo de Backend."
+        },
+        "direct": {
+            "title": "diräkti öberträgig",
+            "status": {
+                "error": "Fähler bem öberträge fo dine Date 😿",
+                "success": "Dini date si erfolgrich öbertreit worde!🎉"
+            },
+            "button": {
+                "migrate": "öberträge",
+                "processing": "Verarbeitig…",
+                "login": "Witer zom Login",
+                "home": "Zor Start-Site"
+            },
+            "description": "Gib d’Ziel-Backend-URL ii, um dini aktuelle Kontodate zum neue Backend z’öberträge. Dini Passphrase bliibt glych!",
+            "backendLabel": "Ziel-Backend-URL",
+            "recaptchaLabel": "ReCaptcha-Schlössel (optional)",
+            "toggleLable": "Brucht ReCaptcha?"
+        },
+        "loginRequired": "Du muesch iglogt si om dini date z’migriere! Bitte gang zrog, ond log dich ich, zom witerfahre.",
+        "download": {
+            "status": {
+                "error": "Bem abelade fo dinere Date esch en Fehler passiert. 😿",
+                "success": "Dini Date si erfolgrich abeglade worde! 🎉"
+            },
+            "title": "Date abelade",
+            "description": "Das wird dini Date uf dis Gerät abelade. Du chasch sie nacher uf de neue Server ufelade oder sie eifach zur Sicheriheit behalte.",
+            "items": {
+                "description": "Der Download beinhaltet:",
+                "bookmarks": "Medie met Läsezeiche",
+                "progress": "Lueg ber verarbeitig zue"
+            },
+            "button": {
+                "download": "Date abelade",
+                "home": "Zor Start-Site",
+                "login": "Gang zom Login"
+            }
+        },
+        "upload": {
+            "button": {
+                "processing": "Verarbeitete...",
+                "import": "Date importiere",
+                "success": "Import abgschlosse",
+                "home": "Witer zor Start-Site"
+            },
+            "title": "Date ufelade",
+            "status": {
+                "success": "Dini date si erfolgrich ufe glade worde! 🎉",
+                "processing": "Verarbeitet Datene…",
+                "error": "Fähler bem ufelade fo dine Date. 😿"
+            },
+            "description": "Lad dini vorher exportierti Dateie ufe, um dini Lesezeichä und din Fortschritt uf das Konto wiederherzustelle.",
+            "file": {
+                "description": "Wähl dini Datei us, wodu welsch ufelade",
+                "select": "Wähl en Datei",
+                "change": "Ändere en Datei",
+                "name": "Datei Name"
+            },
+            "dataPreview": "Vorab aluege:",
+            "exportedOn": "Exportiert am",
+            "items": {
+                "bookmarks": "Medie met Läsezeiche",
+                "progress": "Beobacht der Fortschret"
+            }
+        },
+        "back": "Gang zrog"
+    },
+    "downtimeNotice": {
+        "badge": "Fehler",
+        "title": "Abieter Problem",
+        "message": "film.kace.dev het wieder Problemli mit einzelne Anbieter. Wenn du e Serie nöd finde oder abspiele chasch, versuech bitte d’Quelle z’wechsle. Dä Fehler wird voraussichtlich während de unten aaggehne Zytspanne ahalte.",
+        "goHome": "Zor Start-Site"
+    },
+    "support": {
+        "title": "Support",
+        "q1": {
+            "body": "Nun, du chasch em Officiele <0>film.kace.dev-Discord</0> biträte ond det Froge stelle oder du chasch en Email schecke a d‘Adresse ganz onte uf dere Site.",
+            "title": "Wo chani Helf hole?"
+        },
+        "q2": {
+            "title": "Wo chani en Fehler oder en Bug mälde?",
+            "body": "Mir hei en <0>GitHub</0>, wo du es detailliertes Issue im Repository erstelle chasch. Zusätzlich chasch du, wenn du wetsch, au e Pull Request mache, um s’Problem sälber z’fiixe."
+        },
+        "text": "film.kace.dev isch druf usgleit, so benotzerfröntlech wie möglech z‘si. Trotzdäm het Lüüt no Froge und Problem. Die Site isch do, om z‘hälfe."
+    },
+    "jip": {
+        "q1": {
+            "title": "Wo bechomi helf?",
+            "body": "Nun, du chasch em Officielle <0>film.kace.dev-Discord</0> biträte ond det Froge stelle oder en Email at adresse wo onde a dere Site esch, schribe."
+        },
+        "q2": {
+            "title": "Wo chani en Fehler oder en Bug mälde?",
+            "body": "Mir hei en <0>GitHub\\</0>, wo du es detailliertes Issue im Repository erstelle chasch. Zusätzlich chasch du, wenn du wotsch, au e Pull Request mache, um s’Problem sälber z’fiixe."
+        },
+        "text": "film.kace.dev isch net usem Hemel gheit - s meischte esch vonere einzelne Person gmacht worde (ond das no sehr idrocksvoll!).",
+        "title": "Jip"
+    },
+    "details": {
+        "imdb": "Uf IMDb azeige",
+        "resume": "Fortsetze",
+        "play": "Abspele",
+        "releaseDate": "Veröffentlichungsdatum:",
+        "rating": "Bewertig:",
+        "votes": "Stimmen",
+        "tmdb": "Uf TMDB azeige",
+        "episodes": "Folg",
+        "season": "Staffle",
+        "runtime": "Laufzeit:",
+        "airs": "Loft",
+        "language": "Sproch:",
+        "episode": "Episode",
+        "endsAt": "Ändet am {{time}}"
+    },
+    "discover": {
+        "page": {
+            "title": "Entdeck Felmli ond Serie",
+            "subtitle": "Entdeck die aktuelle Trends ond altbekannti classics.",
+            "loadMore": "Me Lade",
+            "loading": "Ladet...",
+            "back": "Zrog"
+        },
+        "tabs": {
+            "movies": "Filme",
+            "tvshows": "Fernsehserie",
+            "editorpicks": "Uniform"
+        },
+        "carousel": {
+            "title": {
+                "movies": "{{category}} Filme",
+                "tvshows": "{{category}} Shows",
+                "inCinemas": "Im Kino",
+                "popularOn": "Beliebti {{type}} uf {{provider}}",
+                "loading": "Lade...",
+                "latestTVReleases": "Neuschti Serie",
+                "tvshowsOn": "Serie of {{provider}}",
+                "moviesOn": "Felm of {{provider}}",
+                "recommended": "Wel du {{title}} gse hesch",
+                "genreMovies": "{{genre}} Felme",
+                "genreShows": "{{genre}} Serie",
+                "categoryMovies": "{{category}} Felme",
+                "categoryShows": "{{category}} Serie",
+                "popular": "Am Beliebtischte",
+                "nowPlaying": "Im Kino",
+                "topRated": "Top Bewärtige",
+                "latestReleases": "Zletscht erschene",
+                "4kReleases": "4K Veröffentlicht",
+                "onTheAir": "I der Loft"
+            },
+            "change": "Ändere",
+            "more": "Me Azeige"
+        },
+        "randomMovie": {
+            "button": "Lueg öpis zuefeligs",
+            "cancel": "Countdown abbräche",
+            "countdown": "{{countdown}}s",
+            "nowPlaying": "Aktuell abgspelt",
+            "in": "in"
+        },
+        "scrollToTop": "Ufwärts 🚀",
+        "viewLists": "Ganzi Felmlischte azeige",
+        "allLists": "Ganzi Felm Lischte",
+        "featured": {
+            "playNow": "Jetzt abspele",
+            "moreInfo": "Me Infos"
+        }
+    },
+    "fedapi": {
+        "setup": {
+            "step": {
+                "3": "3. Gang zom Application Tab → \"Cookies\".",
+                "1": "1. Gang zo <0>febbox.com</0> ond meld dich met dim Google Account a (benotz es neue Account!)",
+                "2": "2. Öffne d‘DevTools oder de inspector vom Browser",
+                "4": "4. Kopiers 'ui' Cookie.",
+                "5": "5. Schliess de Tab ond log dich aber NET us!",
+                "warning": "(Teil dä Token of kei Fall)"
+            },
+            "title": "Om di UI-Token z‘erhalte:",
+            "showVideo": "Video-Tutorial azeige",
+            "hideVideo": "Video-Tutorial usblände"
+        },
+        "onboarding": {
+            "title": "FED API (Privat) token",
+            "description": "Erstell din eigene Gratis Febbox-Account, före zuegref of d‘FED API (Privat) z‘öbercho. Met dere bechonsch die bescht streaming qualli met 4K, Dolby Atmos, Skip Intro ond die schnellscht 🏃‍♀️💨 ladezite!"
+        },
+        "status": {
+            "success": "Erfolgrich",
+            "api_down": "Erreicht FED API net!",
+            "invalid_token": "Fehler bem hohle fom \"VIP\" stream. Din Token esch ongöltig."
+        }
+    },
+    "watchParty": {
+        "status": {
+            "inSync": "In sync",
+            "outOfSync": "Net synct"
+        },
+        "alone": "Einsam",
+        "withCount": "Met {{count}} andere",
+        "isHost": "Hosting of <0>{{backendName}}</0>",
+        "isGuest": "Luegt als Gascht of <0>{{backendName}}</0>",
+        "watching": "Luege",
+        "showStatusOverlay": "Zeigt status overlay",
+        "leaveWatchParty": "Verlass Watch Party",
+        "shareCode": "Teil dä Code met dine frönde (klick zom kopiere)",
+        "connectedAsGuest": "Verbendet als Gascht zor Watch Party",
+        "hostParty": "Host en Watch Party",
+        "joinParty": "Join Watch Party",
+        "viewers": "Zueschauer ({{count}})",
+        "join": "Verbende",
+        "cancel": "Abbräche",
+        "save": "Spichere",
+        "emptyRoom": "Niemer esch do",
+        "invalidRoom": "Ruum net erreichbar",
+        "episodeMismatch": "Cha nöd a de Watch Party teilneh: Du luegsch e anderi Episode als der Host.",
+        "validating": "Watch Party werd öberprüeft...",
+        "linkCopied": "Kopiert!",
+        "copyCode": "Klick zom Kopiere",
+        "contentMismatch": "Cha nöd a de Watch Party teilneh: Dr Inhalt stimmt nöd mit dem vom Host überei."
+    }
+}

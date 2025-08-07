@@ -14,7 +14,15 @@
             "body": "Nossos resultados de pesquisa são alimentados pelo The Movie Database (TMDB) e são exibidos independentemente de nossas fontes terem ou não o conteúdo.",
             "title": "Os resultados da pesquisa mostram o filme ou série, por que não consigo reproduzi-lo?"
         },
-        "title": "Sobre o film.kace.dev"
+        "title": "Sobre o film.kace.dev",
+        "q4": {
+            "body": "Todos os dados estão sincronizados com o backend da comunidade, qualquer pessoa pode usá-los também.",
+            "title": "E quanto aos meus dados e tudo mais?"
+        },
+        "q5": {
+            "body": "O film.kace.dev tem um servidor no Discord que pode ser encontrado no topo desta página!",
+            "title": "Como posso saber mais?"
+        }
     },
     "actions": {
         "copied": "Copiado",
@@ -86,8 +94,10 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "GitHub"
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter",
+            "funding": "Nos ajude"
         },
         "tagline": "Assista seus programas e filmes favoritos com este aplicativo de streaming de código aberto."
     },
@@ -95,12 +105,16 @@
         "name": "film.kace.dev",
         "pages": {
             "about": "Sobre",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Entrar",
             "onboarding": "Configuração",
             "pagetitle": "{{title}} - film.kace.dev",
             "register": "Registrar",
-            "settings": "Configurações"
+            "settings": "Configurações",
+            "discover": "Descubra",
+            "support": "Ajuda",
+            "migration": "Migrar conta",
+            "jip": "Jip"
         }
     },
     "home": {
@@ -124,10 +138,26 @@
                     "O que você gostaria de explorar?",
                     "O que está na sua lista para assistir?",
                     "Qual o seu filme favorito?",
-                    "Qual a sua série favorita?"
+                    "Qual a sua série favorita?",
+                    "O que tem na sua watchlist hoje?",
+                    "Como foi o teu dia?",
+                    "Foi mal, o site nunca funciona...",
+                    "A film.kace.dev não é a melhor?",
+                    ">ᴗ<"
                 ]
             },
-            "sectionTitle": "Resultados da pesquisa"
+            "sectionTitle": "Resultados da pesquisa",
+            "empty": {
+                "extra": [
+                    "Não há nada aqui :(",
+                    "Tão vazio...",
+                    "Que vazio.",
+                    "Oi usuário novo :3"
+                ],
+                "default": "Bem vindo(a), encontre mídias para assistir aqui!"
+            },
+            "discoverMore": "Descubra mais",
+            "discover": "Descobrir"
         },
         "titles": {
             "day": {
@@ -147,7 +177,24 @@
                 "extra": [
                     "Cansado? Ouvi dizer que O Exorcista é bom."
                 ]
+            },
+            "69": {
+                "default": "Que tal algo picante?",
+                "extra": [
+                    "Feliz dia 69 😘!"
+                ]
+            },
+            "420": {
+                "default": "O que você gostaria de assistir neste 4/20?",
+                "extra": [
+                    "Feliz 4/20 🥳!"
+                ]
             }
+        },
+        "mediaCard": {
+            "moreInfo": "Mais informação",
+            "copyLink": "Copiar link",
+            "close": "Fechar"
         }
     },
     "media": {
@@ -156,7 +203,9 @@
             "movie": "Filme",
             "show": "Série"
         },
-        "unreleased": "Não lançado"
+        "unreleased": "Não lançado",
+        "episodeShort": "E",
+        "seasonShort": "S"
     },
     "navigation": {
         "banner": {
@@ -164,18 +213,20 @@
         },
         "menu": {
             "about": "Sobre nós",
-            "donation": "Doar",
             "logout": "Sair",
             "register": "Sincronizar com a nuvem",
             "settings": "Configurações",
-            "support": "Suporte"
+            "support": "Suporte",
+            "discover": "Descobrir",
+            "development": "Desenvolvimento"
         }
     },
     "notFound": {
         "badge": "Não encontrado",
         "goHome": "Voltar para o início",
         "message": "Procuramos em todos os lugares: debaixo das lixeiras, no armário, atrás do proxy, mas no final não conseguimos encontrar a página que você está procurando.",
-        "title": "Não conseguimos encontrar essa página"
+        "title": "Não conseguimos encontrar essa página",
+        "reloadButton": "Tentar novamente"
     },
     "onboarding": {
         "defaultConfirm": {
@@ -226,18 +277,54 @@
                 },
                 "extension": {
                     "action": "Instalar extensão",
-                    "description": "Instale a extensão de navegador e tenha acesso às melhores fontes.",
+                    "description": "Instale a extensão para navegador e tenha acesso a fontes adicionais! Lembre-se de ativá-la para este site.",
                     "quality": "Melhor qualidade",
                     "title": "Extensão de navegador"
                 },
                 "proxy": {
                     "action": "Configurar proxy",
-                    "description": "Configure um proxy em apenas 5 minutos e tenha acesso a ótimas fontes.",
+                    "description": "Configure um proxy gratuito em apenas 5 minutos! Melhora a confiabilidade do carregamento!",
                     "quality": "Boa qualidade",
                     "title": "Proxy personalizado"
-                }
+                },
+                "or": "ou"
             },
-            "title": "Vamos juntos configurar o film.kace.dev"
+            "title": "Vamos juntos configurar o film.kace.dev",
+            "moreInfo": {
+                "explainer": {
+                    "intro": "O film.kace.dev não hospeda vídeos. Ele depende de sites de terceiros para o conteúdo, então você precisa escolher como ele se conecta a esses sites.",
+                    "proxyDescription": "O proxy extrai mídia de outros sites. Ele contorna as restrições do navegador (como o CORS) para permitir a extração.",
+                    "extension": "1. Extenção",
+                    "fedapi": {
+                        "fedapiDescription": "Use sua própria conta Febbox GRÁTIS para ter acesso à API FED (Privada), a melhor fonte com qualidade 4K, Dolby Atmos, opção para pular a introdução e os tempos de carregamento mais rápidos! Opção altamente recomendada!",
+                        "fedapi": "Adicional: Token da API FED (Privado)"
+                    },
+                    "options": "Suas opções:",
+                    "extensionDescription": "A extensão te dá acesso ao maior número de fontes. Ela atua como um proxy local e consegue lidar com sites que precisam de cookies ou cabeçalhos especiais para carregar.",
+                    "proxy": "2. Proxy",
+                    "default": "3. Configuração padrão",
+                    "defaultDescription": "Usa o proxy embutido do film.kace.dev. É a opção mais fácil, mas pode ser mais lento devido à largura de banda compartilhada.",
+                    "outro": "Se tiver mais dúvidas sobre como isto funciona, sinta-se à vontade para perguntar no servidor do <0>film.kace.dev Discord</0>!"
+                },
+                "button": "Mais informação",
+                "title": "Entendendo a configuração",
+                "recommended": {
+                    "title": "Sem certeza do quê escolher?",
+                    "subtitle": "Configurações recomendadas:",
+                    "desktop": {
+                        "title": "Desktop:",
+                        "description": "Extensão + API FED (Privada)"
+                    },
+                    "iOS": {
+                        "title": "iOS:",
+                        "description": "Proxy Personalizado + API FED (Privada)"
+                    },
+                    "android": {
+                        "title": "Android:",
+                        "description": "Extensão + API FED (Privada)"
+                    }
+                }
+            }
         }
     },
     "overlays": {
@@ -273,7 +360,9 @@
                     "shortTitle": "Baixar / PC",
                     "title": "Baixando no PC"
                 },
-                "title": "Baixar"
+                "title": "Baixar",
+                "button": "Tentar download",
+                "hlsDownloader": "Ou, acesse o site <0>hls downloader website</0> e cole a URL da playlist abaixo."
             },
             "episodes": {
                 "button": "Episódios",
@@ -282,17 +371,22 @@
                 "loadingError": "Erro ao carregar temporada",
                 "loadingList": "Carregando...",
                 "loadingTitle": "Carregando...",
-                "unairedEpisodes": "Um ou mais episódios nesta temporada foram desabilitados porque ainda não foram ao ar."
+                "unairedEpisodes": "Um ou mais episódios nesta temporada foram desabilitados porque ainda não foram ao ar.",
+                "showMore": "Mais",
+                "showLess": "Menos",
+                "seasons": "Temporadas"
             },
             "playback": {
                 "speedLabel": "Velocidade de reprodução",
-                "title": "Configurações de reprodução"
+                "title": "Configurações de reprodução",
+                "disabled": "Desativado no modo Watch Party"
             },
             "quality": {
                 "automaticLabel": "Qualidade automática",
                 "hint": "Você pode tentar <0>trocar de fonte</0> para obter diferentes opções de qualidade.",
                 "iosNoQuality": "Devido a limitações definidas pela Apple, a seleção de qualidade não está disponível no iOS para esta fonte. Você pode tentar <0>trocar para outra fonte</0> para obter diferentes opções de qualidade.",
-                "title": "Qualidade"
+                "title": "Qualidade",
+                "auto": "Automático"
             },
             "settings": {
                 "audioItem": "Áudio",
@@ -301,8 +395,8 @@
                 "experienceSection": "Experiência de visualização",
                 "playbackItem": "Configurações de reprodução",
                 "qualityItem": "Qualidade",
-                "sourceItem": "Fontes de vídeo",
-                "subtitleItem": "Configurações de legenda",
+                "sourceItem": "Fonte",
+                "subtitleItem": "Legendas",
                 "videoSection": "Configurações de vídeo"
             },
             "sources": {
@@ -319,7 +413,8 @@
                     "title": "Sem transmissão"
                 },
                 "title": "Fontes",
-                "unknownOption": "Desconhecido"
+                "unknownOption": "Desconhecido",
+                "editOrder": "Editar ordem"
             },
             "subtitles": {
                 "customChoice": "Solte ou faça upload do arquivo",
@@ -332,7 +427,10 @@
                     "fixCapitals": "Corrigir letras maiúsculas"
                 },
                 "title": "Legendas",
-                "unknownLanguage": "Desconhecido"
+                "unknownLanguage": "Desconhecido",
+                "onChoice": "Ativado",
+                "SourceChoice": "Fonte das legendas",
+                "OpenSubtitlesChoice": "OpenSubtitles"
             }
         },
         "metadata": {
@@ -340,7 +438,7 @@
                 "text": "Não foi possível carregar os metadados da API. Por favor, verifique sua conexão com a internet.",
                 "title": "Falha ao carregar os metadados da API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Removido",
                 "text": "Esta mídia não está mais disponível devido a um aviso de remoção ou reivindicação de direitos autorais.",
                 "title": "A mídia foi removida"
@@ -365,7 +463,6 @@
             }
         },
         "nextEpisode": {
-            "cancel": "Cancelar",
             "next": "Próximo episódio"
         },
         "playbackError": {
@@ -416,9 +513,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "text": "Bem-vindo à página de contato do DMCA do film.kace.dev! Respeitamos os direitos de propriedade intelectual e queremos resolver quaisquer preocupações com direitos autorais rapidamente. Se você acredita que seu trabalho protegido por direitos autorais foi usado indevidamente em nossa plataforma, envie um aviso detalhado de DMCA para o e-mail abaixo. Inclua uma descrição do material protegido por direitos autorais, seus detalhes de contato e uma declaração de crença de boa fé. Estamos comprometidos em resolver essas questões prontamente e agradecemos sua cooperação em manter o film.kace.dev um lugar que respeita a criatividade e os direitos autorais.",
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Carregando aplicativo",
         "loadingUser": "Carregando seu perfil",
@@ -450,7 +546,12 @@
                     "text": "Esta ação é irreversível. Todos os dados serão excluídos e nada poderá ser recuperado.",
                     "title": "Excluir conta"
                 },
-                "title": "Ações"
+                "title": "Ações",
+                "logoutAllDevices": {
+                    "title": "Encerrar todas as sessões",
+                    "text": "Isso irá desconectar você de todos os dispositivos vinculados à sua conta.",
+                    "button": "Sair de todos os dispositivos"
+                }
             },
             "devices": {
                 "deviceNameLabel": "Nome do dispositivo",
@@ -554,5 +655,119 @@
             "title": "Legendas"
         },
         "unsaved": "Você tem alterações não salvas"
+    },
+    "migration": {
+        "start": {
+            "explainer": "Se você deseja migrar ou fazer backup de seus dados, pode fazê-lo usando as opções abaixo. Isso permitirá que você mantenha seus dados ao trocar de servidores de backend.",
+            "options": {
+                "download": {
+                    "description": "Isto baixará seus dados para o seu dispositivo. Você pode então enviá-lo para o novo servidor ou apenas guardá-lo por segurança.",
+                    "title": "Baixar dados",
+                    "quality": "Mais técnico",
+                    "action": "Baixar dados"
+                },
+                "upload": {
+                    "description": "Faça o upload do seu arquivo de dados exportado anteriormente para restaurar seus favoritos e seu progresso nesta conta.",
+                    "title": "Upar dados",
+                    "quality": "Restaurar backup",
+                    "action": "Upar dados"
+                },
+                "or": "ou",
+                "direct": {
+                    "description": "Esta opção irá migrar seus dados para o novo servidor. Esta é a opção mais rápida. <br /><br />Esta opção permitirá que sua senha continue a mesma!",
+                    "title": "Migração direta",
+                    "quality": "Fácil e rápido",
+                    "action": "Transferir dados"
+                }
+            },
+            "title": "Migrar seus dados"
+        },
+        "download": {
+            "description": "Isto baixará seus dados para o seu dispositivo. Você pode então enviá-lo para o novo servidor ou apenas guardá-lo por segurança.",
+            "title": "Baixar dados",
+            "items": {
+                "description": "Download inclui:",
+                "bookmarks": "Mídias salvas",
+                "progress": "Progresso"
+            },
+            "status": {
+                "error": "Falha ao baixar seus dados. 😿",
+                "success": "Seus dados foram baixados com sucesso! 🎉"
+            },
+            "button": {
+                "download": "Baixar dados",
+                "home": "Página inicial",
+                "login": "Continuar com login"
+            }
+        },
+        "upload": {
+            "status": {
+                "error": "Falha ao upar seus dados. 😿",
+                "processing": "Processando dados...",
+                "success": "Seus dados foram upados com sucesso! 🎉"
+            },
+            "button": {
+                "success": "Importação completa",
+                "import": "Importar dados",
+                "processing": "Processando...",
+                "home": "Ir para o início"
+            },
+            "title": "Upar dados",
+            "file": {
+                "description": "Selecione o arquivo que você quer enviar",
+                "select": "Selecionar arquivo",
+                "change": "Mudar arquivo",
+                "name": "Nome do arquivo"
+            },
+            "dataPreview": "Preview:",
+            "items": {
+                "bookmarks": "Mídia salva",
+                "progress": "Progresso"
+            },
+            "exportedOn": "Exportado em"
+        },
+        "loginRequired": "Você precisa estar logado para migrar seus dados! Por favor, volte e faça o login para continuar.",
+        "direct": {
+            "title": "Migração direta",
+            "description": "Insira a URL do backend de destino para migrar os dados da sua conta atual para um novo backend. Isto mantém sua passphrase inalterada!",
+            "backendLabel": "URL de destino do backend",
+            "recaptchaLabel": "Chave ReCaptcha (Opcional)",
+            "toggleLable": "Precisa de ReCaptcha?",
+            "status": {
+                "error": "Falha ao migrar seus dados. 😿",
+                "success": "Seus dados foram migrados com sucesso! 🎉"
+            },
+            "button": {
+                "migrate": "Migrar",
+                "processing": "Processando...",
+                "home": "Página inicial",
+                "login": "Continuar com login"
+            }
+        },
+        "back": "Voltar"
+    },
+    "details": {
+        "imdb": "Ver no IMDb",
+        "language": "Idioma:",
+        "votes": "votos",
+        "tmdb": "Ver no TMDB",
+        "episodes": "Episódios",
+        "seasons": "Temporada(s)",
+        "season": "Temporada",
+        "episode": "Episódio",
+        "airs": "Lançamento",
+        "endsAt": "Termina em {{time}}",
+        "trailer": "Trailer",
+        "runtime": "Tempo de execução:",
+        "rating": "Rating:",
+        "resume": "Continuar",
+        "play": "Play",
+        "releaseDate": "Data de lançamento:"
+    },
+    "downtimeNotice": {
+        "message": "O film.kace.dev está enfrentando problemas com alguns provedores novamente. Se você não consegue encontrar ou reproduzir um programa, por favor, mude a fonte. É esperado que este erro persista durante os horários abaixo.",
+        "badge": "Problemas",
+        "goHome": "Ir para página inicial",
+        "title": "Problema com provedores"
     }
 }

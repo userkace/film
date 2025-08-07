@@ -23,7 +23,7 @@ function shouldShowNextEpisodeButton(
   const percentage = time / duration;
   const secondsFromEnd = duration - time;
   if (secondsFromEnd <= 30) return "always";
-  if (percentage >= 0.9) return "hover";
+  if (percentage >= 0.93) return "hover";
   return "none";
 }
 
@@ -93,22 +93,23 @@ function useNextSeasonEpisode(
 export function NextEpisodeButton(props: {
   controlsShowing: boolean;
   onChange?: (meta: PlayerMeta) => void;
+  inControl: boolean;
 }) {
   const { t } = useTranslation();
   const duration = usePlayerStore((s) => s.progress.duration);
   const isHidden = usePlayerStore((s) => s.interface.hideNextEpisodeBtn);
   const meta = usePlayerStore((s) => s.meta);
   const { setDirectMeta } = usePlayerMeta();
-  const hideNextEpisodeButton = usePlayerStore((s) => s.hideNextEpisodeButton);
   const metaType = usePlayerStore((s) => s.meta?.type);
   const time = usePlayerStore((s) => s.progress.time);
+  const enableAutoplay = usePreferencesStore((s) => s.enableAutoplay);
+  const enableSkipCredits = usePreferencesStore((s) => s.enableSkipCredits);
   const showingState = shouldShowNextEpisodeButton(time, duration);
   const status = usePlayerStore((s) => s.status);
   const setShouldStartFromBeginning = usePlayerStore(
     (s) => s.setShouldStartFromBeginning,
   );
   const updateItem = useProgressStore((s) => s.updateItem);
-  const enableAutoplay = usePreferencesStore((s) => s.enableAutoplay);
 
   const isLastEpisode =
     !meta?.episode?.number || !meta?.episodes?.at(-1)?.number
@@ -172,18 +173,43 @@ export function NextEpisodeButton(props: {
     nextSeason,
   ]);
 
+  const startCurrentEpisodeFromBeginning = useCallback(() => {
+    if (!meta || !meta.episode) return;
+    const metaCopy = { ...meta };
+    setShouldStartFromBeginning(true);
+    setDirectMeta(metaCopy);
+    props.onChange?.(metaCopy);
+    const defaultProgress = { duration: 0, watched: 0 };
+    updateItem({
+      meta: metaCopy,
+      progress: defaultProgress,
+    });
+  }, [setDirectMeta, meta, props, setShouldStartFromBeginning, updateItem]);
+
   useEffect(() => {
     if (!enableAutoplay || metaType !== "show") return;
     const onePercent = duration / 100;
-    const isEnding = time >= duration - onePercent && duration !== 0;
+
+    // When skipCredits is enabled, use the 99% threshold; otherwise require 100% completion
+    const isEnding = enableSkipCredits
+      ? time >= duration - onePercent && duration !== 0 // 99% completion
+      : time >= duration && duration !== 0; // 100% completion
 
     if (duration === 0) hasAutoplayed.current = false;
     if (isEnding && isAutoplayAllowed() && !hasAutoplayed.current) {
       hasAutoplayed.current = true;
       loadNextEpisode();
     }
-  }, [duration, enableAutoplay, loadNextEpisode, metaType, time]);
+  }, [
+    duration,
+    enableAutoplay,
+    enableSkipCredits,
+    loadNextEpisode,
+    metaType,
+    time,
+  ]);
 
+  if (!props.inControl) return null;
   if (!meta?.episode || !nextEp) return null;
   if (metaType !== "show") return null;
 
@@ -200,10 +226,10 @@ export function NextEpisodeButton(props: {
         ])}
       >
         <Button
-          className="py-px box-content bg-buttons-secondary hover:bg-buttons-secondaryHover bg-opacity-90 text-buttons-secondaryText"
-          onClick={hideNextEpisodeButton}
+          className="py-px box-content bg-buttons-secondary hover:bg-buttons-secondaryHover bg-opacity-90 text-buttons-secondaryText justify-center items-center"
+          onClick={() => startCurrentEpisodeFromBeginning()}
         >
-          {t("player.nextEpisode.cancel")}
+          {t("player.nextEpisode.replay")}
         </Button>
         <Button
           onClick={() => loadNextEpisode()}

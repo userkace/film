@@ -33,8 +33,7 @@ export function StatusCircle(props: StatusCircleProps | StatusCircleLoading) {
     <div
       className={classNames(
         {
-          "p-0.5 border-current border-[3px] rounded-full h-6 w-6 relative transition-colors":
-            true,
+          "p-0.5 border-current border-[3px] rounded-full h-6 w-6 relative transition-colors": true,
           "text-video-scraping-loading": props.type === "loading",
           "text-video-scraping-noresult text-opacity-50":
             props.type === "waiting",

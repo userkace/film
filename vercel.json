@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/opensearch.xml",
-      "destination": "/opensearch.xml"
-    },
-    {
       "source": "/(.*)",
       "destination": "/"
     }
@@ -18,43 +14,22 @@
           "value": "nosniff"
         },
         {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
         },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=0, must-revalidate"
-        },
-        {
-        "key": "Content-Security-Policy",
-        "value": "frame-ancestors 'self' https://nunflix.com https://www.nunflix.com"
-        }
-      ]
-    },
-    {
-      "source": "/opensearch.xml",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Pragma",
-          "value": "no-cache"
-        },
-        {
-          "key": "Expires",
-          "value": "0"
         }
       ]
     },
     {
       "source": "/manifest.webmanifest",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
         {
           "key": "Content-Type",
           "value": "application/manifest+json"

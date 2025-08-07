@@ -17,11 +17,15 @@ export function Chevron(props: { children?: React.ReactNode }) {
 export function LinkTitle(props: {
   children: React.ReactNode;
   textClass?: string;
+  box?: boolean;
 }) {
   return (
     <span
       className={classNames([
         "font-medium text-left",
+        props.box
+          ? "flex flex-col items-center justify-center h-full gap-1 text-center"
+          : "",
         props.textClass || "text-video-context-type-main",
       ])}
     >
@@ -34,7 +38,29 @@ export function BackLink(props: {
   onClick?: () => void;
   children: React.ReactNode;
   rightSide?: React.ReactNode;
+  side?: "left" | "right";
 }) {
+  const { side = "left" } = props;
+
+  if (side === "right") {
+    return (
+      <Title
+        rightSide={
+          <button
+            type="button"
+            className="p-2 rounded tabbable hover:bg-video-context-light hover:bg-opacity-10"
+            onClick={props.onClick}
+          >
+            <Icon className="text-xl" icon={Icons.ARROW_RIGHT} />
+          </button>
+        }
+      >
+        <button type="button" onClick={props.onClick}>
+          <span className="line-clamp-1 break-all">{props.children}</span>
+        </button>
+      </Title>
+    );
+  }
   return (
     <Title rightSide={props.rightSide}>
       <button
@@ -56,18 +82,28 @@ export function Link(props: {
   onClick?: () => void;
   children?: ReactNode;
   className?: string;
+  box?: boolean;
+  disabled?: boolean;
 }) {
-  const classes = classNames("flex py-2 px-3 rounded-lg w-full -ml-3", {
-    "cursor-default": !props.clickable,
-    "hover:bg-video-context-hoverColor hover:bg-opacity-50 cursor-pointer tabbable":
-      props.clickable,
-    "bg-video-context-hoverColor bg-opacity-50": props.active,
-  });
+  const classes = classNames(
+    "flex py-2 transition-colors duration-100 rounded-lg",
+    props.box ? "bg-video-context-light/10 h-20" : "",
+    {
+      "cursor-default": !props.clickable,
+      "hover:bg-video-context-light hover:bg-opacity-20 cursor-pointer tabbable":
+        props.clickable,
+      "bg-video-context-light bg-opacity-20": props.active,
+      "-ml-3 px-3 w-full": !props.box,
+      "opacity-50 pointer-events-none": props.disabled,
+    },
+  );
   const styles = { width: "calc(100% + 1.5rem)" };
 
   const content = (
-    <div className={classNames("flex items-center flex-1", props.className)}>
-      <div className="flex-1 text-left">{props.children}</div>
+    <div
+      className={classNames("flex items-center flex-1 h-full", props.className)}
+    >
+      <div className="flex-1 text-left flex h-full">{props.children}</div>
       <div className="flex">{props.rightSide}</div>
     </div>
   );
@@ -88,9 +124,10 @@ export function Link(props: {
     <button
       type="button"
       className={classes}
-      style={styles}
+      style={props.box ? {} : styles}
       onClick={props.onClick}
       data-active-link={props.active ? true : undefined}
+      disabled={props.disabled}
     >
       {content}
     </button>
@@ -102,6 +139,8 @@ export function ChevronLink(props: {
   onClick?: () => void;
   children?: ReactNode;
   active?: boolean;
+  box?: boolean;
+  disabled?: boolean;
 }) {
   const rightContent = <Chevron>{props.rightText}</Chevron>;
   return (
@@ -109,9 +148,12 @@ export function ChevronLink(props: {
       onClick={props.onClick}
       active={props.active}
       clickable
-      rightSide={rightContent}
+      rightSide={props.box ? null : rightContent}
+      className={props.box ? "flex flex-col items-center justify-center" : ""}
+      box={props.box}
+      disabled={props.disabled}
     >
-      <LinkTitle>{props.children}</LinkTitle>
+      <LinkTitle box={props.box}>{props.children}</LinkTitle>
     </Link>
   );
 }
@@ -123,34 +165,15 @@ export function SelectableLink(props: {
   children?: ReactNode;
   disabled?: boolean;
   error?: ReactNode;
-  chevron?: boolean;
+  box?: boolean;
 }) {
   let rightContent;
   if (props.selected) {
-    if (props.chevron) {
-      rightContent = (
-        <span className="flex items-center">
-          <Icon
-            icon={Icons.CIRCLE_CHECK}
-            className="text-xl text-video-context-type-accent"
-          />
-          <Icon
-            className="text-white text-xl ml-1 -mr-1.5"
-            icon={Icons.CHEVRON_RIGHT}
-          />
-        </span>
-      );
-    } else {
-      rightContent = (
-        <Icon
-          icon={Icons.CIRCLE_CHECK}
-          className="text-xl text-video-context-type-accent"
-        />
-      );
-    }
-  } else if (props.chevron) {
     rightContent = (
-      <Icon className="text-xl ml-1 -mr-1.5" icon={Icons.CHEVRON_RIGHT} />
+      <Icon
+        icon={Icons.CIRCLE_CHECK}
+        className="text-xl text-video-context-type-accent"
+      />
     );
   }
   if (props.error)
@@ -166,6 +189,7 @@ export function SelectableLink(props: {
       onClick={props.onClick}
       clickable={!props.disabled}
       rightSide={rightContent}
+      box={props.box}
     >
       <LinkTitle
         textClass={classNames({

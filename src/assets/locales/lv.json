@@ -14,7 +14,7 @@
       "body": "Mūsu meklēšanas rezultātus nodrošina filmu datu bāze (TMDB), un tie tiek rādīti neatkarīgi no tā, vai mūsu avotos patiešām ir saturs.",
       "title": "Meklēšanas rezultātos tiek parādīta seriāls vai filma. Kāpēc es nevaru to atskaņot?"
     },
-    "title": "Par film.kace.dev"
+    "title": "Par "
   },
   "actions": {
     "copied": "Nokopēts",
@@ -83,7 +83,7 @@
     },
     "links": {
       "discord": "Discord",
-      "dmca": "Autortiesību likums",
+      "legal": "Autortiesību likums",
       "github": "GitHub"
     },
     "tagline": "Skatieties savas iecienītākās pārraides un filmas, izmantojot šo atvērtā koda straumēšanas lietotni."
@@ -92,7 +92,7 @@
     "name": "Filmas-web",
     "pages": {
       "about": "Par",
-      "dmca": "Autortiesību likums",
+      "legal": "Autortiesību likums",
       "login": "Ieiet",
       "pagetitle": "{{title}} - filmas-web",
       "register": "Reģistrēties",
@@ -115,8 +115,7 @@
       "loading": "Lādejas...",
       "noResults": "Mēs nevarējām neko atrast!",
       "placeholder": {
-        "default": "Ko tu gribi skatīties?",
-        "extra": []
+        "default": "Ko tu gribi skatīties?"
       },
       "sectionTitle": "Meklējuma rezultāti"
     },
@@ -147,7 +146,6 @@
     },
     "menu": {
       "about": "Par mums",
-      "donation": "Ziedot",
       "logout": "Iziet",
       "register": "Sinhronizēt ar mākoni",
       "settings": "Iestādijumi",
@@ -250,7 +248,6 @@
       }
     },
     "nextEpisode": {
-      "cancel": "Atcelt",
       "next": "Nakamā epizode"
     },
     "playbackError": {
@@ -288,8 +285,7 @@
     }
   },
   "screens": {
-    "dmca": {
-      "text": "Laipni lūdzam filmu-web Autortiesību kontaktu lapā! Mēs cienām intelektuālā īpašuma tiesības un vēlamies ātri atrisināt visas autortiesību problēmas. Ja uzskatāt, ka jūsu ar autortiesībām aizsargātais darbs ir nepareizi izmantots mūsu platformā, lūdzu, nosūtiet uz tālāk norādīto e-pasta ziņojumu detalizētu Digitālās tūkstošgades autortiesību likuma paziņojumu. Lūdzu, iekļaujiet ar autortiesībām aizsargātā materiāla aprakstu, savu kontaktinformāciju un labas ticības apliecinājumu. Mēs esam apņēmušies ātri atrisināt šīs problēmas un novērtējam jūsu sadarbību, lai saglabātu filmu tīmekli par vietu, kurā tiek ievērotas radošums un autortiesības.",
+    "legal": {
       "title": "Autortiesību likums"
     },
     "loadingApp": "Notiek aplikācijas ielāde",
@@ -322,7 +318,12 @@
           "text": "Šī darbība ir neatgriezeniska. Visi dati tiks dzēsti, un neko nevarēs atgūt.",
           "title": "Dzēst kontu"
         },
-        "title": "Darbības"
+        "title": "Darbības",
+        "logoutAllDevices": {
+          "title": "Beigt visas sesijas",
+          "text": "Šī darbība izrakstīs jūs no visiem ierīcēm, kas saistītas ar jūsu kontu.",
+          "button": "Izrakstīties no visām ierīcēm"
+        }
       },
       "devices": {
         "deviceNameLabel": "Ierīces vārds",

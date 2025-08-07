@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  @apply bg-background-main font-open-sans text-type-text;
+  font-family: "Lato", sans-serif !important;
+  @apply bg-background-main font-main text-type-text;
   min-height: 100vh;
   min-height: 100dvh;
+  font-size: 1.0248em;
 }
 
 html[data-full],
@@ -30,8 +33,7 @@ body[data-no-select] {
   user-select: none;
 }
 
-html[data-no-scroll],
-html[data-no-scroll] body {
+html[data-no-scroll], html[data-no-scroll] body {
   overflow: hidden;
 }
 
@@ -232,8 +234,134 @@ input[type=range].styled-slider.slider-progress::-ms-fill-lower {
   /* Invert horizontal X offset on transform (Tailwind RTL plugin does the rest) */
   transform: translate(calc(var(--tw-translate-x) * -1), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
-
 [dir="ltr"] .transform {
   /* default - otherwise it overwrites*/
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+@keyframes jiggle {
+  0%, 100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.jiggle {
+  animation: jiggle 0.25s infinite;
+}
+
+.carousel-container {
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0), /* Left edge */
+    rgba(0, 0, 0, 1) 80px, /* visible after 80px */
+    rgba(0, 0, 0, 1) calc(100% - 80px), /* invisible 80px from right */
+    rgba(0, 0, 0, 0) 100% /* Right edge */
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 80px,
+    rgba(0, 0, 0, 1) calc(100% - 80px),
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0), /* Left edge */
+    rgba(0, 0, 0, 1) 20px, /* visible after 80px */
+    rgba(0, 0, 0, 1) calc(100% - 20px), /* invisible 80px from right */
+    rgba(0, 0, 0, 0) 100% /* Right edge */
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20px,
+    rgba(0, 0, 0, 1) calc(100% - 20px),
+    rgba(0, 0, 0, 0) 100%
+  );
+  }
+}
+
+.vertical-carousel-container {
+  --mask-fade-distance: 80px;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--mask-fade-distance),
+    black calc(100% - var(--mask-fade-distance)),
+    transparent
+  );
+  mask-image: var(-webkit-mask-image);
+  z-index: 1;
+}
+
+.vertical-carousel-container.hide-top-gradient {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black,
+    black calc(100% - var(--mask-fade-distance)),
+    transparent
+  );
+  mask-image: var(-webkit-mask-image);
+}
+
+.vertical-carousel-container.hide-bottom-gradient {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--mask-fade-distance),
+    black
+  );
+  mask-image: var(-webkit-mask-image);
+}
+
+.vertical-carousel-container.hide-top-gradient.hide-bottom-gradient {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+@media (max-width: 768px) {
+  .vertical-carousel-container {
+    --mask-fade-distance: 20px;
+  }
+}
+
+/* DetailsModal staggered scaling anime */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.bookmark-button {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.group:hover .bookmark-button {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .group:hover .bookmark-button {
+    opacity: 0;
+  }
 }

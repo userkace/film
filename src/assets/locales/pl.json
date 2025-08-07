@@ -8,72 +8,188 @@
         },
         "q2": {
             "body": "Nie można złożyć wniosku o serialu ani filmu, film.kace.dev nie zarządza żadną treścią. Wszystkie treści są przeglądane za pośrednictwem źródeł w Internecie.",
-            "title": "Gdzie mogę złożyć wniosek o seriale lub filmie?"
+            "title": "Gdzie mogę złożyć wniosek o seriale lub filmie?",
+            "section": "szukaj"
         },
         "q3": {
             "body": "Nasze wyniki wyszukiwania pochodzą z TMDB i są wyświetlane niezależnie od tego, czy nasze źródła faktycznie posiadają daną treść.",
-            "title": "W wyniku wyszukiwania wyświetlany jest serial lub film. Dlaczego nie mogę go odtworzyć?"
+            "title": "W wyniku wyszukiwania wyświetlany jest serial lub film. Dlaczego nie mogę go odtworzyć?",
+            "section": "szukaj"
         },
-        "title": "O film.kace.dev"
+        "title": "O film.kace.dev oraz FAQ (^▽^)",
+        "q5": {
+            "title": "Jak mogę dowiedzieć się więcej?",
+            "body": "film.kace.dev ma swój serwer Discord, który znajdziesz w nagłówku strony!"
+        },
+        "q4": {
+            "title": "Co z moimi danymi?",
+            "body": "Wszystkie dane są synchronizowane do backendu społeczności, każdy może ich użyć."
+        },
+        "help": "Nie możesz znależć odpowiedzi? <0> Tu otrzymasz pomoc.</0>",
+        "q12": {
+            "body": "Zmień źródło. Nie mam kontroli nad dokładnością treści.",
+            "title": "Odcinek, który oglądam jest nieprawidłowy.",
+            "section": "odtwarzanie"
+        },
+        "q18": {
+            "body": "Prędkość zależy od strony, która udostępnia plik. Spróbuj zmienić źródło, aby uzyskać wyższą prędkość.",
+            "title": "Źródło powoli ładuje się.",
+            "section": "odtwarzanie"
+        },
+        "q20": {
+            "body": "FED API jest naszym prywatnym zbieraczem, który pobiera streamy bezpośrednio z Febbox. Każde darmowe konto Febbox zawiera 100 GB/na miesiąc nielimitowanej przepustowości oraz używamy Twojego UI tokenu, aby zebrać treść. Instalacja jest prostrza na przeglądarce PC, ale jest instrukcja na naszym serwerze Discord dla urządzeń mobilnych.",
+            "title": "Czym jest FED API?",
+            "section": "połączenia"
+        },
+        "q22": {
+            "body": "Niektóre źródła blokują zbieraczy. Rozszerzenie działa jako lokalne proxy i omija takich blokad używając Twojego IP, nagłówków oraz plików cookies.",
+            "section": "połączenia",
+            "title": "Czemu potrzebuję rozszerzenia lub niestandardowego proxy?"
+        },
+        "sections": {
+            "language": "Język oraz ustawienia napisów",
+            "search": "Wyszukiwanie oraz dostępność treści",
+            "playback": "Problemy z odtwarzaniem",
+            "connections": "Połączenia"
+        },
+        "q23": {
+            "title": "Czym jest to rozszerzenie? Czy jest bezpieczne?",
+            "body": "To jest lokalne narzędzie proxy, służące aby uzyskać dostęp do streamów, które blokują zbieraczy. Udaje Twoją sesje przeglądania. Jest całkowicie otwarto-źródłowe oraz możesz znaleźć na naszym githubie.",
+            "section": "połączenia"
+        },
+        "q6": {
+            "body": "Jeszcze nie, ale możesz zainstalować jako PWA (Progresywna Aplikacja Internetowa). Na IOS, w przeglądarce Safara → Udostępnij → Dodaj do ekranu głównego. Na Androidzie, w przeglądarce Google Chrome → Kliknij 3 kropki → Dodaj do ekranu głównego. Eksperymentalna wersja aplikacji jest dostępna na naszym serwerze Discord, ale nie rekomendujemy jej używania.",
+            "title": "Czy istnieje aplikacja film.kace.dev?"
+        },
+        "q7": {
+            "body": "Kliknij \"Synchronizuj do Chmury\" w menu, albo przejdź do Ustawień, aby stworzyć i zsynchronizować konto społeczności.",
+            "title": "Jak stworzyć konto?"
+        },
+        "q9": {
+            "body": "Nie—ponieważ to nie są nasze treści, nie możemy dodać albo zmienić tego, co jest już dostępne. Lista treści jest na podstawie tego, co jest publicznie dostępne poprzez mechanizm wyszukujący.",
+            "title": "Brakuje tej treści / Czy mogę poprosić o treść?",
+            "section": "szukaj"
+        },
+        "q14": {
+            "body": "Jeżeli 4K nie jest pokazane, prawdopodobnie jest niedostępne w tym źródle.",
+            "title": "4K jest niedostępne.",
+            "section": "odtwarzanie"
+        },
+        "q25": {
+            "body": "Naszym priorytetem jest Angielski, ale niektóre źródła oferują inne języki. Spróbuj zmienić źródła. Dla FEB API tylko przeglądarka Safary wspiera zmiane audio w plikach MP4.",
+            "title": "Jak zmienić język?",
+            "section": "język"
+        },
+        "q15": {
+            "body": "Upewnij się, że Twoje urządzenie nie jest wyciszone i spróbuj zmienić źródło. Problemy z dźwiękiem mogą być związane z konkretnym źródłem.",
+            "title": "Czemu nie ma dźwięku?",
+            "section": "odtwarzanie"
+        },
+        "q10": {
+            "title": "Nie mogę znaleźć filmu/serialu, którego szukam!",
+            "body": "TMDB napędza nasze wyszukiwania. Spróbuj kliknąć ikonkę 🔎 aby otworzyć zaawansowane wyszukiwanie, jeśli wyniki nie są dokładne.",
+            "section": "szukaj"
+        },
+        "q11": {
+            "title": "Czemu widzę czarny ekran?",
+            "body": "Prawdopodobnie uszkodzony plik wideo. Spróbuj zmienić źródła.",
+            "section": "odtwarzanie"
+        },
+        "q13": {
+            "title": "Jakość filmu nie jest taka, jaką oczekiwałem.",
+            "body": "Spróbuj zmienić źródła. Jakość waha się od dostawcy; FED API często oferuje więcej opcji.",
+            "section": "odtwarzanie"
+        },
+        "q16": {
+            "title": "Wideo jest przyciemnione, albo pozbawione kolorów.",
+            "body": "Plik wideo może być uszkodzony lub wideo jest w formacie HDR. Upewnij się, że Twoje urządzenie wspiera HDR, albo zmień źródło.",
+            "section": "odtwarzanie"
+        },
+        "q17": {
+            "title": "Mam wizualne glitche.",
+            "body": "Wizualne błędy zazwyczaj są spowodowane słabej jakości udostępnionego pliku. Spróbuj zmienić źródła.",
+            "section": "odtwarzanie"
+        },
+        "q19": {
+            "title": "Jak zmienić źródło?",
+            "body": "Oglądajac, kliknij ikonkę ⚙️następnie wybierz inne źródło w\"źródła wideo\".",
+            "section": "odtwarzanie"
+        },
+        "q21": {
+            "title": "Czy FED API działa na wszystkich urządzeniach?",
+            "body": "Tak. Po konfiguracji Twój token działa na wszystkich zalogowanych urządzeniach.",
+            "section": "połączenia"
+        },
+        "q24": {
+            "title": "Mój token Febbox nie działa. Co powinienem zrobić?",
+            "body": "Twój ISP (Dostawca internetu) zapewne blokuje FED API. Ustaw niestandardowy DNS np. 1.1.1.1 lub NextDNS. Możesz również zmienić region w panelu admina.",
+            "section": "połączenia"
+        },
+        "q26": {
+            "title": "Moje napisy są rozsynchronizowane.",
+            "section": "język",
+            "body": "Wejdź w \"Dostosuj\" w ustawieniach napisów lub wciśnij [ i ] na klawiaturze. Możesz również dodać własny plik z napisami."
+        },
+        "searchPlaceholder": "Przeszukaj FAQ..."
     },
     "actions": {
         "copied": "Skopiowano",
         "copy": "Kopiuj"
     },
     "auth": {
-        "createAccount": "Nie masz jeszcze konta? <0>Utwórz konto.</0>",
+        "createAccount": "Nie masz jeszcze konta? 😬 <0>Utwórz konto.</0>",
         "deviceNameLabel": "Nazwa urządzenia",
         "deviceNamePlaceholder": "Telefon osobisty",
         "generate": {
-            "description": "Twoja fraza hasła działa jak nazwa użytkownika i hasło. Pamiętaj aby zachować go w bezpiecznym miejscu, ponieważ będziesz musiał go wprowadzić aby zalogować się na swoje konto",
-            "next": "Zapisałem frazę hasła",
-            "passphraseFrameLabel": "Fraza hasła",
-            "title": "Twoja fraza hasła"
+            "description": "Twoja fraza działa jako nazwa użytkownika i hasło. Pamiętaj, aby zachować ją w bezpiecznym miejscu, ponieważ będziesz musiał ją wprowadzić, aby zalogować się na swoje konto. <bold>NIE zgub swojej frazy!</bold>",
+            "next": "Zapisałem frazę",
+            "passphraseFrameLabel": "Fraza",
+            "title": "Twoja fraza"
         },
         "hasAccount": "Masz już konto? <0>Zaloguj się tutaj.</0>",
         "login": {
-            "description": "Proszę wpisać frazę hasła, aby zalogować się na swoje konto",
+            "description": "Proszę wpisać frazę, aby zalogować się na swoje konto",
             "deviceLengthError": "Proszę wpisać nazwę urządzenia",
-            "passphraseLabel": "12-wyrazowa fraza hasła",
-            "passphrasePlaceholder": "Fraza hasła",
+            "passphraseLabel": "12-wyrazowa fraza",
+            "passphrasePlaceholder": "Fraza",
             "submit": "Zaloguj się",
             "title": "Zaloguj się na swoje konto",
-            "validationError": "Nieprawidłowe lub niedokończone fraza hasła"
+            "validationError": "Nieprawidłowa lub niedokończona fraza /ᐠ. .ᐟ\\"
         },
         "register": {
             "information": {
                 "color1": "Kolor profilu jeden",
                 "color2": "Kolor profilu dwa",
-                "header": "Wpisz nazwę swojego urządzenia i wybierz kolory oraz ikonę użytkownika",
-                "icon": "Ikona użytkownika",
+                "header": "Wpisz nazwę swojego urządzenia, wybierz kolory oraz ikonkę użytkownika!",
+                "icon": "Ikonka użytkownika",
                 "next": "Dalej",
                 "title": "Informacje o koncie"
             }
         },
         "trust": {
             "failed": {
-                "text": "Skonfigurowałeś to poprawnie?",
-                "title": "Nie udało się połączyć z serwerem"
+                "text": "Czy na pewno skonfigurowałeś to poprawnie?",
+                "title": "Nie udało połączyć się z serwerem"
             },
-            "host": "Łączysz się z <0>{{hostname}}</0> - przed utworzeniem konta potwierdź że ufasz temu serwerowi",
-            "no": "Wstecz",
+            "host": "Łączysz się z <0>{{hostname}}</0> - przed utworzeniem konta upewnij się, że ufasz temu serwerowi...",
+            "no": "Wróć",
             "noHost": "Serwer nie został skonfigurowany, więc nie można utworzyć konta",
-            "noHostTitle": "Serwer nie skonfigurowany!",
-            "title": "Ufasz temu serwerowi?",
-            "yes": "Ufam temu serwerowi"
+            "noHostTitle": "Serwer nie jest skonfigurowany!",
+            "title": "Czy ufasz temu serwerowi?",
+            "yes": "Ufam temu serwerowi 🤞"
         },
         "verify": {
-            "description": "Wprowadź swoją frazę hasła, aby potwierdzić jego zapisanie i utworzyć konto",
+            "description": "Wprowadź swoją frazę, aby potwierdzić, że ją zapisałeś i stworzyć konto",
             "invalidData": "Dane są nieprawidłowe",
-            "noMatch": "Fraza hasła nie pasuje",
-            "passphraseLabel": "Twoja 12-wyrazowa fraza hasła",
+            "noMatch": "Fraza nie pasuje 😭",
+            "passphraseLabel": "Twoja 12-wyrazowa fraza",
             "recaptchaFailed": "Weryfikacja ReCaptcha nie powiodła się",
             "register": "Utwórz konto",
-            "title": "Potwierdź swoją frazę hasła"
+            "title": "Potwierdź swoją frazę"
         }
     },
     "errors": {
-        "badge": "Zepsuło się",
+        "badge": "Zepsuło się 💀",
         "details": "Szczegóły błędu",
         "reloadPage": "Odśwież stronę",
         "showError": "Pokaż szczegóły błędu",
@@ -81,26 +197,32 @@
     },
     "footer": {
         "legal": {
-            "disclaimer": "Zastrzeżenie",
+            "disclaimer": "Zastrzeżenie ◝(ᵔᵕᵔ)◜",
             "disclaimerText": "film.kace.dev nie przechowuje żadnych plików, zawiera jedynie łącza do usług stron trzecich. Kwestie prawne należy konsultować z hostami plików i dostawcami. film.kace.dev nie ponosi odpowiedzialności za jakiekolwiek pliki multimedialne prezentowane przez dostawców wideo."
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "GitHub"
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter",
+            "funding": "Wesprzyj nas"
         },
-        "tagline": "Oglądaj swoje ulubione seriale i filmy za pomocą tej aplikacji streamingowej typu open source."
+        "tagline": "Oglądaj swoje ulubione seriale i filmy za darmo, bez reklam! (っ'ヮ'c)"
     },
     "global": {
         "name": "film.kace.dev",
         "pages": {
-            "about": "Informacje",
-            "dmca": "DMCA",
+            "about": "Informacje oraz FAQ",
+            "legal": "Legal / DMCA",
             "login": "Zaloguj sie",
             "onboarding": "Konfiguracja",
             "pagetitle": "{{title}} - film.kace.dev",
             "register": "Zarejestruj się",
-            "settings": "Ustawienia"
+            "settings": "Ustawienia",
+            "discover": "Odkrywaj",
+            "support": "Wsparcie",
+            "migration": "Migruj konto",
+            "jip": "Jip"
         }
     },
     "home": {
@@ -108,73 +230,111 @@
             "sectionTitle": "Zakładki"
         },
         "continueWatching": {
-            "sectionTitle": "Kontynuuj oglądanie"
+            "sectionTitle": "Kontynuuj oglądanie..."
         },
         "mediaList": {
-            "stopEditing": "Przestań edytować"
+            "stopEditing": "Zakończ edytowanie"
         },
         "search": {
-            "allResults": "To wszystko co mamy!",
-            "failed": "Nie udało się znaleźć mediów, Spróbuj ponownie!",
-            "loading": "Wczytywanie...",
-            "noResults": "Nie mogliśmy niczego znaleźć!",
+            "allResults": "To wszystko co mamy...",
+            "failed": "Nie udało się znaleźć mediów. Spróbuj ponownie!",
+            "loading": "Ładowanie...",
+            "noResults": "Nie mogliśmy niczego znaleźć :(",
             "placeholder": {
                 "default": "Co chciałbyś obejrzeć?",
                 "extra": [
-                    "Co chcesz odkryć?",
-                    "Co znajduje się na Twojej liście do obejrzenia?",
-                    "Jaki jest twój ulubiony film?",
-                    "Jaki jest twój ulubiony serial?"
+                    "Na co masz ochotę?",
+                    "Czy mamy usunąć Twoją historię wyszukiwania?",
+                    "Co chcesz streamować?",
+                    "film.kace.dev to najlepsza strona!",
+                    "Co jest dzisiaj na Twojej liście Do Obejrzenia?",
+                    "Jak Ci minął dzień?",
+                    "Mój błąd, ta strona nigdy nie działa...",
+                    "Czy film.kace.dev nie jest najlepszy?",
+                    ">ᴗ<"
                 ]
             },
-            "sectionTitle": "Wyniki wyszukiwania"
+            "sectionTitle": "Wyniki wyszukiwania",
+            "empty": {
+                "default": "Witaj, znajdź coś do obejrzenia!",
+                "extra": [
+                    "Nic tu nie ma :(",
+                    "Tak pusto...",
+                    "Taka pustka.",
+                    "Cześć, nowy użytkowniku! :3"
+                ]
+            },
+            "discoverMore": "Odkrywaj więcej",
+            "discover": "Odkrywaj"
         },
         "titles": {
             "day": {
                 "default": "Co chciałbyś obejrzeć dziś po południu?",
                 "extra": [
-                    "Masz ochotę na przygodę? Park Jurajski może być idealnym wyborem."
+                    "Viva la film.kace.dev!"
                 ]
             },
             "morning": {
                 "default": "Co chciałbyś obejrzeć dziś rano?",
                 "extra": [
-                    "Słyszałem że „Przed wschodem słońca” jest dobre"
+                    "Viva la film.kace.dev!"
                 ]
             },
             "night": {
                 "default": "Co chciałbyś obejrzeć dziś wieczorem?",
                 "extra": [
-                    "Zmęczony? Słyszałem że „Egzorcysta” jest dobry."
+                    "Viva la film.kace.dev!"
                 ]
+            },
+            "69": {
+                "default": "Masz ochotę na coś pikantnego?",
+                "extra": [
+                    "Wesołego dnia 69 😘!"
+                ]
+            },
+            "420": {
+                "extra": [
+                    "Wesołego 420 🥳!"
+                ],
+                "default": "Dziś jest 20 kwietnia, co chciałbyś obejrzeć?"
             }
+        },
+        "mediaCard": {
+            "moreInfo": "Więcej info",
+            "copyLink": "Skopiuj link",
+            "close": "Zamknij"
         }
     },
     "media": {
-        "episodeDisplay": "S{{season}} E{{episode}}",
+        "episodeDisplay": "S{{season}} - O{{episode}}",
         "types": {
             "movie": "Film",
             "show": "Serial"
-        }
+        },
+        "unreleased": "Niewydane",
+        "episodeShort": "O",
+        "seasonShort": "S"
     },
     "navigation": {
         "banner": {
-            "offline": "Sprawdź swoje połączenie sieciowe"
+            "offline": "Sprawdź swoje połączenie internetowe, głupolku!"
         },
         "menu": {
-            "about": "O nas",
-            "donation": "Wspieraj nas",
+            "about": "O nas oraz FAQ",
             "logout": "Wyloguj się",
-            "register": "Synchronizuj z chmurą",
+            "register": "Synchronizuj z Chmurą",
             "settings": "Ustawienia",
-            "support": "Wsparcie"
+            "support": "Wsparcie",
+            "discover": "Odkrywaj",
+            "development": "Rozwój"
         }
     },
     "notFound": {
         "badge": "Nie znaleziono",
         "goHome": "Wróć na stronę główną",
-        "message": "Szukaliśmy wszędzie: w koszu, w szafie, a nawet w piwnicy, ale nie byliśmy w stanie znaleźć strony której szukasz.",
-        "title": "Nie można znaleźć tej strony"
+        "message": "Szukaliśmy wszędzie: w koszu, w szafie, a nawet w piwnicy, ale nie byliśmy w stanie znaleźć strony której szukasz. (ಥ﹏ಥ)",
+        "title": "Nie można znaleźć tej strony",
+        "reloadButton": "Spróbuj jeszcze raz"
     },
     "onboarding": {
         "defaultConfirm": {
@@ -234,9 +394,45 @@
                     "description": "Skonfiguruj proxy w 5 minut i uzyskaj dostęp do świetnych źródeł.",
                     "quality": "Dobra jakość",
                     "title": "Niestandardowy serwer proxy"
-                }
+                },
+                "or": "lub"
             },
-            "title": "Przejdźmy do konfiguracji z film.kace.dev"
+            "title": "Przejdźmy do konfiguracji z film.kace.dev",
+            "moreInfo": {
+                "explainer": {
+                    "fedapi": {
+                        "fedapiDescription": "Połącz swoje darmowe konto Febbox, aby uzyskać dostęp do FED API (Prywatne), najlepszego źródła z obsługą 4K, Dolby Atmos, pomijaniem czołówek oraz szybszym ładowaniem wideo! Rekomendowana opcja!",
+                        "fedapi": "Dodatkowe: FED API (Prywatny) token"
+                    },
+                    "defaultDescription": "Używa wbudowanego Proxy film.kace.dev. Jest to najłatwiejsza opcja, ale może być wolniejsza przez udostępnianie przepustowości.",
+                    "default": "3. Domyślna konfiguracja",
+                    "outro": "Jeśli masz więcej pytań nad tym jak to działa, możesz śmiało zapytać na naszym serwerze! <0>film.kace.dev Discord</0>",
+                    "intro": "film.kace.dev nie umieszcza plików wideo. Polegamy na treściach ze stron trzecich, więc musisz wybrać w jaki sposób platforma ma się z nimi połączyć.",
+                    "options": "Twoje Opcje:",
+                    "extension": "1. Rozszerzenie",
+                    "extensionDescription": "Rozszerzenie pozwala na dostęp do większości źródeł. Działa jako lokalne proxy i jest w stanie załadować strony, które wymagają pewnych plików cookies lub nagłówków.",
+                    "proxy": "2. Proxy",
+                    "proxyDescription": "Proxy zbiera media z innych stron. Omija restrykcje (takie jak; CORS)."
+                },
+                "button": "Więcej info",
+                "recommended": {
+                    "title": "Nie wiesz co wybrać?",
+                    "subtitle": "Polecane konfiguracje:",
+                    "desktop": {
+                        "title": "Pulpit:",
+                        "description": "Rozszerzenia + FED API (Prywatne)"
+                    },
+                    "iOS": {
+                        "title": "iOS:",
+                        "description": "Niestandardowe proxy + FED API (Prywatne)"
+                    },
+                    "android": {
+                        "title": "Android:",
+                        "description": "Rozszerzenie + FED API (Prywatne)"
+                    }
+                },
+                "title": "Informacje o konfiguracji"
+            }
         }
     },
     "overlays": {
@@ -272,7 +468,13 @@
                     "shortTitle": "Pobierz / Komputer",
                     "title": "Pobieranie na komputerze"
                 },
-                "title": "Pobierz"
+                "title": "Pobierz",
+                "hlsDownloader": "Lub przejdź do <0>hls downloader website</0> i wklej link playlisty z dołu.",
+                "openIn": "Otwórz w...",
+                "vlc": "VLC",
+                "iina": "IINA",
+                "hlsOpenInDisclaimer": "Otwieranie streamów HLS w zewnętrznym odtwarzaczu MOŻE NIE ZADZIAŁAĆ!",
+                "button": "Próba pobrania"
             },
             "episodes": {
                 "button": "Odcinki",
@@ -281,17 +483,24 @@
                 "loadingError": "Błąd podczas ładowania sezonu",
                 "loadingList": "Wczytywanie...",
                 "loadingTitle": "Wczytywanie...",
-                "unairedEpisodes": "Jeden lub więcej odcinków tego sezonu zostało wyłączonych, ponieważ nie zostały jeszcze wyemitowane."
+                "unairedEpisodes": "Jeden lub więcej odcinków tego sezonu zostało wyłączonych, ponieważ nie zostały jeszcze wyemitowane.",
+                "markAsWatched": "Oznacz jako obejrzane",
+                "seasons": "Sezony",
+                "showMore": "Pokaż więcej",
+                "showLess": "Pokaż mniej",
+                "markAsUnwatched": "Oznacz jako do obejrzenia"
             },
             "playback": {
                 "speedLabel": "Szybkość odtwarzania",
-                "title": "Ustawienia odtwarzania"
+                "title": "Ustawienia odtwarzania",
+                "disabled": "(Wyłączone w wspólnym oglądaniu)"
             },
             "quality": {
                 "automaticLabel": "Jakość automatyczna",
                 "hint": "Możesz spróbować <0>przełączyć źródło</0> aby uzyskać różne opcje jakości.",
                 "iosNoQuality": "Ze względu na ograniczenia zdefiniowane przez Apple, wybór jakości nie jest dostępny w systemie iOS dla tego źródła. Możesz spróbować <0>przełączyć na inne źródło</0> aby uzyskać inne opcje jakości.",
-                "title": "Jakość"
+                "title": "Jakość",
+                "auto": "Auto"
             },
             "settings": {
                 "audioItem": "Dźwięk",
@@ -318,20 +527,37 @@
                     "title": "Brak strumienia"
                 },
                 "title": "Źródła",
-                "unknownOption": "Nieznany"
+                "unknownOption": "Nieznany",
+                "editOrder": "Edytuj kolejność"
             },
             "subtitles": {
                 "customChoice": "Wrzuć lub prześlij plik",
                 "customizeLabel": "Dostosuj",
-                "dropSubtitleFile": "Przeciągnij i upuść plik z napisami tutaj",
-                "offChoice": "Wyłączone",
+                "dropSubtitleFile": "Tu przerzuć plik z napisami! >_<",
+                "offChoice": "Wyłącz",
                 "settings": {
                     "backlink": "Własne napisy",
                     "delay": "Opóźnienie napisów",
                     "fixCapitals": "Popraw kapitalizację"
                 },
                 "title": "Napisy",
-                "unknownLanguage": "Nieznany"
+                "unknownLanguage": "Nieznany",
+                "empty": "Nie znaleziono napisów.",
+                "OpenSubtitlesChoice": "Zewnętrzne napisy",
+                "SourceChoice": "Napisy ze źródła",
+                "onChoice": "Włącz",
+                "notFound": "Żadna z dostępnych opcji nie pasuje do Twojej prośby",
+                "useNativeSubtitles": "Użyj natywnych napisów",
+                "useNativeSubtitlesDescription": "Może naprawić napisy podczas przesyłania i w PiP",
+                "scrapeButton": "Napisy zbieraczy"
+            },
+            "watchparty": {
+                "notice": "Starsza werjsa Oglądaj Wspólnie może nie działac z pewnymi źródłami",
+                "watchpartyItem": "Oglądaj wspólnie",
+                "legacyWatchparty": "Użyj starszej wersji Oglądaj Wspólnie"
+            },
+            "audio": {
+                "default": "Domyślny"
             }
         },
         "metadata": {
@@ -339,33 +565,34 @@
                 "text": "Nie można załadować metadanych API, sprawdź połączenie internetowe.",
                 "title": "Nie udało się załadować metadanych API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Usunięte",
-                "text": "Ten materiał nie jest już dostępny z powodu żądania usunięcia lub roszczenia dotyczącego praw autorskich.",
+                "text": "Ten materiał nie jest już dostępny z powodu żądania usunięcia lub roszczenia dotyczącego praw autorskich. 😨",
                 "title": "Media zostały usunięte"
             },
             "extensionPermission": {
                 "badge": "Brak uprawnień",
                 "button": "Użyj rozszerzenia",
-                "text": "Masz nasze rozszerzenie przeglądarki, ale potrzebujemy pozwolenia, aby zacząć z niego korzystać.",
+                "text": "Masz nasze rozszerzenie przeglądarki, ale potrzebujemy pozwolenia, aby zacząć z niego korzystać. (¬_¬)",
                 "title": "Skonfiguruj rozszerzenie"
             },
             "failed": {
                 "badge": "Nie powiodło się",
                 "homeButton": "Wróć na stronę główną",
-                "text": "Nie można załadować metadanych multimediów z TMDB. Sprawdź czy TMDB nie działa lub jest zablokowany na twoim połączeniu internetowym.",
+                "text": "Nie można załadować metadanych multimediów z TMDB. Sprawdź czy TMDB działa lub jest zablokowany na Twoim połączeniu internetowym.",
                 "title": "Nie udało się załadować metadanych"
             },
             "notFound": {
                 "badge": "Nie znaleziono",
                 "homeButton": "Wróć na stronę główną",
-                "text": "Nie znaleźliśmy żądanych multimediów. Albo został usunięty, albo zmieniłeś adres URL.",
+                "text": "Nie znaleźliśmy żądanych multimediów. Albo został usunięty, albo zmieniłeś adres URL (nieładnie, nieładnie).",
                 "title": "Nie można znaleźć multimediów."
             }
         },
         "nextEpisode": {
-            "cancel": "Anuluj",
-            "next": "Następny odcinek"
+            "next": "Następny odcinek",
+            "replay": "Odtwórz ponownie",
+            "nextSeason": "Następnym sezon"
         },
         "playbackError": {
             "badge": "Błąd odtwarzania",
@@ -377,13 +604,13 @@
                 "errorNotSupported": "Obiekt multimediów lub dostawcy multimediów nie jest obsługiwany."
             },
             "homeButton": "Wróć na stronę główną",
-            "text": "Wystąpił błąd podczas próby odtworzenia multimediów. Spróbuj ponownie.",
+            "text": "Wystąpił błąd podczas próby odtworzenia multimediów 😖. Spróbuj ponownie lub zmień źródło!",
             "title": "Nie udało się odtworzyć wideo!"
         },
         "scraping": {
             "items": {
                 "failure": "Wystąpił błąd",
-                "notFound": "Nie ma wideo",
+                "notFound": "Nie ma wideo (╥﹏╥)",
                 "pending": "Sprawdzanie filmów..."
             },
             "notFound": {
@@ -391,26 +618,55 @@
                 "detailsButton": "Pokaż szczegóły",
                 "homeButton": "Wróć na stronę główną",
                 "text": "Przeszukaliśmy naszych dostawców i nie możemy znaleźć poszukiwanych multimediów! Nie przechowujemy multimediów i nie mamy kontroli nad ich dostępnością. Kliknij \"Pokaż szczegóły\" poniżej, aby uzyskać więcej informacji.",
-                "title": "Nie mogliśmy znaleźć tego"
+                "title": "Nie mogliśmy tego znaleźć",
+                "discoverButton": "Odkryj więcej"
+            },
+            "extensionFailure": {
+                "text": "Zainstalowałeś rozszerzenie film.kace.dev. Aby zaczęło działać musisz włączyć dla tej strony.",
+                "badge": "Rozszerzenie wyłączone",
+                "homeButton": "Wróć na stronę główną",
+                "enableExtension": "Włącz rozszerzenie",
+                "title": "Proszę włączyć rozszerzenie"
+            },
+            "tips": {
+                "1": "Kliknij w ikonkę zębatek, aby zmienić źródło!",
+                "2": "Kliknij w tytuł, aby skopiować link!",
+                "13": "Użyj strzałek LEWA lub PRAWA, aby pominąć o 5 sekund!",
+                "18": "Wciśnij < i > aby zmienić prędkość odtwarzania!",
+                "5": "Zainstaluj rozszerzenie, aby mieć więcej źródeł!",
+                "7": "Przytrzymaj SHIFT i kliknij w tytuł, aby skopiować link!",
+                "3": "Wciśnij i przytrzymaj lub przytrzymaj SHIFT, aby wyświetlić przycisk od szerokiego ekranu, zamiast pełnego!",
+                "4": "Niektóre źródła działają lepiej niż inne!",
+                "6": "Przytrzymaj zakładki, aby edytować lub usunąć!",
+                "8": "Ustaw niestandardowy kolor napisów!",
+                "9": "Migruj swoje konto do nowego backendu w ustawieniach!",
+                "10": "Dołącz do serwera Discord!",
+                "11": "Użyj [ i ] żeby dostosować prędkość napisów!",
+                "12": "Wciśnij SPACJĘ lub K, aby wznowić/zatrzymać!",
+                "14": "Użyj J lub L, aby pominąć o 10 sekund!",
+                "15": "Wciśnij F, aby włączyć pełny ekran!",
+                "16": "Wciśnij M, aby wyciszyć!",
+                "17": "Użyj strzałek GÓRA lub DÓŁ, aby zmienić głośność!",
+                "19": "Wciśnij . lub , aby ruszyć klatka po klatce w trakcie pauzy!",
+                "20": "Wciśnij C, aby włączyć napisy!"
             }
         },
         "time": {
             "regular": "{{timeWatched}} / {{duration}}",
-            "remaining": "Zostało {{timeLeft}} • Skończ o {{timeFinished, datetime}}",
+            "remaining": "Zostało {{timeLeft}} • Skończy się {{timeFinished, datetime}}",
             "shortRegular": "{{timeWatched}}",
             "shortRemaining": "-{{timeLeft}}"
         },
         "turnstile": {
-            "description": "Proszę potwierdź że jesteś człowiekiem, wypełniając Captcha po prawej stronie. Ma to zapewnić bezpieczeństwo film.kace.dev!",
-            "error": "Nie udało się zweryfikować Twojego człowieczeństwa. Proszę spróbuj ponownie.",
-            "title": "Musimy sprawdzić, czy jesteś człowiekiem.",
-            "verifyingHumanity": "Sprawdzasz swoje człowieczeństwo..."
+            "description": "Proszę potwierdź, że jesteś człowiekiem, wypełniając Captcha po prawej stronie. Ma to zapewnić bezpieczeństwo film.kace.dev.",
+            "error": "Nie udało się zweryfikować. Proszę spróbuj ponownie. Wyczyść pamięć cache i spróbuj ponownie, lub zmień źródło (kliknij w zębatkę).",
+            "title": "Czy jesteś robocikiem 🤖?",
+            "verifyingHumanity": "Weryfikacja... (^▽^)👍"
         }
     },
     "screens": {
-        "dmca": {
-            "text": "Witamy na stronie kontaktowej DMCA serwisu film.kace.dev! Szanujemy prawa własności intelektualnej i chcemy szybko rozwiązywać wszelkie problemy związane z prawami autorskimi. Jeśli uważasz że twoja praca chroniona prawem autorskim została niewłaściwie wykorzystana na naszej platformie, proszę wysłać szczegółowe powiadomienie DMCA na poniższy adres e-mail. Prosimy o dołączenie opisu materiału chronionego prawem autorskim, danych kontaktowych i oświadczenia w dobrej wierze. Zależy nam na szybkim rozwiązywaniu takich spraw i będziemy wdzięczni za współpracę w utrzymaniu film.kace.dev jako miejsce w którym szanuje się kreatywność i prawa autorskie.",
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Wczytywanie aplikacji",
         "loadingUser": "Wczytywanie profilu",
@@ -418,11 +674,12 @@
             "logout": "Wyloguj się",
             "reset": "Zresetuj serwer niestandardowy",
             "text": "Nie udało się wczytać profilu",
-            "textWithReset": "Nie udało się wczytać profilu z niestandardowego serwera, chcesz powrócić do domyślnego serwera?"
+            "textWithReset": "Nie udało się wczytać profilu z niestandardowego serwera, chcesz powrócić do domyślnego serwera?",
+            "reload": "Odśwież"
         },
         "migration": {
-            "failed": "Migracja danych nie powiodła się.",
-            "inProgress": "Proszę czekać, przeprowadzamy migrację danych. Nie powinno to zająć dużo czasu."
+            "failed": "Migracja danych nie powiodła się. 😿",
+            "inProgress": "Proszę czekać, przeprowadzamy migrację danych. To zajmie chwilkę."
         }
     },
     "settings": {
@@ -437,12 +694,22 @@
                 "delete": {
                     "button": "Usuń konto",
                     "confirmButton": "Usuń konto",
-                    "confirmDescription": "Na pewno chcesz usunąć swoje konto? Wszystkie twoje dane zostaną stracone!",
+                    "confirmDescription": "Na pewno chcesz usunąć swoje konto? Wszystkie twoje dane zostaną stracone! ૮₍˶Ó﹏Ò ⑅₎ა",
                     "confirmTitle": "Jesteś pewny?",
                     "text": "Działanie to jest nieodwracalne. Wszystkie dane zostaną usunięte i nie będzie można ich odzyskać.",
                     "title": "Usuń konto"
                 },
-                "title": "Działania"
+                "title": "Działania",
+                "logoutAllDevices": {
+                    "title": "Zakończ wszystkie sesje",
+                    "text": "To wyloguje Cię ze wszystkich urządzeń powiązanych z Twoim kontem.",
+                    "button": "Wyloguj się ze wszystkich urządzeń"
+                },
+                "migration": {
+                    "title": "Migracja konta",
+                    "text": "Migruj swoje konto do nowego serwera lub pobierz swoje dane.",
+                    "button": "Migruj konto"
+                }
             },
             "devices": {
                 "deviceNameLabel": "Nazwa urządzenia",
@@ -462,7 +729,12 @@
                 "text": "Udostępnij postępy oglądania między urządzeniami i synchronizuj je.",
                 "title": "Synchronizuj z chmurą"
             },
-            "title": "Konto"
+            "title": "Konto",
+            "admin": {
+                "title": "Panel administracyjny",
+                "text": "Korzystaj z narzędzi stworzonych do sprawdzania stanu film.kace.dev.",
+                "button": "Sprawdź to"
+            }
         },
         "appearance": {
             "activeTheme": "Aktywny",
@@ -471,23 +743,61 @@
                 "default": "Domyślny",
                 "gray": "Szary",
                 "red": "Czerwony",
-                "teal": "Morski"
+                "teal": "Morski",
+                "classic": "Klasyczny",
+                "green": "Zielony",
+                "mocha": "Mocha",
+                "pink": "Ruszofy",
+                "noir": "Czarne kino",
+                "ember": "Rozżarzony",
+                "acid": "Kwasowy",
+                "spark": "Błyszczący",
+                "grape": "Winogronowy",
+                "spiderman": "Spiderman",
+                "forest": "Las",
+                "wolverine": "Wolverine",
+                "popsicle": "Popsicle",
+                "hulk": "Hulk"
             },
-            "title": "Wygląd"
+            "title": "Wygląd",
+            "options": {
+                "forceCompactEpisodeViewDescription": "Wymuś karuzelę odcinków w odtwarzaczu, aby użyć \"klasycznego\" kompaktowego pionowego widoku. Domyślnie wyłączone.",
+                "discover": "Sekcja Odkrywaj",
+                "modalDescription": "Pokaż szczegóły gdy klikniesz na kartę medii zamiast przejścia na stronę oglądania. Proxy lub rozszerzenie są wymagane na zwiastun. Domyślnie wyłączone.",
+                "discoverDescription": "Pokaż sekcję Odkrywaj na stronie Startowej poniżej zakładek. Domyślnie włączone.",
+                "discoverLabel": "Sekcja Odkrywaj",
+                "featured": "Wyróżnione media",
+                "featuredDescription": "Pokaż karuzelę wyróżnionych filmów i seriali na górzej Twojej strony startowej! Domyślnie wyłączone.",
+                "featuredLabel": "Wyróżnione media",
+                "logos": "Logo",
+                "logosDescription": "Pokaż logo zamiast tekstu tytułów w szczegółach i wyróżnionych sekcjach. Domyślnie włączone.",
+                "logosNotice": "W większości logo są po Angielsku. Jeśli używasz innego języka, wyłącz tą opcję!",
+                "logosLabel": "Zdjęcia logo",
+                "carouselView": "Widok z karuzeli",
+                "carouselViewDescription": "Pokaż Twoje obecnie oglądane oraz sekcje jako widok z karuzeli, zamiast widoku z siatki. Domyślnie wyłączone.",
+                "carouselViewLabel": "Widok z karuzeli",
+                "forceCompactEpisodeView": "Wymuś kompaktowy widok odcinków",
+                "forceCompactEpisodeViewLabel": "Kompaktowe odcinki"
+            }
         },
         "connections": {
             "server": {
                 "description": "Jeśli chcesz połączyć się z niestandardowym backendem w celu przechowywania danych, włącz tę opcję i podaj adres URL. <0>Instrukcje.</0>",
                 "label": "Serwer niestandardowy",
-                "urlLabel": "Adres URL niestandardowego serwera"
+                "urlLabel": "Adres URL niestandardowego serwera",
+                "migration": {
+                    "description": "<0>Migruj moje dane</0> do nowego serwera.",
+                    "link": "Migruj moje dane"
+                },
+                "documentation": "Dokumentacja backendu"
             },
             "setup": {
                 "doSetup": "Konfiguruj",
                 "errorStatus": {
-                    "description": "Wygląda na to, że jeden lub więcej elementów tej konfiguracji wymaga Twojej uwagi.",
-                    "title": "Coś wymaga twojej uwagi"
+                    "description": "Wygląda na to, że jeden lub więcej elementów tej konfiguracji wymaga Twojej uwagii.",
+                    "title": "Coś wymaga Twojej uwagi 😱"
                 },
-                "itemError": "Coś jest nie tak z tym ustawieniem. Ponownie przejdź przez konfigurację, aby to naprawić.",
+                "itemError": "Coś jest nie tak z tym ustawieniem. Ponownie przejdź przez konfigurację, aby to naprawić. (ᴗ_ ᴗ。)",
                 "items": {
                     "default": "Domyślna konfiguracja",
                     "extension": "Rozszerzenie",
@@ -495,7 +805,7 @@
                 },
                 "redoSetup": "Ponów konfigurację",
                 "successStatus": {
-                    "description": "Wszystko jest gotowe, abyś mógł zacząć oglądać ulubione media.",
+                    "description": "Wszystko jest gotowe, abyś mógł zacząć oglądać ulubione media. (๑>◡<๑)",
                     "title": "Wszystko jest gotowe!"
                 },
                 "unsetStatus": {
@@ -507,10 +817,15 @@
             "workers": {
                 "addButton": "Dodaj nowego pracownika",
                 "description": "Aby aplikacja działała, cały ruch jest kierowany przez serwery proxy. Włącz tę opcję, jeśli chcesz korzystać z własnych pracowników. <0>Instrukcje.</0>",
-                "emptyState": "Brak pracowników, dodaj jednego poniżej",
+                "emptyState": "Brak pracowników (｡•́︿•̀｡), dodaj jednego poniżej",
                 "label": "Używaj niestandardowych pracowników proxy",
                 "urlLabel": "Adresy URL pracowników",
-                "urlPlaceholder": "https://"
+                "urlPlaceholder": "https://",
+                "proxyTMDB": {
+                    "description": "Potrzebne jeśli nie możesz uzyskać dostępu do TheMovieDB. Rekomendujemy wyłączenie sekcji Odkrywaj, aby poprawić wydajność.",
+                    "title": "Proxy TMDB"
+                },
+                "documentation": "Dokumentacja proxy"
             }
         },
         "preferences": {
@@ -519,7 +834,14 @@
             "thumbnail": "Generuj miniatury",
             "thumbnailDescription": "W większości przypadków filmy nie mają miniatur. Możesz włączyć to ustawienie, aby generować je na bieżąco, ale może to spowolnić wideo.",
             "thumbnailLabel": "Generuj miniatury",
-            "title": "Preferencje"
+            "title": "Preferencje",
+            "skipCreditsDescription": "Gdy włączone automatycznie odtwarza następny odcinek, gdy obecny jest w 99% obejrzany. Gdy wyłączone odtwarzanie nastąpi gdy cały odcinek jest skończony.",
+            "autoplay": "Autoodtwarzanie",
+            "autoplayDescription": "Automatycznie odtwórz następny odcinek zbliżając się do końca obecnego. Może zostać włączone przez użytkownika w rozszerzeniu, niestandardowym proxy lub domyślną konfiguracją, jeśli dozwolone.",
+            "autoplayLabel": "Autoodtwarzanie",
+            "skipCredits": "Pomiń napisy końcowe",
+            "skipCreditsLabel": "Pomiń napisy końcowe",
+            "lowPerformanceMode": "Tryb niskiej wydajności/przepustowości"
         },
         "reset": "Reset",
         "save": "Zapisz",
@@ -546,5 +868,143 @@
             "title": "Napisy"
         },
         "unsaved": "Masz niezapisane zmiany"
+    },
+    "migration": {
+        "start": {
+            "options": {
+                "download": {
+                    "description": "Ta opcja pozwala na pobranie swoich danych bezpośrednio na urządzenie. Możesz je przenieść na nowy serwer lub zachować na dysku jako kopię zapasową.",
+                    "title": "Pobierz dane",
+                    "action": "Pobierz dane",
+                    "quality": "Więcej informacji technicznych"
+                },
+                "or": "lub",
+                "direct": {
+                    "description": "Ta opcja przeniesie twoje dane bezpośrednio na nowy serwer. <br /><br />To najszybsza możliwa opcja, która pozwoli Ci zachować swoją frazę!",
+                    "title": "Bezpośrednia migracja",
+                    "quality": "Najłatwiejsza i najszybsza",
+                    "action": "Przenieś dane"
+                },
+                "upload": {
+                    "title": "Prześlij dane",
+                    "description": "Prześlij wcześniej eksportowany plik z danymi aby przywrócić swoje zakładki i postęp na tym koncie.",
+                    "quality": "Przywróć z kopii zapasowej",
+                    "action": "Prześlij dane"
+                }
+            },
+            "explainer": "Jeżeli chciałbyś zmigrować swoje dane lub wykonać ich kopię zapasową, wykorzystaj funkcje dostępne poniżej. Pozwolą Ci one przenieść swoje dane na inny serwer.",
+            "title": "Migruj swoje dane"
+        },
+        "direct": {
+            "status": {
+                "error": "Wystąpił błąd podczas migracji twoich danych. 😿",
+                "success": "Twoje dane zostały zmigrowane! 🎉"
+            },
+            "title": "Bezpośrednia migracja",
+            "description": "Wprowadź adres URL serwera do którego chcesz przenieść swoje dane. Ta opcja zachowa twoją frazę!",
+            "backendLabel": "URL serwera docelowego",
+            "recaptchaLabel": "Weryfikacja ReCaptcha (opcjonalna)",
+            "toggleLable": "Potrzebujesz ReCaptchy?",
+            "button": {
+                "migrate": "Migruj",
+                "processing": "Przetwarzanie...",
+                "home": "Wróć na stronę główną",
+                "login": "Kontynuuj"
+            }
+        },
+        "loginRequired": "Musisz być zalogowany, aby zmigrować swoje dane! Zaloguj się, aby kontynuować.",
+        "download": {
+            "title": "Pobierz dane",
+            "description": "To pobierze Twoje dane na obecne urządzenie. Możesz je przesłać do nowego serweru, albo trzymać jako kopię zapasową.",
+            "items": {
+                "description": "Pobieranie zawiera:",
+                "bookmarks": "Zakładki mediów",
+                "progress": "Postęp oglądania"
+            },
+            "status": {
+                "error": "Nie udało się pobrać Twoich danych. 😿",
+                "success": "Twoje dane zostały pobrane! 🎉"
+            },
+            "button": {
+                "download": "Pobierz dane",
+                "home": "Wróć na stronę główną",
+                "login": "Kontynuuj"
+            }
+        },
+        "upload": {
+            "description": "Wczytaj Twoje poprzednio eksportowane pliki, aby przywrócić zakładki oraz postęp na tym koncie.",
+            "title": "Wczytaj dane",
+            "status": {
+                "processing": "Wczytywanie danych...",
+                "error": "Nie udało się wczytać Twoich danych. 😿",
+                "success": "Twoje dane zostały załadowane! 🎉"
+            },
+            "file": {
+                "description": "Wybierz plik, który chcesz załadować",
+                "select": "Wybierz plik",
+                "change": "Zmień plik",
+                "name": "Nazwa pliku"
+            },
+            "dataPreview": "Podgląd:",
+            "items": {
+                "bookmarks": "Zakładki media",
+                "progress": "Postęp oglądania"
+            },
+            "exportedOn": "Eksportowane na",
+            "button": {
+                "import": "Importuj dane",
+                "processing": "Przetwarzanie...",
+                "success": "Importowanie zakończone",
+                "home": "Kontynuuj do ekranu głównego"
+            }
+        },
+        "back": "Cofnij"
+    },
+    "details": {
+        "releaseDate": "Data publikacji:",
+        "endsAt": "Kończy się na {{time}}",
+        "language": "Język:",
+        "resume": "Wznów",
+        "play": "Wznów",
+        "runtime": "Aktywność:",
+        "rating": "Ocena:",
+        "votes": "głosy",
+        "tmdb": "Zobacz na TMDB",
+        "imdb": "Zobacz na IMDB",
+        "episodes": "Odcinki",
+        "seasons": "Sezon/y",
+        "season": "Sezon",
+        "episode": "Odcinek",
+        "trailer": "Zwiastun"
+    },
+    "downtimeNotice": {
+        "badge": "Problemy",
+        "goHome": "Wróć do strony głównej",
+        "title": "Problemy z dostawcą",
+        "message": "film.kace.dev napotkał problem z niektórymi dostawcami, jeśli nie możesz znaleźć albo odtworzyć serialu, proszę zmienić źródło. Możesz spodziewać sie tego problemu przez pewien czas."
+    },
+    "support": {
+        "text": "film.kace.dev jest zaprojektowany jak najbardziej przejrzyście, jak to możliwe. Aczkolwiek nie wykluczamy pytań lub problemów. Ta strona jest po to, aby Ci z tym pomóc",
+        "title": "Wsparcie",
+        "q1": {
+            "body": "Możesz dołączyć do oficjalnego serwera <0>film.kace.dev discord</0> i zadać nam pytania lub wysłać do nas maila, którego znajdziesz na dole strony.",
+            "title": "Gdzie mogę otrzymać pomoc?"
+        },
+        "q2": {
+            "title": "W jaki sposób mogę zgłosić błąd lub problem?",
+            "body": "Mamy stronę na GitHubie <0>GitHub</0> gdzie możesz stworzyć opisany problem w naszym repozytorium."
+        }
+    },
+    "jip": {
+        "title": "Jip",
+        "text": "film.kace.dev nie spadło z kokosa, zostało stworzone głównie przez jedną osobę (bardzo epicką).",
+        "q1": {
+            "body": "Możesz dołączyć do oficjalnego serwera <0>film.kace.dev discord</0> i zadać nam pytania lub wysłać do nas maila, którego znajdziesz na dole strony.",
+            "title": "Gdzie mogę otrzymać pomoc?"
+        },
+        "q2": {
+            "body": "Mamy stronę na GitHubie <0>GitHub</0> gdzie możesz stworzyć opisany problem w naszym repozytorium.",
+            "title": "W jaki sposób mogę zgłosić błąd lub problem?"
+        }
     }
 }

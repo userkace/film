@@ -1,558 +1,790 @@
 {
-    "about": {
-        "description": "film.kace.dev is een webapplicatie die het internet afzoekt naar streams. Het team streeft naar een minimalistische benadering van het consumeren van inhoud.",
-        "faqTitle": "Veelgestelde vragen",
-        "q1": {
-            "body": "film.kace.dev host geen inhoud. Wanneer je op iets klikt om te bekijken, wordt het internet afgezocht naar de geselecteerde media (op het laadscherm en in het tabblad 'videobronnen' kun je zien welke bron je gebruikt). Media wordt nooit geüpload door film.kace.dev, alles gaat via dit zoekmechanisme.",
-            "title": "Waar komt de content vandaan?"
-        },
-        "q2": {
-            "body": "Het is niet mogelijk om een show of film aan te vragen, film.kace.dev beheert geen content. Alle inhoud wordt bekeken via bronnen op het internet.",
-            "title": "Waar kan ik een show of film aanvragen?"
-        },
-        "q3": {
-            "body": "Onze zoekresultaten worden aangestuurd door The Movie Database (TMDB) en worden weergegeven ongeacht of onze bronnen de inhoud daadwerkelijk hebben.",
-            "title": "De zoekresultaten tonen de show of film, waarom kan ik hem niet afspelen?"
-        },
-        "title": "Over film.kace.dev"
+  "about": {
+    "description": "film.kace.dev is een webapplicatie die het internet afzoekt naar streams. Het team streeft naar een minimalistische benadering van het consumeren van inhoud.",
+    "faqTitle": "Veelgestelde vragen",
+    "q1": {
+      "body": "film.kace.dev host geen inhoud. Wanneer je op iets klikt om te bekijken, wordt het internet afgezocht naar de geselecteerde media (op het laadscherm en in het tabblad 'videobronnen' kun je zien welke bron je gebruikt). Media wordt nooit geüpload door film.kace.dev, alles gaat via dit zoekmechanisme.",
+      "title": "Waar komt de content vandaan?"
     },
-    "actions": {
-        "copied": "Gekopieerd",
-        "copy": "Kopieer"
+    "q2": {
+      "body": "Het is niet mogelijk om een show of film aan te vragen, film.kace.dev beheert geen content. Alle inhoud wordt bekeken via bronnen op het internet.",
+      "title": "Waar kan ik een show of film aanvragen?"
     },
-    "auth": {
-        "createAccount": "Heb je nog geen account? <0>Maak er dan een.</0>",
-        "deviceNameLabel": "Naam toestel",
-        "deviceNamePlaceholder": "Mijn telefoon",
-        "generate": {
-            "description": "Je passphrase werkt als je gebruikersnaam en wachtwoord. Sla je passphrase dus goed op, je hebt hem namelijk nodig om in te loggen",
-            "next": "Ik heb mijn passphrase opgeslagen",
-            "passphraseFrameLabel": "Wachtwoord",
-            "title": "Uw wachtwoord"
-        },
-        "hasAccount": "Heb je al een account? <0>Log hier in.</0>",
-        "login": {
-            "description": "Vul je wachtwoord in",
-            "deviceLengthError": "Vul de naam van je apparaat in",
-            "passphraseLabel": "12-Woordelijke wachtwoord",
-            "passphrasePlaceholder": "Wachtwoord",
-            "submit": "Log in",
-            "title": "Log in bij je account",
-            "validationError": "Incorrecte of incompleet wachtwoord"
-        },
-        "register": {
-            "information": {
-                "color1": "Profielkleur 1",
-                "color2": "Profielkleur 2",
-                "header": "Vul hier het naam van je apparaat. Kies ook je de kleuren die je wil, en een icoontje",
-                "icon": "Icoontje",
-                "next": "Volgende",
-                "title": "Account informatie"
-            }
-        },
-        "trust": {
-            "failed": {
-                "text": "Heb je het goed ingesteld?",
-                "title": "Kon niet met de server verbinden"
-            },
-            "host": "Je gaat zo verbinden met <0>{{hostname}}</0>, check even of je deze link vertrouwt",
-            "no": "Vorige pagina",
-            "noHost": "De server is nog niet geconfigureerd, daarom kunt u geen account aanmaken",
-            "noHostTitle": "Server niet geconfigureerd!",
-            "title": "Vertrouw je deze server?",
-            "yes": "Ik vertrouw deze server"
-        },
-        "verify": {
-            "description": "Vul je wachtwoord in zodat we weten dat je het opgeslagen hebt, dan kunnen we je account maken",
-            "invalidData": "Ongeldige data",
-            "noMatch": "Wachtwoord komt niet overeen",
-            "passphraseLabel": "Jouw wachtwoord",
-            "recaptchaFailed": "ReCatpcha validatie is mislukt",
-            "register": "Maak een account",
-            "title": "Bevestig je wachtwoord"
-        }
+    "q3": {
+      "body": "Onze zoekresultaten worden aangestuurd door The Movie Database (TMDB) en worden weergegeven ongeacht of onze bronnen de inhoud daadwerkelijk hebben.",
+      "title": "De zoekresultaten tonen de show of film, waarom kan ik hem niet afspelen?"
     },
-    "errors": {
-        "badge": "Tis kapot",
-        "details": "Informatie over foutmelding",
-        "reloadPage": "Herlaad de pagina",
-        "showError": "Meer informatie over foutmelding",
-        "title": "Er is iets fout gegaan!"
+    "title": "Over film.kace.dev",
+    "q4": {
+      "body": "Alle data worden gesynchroniseerd met de community backend. Iedereen kan deze ook vrij gebruiken.",
+      "title": "Hoe zit het met mijn gegevens en dergelijke?"
     },
-    "footer": {
-        "legal": {
-            "disclaimer": "Disclaimer",
-            "disclaimerText": "film.kace.dev host geen bestanden, maar linkt alleen naar diensten van derden. Juridische kwesties moeten worden opgenomen met de bestandshosts en providers. film.kace.dev is niet verantwoordelijk voor mediabestanden die worden getoond door de videoproviders."
-        },
-        "links": {
-            "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "Github"
-        },
-        "tagline": "Bekijk je favoriete shows en films met deze open source streaming app."
+    "q5": {
+      "body": "film.kace.dev heeft een Discord server die je bovenaan in deze pagina kunt vinden!",
+      "title": "Hoe kan ik meer te weten komen?"
+    }
+  },
+  "actions": {
+    "copied": "Gekopieerd",
+    "copy": "Kopieer"
+  },
+  "auth": {
+    "createAccount": "Heb je nog geen account? <0>Maak er dan een.</0>",
+    "deviceNameLabel": "Naam toestel",
+    "deviceNamePlaceholder": "Mijn telefoon",
+    "generate": {
+      "description": "Je passphrase werkt als je gebruikersnaam en wachtwoord. Sla je passphrase dus goed op, je hebt hem namelijk nodig om in te loggen. <bold>Verlies hem dus NIET!</bold>",
+      "next": "Ik heb mijn passphrase opgeslagen",
+      "passphraseFrameLabel": "Wachtwoord",
+      "title": "Uw wachtwoord"
     },
-    "global": {
-        "name": "film.kace.dev",
-        "pages": {
-            "about": "Over",
-            "dmca": "DMCA",
-            "login": "Login",
-            "onboarding": "Instellen",
-            "pagetitle": "{{title}} - film.kace.dev",
-            "register": "Registreren",
-            "settings": "Instellingen"
-        }
+    "hasAccount": "Heb je al een account? <0>Log hier in.</0>",
+    "login": {
+      "description": "Vul je wachtwoord in",
+      "deviceLengthError": "Vul de naam van je apparaat in",
+      "passphraseLabel": "12-Woordelijke wachtwoord",
+      "passphrasePlaceholder": "Wachtwoord",
+      "submit": "Log in",
+      "title": "Log in bij je account",
+      "validationError": "Incorrecte of incompleet wachtwoord"
     },
-    "home": {
-        "bookmarks": {
-            "sectionTitle": "Opgeslagen"
-        },
-        "continueWatching": {
-            "sectionTitle": "Kijk verder"
-        },
-        "mediaList": {
-            "stopEditing": "Stoppen met bewerken"
-        },
-        "search": {
-            "allResults": "Dat is het!",
-            "failed": "Het is niet gelukt de media te laden, probeer het nog eens!",
-            "loading": "Aan het zoeken...",
-            "noResults": "We konden helaas niets vinden!",
-            "placeholder": {
-                "default": "Wat wil je graag kijken?",
-                "extra": [
-                    "Wat wil je verkennen?",
-                    "Wat staat er op jouw kijklijst?",
-                    "Wat is jouw favoriete film?",
-                    "Wat is jouw favoriete serie?"
-                ]
-            },
-            "sectionTitle": "Zoekresultaten"
-        },
-        "titles": {
-            "day": {
-                "default": "Wat wil je vanmiddag kijken?",
-                "extra": [
-                    "Voel je je avontuurlijk? Dan is Jurassic Park misschien wel de perfecte keuze."
-                ]
-            },
-            "morning": {
-                "default": "Waar wil je deze ochtend naar kijken?",
-                "extra": [
-                    "Ik hoor dat Before Sunrise goed is"
-                ]
-            },
-            "night": {
-                "default": "Wat wil je vanavond bekijken?",
-                "extra": [
-                    "Moe? Ik hoor dat The Exorcist goed is."
-                ]
-            }
-        }
+    "register": {
+      "information": {
+        "color1": "Profielkleur 1",
+        "color2": "Profielkleur 2",
+        "header": "Vul hier het naam van je apparaat. Kies ook je de kleuren die je wil, en een icoontje",
+        "icon": "Icoontje",
+        "next": "Volgende",
+        "title": "Account informatie"
+      }
     },
-    "media": {
-        "episodeDisplay": "S{{season}} A{{episode}}",
-        "types": {
-            "movie": "Film",
-            "show": "Serie"
-        },
-        "unreleased": "Niet uitgebracht"
+    "trust": {
+      "failed": {
+        "text": "Heb je het goed ingesteld?",
+        "title": "Kon niet met de server verbinden"
+      },
+      "host": "Je gaat zo verbinden met <0>{{hostname}}</0>, check even of je deze link vertrouwt",
+      "no": "Vorige pagina",
+      "noHost": "De server is nog niet geconfigureerd, daarom kunt u geen account aanmaken",
+      "noHostTitle": "Server niet geconfigureerd!",
+      "title": "Vertrouw je deze server?",
+      "yes": "Ik vertrouw deze server"
     },
-    "navigation": {
-        "banner": {
-            "offline": "Controleer je internetverbinding"
-        },
-        "menu": {
-            "about": "Over ons",
-            "donation": "Doneer",
-            "logout": "Log uit",
-            "register": "Synchroniseren met de cloud",
-            "settings": "Instellingen",
-            "support": "Ondersteuning"
-        }
+    "verify": {
+      "description": "Vul je wachtwoord in zodat we weten dat je het opgeslagen hebt, dan kunnen we je account maken",
+      "invalidData": "Ongeldige data",
+      "noMatch": "Wachtwoord komt niet overeen",
+      "passphraseLabel": "Jouw wachtwoord",
+      "recaptchaFailed": "ReCatpcha validatie is mislukt",
+      "register": "Maak een account",
+      "title": "Bevestig je wachtwoord"
+    }
+  },
+  "errors": {
+    "badge": "Tis kapot",
+    "details": "Informatie over foutmelding",
+    "reloadPage": "Herlaad de pagina",
+    "showError": "Meer informatie over foutmelding",
+    "title": "Er is iets fout gegaan!"
+  },
+  "footer": {
+    "legal": {
+      "disclaimer": "Disclaimer",
+      "disclaimerText": "film.kace.dev host geen bestanden, maar linkt alleen naar diensten van derden. Juridische kwesties moeten worden opgenomen met de bestandshosts en providers. film.kace.dev is niet verantwoordelijk voor mediabestanden die worden getoond door de videoproviders."
     },
-    "notFound": {
-        "badge": "Pagina niet gevonden",
-        "goHome": "Naar de home-pagina",
-        "message": "We hebben echt alles geprobeerd, zelfs tijdrijzen; echter hebben we deze pagina helaas niet kunnen vinden.",
-        "title": "Pagina niet gevonden"
+    "links": {
+      "discord": "Discord",
+      "legal": "Legal / DMCA",
+      "github": "Github",
+      "twitter": "Twitter / X"
     },
-    "onboarding": {
-        "defaultConfirm": {
-            "cancel": "Annuleren",
-            "confirm": "Gebruik standaardinstallatie",
-            "description": "De standaardinstallatie heeft niet de beste streams en kan onbruikbaar traag zijn.",
-            "title": "Weet je het zeker?"
+    "tagline": "Bekijk je favoriete shows en films met deze open source streaming app."
+  },
+  "global": {
+    "name": "film.kace.dev",
+    "pages": {
+      "about": "Over",
+      "legal": "Legal / DMCA",
+      "login": "Login",
+      "onboarding": "Instellen",
+      "pagetitle": "{{title}} - film.kace.dev",
+      "register": "Registreren",
+      "settings": "Instellingen",
+      "discover": "Ondek",
+      "support": "Steun",
+      "migration": "Account migreren",
+      "jip": "Jipy"
+    }
+  },
+  "home": {
+    "bookmarks": {
+      "sectionTitle": "Opgeslagen"
+    },
+    "continueWatching": {
+      "sectionTitle": "Kijk verder"
+    },
+    "mediaList": {
+      "stopEditing": "Stoppen met bewerken"
+    },
+    "search": {
+      "allResults": "Dat is het!",
+      "failed": "Het is niet gelukt de media te laden, probeer het nog eens!",
+      "loading": "Aan het zoeken...",
+      "noResults": "We konden helaas niets vinden!",
+      "placeholder": {
+        "default": "Wat wil je graag kijken?",
+        "extra": [
+          "Wat wil je verkennen?",
+          "Wat staat er op jouw kijklijst?",
+          "Wat is jouw favoriete film?",
+          "Wat is jouw favoriete serie?",
+          "Wat staat er vandaag op jouw kijklijst?",
+          "Hoe was je dag?",
+          "Mijn fout, de site werkt nooit...",
+          "Is film.kace.dev niet gewoon de beste?",
+          ">ᴗ<"
+        ]
+      },
+      "sectionTitle": "Zoekresultaten",
+      "empty": {
+        "default": "Welkom, hier vindt je de media om te bekijken!",
+        "extra": [
+          "Hier is niks :(",
+          "Zo leeg...",
+          "Wat een leegte.",
+          "Hallo nieuwe gebruiker :3"
+        ]
+      },
+      "discoverMore": "Ondek meer",
+      "discover": "Ondek"
+    },
+    "titles": {
+      "day": {
+        "default": "Wat wil je vanmiddag kijken?",
+        "extra": ["Lang leven film.kace.dev!"]
+      },
+      "morning": {
+        "default": "Waar wil je deze ochtend naar kijken?",
+        "extra": ["Lang leven film.kace.dev!"]
+      },
+      "night": {
+        "default": "Wat wil je vanavond bekijken?",
+        "extra": ["Moe? Ik hoor dat The Exorcist goed is."]
+      },
+      "420": {
+        "default": "Wat wil je deze 4/20 bekijken?",
+        "extra": ["Happy 4/20 🥳"]
+      },
+      "69": {
+        "default": "Zin in iets pittigs?",
+        "extra": ["Gelukkige 69e dag 😘!"]
+      }
+    }
+  },
+  "media": {
+    "episodeDisplay": "S{{season}} A{{episode}}",
+    "types": {
+      "movie": "Film",
+      "show": "Serie"
+    },
+    "unreleased": "Niet uitgebracht"
+  },
+  "navigation": {
+    "banner": {
+      "offline": "Controleer je internetverbinding"
+    },
+    "menu": {
+      "about": "Over ons",
+      "logout": "Log uit",
+      "register": "Synchroniseren met de Cloud",
+      "settings": "Instellingen",
+      "support": "Ondersteuning",
+      "discover": "Ontdek"
+    }
+  },
+  "notFound": {
+    "badge": "Pagina niet gevonden",
+    "goHome": "Naar de home-pagina",
+    "message": "We hebben echt alles geprobeerd, zelfs tijdrijzen; echter hebben we deze pagina helaas niet kunnen vinden.",
+    "title": "Pagina niet gevonden",
+    "reloadButton": "Probeer opnieuw"
+  },
+  "onboarding": {
+    "defaultConfirm": {
+      "cancel": "Annuleren",
+      "confirm": "Gebruik standaardinstallatie",
+      "description": "De standaardinstallatie heeft niet de beste streams. Je mist de beste bronnen!",
+      "title": "Weet je het zeker?"
+    },
+    "extension": {
+      "back": "Terug",
+      "explainer": "Door gebruik te maken van de browserextensie kun je de beste streams krijgen. Met slechts een eenvoudige installatie. 👌",
+      "explainerIos": "Helaas, de browserextensie is niet ondersteund op iOS. Druk op <bold>Terug</bold> om een andere optie te kiezen.",
+      "extensionHelp": "Als je de extensie hebt geïnstalleerd maar niet wordt gedetecteerd, <bold>open dan de extensie via het extensies menu in je browser</bold> en volg de stappen op het scherm.",
+      "linkChrome": "Installeer de Chrome-extensie",
+      "linkFirefox": "Installeer de Firefox-extensie",
+      "notDetecting": "Geïnstalleerd op Chrome, maar de site detecteert het niet? Probeer de pagina opnieuw te laden!",
+      "notDetectingAction": "Pagina opnieuw laden",
+      "status": {
+        "disallowed": "Extensie is niet ingeschakeld voor deze pagina",
+        "disallowedAction": "Extensie inschakelen",
+        "failed": "Mislukt om status aan te vragen",
+        "loading": "Aan het wachten tot je de extensie hebt geïnstalleerd",
+        "outdated": "Extensieversie te oud",
+        "success": "Extensie werkt zoals verwacht!"
+      },
+      "submit": "Doorgaan",
+      "title": "Laten we beginnen met de extensie"
+    },
+    "proxy": {
+      "back": "Terug",
+      "explainer": "Met de proxy-methode kun je hoogwaardige streams verkrijgen door zelf een proxy op te zetten.",
+      "input": {
+        "errorConnection": "Kon geen verbinding maken met de proxy",
+        "errorInvalidUrl": "Geen geldige URL",
+        "errorNotProxy": "Verwachtte een proxy maar kreeg een website",
+        "label": "Proxy URL",
+        "placeholder": "https://"
+      },
+      "link": "Leer hoe je de proxy kunt instellen",
+      "submit": "Proxy opslaan",
+      "title": "Laten we een nieuwe proxy instellen"
+    },
+    "start": {
+      "explainer": "Om de beste streams mogelijk te krijgen, moet je kiezen welke streammethode je wilt gebruiken.",
+      "options": {
+        "default": {
+          "text": "Ik wil geen streams van goede kwaliteit, gebruik de standaardinstellingen."
         },
         "extension": {
-            "back": "Terug",
-            "explainer": "Door gebruik te maken van de browserextensie kun je de beste streams krijgen. Met slechts een eenvoudige installatie.",
-            "explainerIos": "Helaas, de browserextensie is niet ondersteund op iOS. Druk op <bold>Terug</bold> om een andere optie te kiezen.",
-            "extensionHelp": "Als je de extensie hebt geïnstalleerd maar niet wordt gedetecteerd, <bold>open dan de extensie via het extensies menu in je browser</bold> en volg de stappen op het scherm.",
-            "linkChrome": "Installeer de Chrome-extensie",
-            "linkFirefox": "Installeer de Firefox-extensie",
-            "notDetecting": "Geïnstalleerd op Chrome, maar de site detecteert het niet? Probeer de pagina opnieuw te laden!",
-            "notDetectingAction": "Pagina opnieuw laden",
-            "status": {
-                "disallowed": "Extensie is niet ingeschakeld voor deze pagina",
-                "disallowedAction": "Extensie inschakelen",
-                "failed": "Mislukt om status aan te vragen",
-                "loading": "Aan het wachten tot je de extensie hebt geïnstalleerd",
-                "outdated": "Extensieversie te oud",
-                "success": "Extensie werkt zoals verwacht!"
-            },
-            "submit": "Doorgaan",
-            "title": "Laten we beginnen met de extensie"
+          "action": "Installeer extensie",
+          "description": "Installeer browserextensie en krijg toegang tot de beste bronnen.",
+          "quality": "Beste kwaliteit",
+          "title": "Browserextensie"
         },
         "proxy": {
-            "back": "Terug",
-            "explainer": "Met de proxy-methode kun je hoogwaardige streams verkrijgen door zelf een proxy op te zetten.",
-            "input": {
-                "errorConnection": "Kon geen verbinding maken met de proxy",
-                "errorInvalidUrl": "Geen geldige URL",
-                "errorNotProxy": "Verwachtte een proxy maar kreeg een website",
-                "label": "Proxy URL",
-                "placeholder": "https://"
-            },
-            "link": "Leer hoe je de proxy kunt instellen",
-            "submit": "Proxy opslaan",
-            "title": "Laten we een nieuwe proxy instellen"
+          "action": "Proxy instellen",
+          "description": "Proxy instellen in slechts 5 minuten en krijg toegang tot geweldige bronnen.",
+          "quality": "Goede kwaliteit",
+          "title": "Eigen proxy"
         },
-        "start": {
-            "explainer": "Om de beste streams mogelijk te krijgen, moet je kiezen welke streammethode je wilt gebruiken.",
-            "options": {
-                "default": {
-                    "text": "Ik wil geen streams van goede kwaliteit, <0 /> <1>Gebruik de standaardinstellingen.</1>"
-                },
-                "extension": {
-                    "action": "Installeer extensie",
-                    "description": "Installeer browserextensie en krijg toegang tot de beste bronnen.",
-                    "quality": "Beste kwaliteit",
-                    "title": "Browserextensie"
-                },
-                "proxy": {
-                    "action": "Proxy instellen",
-                    "description": "Proxy instellen in slechts 5 minuten en krijg toegang tot geweldige bronnen.",
-                    "quality": "Goede kwaliteit",
-                    "title": "Eigen proxy"
-                }
-            },
-            "title": "Laten we beginnen met het instellen van film.kace.dev"
-        }
+        "or": "of"
+      },
+      "title": "Laten we beginnen met het instellen van film.kace.dev"
+    }
+  },
+  "overlays": {
+    "close": "Sluiten"
+  },
+  "player": {
+    "back": {
+      "default": "Naar de home-pagina",
+      "short": "Terug"
     },
-    "overlays": {
-        "close": "Sluiten"
+    "casting": {
+      "enabled": "Aan het casten... 🎬"
     },
-    "player": {
-        "back": {
-            "default": "Naar de home-pagina",
-            "short": "Terug"
+    "menus": {
+      "downloads": {
+        "copyHlsPlaylist": "HLS-afspeellijstlink kopiëren",
+        "disclaimer": "Downloads worden direct bij de bron opgehaald. film.kace.dev heeft geen controle over het bestand dat je ontvangt.",
+        "downloadSubtitle": "Download huidige ondertiteling",
+        "downloadVideo": "Download filmpje",
+        "hlsDisclaimer": "Downloads worden rechtstreeks van de aanbieder gehaald. film.kace.dev heeft geen controle over de manier waarop de downloads worden aangeboden.<br /><br />Houd er rekening mee dat u nu een HLS-afspeellijst downloadt, het wordt <bold>afgeraden deze te downloaden als u niet bekend bent met geavanceerde streamingbestandstypen</bold>. Probeer verschillende bronnen voor verschillende streamingbestandstypen.",
+        "onAndroid": {
+          "1": "Om te downloaden op Android, klik je op de downloadknop en vervolgens, op de nieuwe pagina, <bold>tap and hold</bold> op de video en selecteer <bold>save</bold>.",
+          "shortTitle": "Download / Android",
+          "title": "Downloaden op Android"
         },
-        "casting": {
-            "enabled": "Aan het casten..."
+        "onIos": {
+          "1": "Als je wilt downloaden op iOS, klik je op de downloadknop en vervolgens op de nieuwe pagina op <bold><ios_share /></bold> en vervolgens op <bold>Save to Files <ios_files /></bold>.",
+          "shortTitle": "Download / iOS",
+          "title": "Downloaden op iOS"
         },
-        "menus": {
-            "downloads": {
-                "copyHlsPlaylist": "HLS-afspeellijstlink kopiëren",
-                "disclaimer": "Downloads worden direct bij de bron opgehaald. film.kace.dev heeft geen controle over het bestand dat je ontvangt.",
-                "downloadSubtitle": "Download huidige ondertiteling",
-                "downloadVideo": "Download filmpje",
-                "hlsDisclaimer": "Downloads worden rechtstreeks van de aanbieder gehaald. film.kace.dev heeft geen controle over de manier waarop de downloads worden aangeboden.<br /><br />Houd er rekening mee dat u nu een HLS-afspeellijst downloadt, het wordt <bold>afgeraden deze te downloaden als u niet bekend bent met geavanceerde streamingbestandstypen</bold>. Probeer verschillende bronnen voor verschillende streamingbestandstypen.",
-                "onAndroid": {
-                    "1": "Om te downloaden op Android, klik je op de downloadknop en vervolgens, op de nieuwe pagina, <bold>tap and hold</bold> op de video en selecteer <bold>save</bold>.",
-                    "shortTitle": "Download / Android",
-                    "title": "Downloaden op Android"
-                },
-                "onIos": {
-                    "1": "Als je wilt downloaden op iOS, klik je op de downloadknop en vervolgens op de nieuwe pagina op <bold><ios_share /></bold> en vervolgens op <bold>Save to Files <ios_files /></bold>.",
-                    "shortTitle": "Download / iOS",
-                    "title": "Downloaden op iOS"
-                },
-                "onPc": {
-                    "1": "Klik op de downloadknop op de pc en klik op de nieuwe pagina met de rechtermuisknop op de video en selecteer <bold>Video opslaan als</bold>",
-                    "shortTitle": "Download / PC",
-                    "title": "Downloaden op PC"
-                },
-                "title": "Download"
-            },
-            "episodes": {
-                "button": "Afleveringen",
-                "emptyState": "Er zijn in dit seizoen geen afleveringen, kijk over een paar jaar nog eens!",
-                "episodeBadge": "A{{episode}}",
-                "loadingError": "Er ging iets mis bij het laden van dit seizoen",
-                "loadingList": "Aan het laden...",
-                "loadingTitle": "Aan het zoeken...",
-                "unairedEpisodes": "Een of meer afleveringen van dit seizoen zijn uitgeschakeld omdat ze nog niet zijn uitgezonden."
-            },
-            "playback": {
-                "speedLabel": "Afspeelsnelheid",
-                "title": "Afspeel instellingen"
-            },
-            "quality": {
-                "automaticLabel": "Automatische kwaliteit",
-                "hint": "Je kunt <0>bron omschakelen</0> proberen om verschillende kwaliteitsopties te krijgen.",
-                "iosNoQuality": "Vanwege door Apple gedefinieerde beperkingen is kwaliteitsselectie niet beschikbaar op iOS voor deze bron. U kunt <0>omschakelen naar een andere bron</0> proberen om andere kwaliteitsopties te krijgen.",
-                "title": "Kwaliteit"
-            },
-            "settings": {
-                "audioItem": "Audio",
-                "downloadItem": "Download",
-                "enableSubtitles": "Ondertitels inschakelen",
-                "experienceSection": "Kijk-ervaring",
-                "playbackItem": "Afspeel instellingen",
-                "qualityItem": "Kwaliteit",
-                "sourceItem": "Video-bron",
-                "subtitleItem": "Instellingen ondertiteling",
-                "videoSection": "Video instellingen"
-            },
-            "sources": {
-                "failed": {
-                    "text": "Er ging iets mis bij het zoeken naar videos, probeer een andere bron.",
-                    "title": "Het is niet gelukt dit op te halen"
-                },
-                "noEmbeds": {
-                    "text": "We konden geen embeds vinden, probeer een andere bron.",
-                    "title": "Geen embeds gevonden"
-                },
-                "noStream": {
-                    "text": "Deze bron heeft geen links voor deze film of serie.",
-                    "title": "Geen bron"
-                },
-                "title": "Bronnen",
-                "unknownOption": "Onbekend"
-            },
-            "subtitles": {
-                "customChoice": "Sleep of upload bestand",
-                "customizeLabel": "Aanpassen",
-                "dropSubtitleFile": "Sleep ondertitelbestand naar hier",
-                "offChoice": "Uit",
-                "settings": {
-                    "backlink": "Aangepaste ondertiteling",
-                    "delay": "Ondertiteling vertraging",
-                    "fixCapitals": "Hoofdlettergebruik corrigeren"
-                },
-                "title": "Ondertiteling",
-                "unknownLanguage": "Onbekend"
-            }
+        "onPc": {
+          "1": "Klik op de downloadknop op de pc en klik op de nieuwe pagina met de rechtermuisknop op de video en selecteer <bold>Video opslaan als</bold>",
+          "shortTitle": "Download / PC",
+          "title": "Downloaden op PC"
         },
-        "metadata": {
-            "api": {
-                "text": "Kan API-metagegevens niet laden. Controleer uw internetverbinding.",
-                "title": "Kan API-metagegevens niet laden"
-            },
-            "dmca": {
-                "badge": "Weggehaald",
-                "text": "Deze media is niet langer beschikbaar vanwege een verwijderingsverzoek of auteursrechtenclaim.",
-                "title": "Media is weggehaald"
-            },
-            "extensionPermission": {
-                "badge": "Toestemming ontbreekt",
-                "button": "Gebruik de extensie",
-                "text": "Je hebt de browserextensie, maar we hebben jouw toestemming nodig om gebruik te maken van de extensie.",
-                "title": "Configureer de extensie"
-            },
-            "failed": {
-                "badge": "Mislukt",
-                "homeButton": "Ga naar de home-pagina",
-                "text": "We konden geen informatie over deze media ophalen bij TMDB. Kijk even na of TMDB te bereiken is op dit netwerk.",
-                "title": "Metadata ophalen mislukt"
-            },
-            "notFound": {
-                "badge": "Pagina niet gevonden",
-                "homeButton": "Naar de home-pagina",
-                "text": "We konden dit stukje media niet vinden. Het is mogelijk verwijderd, of jij hebt zelf de URL aangepast.",
-                "title": "We konden deze media niet vinden."
-            }
+        "title": "Download"
+      },
+      "episodes": {
+        "button": "Afleveringen",
+        "emptyState": "Er zijn in dit seizoen geen afleveringen, kijk over een paar jaar nog eens!",
+        "episodeBadge": "A{{episode}}",
+        "loadingError": "Er ging iets mis bij het laden van dit seizoen",
+        "loadingList": "Aan het laden...",
+        "loadingTitle": "Aan het zoeken...",
+        "unairedEpisodes": "Een of meer afleveringen van dit seizoen zijn uitgeschakeld omdat ze nog niet zijn uitgezonden.",
+        "seasons": "Seizoenen"
+      },
+      "playback": {
+        "speedLabel": "Afspeelsnelheid",
+        "title": "Afspeel instellingen"
+      },
+      "quality": {
+        "automaticLabel": "Automatische kwaliteit",
+        "hint": "Je kunt <0>bron omschakelen</0> proberen om verschillende kwaliteitsopties te krijgen.",
+        "iosNoQuality": "Vanwege door Apple gedefinieerde beperkingen is kwaliteitsselectie niet beschikbaar op iOS voor deze bron. U kunt <0>omschakelen naar een andere bron</0> proberen om andere kwaliteitsopties te krijgen.",
+        "title": "Kwaliteit"
+      },
+      "settings": {
+        "audioItem": "Audio",
+        "downloadItem": "Download",
+        "enableSubtitles": "Ondertitels inschakelen",
+        "experienceSection": "Kijk-ervaring",
+        "playbackItem": "Afspeel instellingen",
+        "qualityItem": "Kwaliteit",
+        "sourceItem": "Video-bron",
+        "subtitleItem": "Instellingen ondertiteling",
+        "videoSection": "Video instellingen"
+      },
+      "sources": {
+        "failed": {
+          "text": "Er ging iets mis bij het zoeken naar videos, probeer een andere bron.",
+          "title": "Het is niet gelukt dit op te halen"
         },
-        "nextEpisode": {
-            "cancel": "Annuleren",
-            "next": "Volgende aflevering"
+        "noEmbeds": {
+          "text": "We konden geen embeds vinden, probeer een andere bron.",
+          "title": "Geen embeds gevonden"
         },
-        "playbackError": {
-            "badge": "Afspeelfout",
-            "errors": {
-                "errorAborted": "Het laden van de media is stopgezet omdat de gebruiker daar om vroeg.",
-                "errorDecode": "Ondanks het feit dat we eerder dachten dat deze bron beschikbaar, was dat toch niet zo en is er een decode error ontstaan.",
-                "errorGenericMedia": "Onbekende media foutmelding.",
-                "errorNetwork": "Er ging iets mis waardoor de media niet langer beschikbaar is, al was hij dat eerst wel.",
-                "errorNotSupported": "Deze media or media provider wordt niet ondersteund."
-            },
-            "homeButton": "Naar de home-pagina",
-            "text": "Er ging iets mis bij het afspelen. Probeer het nog eens.",
-            "title": "Oeps, hier ging iets mis!"
+        "noStream": {
+          "text": "Deze bron heeft geen links voor deze film of serie.",
+          "title": "Geen bron"
         },
-        "scraping": {
-            "extensionFailure": {
-                "badge": "Extensie uitgeschakeld",
-                "enableExtension": "Extensie inschakelen",
-                "homeButton": "Naar hoofdpagina",
-                "text": "Je hebt de film.kace.dev extensie geïnstalleerd. Om deze te gebruiken, moet je de extensie inschakelen voor deze site.",
-                "title": "Activeer alstublieft de extensie"
-            },
-            "items": {
-                "failure": "Daar ging iets mis",
-                "notFound": "Er is geen video gevonden",
-                "pending": "Naar videos aan het zoeken..."
-            },
-            "notFound": {
-                "badge": "Niet gevonden",
-                "detailsButton": "Meer informatie",
-                "homeButton": "Naar de home-pagina",
-                "text": "We hebben al onze providers lief aangekeken maar we hebben niets kunnen vinden. Wij beheersen de media niet, en bepalen dus niet wat er beschikbaar is. Klik op \"meer informatie over foutmelding\" voor meer informatie.",
-                "title": "Dat konden we niet vinden"
-            }
+        "title": "Bronnen",
+        "unknownOption": "Onbekend",
+        "editOrder": "Bewerk volgorde"
+      },
+      "subtitles": {
+        "customChoice": "Sleep of upload bestand",
+        "customizeLabel": "Aanpassen",
+        "dropSubtitleFile": "Sleep ondertitelbestand naar hier",
+        "offChoice": "Uit",
+        "settings": {
+          "backlink": "Aangepaste ondertiteling",
+          "delay": "Ondertiteling vertraging",
+          "fixCapitals": "Hoofdlettergebruik corrigeren"
         },
-        "time": {
-            "regular": "{{timeWatched}} / {{duration}}",
-            "remaining": "Nog {{timeLeft}} • Klaar om {{timeFinished, datetime}}",
-            "shortRegular": "{{timeWatched}}",
-            "shortRemaining": "-{{timeLeft}}"
-        },
-        "turnstile": {
-            "description": "Bevestig dat u een mens bent door de Captcha aan de rechterkant in te vullen. Dit is om film.kace.dev veilig te houden!",
-            "error": "Kan uw menselijkheid niet verifiëren. Probeer het opnieuw.",
-            "title": "We moeten verifiëren dat u een mens bent.",
-            "verifyingHumanity": "Je menselijkheid verifiëren..."
-        }
+        "title": "Ondertiteling",
+        "unknownLanguage": "Onbekend",
+        "onChoice": "Aan",
+        "OpenSubtitlesChoice": "OpenOndertitels",
+        "SourceChoice": "Bronondertitels",
+        "scrapeButton": "Onder titels ophalen",
+        "empty": "Er zijn geen ondertitels beschikbaar voor dit.",
+        "notFound": "Geen van de beschikbare opties komt overeen met je zoekopdracht"
+      }
     },
-    "screens": {
-        "dmca": {
-            "text": "Welkom op de DMCA-contactpagina van film.kace.dev! Wij respecteren intellectuele eigendomsrechten en willen eventuele problemen met auteursrechten snel aanpakken. Als u van mening bent dat uw auteursrechtelijk beschermde werk onjuist is gebruikt op ons platform, stuur dan een gedetailleerde DMCA-kennisgeving naar het onderstaande e-mailadres. Vermeld een beschrijving van het auteursrechtelijk beschermde materiaal, uw contactgegevens en een verklaring dat u te goeder trouw bent. Wij zetten ons in om deze zaken snel op te lossen en waarderen uw medewerking om film.kace.dev een plek te houden waar creativiteit en auteursrechten worden gerespecteerd.",
-            "title": "DMCA"
+    "metadata": {
+      "api": {
+        "text": "Kan API-metagegevens niet laden. Controleer uw internetverbinding.",
+        "title": "Kan API-metagegevens niet laden"
+      },
+      "legal": {
+        "badge": "Weggehaald",
+        "text": "Deze media is niet langer beschikbaar vanwege een verwijderingsverzoek of auteursrechtenclaim.",
+        "title": "Media is weggehaald"
+      },
+      "extensionPermission": {
+        "badge": "Toestemming ontbreekt",
+        "button": "Gebruik de extensie",
+        "text": "Je hebt de browserextensie, maar we hebben jouw toestemming nodig om gebruik te maken van de extensie.",
+        "title": "Configureer de extensie"
+      },
+      "failed": {
+        "badge": "Mislukt",
+        "homeButton": "Ga naar de home-pagina",
+        "text": "We konden geen informatie over deze media ophalen bij TMDB. Kijk even na of TMDB te bereiken is op dit netwerk.",
+        "title": "Metadata ophalen mislukt"
+      },
+      "notFound": {
+        "badge": "Pagina niet gevonden",
+        "homeButton": "Naar de home-pagina",
+        "text": "We konden dit stukje media niet vinden. Het is mogelijk verwijderd, of jij hebt zelf de URL aangepast.",
+        "title": "We konden deze media niet vinden."
+      }
+    },
+    "nextEpisode": {
+      "next": "Volgende aflevering",
+      "replay": "Opnieuw afspelen",
+      "nextSeason": "Volgend seizoen"
+    },
+    "playbackError": {
+      "badge": "Afspeelfout",
+      "errors": {
+        "errorAborted": "Het laden van de media is stopgezet omdat de gebruiker daar om vroeg.",
+        "errorDecode": "Ondanks het feit dat we eerder dachten dat deze bron beschikbaar, was dat toch niet zo en is er een decode error ontstaan.",
+        "errorGenericMedia": "Onbekende media foutmelding.",
+        "errorNetwork": "Er ging iets mis waardoor de media niet langer beschikbaar is, al was hij dat eerst wel.",
+        "errorNotSupported": "Deze media or media provider wordt niet ondersteund."
+      },
+      "homeButton": "Naar de home-pagina",
+      "text": "Er ging iets mis bij het afspelen. Probeer het nog eens.",
+      "title": "Oeps, hier ging iets mis!"
+    },
+    "scraping": {
+      "extensionFailure": {
+        "badge": "Extensie uitgeschakeld",
+        "enableExtension": "Extensie inschakelen",
+        "homeButton": "Naar hoofdpagina",
+        "text": "Je hebt de film.kace.dev extensie geïnstalleerd. Om deze te gebruiken, moet je de extensie inschakelen voor deze site.",
+        "title": "Activeer alstublieft de extensie"
+      },
+      "items": {
+        "failure": "Daar ging iets mis",
+        "notFound": "Er is geen video gevonden",
+        "pending": "Naar videos aan het zoeken..."
+      },
+      "notFound": {
+        "badge": "Niet gevonden",
+        "detailsButton": "Meer informatie",
+        "homeButton": "Naar de home-pagina",
+        "text": "We hebben al onze providers lief aangekeken maar we hebben niets kunnen vinden. Wij beheersen de media niet, en bepalen dus niet wat er beschikbaar is. Klik op \"meer informatie over foutmelding\" voor meer informatie.",
+        "title": "Dat konden we niet vinden",
+        "discoverButton": "Ontdek meer"
+      }
+    },
+    "time": {
+      "regular": "{{timeWatched}} / {{duration}}",
+      "remaining": "Nog {{timeLeft}} • Klaar om {{timeFinished, datetime}}",
+      "shortRegular": "{{timeWatched}}",
+      "shortRemaining": "-{{timeLeft}}"
+    },
+    "turnstile": {
+      "description": "Bevestig dat u een mens bent door de Captcha aan de rechterkant in te vullen. Dit is om film.kace.dev veilig te houden!",
+      "error": "Kan uw menselijkheid niet verifiëren. Probeer het opnieuw.",
+      "title": "We moeten verifiëren dat u een mens bent.",
+      "verifyingHumanity": "Je menselijkheid verifiëren..."
+    }
+  },
+  "screens": {
+    "legal": {
+      "title": "Legal / DMCA"
+    },
+    "loadingApp": "Toepassing laden",
+    "loadingUser": "Je profiel laden",
+    "loadingUserError": {
+      "logout": "Uitloggen",
+      "reset": "Aangepaste server resetten",
+      "text": "Het laden van uw profiel is mislukt",
+      "textWithReset": "Is het laden van je profiel van je aangepaste server mislukt en wil je terug naar de standaardserver?",
+      "reload": "Opnieuw laden"
+    },
+    "migration": {
+      "failed": "Het migreren van uw gegevens is mislukt.",
+      "inProgress": "Even geduld, we zijn je gegevens aan het migreren. Dit zal niet lang duren."
+    }
+  },
+  "settings": {
+    "account": {
+      "accountDetails": {
+        "deviceNameLabel": "Apparaatnaam",
+        "deviceNamePlaceholder": "Persoonlijke telefoon",
+        "editProfile": "Bewerken",
+        "logoutButton": "Uitloggen"
+      },
+      "actions": {
+        "delete": {
+          "button": "Account verwijderen",
+          "confirmButton": "Account verwijderen",
+          "confirmDescription": "Weet je zeker dat je je account wilt verwijderen? Al je gegevens zullen verloren gaan!",
+          "confirmTitle": "Weet je het zeker?",
+          "text": "Deze actie is onomkeerbaar. Alle gegevens worden verwijderd en er kan niets worden hersteld.",
+          "title": "Account verwijderen"
         },
-        "loadingApp": "Toepassing laden",
-        "loadingUser": "Je profiel laden",
-        "loadingUserError": {
-            "logout": "Uitloggen",
-            "reset": "Aangepaste server resetten",
-            "text": "Het laden van uw profiel is mislukt",
-            "textWithReset": "Is het laden van je profiel van je aangepaste server mislukt en wil je terug naar de standaardserver?"
+        "title": "Acties",
+        "logoutAllDevices": {
+          "title": "Eindig alle sessies",
+          "text": "Dit zal je afmelden van alle apparaten die gekoppeld zijn aan je account.",
+          "button": "Log uit van alle apparaten"
         },
         "migration": {
-            "failed": "Het migreren van uw gegevens is mislukt.",
-            "inProgress": "Even geduld, we zijn je gegevens aan het migreren. Dit zal niet lang duren."
+          "text": "Zet je account over naar een nieuwe server of download je gegevens.",
+          "title": "Accountmigratie",
+          "button": "Account overzetten"
         }
+      },
+      "devices": {
+        "deviceNameLabel": "Apparaatnaam",
+        "failed": "Sessies niet geladen",
+        "removeDevice": "Verwijder",
+        "title": "Apparaten"
+      },
+      "profile": {
+        "finish": "Bewerken voltooien",
+        "firstColor": "Profielkleur 1",
+        "secondColor": "Profielkleur 2",
+        "title": "Profielfoto bewerken",
+        "userIcon": "Gebruikerspictogram"
+      },
+      "register": {
+        "cta": "Aan de slag",
+        "text": "Deel uw kijkvoortgang tussen apparaten en houd ze gesynchroniseerd.",
+        "title": "Synchroniseren met de Cloud"
+      },
+      "title": "Account",
+      "admin": {
+        "title": "Beheerderspaneel",
+        "text": "Gebruik de tools om de status van P‑Stream te testen.",
+        "button": "Bekijk het"
+      }
     },
-    "settings": {
-        "account": {
-            "accountDetails": {
-                "deviceNameLabel": "Apparaatnaam",
-                "deviceNamePlaceholder": "Persoonlijke telefoon",
-                "editProfile": "Bewerken",
-                "logoutButton": "Uitloggen"
-            },
-            "actions": {
-                "delete": {
-                    "button": "Account verwijderen",
-                    "confirmButton": "Account verwijderen",
-                    "confirmDescription": "Weet je zeker dat je je account wilt verwijderen? Al je gegevens zullen verloren gaan!",
-                    "confirmTitle": "Weet je het zeker?",
-                    "text": "Deze actie is onomkeerbaar. Alle gegevens worden verwijderd en er kan niets worden hersteld.",
-                    "title": "Account verwijderen"
-                },
-                "title": "Acties"
-            },
-            "devices": {
-                "deviceNameLabel": "Apparaatnaam",
-                "failed": "Sessies niet geladen",
-                "removeDevice": "Verwijder",
-                "title": "Apparaten"
-            },
-            "profile": {
-                "finish": "Bewerken voltooien",
-                "firstColor": "Profielkleur 1",
-                "secondColor": "Profielkleur 2",
-                "title": "Profielfoto bewerken",
-                "userIcon": "Gebruikerspictogram"
-            },
-            "register": {
-                "cta": "Aan de slag",
-                "text": "Deel uw kijkvoortgang tussen apparaten en houd ze gesynchroniseerd.",
-                "title": "Synchroniseren met de cloud"
-            },
-            "title": "Account"
+    "appearance": {
+      "activeTheme": "Actief",
+      "themes": {
+        "blue": "Blauw",
+        "default": "Standaard",
+        "gray": "Grijs",
+        "red": "Rood",
+        "teal": "Groenblauw",
+        "classic": "Klassiek",
+        "green": "Groen",
+        "mocha": "Mokka",
+        "pink": "Roze"
+      },
+      "title": "Uiterlijk",
+      "options": {
+        "discoverDescription": "Toon de Ontdek sectie op de startpagina onder je gebookmarkte media. Standaard ingeschakeld.",
+        "discover": "Ontdek sectie",
+        "discoverLabel": "Ontdek sectie",
+        "modal": "Details pop-up",
+        "modalDescription": "Toon de details pop-up wanneer je op een media kaart klikt in plaats van naar de kijkpagina te gaan. Proxy of extensie vereist voor trailer. Standaard uitgeschakeld.",
+        "modalLabel": "Details pop-up"
+      }
+    },
+    "connections": {
+      "server": {
+        "description": "Als je verbinding wilt maken met een eigen backend om je gegevens op te slaan, schakel dan deze optie in en geef de URL op. <0>Instructies.</0>",
+        "label": "Eigen server",
+        "urlLabel": "Eigen server URL",
+        "migration": {
+          "link": "Migreer mijn gegevens",
+          "description": "<0>Migreer mijn gegevens</0> naar een nieuwe server."
+        }
+      },
+      "setup": {
+        "doSetup": "Instellen",
+        "errorStatus": {
+          "description": "Het lijkt erop dat één of meer items in deze configuratie jouw aandacht nodig hebben.",
+          "title": "Iets vereist jouw aandacht"
         },
-        "appearance": {
-            "activeTheme": "Actief",
-            "themes": {
-                "blue": "Blauw",
-                "default": "Standaard",
-                "gray": "Grijs",
-                "red": "Rood",
-                "teal": "Groenblauw"
-            },
-            "title": "Uiterlijk"
+        "itemError": "Er is iets mis met deze instelling. Klik op opnieuw instellen om op te lossen.",
+        "items": {
+          "default": "Standaard installatie",
+          "extension": "Extensie",
+          "proxy": "Eigen proxy"
         },
-        "connections": {
-            "server": {
-                "description": "Als je verbinding wilt maken met een eigen backend om je gegevens op te slaan, schakel dan deze optie in en geef de URL op. <0>Instructies.</0>",
-                "label": "Eigen server",
-                "urlLabel": "Eigen server URL"
-            },
-            "setup": {
-                "doSetup": "Instellen",
-                "errorStatus": {
-                    "description": "Het lijkt erop dat één of meer items in deze configuratie jouw aandacht nodig hebben.",
-                    "title": "Iets vereist jouw aandacht"
-                },
-                "itemError": "Er is iets mis met deze instelling. Klik op opnieuw instellen om op te lossen.",
-                "items": {
-                    "default": "Standaard installatie",
-                    "extension": "Extensie",
-                    "proxy": "Eigen proxy"
-                },
-                "redoSetup": "Opnieuw instellen",
-                "successStatus": {
-                    "description": "In alles is ingesteld, je kunt nu je favoriete media bekijken.",
-                    "title": "Alles is ingesteld!"
-                },
-                "unsetStatus": {
-                    "description": "Klik op de knop aan de rechterkant om het installatieproces te starten.",
-                    "title": "Je hebt de installatieprocedure nog niet doorlopen"
-                }
-            },
-            "title": "Verbindingen",
-            "workers": {
-                "addButton": "Nieuwe worker toevoegen",
-                "description": "Om de applicatie te laten werken, wordt al het verkeer omgeleid via proxies. Schakel dit in als je je eigen workers wilt gebruiken. <0>Instructies.</0>",
-                "emptyState": "Nog geen workers, voeg er hieronder een toe",
-                "label": "Eigen proxy werker gebruiken",
-                "urlLabel": "Worker URLs",
-                "urlPlaceholder": "https://"
-            }
+        "redoSetup": "Opnieuw instellen",
+        "successStatus": {
+          "description": "In alles is ingesteld, je kunt nu je favoriete media bekijken.",
+          "title": "Alles is ingesteld!"
         },
-        "preferences": {
-            "language": "Applicatietaal",
-            "languageDescription": "Taal toegepast op de gehele applicatie.",
-            "thumbnail": "Genereer miniaturen",
-            "thumbnailDescription": "Meestal hebben video's geen miniaturen. Je kunt deze instelling inschakelen om ze dynamisch te genereren, maar dit kan je video vertragen.",
-            "thumbnailLabel": "Genereer miniaturen",
-            "title": "Voorkeuren"
+        "unsetStatus": {
+          "description": "Klik op de knop aan de rechterkant om het installatieproces te starten.",
+          "title": "Je hebt de installatieprocedure nog niet doorlopen"
+        }
+      },
+      "title": "Verbindingen",
+      "workers": {
+        "addButton": "Nieuwe worker toevoegen",
+        "description": "Om de applicatie te laten werken, wordt al het verkeer omgeleid via proxies. Schakel dit in als je je eigen workers wilt gebruiken. <0>Instructies.</0>",
+        "emptyState": "Nog geen workers, voeg er hieronder een toe",
+        "label": "Eigen proxy werker gebruiken",
+        "urlLabel": "Worker URLs",
+        "urlPlaceholder": "https://"
+      }
+    },
+    "preferences": {
+      "language": "Applicatietaal",
+      "languageDescription": "Taal toegepast op de gehele applicatie.",
+      "thumbnail": "Genereer miniaturen",
+      "thumbnailDescription": "Meestal hebben video's geen miniaturen. Je kunt deze instelling inschakelen om ze dynamisch te genereren, maar dit kan je video vertragen.",
+      "thumbnailLabel": "Genereer miniaturen",
+      "title": "Voorkeuren",
+      "autoplay": "Automatisch afspelen",
+      "skipCreditsDescription": "Wanneer ingeschakeld, wordt automatisch de volgende aflevering afgespeeld bij 99% voltooiing om de eindcredits over te slaan. Wanneer uitgeschakeld, wacht je totdat de aflevering volledig af is.",
+      "sourceOrderDescription": "Sleep om de volgorde van de bronnen te herordenen. Dit bepaalt de volgorde waarin de bronnen worden gecontroleerd voor de media die je probeert te bekijken. Als een bron grijs is, betekent dit dat de <bold>extensie</bold> vereist is voor die bron. <br><br> <strong>(De standaardvolgorde is het beste voor de meeste gebruikers)</strong>",
+      "autoplayDescription": "Speel automatisch de volgende aflevering in een serie af nadat het einde is bereikt. Kan ingeschakeld worden door gebruikers met de browserextensie, een eigen proxy, of met de standaardinstellingen als dit toegestaan is door de host.",
+      "autoplayLabel": "Automatisch afspelen",
+      "skipCredits": "Sla eindcredits over",
+      "skipCreditsLabel": "Sla eindcredits over",
+      "sourceOrder": "Volgorde van bronnen",
+      "sourceOrderEnableLabel": "Aangepaste bronvolgorde"
+    },
+    "reset": "Resetten",
+    "save": "Wijzigingen opslaan",
+    "sidebar": {
+      "info": {
+        "appVersion": "App versie",
+        "backendUrl": "Backend URL",
+        "backendVersion": "Backend versie",
+        "hostname": "hostnaam",
+        "insecure": "Onveilig",
+        "notLoggedIn": "U bent niet ingelogd",
+        "secure": "Veilig",
+        "title": "App informatie",
+        "unknownVersion": "Onbekend",
+        "userId": "Gebruiker ID"
+      }
+    },
+    "subtitles": {
+      "backgroundBlurLabel": "Achtergrondvervaging",
+      "backgroundLabel": "Achtergrond dekking",
+      "colorLabel": "Kleur",
+      "previewQuote": "Ik mag niet bang zijn. Angst doodt de geest.",
+      "textSizeLabel": "Tekengrootte",
+      "title": "Ondertiteling",
+      "textBoldLabel": "Vetgedrukte tekst"
+    },
+    "unsaved": "U heeft niet-opgeslagen wijzigingen"
+  },
+  "migration": {
+    "loginRequired": "U moet ingelogd zijn om uw data te migreren! Ga terug en log in om verder te gaan.",
+    "start": {
+      "title": "Migreer uw gegevens",
+      "explainer": "Als je je gegevens wilt migreren of back-uppen, kun je dat doen met de onderstaande opties. Zo kunt u uw gegevens behouden wanneer u van backendserver wisselt.",
+      "options": {
+        "direct": {
+          "description": "Hiermee worden je gegevens direct naar de nieuwe server gemigreerd. Dit is de snelste optie.  <br /><br />Met deze optie kun je je wachtwoordzin hetzelfde houden!",
+          "action": "Gegevens overdragen",
+          "title": "Rechtstreekse migratie",
+          "quality": "Gemakkelijkst en het snelst"
         },
-        "reset": "Resetten",
-        "save": "Wijzigingen opslaan",
-        "sidebar": {
-            "info": {
-                "appVersion": "App versie",
-                "backendUrl": "Backend URL",
-                "backendVersion": "Backend versie",
-                "hostname": "hostnaam",
-                "insecure": "Onveilig",
-                "notLoggedIn": "U bent niet ingelogd",
-                "secure": "Veilig",
-                "title": "App informatie",
-                "unknownVersion": "Onbekend",
-                "userId": "Gebruiker ID"
-            }
+        "or": "Of",
+        "download": {
+          "description": "Hierdoor worden je gegevens gedownload naar je apparaat. Je kunt ze dan uploaden naar de nieuwe server of ze gewoon bewaren.",
+          "title": "Download gegevens",
+          "quality": "Meer technisch",
+          "action": "Download data"
         },
-        "subtitles": {
-            "backgroundBlurLabel": "Achtergrondvervaging",
-            "backgroundLabel": "Achtergrond dekking",
-            "colorLabel": "Kleur",
-            "previewQuote": "Ik mag niet bang zijn. Angst doodt de geest.",
-            "textSizeLabel": "Tekengrootte",
-            "title": "Ondertiteling"
-        },
-        "unsaved": "U heeft niet-opgeslagen wijzigingen"
+        "upload": {
+          "title": "Upload data",
+          "description": "Upload uw eerder geëxporteerde gegevensbestand om uw bladwijzers en voortgang op dit account te herstellen.",
+          "quality": "Herstellen vanaf back-up",
+          "action": "Upload Data"
+        }
+      }
+    },
+    "upload": {
+      "exportedOn": "Geëxporteerd op",
+      "button": {
+        "processing": "Bezig met verwerken...",
+        "home": "Ga naar start",
+        "import": "Gegevens importeren",
+        "success": "Importeren voltooid"
+      },
+      "items": {
+        "progress": "Kijkvoortgang",
+        "bookmarks": "Media met bladwijzers"
+      },
+      "file": {
+        "name": "Bestandsnaam",
+        "description": "Selecteer het bestand dat je wilt uploaden",
+        "select": "Selecteer bestand",
+        "change": "Wijzig bestand"
+      },
+      "dataPreview": "Voorbeeld:",
+      "title": "Upload gegevens",
+      "description": "Upload je eerder geëxporteerde gegevensbestand om je bladwijzers en voortgang op dit account te herstellen.",
+      "status": {
+        "processing": "Gegevens worden verwerkt...",
+        "error": "Het is niet gelukt om je gegevens te uploaden. 😿",
+        "success": "Je gegevens zijn succesvol geüpload! 🎉"
+      }
+    },
+    "direct": {
+      "description": "Voer de bestemmingsbackend URL in om je huidige accountgegevens naar een nieuwe backend te migreren. Je wachtwoordzin blijft hetzelfde!",
+      "title": "Rechtstreekse migratie",
+      "backendLabel": "Bestemmingsbackend URL",
+      "recaptchaLabel": "ReCaptcha Sleutel (Optioneel)",
+      "toggleLable": "ReCaptcha nodig?",
+      "status": {
+        "error": "Migratie van je gegevens is mislukt. 😿",
+        "success": "Je gegevens zijn succesvol gemigreerd! 🎉"
+      },
+      "button": {
+        "migrate": "Migreren",
+        "processing": "Bezig met verwerken...",
+        "login": "Ga verder naar inloggen",
+        "home": "Ga naar startpagina"
+      }
+    },
+    "download": {
+      "title": "Gegevens downloaden",
+      "description": "Hiermee download je jouw gegevens naar je apparaat. Je kunt deze daarna uploaden naar de nieuwe server of bewaren voor later gebruik.",
+      "items": {
+        "description": "Download bevat:",
+        "bookmarks": "Media met bladwijzer",
+        "progress": "Voortgang volgen"
+      },
+      "status": {
+        "error": "Het downloaden van je gegevens is mislukt. 😿",
+        "success": "Je gegevens zijn succesvol gedownload! 🎉"
+      },
+      "button": {
+        "download": "Gegevens downloaden",
+        "home": "Ga naar startpagina",
+        "login": "Ga door naar inloggen"
+      }
+    },
+    "back": "Ga terug"
+  },
+  "downtimeNotice": {
+    "badge": "Problemen",
+    "message": "film.kace.dev ondervindt opnieuw problemen met sommige providers. Als je een show niet kunt vinden of afspelen, probeer dan de bron te wijzigen. Verwacht dat deze fout zich zal blijven voordoen gedurende de onderstaande tijden.",
+    "goHome": "Ga naar startpagina",
+    "title": "Providerproblemen"
+  },
+  "support": {
+    "text": "film.kace.dev is ontworpen om zo gebruiksvriendelijk mogelijk te zijn. Mensen hebben echter nog steeds vragen en problemen. Deze pagina is hier om deze tekortkomingen op te lossen",
+    "title": "Ondersteuning",
+    "q2": {
+      "body": "We hebben een <0>GitHub</0> waar je een gedetailleerd issue in onze repository kunt aanmaken. Daarnaast kun je, als je dat wilt, een pull request indienen om het probleem zelf op te lossen.",
+      "title": "Hoe kan ik een bug of probleem melden?"
+    },
+    "q1": {
+      "body": "Je kunt lid worden van de officiële <0>P‑Stream Discord</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
+      "title": "Waar kan ik hulp krijgen?"
     }
+  },
+  "discover": {
+    "randomMovie": {
+      "button": "Kijk iets willekeurigs",
+      "cancel": "Annuleer aftelling",
+      "countdown": "{{countdown}}s",
+      "nowPlaying": "Nu aan het afspelen",
+      "in": "in"
+    },
+    "tabs": {
+      "movies": "Films",
+      "tvshows": "Televisieshows",
+      "editorpicks": "Aanbevolen door ons"
+    },
+    "carousel": {
+      "title": {
+        "movies": "{{category}} Films",
+        "tvshows": "{{category}} Shows",
+        "inCinemas": "In de bioscoop",
+        "popularOn": "Populair {{type}} op {{provider}}"
+      }
+    },
+    "page": {
+      "title": "Ontdek Films & TV",
+      "subtitle": "Ontdek de nieuwste hits en tijdloze klassiekers."
+    },
+    "scrollToTop": "Terug naar boven"
+  },
+  "jip": {
+    "q2": {
+      "body": "We hebben een <0>GitHub</0> waar je een gedetailleerd issue in onze repository kunt aanmaken. Daarnaast kun je, als je dat wilt, een pull request indienen om het probleem zelf op te lossen.",
+      "title": "Hoe kan ik een bug of probleem melden?"
+    },
+    "text": "P‑Stream is niet zomaar uit een kokosnootboom gevallen, het is grotendeels door één persoon gemaakt (en niet zomaar één, maar een zeer epische).",
+    "q1": {
+      "body": "Je kunt lid worden van de officiële <0>P‑Stream Discord</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
+      "title": "Waar kan ik hulp krijgen?"
+    },
+    "title": "Over de maker"
+  }
 }

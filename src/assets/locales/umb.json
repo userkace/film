@@ -1,0 +1,18 @@
+{
+  "global": {
+    "name": "film.kace.dev",
+    "pages": {
+      "about": "About and FAQ",
+      "legal": "Legal / DMCA",
+      "discover": "Discover",
+      "support": "Support",
+      "login": "Login",
+      "onboarding": "Setup",
+      "pagetitle": "{{title}} - film.kace.dev",
+      "register": "Register",
+      "settings": "Settings",
+      "migration": "Migrate Account",
+      "jip": "Jip"
+    }
+  }
+}

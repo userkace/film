@@ -1,14 +1,20 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
 import IosPwaLimitations from "@/components/buttons/IosPwaLimitations";
 import { BrandPill } from "@/components/layout/BrandPill";
 import { Player } from "@/components/player";
+import { SkipIntroButton } from "@/components/player/atoms/SkipIntroButton";
+import { UnreleasedEpisodeOverlay } from "@/components/player/atoms/UnreleasedEpisodeOverlay";
+import { WatchPartyStatus } from "@/components/player/atoms/WatchPartyStatus";
 import { Widescreen } from "@/components/player/atoms/Widescreen";
 import { useShouldShowControls } from "@/components/player/hooks/useShouldShowControls";
+import { useSkipTime } from "@/components/player/hooks/useSkipTime";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import usePremiumStore from "@/stores/player/premiumSite";
 import { PlayerMeta, playerStatus } from "@/stores/player/slices/source";
 import { usePlayerStore } from "@/stores/player/store";
+import { useWatchPartyStore } from "@/stores/watchParty";
+
+import { ScrapingPartInterruptButton, Tips } from "./ScrapingPart";
 
 export interface PlayerPartProps {
   children?: ReactNode;
@@ -18,24 +24,21 @@ export interface PlayerPartProps {
 }
 
 export function PlayerPart(props: PlayerPartProps) {
-  const [isInIframe, setIsInIframe] = useState(false);
   const { showTargets, showTouchTargets } = useShouldShowControls();
   const status = usePlayerStore((s) => s.status);
   const { isMobile } = useIsMobile();
   const isLoading = usePlayerStore((s) => s.mediaPlaying.isLoading);
-  const { isPremiumSite, isReferrerChecked } = usePremiumStore();
+  const { isHost, enabled } = useWatchPartyStore();
 
-  useEffect(() => {
-    setIsInIframe(window.parent !== window);
-  }, []);
+  const inControl = !enabled || isHost;
 
-  // Detect if running as a PWA on iOS
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
   const isIOSPWA =
-    /iPad|iPhone|iPod/i.test(navigator.userAgent) &&
-    window.matchMedia("(display-mode: standalone)").matches;
+    isIOS && window.matchMedia("(display-mode: standalone)").matches;
 
-  // Detect if Shift key is being held
   const [isShifting, setIsShifting] = useState(false);
+  const [isHoldingFullscreen, setIsHoldingFullscreen] = useState(false);
+  const holdTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Shift") {
@@ -48,6 +51,26 @@ export function PlayerPart(props: PlayerPartProps) {
       setIsShifting(false);
     }
   });
+
+  const handleTouchStart = () => {
+    if (holdTimeoutRef.current) {
+      clearTimeout(holdTimeoutRef.current);
+    }
+    holdTimeoutRef.current = setTimeout(() => {
+      setIsHoldingFullscreen(true);
+    }, 100);
+  };
+
+  const handleTouchEnd = () => {
+    if (holdTimeoutRef.current) {
+      clearTimeout(holdTimeoutRef.current);
+    }
+    holdTimeoutRef.current = setTimeout(() => {
+      setIsHoldingFullscreen(false);
+    }, 1000);
+  };
+
+  const skiptime = useSkipTime();
 
   return (
     <Player.Container onLoad={props.onLoad} showingControls={showTargets}>
@@ -75,47 +98,38 @@ export function PlayerPart(props: PlayerPartProps) {
         className="text-white"
         show={showTouchTargets && status === playerStatus.PLAYING}
       >
-        <Player.SkipBackward iconSizeClass="text-3xl" />
+        <Player.SkipBackward iconSizeClass="text-3xl" inControl={inControl} />
         <Player.Pause
           iconSizeClass="text-5xl"
           className={isLoading ? "opacity-0" : "opacity-100"}
         />
-        <Player.SkipForward iconSizeClass="text-3xl" />
+        <Player.SkipForward iconSizeClass="text-3xl" inControl={inControl} />
       </Player.CenterMobileControls>
+
+      <div
+        className={`absolute right-4 z-50 transition-all duration-300 ease-in-out ${
+          showTargets ? "top-16" : "top-1"
+        }`}
+      >
+        <WatchPartyStatus />
+      </div>
 
       <Player.TopControls show={showTargets}>
         <div className="grid grid-cols-[1fr,auto] xl:grid-cols-3 items-center">
           <div className="flex space-x-3 items-center">
-            {/* Conditional rendering based on isInIframe state */}
-            {!isInIframe && (
-              <>
-                <Player.BackLink url={props.backUrl} />
-                <span className="text mx-3 text-type-secondary">/</span>
-              </>
-            )}
+            <Player.BackLink url={props.backUrl} />
+            <span className="text mx-3 text-type-secondary">/</span>
             <Player.Title />
-            {!isInIframe && <Player.BookmarkButton />}
+
+            <Player.InfoButton />
+
+            <Player.BookmarkButton />
           </div>
           <div className="text-center hidden xl:flex justify-center items-center">
             <Player.EpisodeTitle />
           </div>
           <div className="hidden sm:flex items-center justify-end">
-            <div className="hidden sm:flex items-center justify-end">
-              {isReferrerChecked && !isPremiumSite ? (
-                isInIframe ? (
-                  <div
-                    onClick={() =>
-                      window.open("https://www.vidbinge.com", "_blank")
-                    }
-                    style={{ cursor: "pointer" }} // Make the cursor a pointer if in iframe
-                  >
-                    <BrandPill clickable />
-                  </div>
-                ) : (
-                  <BrandPill />
-                )
-              ) : null}
-            </div>
+            <BrandPill />
           </div>
           <div className="flex sm:hidden items-center justify-end">
             {status === playerStatus.PLAYING ? (
@@ -129,7 +143,11 @@ export function PlayerPart(props: PlayerPartProps) {
       </Player.TopControls>
 
       <Player.BottomControls show={showTargets}>
-        <div className="flex items-center space-x-3">
+        {status === playerStatus.PLAYING ? null : <Tips />}
+        <div className="flex items-center justify-center space-x-3 h-full">
+          {status === playerStatus.SCRAPING ? (
+            <ScrapingPartInterruptButton />
+          ) : null}
           {status === playerStatus.PLAYING ? (
             <>
               {isMobile ? <Player.Time short /> : null}
@@ -142,15 +160,15 @@ export function PlayerPart(props: PlayerPartProps) {
             {status === playerStatus.PLAYING ? (
               <>
                 <Player.Pause />
-                <Player.SkipBackward />
-                <Player.SkipForward />
+                <Player.SkipBackward inControl={inControl} />
+                <Player.SkipForward inControl={inControl} />
                 <Player.Volume />
                 <Player.Time />
               </>
             ) : null}
           </Player.LeftSideControls>
           <div className="flex items-center space-x-3">
-            <Player.Episodes />
+            <Player.Episodes inControl={inControl} />
             {status === playerStatus.PLAYING ? (
               <>
                 <Player.Pip />
@@ -160,8 +178,9 @@ export function PlayerPart(props: PlayerPartProps) {
             ) : null}
             {status === playerStatus.PLAYBACK_ERROR ||
             status === playerStatus.PLAYING ? (
-              <Player.Settings />
+              <Player.Captions />
             ) : null}
+            <Player.Settings />
             {/* Fullscreen on when not shifting */}
             {!isShifting && <Player.Fullscreen />}
 
@@ -177,35 +196,48 @@ export function PlayerPart(props: PlayerPartProps) {
           <div />
           <div className="flex justify-center space-x-3">
             {/* Disable PiP for iOS PWA */}
-            {!isIOSPWA &&
-              (status === playerStatus.PLAYING ? <Player.Pip /> : null)}
-            <Player.Episodes />
-            {status === playerStatus.PLAYING ? <Player.Settings /> : null}
-            {/* Expand button for iOS PWA only */}
-            {isIOSPWA && status === playerStatus.PLAYING && <Widescreen />}
+            {!isIOSPWA && status === playerStatus.PLAYING && <Player.Pip />}
+            <Player.Episodes inControl={inControl} />
+            {status === playerStatus.PLAYING ? (
+              <div className="hidden ssm:block">
+                <Player.Captions />
+              </div>
+            ) : null}
+            <Player.Settings />
+            {isIOSPWA && <IosPwaLimitations />}
           </div>
           <div>
-            {/* Disable for iOS PWA */}
+            {/* iOS PWA */}
             {!isIOSPWA && (
-              <div>
-                <Player.Fullscreen />
+              <div
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                className="select-none touch-none"
+                style={{ WebkitTapHighlightColor: "transparent" }}
+              >
+                {isHoldingFullscreen ? <Widescreen /> : <Player.Fullscreen />}
               </div>
             )}
-            {/* Add info for iOS PWA */}
-            {isIOSPWA && (
-              <div>
-                <IosPwaLimitations />
-              </div>
-            )}
+            {isIOSPWA && status === playerStatus.PLAYING && <Widescreen />}
           </div>
         </div>
       </Player.BottomControls>
 
       <Player.VolumeChangedPopout />
+      <Player.SubtitleDelayPopout />
+      <Player.SpeedChangedPopout />
+      <UnreleasedEpisodeOverlay />
 
       <Player.NextEpisodeButton
         controlsShowing={showTargets}
         onChange={props.onMetaChange}
+        inControl={inControl}
+      />
+
+      <SkipIntroButton
+        controlsShowing={showTargets}
+        skipTime={skiptime}
+        inControl={inControl}
       />
     </Player.Container>
   );

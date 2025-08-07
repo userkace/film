@@ -9,6 +9,7 @@ import {
   keysFromMnemonic,
   signChallenge,
 } from "@/backend/accounts/crypto";
+import { getGroupOrder } from "@/backend/accounts/groupOrder";
 import { importBookmarks, importProgress } from "@/backend/accounts/import";
 import { getLoginChallengeToken, loginAccount } from "@/backend/accounts/login";
 import { progressMediaItemToInputs } from "@/backend/accounts/progress";
@@ -180,13 +181,21 @@ export function useAuth() {
         throw err;
       }
 
-      const [bookmarks, progress, settings] = await Promise.all([
+      const [bookmarks, progress, settings, groupOrder] = await Promise.all([
         getBookmarks(backendUrl, account),
         getProgress(backendUrl, account),
         getSettings(backendUrl, account),
+        getGroupOrder(backendUrl, account),
       ]);
 
-      syncData(user.user, user.session, progress, bookmarks, settings);
+      syncData(
+        user.user,
+        user.session,
+        progress,
+        bookmarks,
+        settings,
+        groupOrder,
+      );
     },
     [backendUrl, syncData, logout],
   );

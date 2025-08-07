@@ -1,0 +1,1022 @@
+{
+    "about": {
+        "faqTitle": "Gyakori kérdések",
+        "q1": {
+            "title": "Honnan jön a tartalom?",
+            "body": "film.kace.dev nem tárol semmilyen tartalmat. Amikor valamit megakarsz nézni, az internetet átfésüljök a kiválasztott médiáért (A töltőképernyőn, és a 'video források' fülön láthatod, hogy melyik forrást használod). Média, tartalom soha nincs feltöltve film.kace.dev által, minden ezen a keresési mechanizmuson keresztül történik."
+        },
+        "q2": {
+            "body": "Nem lehetséges filmet vagy sorozatot kérni, film.kace.dev nem kezel semmilyen tartalmat. Az összes tartalom különböző internetes forrásokon keresztül tekinthető meg.",
+            "title": "Hol tudok filmet vagy sorozatot kérni?"
+        },
+        "q3": {
+            "body": "A keresési eredményeink a \"The Movie Database\" (TMDB) által vannak szolgáltatva, és megjelennek attól függetlenül, hogy bármely forráson elérhető-e a tartalom.",
+            "title": "A keresési eredményekben látható a film vagy sorozat, miért nem tudom lejátszani?"
+        },
+        "q4": {
+            "body": "Az összes adat szinkronizál a közösségi \"backend\"-re, bárki szabadon használhatja ezt.",
+            "title": "Mi van az adataimmal meg egyéb cuccokkal?"
+        },
+        "q5": {
+            "title": "Hol tudhatok meg többet?",
+            "body": "Van a film.kace.dev-nek egy Discord szervere, amit megtalálhatsz ennek az oldalnak a fejlécén!"
+        },
+        "title": "film.kace.dev-ről",
+        "description": "film.kace.dev egy mellékágja(forkja) a movie-webnek, amelynek fennmaradása biztosítva van a movie-web.app leállása után is. film.kace.dev egy privát, \"self-hosted\" VPS-en fut. Az oldalt veszteségesen futtatom;nincsenek reklámok a szabad/ingyenes médiában való hitem miatt."
+    },
+    "actions": {
+        "copied": "Kimásolva",
+        "copy": "Másolás"
+    },
+    "auth": {
+        "createAccount": "Még nincsen fiókod? <0>Csinálj egy fiókot.</0>",
+        "deviceNameLabel": "Eszköz név",
+        "deviceNamePlaceholder": "Személyes telefon",
+        "generate": {
+            "next": "Elmentettem a szósorozatomat",
+            "passphraseFrameLabel": "Szósorozat",
+            "title": "A szósorozatod",
+            "description": "A szósorozatod a felhasználó nevedként és egyben jelszavadként is viselkedik. Tárold biztonságos, megjegyezhető helyen, mert a bejelentkezéshez szükséged lesz rá. <bold>NE veszítsd el a szósorozatodat!</bold>"
+        },
+        "hasAccount": "Már van fiókod? <0>Jelentkezz be itt.</0>",
+        "login": {
+            "description": "Kérlek írd be a szósorozatodat, hogy bejelentkezz a fiókodba",
+            "passphraseLabel": "12 szóbol álló szósorozat",
+            "passphrasePlaceholder": "Szósorozat",
+            "submit": "Bejelentkezés",
+            "validationError": "Érvénytelen vagy hiányos szósorozat",
+            "deviceLengthError": "Kérlek add meg az eszköz nevét",
+            "title": "Jelentkezz be a fiókodba"
+        },
+        "register": {
+            "information": {
+                "color2": "Második profil szín",
+                "color1": "Első profil szín",
+                "icon": "Felhasználói ikon",
+                "next": "Következő",
+                "title": "Fiók információ",
+                "header": "Adj nevet az eszközödnek, majd válassz színeket és egy felhasználói ikont tetszésed szerint!"
+            }
+        },
+        "trust": {
+            "failed": {
+                "text": "Helyesen állítottad be?",
+                "title": "A szerver elérése sikertelen volt"
+            },
+            "noHostTitle": "Szerver nincs konfigurálva!",
+            "no": "Vissza",
+            "title": "Bízol ebben a szerverben?",
+            "yes": "Bízok ebben a szerverben",
+            "host": "Éppen a(z) <0>{{hostname}}</0> kiszolgálóhoz csatlakozol – győződj meg róla, hogy megbízható, mielőtt fiókot hozol létre...",
+            "noHost": "A szerver nincsen konfigurálva, így nem tudsz egy fiókot csinálni"
+        },
+        "verify": {
+            "description": "Kérlek írd be a szósorozatotad korábbról, hogy megerősitsd, hogy elmentetted és hogy létrehozzad a fiókod",
+            "invalidData": "Az adat helytelen",
+            "noMatch": "A szósorozat nem egyezik",
+            "passphraseLabel": "A 12 szóbol álló szósorozatod",
+            "recaptchaFailed": "ReCaptcha hitelesítés sikertelen",
+            "register": "Fiók létrehozása",
+            "title": "Erősítds meg a szósorozatodat"
+        }
+    },
+    "errors": {
+        "badge": "Elromlott",
+        "details": "Hiba részletei",
+        "reloadPage": "Töltsd újra az oldalt",
+        "showError": "Hiba részleteinek mutatása",
+        "title": "Hiba lépett fel!"
+    },
+    "footer": {
+        "legal": {
+            "disclaimer": "Figyelmeztetés",
+            "disclaimerText": "Felhívjuk figyelmedet, hogy a film.kace.dev nem tárol fájlokat, hanem csak harmadik fél szolgáltatóinak tartalmát jeleníti meg. Jogi kérdésekkel közvetlenül hozzájuk kell fordulni."
+        },
+        "links": {
+            "discord": "Discord",
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter",
+            "funding": "Támogass minket"
+        },
+        "tagline": "Nézd a kedvenc filmeidet és sorozataidat ingyen, örökké reklámmentesen!"
+    },
+    "global": {
+        "name": "film.kace.dev",
+        "pages": {
+            "about": "Rólunk",
+            "legal": "Legal / DMCA",
+            "discover": "Felfedezés",
+            "support": "Szupport",
+            "login": "Bejelentkezés",
+            "onboarding": "Előkészítés",
+            "pagetitle": "{{title}} - film.kace.dev",
+            "settings": "Beállítások",
+            "migration": "Fiók átvitele",
+            "jip": "Jip",
+            "register": "Regisztrálás"
+        }
+    },
+    "home": {
+        "continueWatching": {
+            "sectionTitle": "Nézés folytatása..."
+        },
+        "mediaList": {
+            "stopEditing": "Szerkesztés befejezése"
+        },
+        "search": {
+            "allResults": "Ennyi van...",
+            "failed": "Nem sikerült megtaláni a tartalmat, próbáld újra!",
+            "loading": "Betöltés...",
+            "placeholder": {
+                "default": "Mit akarsz nézni?",
+                "extra": [
+                    "Mihez van kedved?",
+                    "Kitöröljük a böngészési előzményeidet?",
+                    "Mit akarsz streamelni?",
+                    "film.kace.dev mindenidők legjobb oldala!",
+                    "Mi van a nézési listádon ma?",
+                    "Milyen volt a napod?",
+                    "A francba, bocsi, az én hibám, hogy soha se működik az oldal...",
+                    "Ugye, hogy a film.kace.dev a legjobb?",
+                    "UwU"
+                ]
+            },
+            "empty": {
+                "extra": [
+                    "Nincs itt semmi, szomcsi",
+                    "Az üresség, ó de nagy...",
+                    "Ményi üresség.",
+                    "Szia új felhasználó :3"
+                ],
+                "default": "Helló-belló, itt keress tartalmat nézésre!"
+            },
+            "sectionTitle": "Keresési eredmények",
+            "discoverMore": "Fedezz fel többet",
+            "discover": "Felfedezés",
+            "noResults": "Nem találtunk semmit"
+        },
+        "mediaCard": {
+            "moreInfo": "Több infó",
+            "copyLink": "Link másolása",
+            "close": "Bezárás"
+        },
+        "titles": {
+            "day": {
+                "extra": [
+                    "Viva la film.kace.dev!"
+                ],
+                "default": "Mit szeretnél nézni e délután?"
+            },
+            "morning": {
+                "default": "Mit szeretnél nézni e reggelen?",
+                "extra": [
+                    "Viva la film.kace.dev!"
+                ]
+            },
+            "night": {
+                "default": "Mit szeretnél nézni ezen az estén?",
+                "extra": [
+                    "Viva la film.kace.dev!"
+                ]
+            },
+            "420": {
+                "extra": [
+                    "Boldog 4/20-át!"
+                ],
+                "default": "Mit szeretnél nézni ezen a 4/20-adikán?"
+            },
+            "69": {
+                "default": "Felvagy készülve valami szaftós, tüzes kalandra?",
+                "extra": [
+                    "Boldog 69 napot!"
+                ]
+            }
+        },
+        "bookmarks": {
+            "sectionTitle": "Könyvjelzők"
+        }
+    },
+    "media": {
+        "episodeDisplay": "{{season}}. évad - {{episode}}. rész",
+        "unreleased": "Kiadatlan",
+        "types": {
+            "movie": "Film",
+            "show": "Sorozat"
+        },
+        "episodeShort": "rész",
+        "seasonShort": "évad"
+    },
+    "details": {
+        "resume": "Folytatás",
+        "play": "Lejátszás",
+        "runtime": "Időtartam:",
+        "language": "Nyelv:",
+        "rating": "Értékelés:",
+        "votes": "szavazatok",
+        "tmdb": "Megtekintés TMDB-én",
+        "imdb": "Megtekintés IMDb-én",
+        "episodes": "Részek",
+        "seasons": "Évad(ok)",
+        "season": "Évad",
+        "episode": "Rész",
+        "endsAt": "Vége {{time}}-kor",
+        "trailer": "Trailer",
+        "airs": "Megjelenés",
+        "releaseDate": "Megjelenési dátum:"
+    },
+    "migration": {
+        "start": {
+            "title": "Vidd át az adatod",
+            "options": {
+                "or": "vagy",
+                "direct": {
+                    "description": "Ez közvetlen átvisziaz adataidat az új szerverre. Ez a leggyorsabb opció.<br /><br />Ez az opció lehetővé teszi, hogy ugyanaz maradjon a szósorozatod!",
+                    "title": "Közvetlen átvitel",
+                    "quality": "Legkönnyebb és leggyorsabb",
+                    "action": "Adat átvitele"
+                },
+                "download": {
+                    "description": "Ez letölti az adataidat az eszközödre. Ezt feltöltheted az új szerverre, vagy csak megtarthatód megőrzés miatt.",
+                    "title": "Adat letöltése",
+                    "quality": "Jobban teknikai",
+                    "action": "Adat letöltése"
+                },
+                "upload": {
+                    "title": "Adat feltöltése",
+                    "quality": "Visszaállítás biztonsági mentésből",
+                    "action": "Adat feltöltése",
+                    "description": "Töltsd fel a korábban exportált/lementett adatfájlodat, hogy visszaállítsad a könyvjelzőidet, és a haladásodat ezen a fiókon."
+                }
+            },
+            "explainer": "Ha átszeretnéd vinni, vagy le akarod menteni az adataiad, az alábbiakkal teheted ezt meg. Ez lehetővé teszi, hogy megtartsd az adatiad, ha \"backend szervert\" váltasz."
+        },
+        "direct": {
+            "title": "Közvetlen átvitel",
+            "backendLabel": "Cél backend URL-je",
+            "recaptchaLabel": "ReCaptcha kulcs (opcionális)",
+            "toggleLable": "Kell ReCaptcha?",
+            "status": {
+                "error": "Az adataid átvitele sikertelen.",
+                "success": "Sikeresen át lettek víve az adataid! Yipeee"
+            },
+            "button": {
+                "migrate": "Átvitel",
+                "processing": "Feldolgozás...",
+                "home": "Kezdőlapra",
+                "login": "Folytatás a bejelentkezéshez"
+            },
+            "description": "Add meg a cél \"backend\"-nek az URL-jét, hogy átvidd a fiókod adatait az új backendre. Így a szósorozatod változatlan marad!"
+        },
+        "download": {
+            "title": "Adat letöltése",
+            "items": {
+                "description": "A letöltésbe beletartoznak:",
+                "bookmarks": "Könyvjelzőzött tartalmak",
+                "progress": "Nézési haladás"
+            },
+            "status": {
+                "success": "Sikeresen le lettek töltve az adataid! EZAZ",
+                "error": "Nem sikerült letölteni az adataidat."
+            },
+            "button": {
+                "download": "Adat letöltése",
+                "home": "Kezdőlapra",
+                "login": "Folytatás a bejelentkezéshez"
+            },
+            "description": "Ez lefogja tölteni az adataidat az eszközödre. Utána feltudod tölteni az új szerverre, vagy csak megtarthatod megőrzés miatt."
+        },
+        "upload": {
+            "title": "Adat feltöltése",
+            "status": {
+                "processing": "Adat feldolgozása...",
+                "error": "Nem sikerült feltölteni az adataidat.",
+                "success": "Sikeresen feltöltődtek az adataid!"
+            },
+            "file": {
+                "description": "Válaszd ki a fájlt amit fel akarsz tölteni",
+                "change": "Fájl megváltoztatása",
+                "name": "Fájl neve",
+                "select": "Fájl kiválasztása"
+            },
+            "items": {
+                "bookmarks": "Könyvjelzőzött tartalom",
+                "progress": "Nézési haladás"
+            },
+            "exportedOn": "Exportálva",
+            "button": {
+                "success": "Importálás befejezve",
+                "home": "Folytatás a kezdőlapra",
+                "import": "Adat importálása",
+                "processing": "Feldolgozás..."
+            },
+            "description": "Töltsd fel a korábban exportált/lementett adatfájlodat, hogy visszaálltsad a könyjvelzőidet, és az haladásodat ezen a fiókon.",
+            "dataPreview": "Előnézet:"
+        },
+        "loginRequired": "Az adatod átviteléhez be kell jelentkezned! Kérlek menj vissza, és jelentkezz be a folytatáshoz.",
+        "back": "Vissza"
+    },
+    "navigation": {
+        "menu": {
+            "about": "Rólunk",
+            "logout": "Kijelentkezés",
+            "register": "Szinkronizálás a felhővel",
+            "settings": "Beállítások",
+            "support": "Szupport",
+            "discover": "Felfedezés",
+            "development": "Fejlesztés"
+        },
+        "banner": {
+            "offline": "Nézd meg az internet kapcsolatodat, drágaságom!"
+        }
+    },
+    "notFound": {
+        "badge": "Nem található",
+        "reloadButton": "Próbáld újra",
+        "title": "Nem találtuk azt az oldalt",
+        "message": "Mindenhol kerestük: a templomban, a gyerekkori házadban, a halálnak a dolgán, de még így se sikerült megtaláni az oldalt amit kerestél.",
+        "goHome": "Vissza a kezdőlapra"
+    },
+    "downtimeNotice": {
+        "badge": "Hibák",
+        "goHome": "Kezdőlapra",
+        "title": "Tartalomszolgáltatói problémák",
+        "message": "film.kace.dev hiábakt tapasztal néhány szolgáltatóval megint, ha nem találsz, vagy nem tudsz lejátszani egy sorozatot, változtass forrást. Az alábbi időszakokban ez a hiba várhatóan fennmarad."
+    },
+    "onboarding": {
+        "defaultConfirm": {
+            "cancel": "Mégse",
+            "confirm": "Alap beállítások használata",
+            "description": "Az alapbeállításoknál nincsenek a legjobb sztreamek. Ki fogsz maradni a legjobb forrásokból!",
+            "title": "Biztos vagy benne?"
+        },
+        "extension": {
+            "back": "Vissza",
+            "linkFirefox": "Firefox bővítmény telepítése",
+            "notDetectingAction": "Oldal újratöltése",
+            "status": {
+                "disallowed": "A bővítmény nincs engedélyezve erre az oldalra",
+                "disallowedAction": "Engedélyezd a bővítményt",
+                "failed": "Nem sikerült lekérni a státuszt",
+                "loading": "Várakozás, ameddig telepíted a bővítményt",
+                "outdated": "Bővítvény verzió túl régi",
+                "success": "A bővítmény úgy működik, ahogy kell!"
+            },
+            "submit": "Folytatás",
+            "title": "Kezdjünk egy bővítménnyel",
+            "explainer": "A böngészési bővitményt használva elérheted a legjobb sztreameket/forrásokat, amiket kínálunk. Csak egy egyszerű</bold> telepítéssel.",
+            "extensionHelp": "Ha telepítetted a bővítményt, de nincs érzékelve, <bold>nyísd meg a bővitmény a bővitmények menűből</bold> és kövesd az utasításokat a képernyőn.",
+            "linkChrome": "Chrome bővítmény telepítése",
+            "explainerIos": "Sajnos, a bővítmény nincs támogatva iOS-en, Nyomd a <bold>Vissza</bold> gombot, hogy egy másik opciót válassz.",
+            "notDetecting": "Telepítetted Chrome-on, de az oldal nem érzékeli? Próbáld meg újratölteni az oldalt!"
+        },
+        "proxy": {
+            "back": "Vissza",
+            "input": {
+                "errorConnection": "Nem sikerült csatlakozni a proxy-hoz",
+                "errorInvalidUrl": "Helytelen URL",
+                "errorNotProxy": "Proxy-ira számítottunk, de weboldalt kaptunk helyette",
+                "label": "Proxy URL-je",
+                "placeholder": "https://"
+            },
+            "link": "Tanuld meg a proxy csinálást",
+            "submit": "Proxy beküldése",
+            "explainer": "A proxy megoldással, kiváló minőségű sztreameket szerezhetsz, ha egy saját szolgáltatású proxy-it csinálsz.",
+            "title": "Csináljunk egy új proxy-it"
+        },
+        "start": {
+            "moreInfo": {
+                "button": "Több információ",
+                "title": "Egy beállítás megértése",
+                "explainer": {
+                    "intro": "film.kace.dev nem hosztol, se nem tárol videókat. Harmadik felekre hagyatkozik a tartalmakért, ezért ki kell választanod, hogy hogyan kapcsolódjon azokhoz az oldalakhoz.",
+                    "options": "A beállításaid:",
+                    "extension": "1. Bővítmény",
+                    "proxy": "2. Proxy",
+                    "proxyDescription": "A proxy más weboldalakról gyűjti be a médiatartalmat. Kikerüli a böngészőkorlátozásokat (például a CORS-t), hogy lehetővé tegye az adatok begyűjtését.",
+                    "default": "3. Alap beállítás",
+                    "fedapi": {
+                        "fedapi": "Továbbiak: FED API (privát) token",
+                        "fedapiDescription": "Hozd az INGYENES Febbox fioókodat, hogy hozzáférést nyerj a FED API (privát-hoz), a legjobb forrás 4K minőséggel, Dolby Atmos hatással, intro átugrással, és a leggyorsabb betöltési sebességekkel! Nagyon ajánlott opció!"
+                    },
+                    "outro": "Ha több kérdésed van, hogy ez hogyan működik, nyugodtan kérdezz a <0>film.kace.dev Discord</0> szerveren!",
+                    "defaultDescription": "A film.kace.dev beépített proxy-ját használja. A legegyszerűbb opció, de lehet lassabb a megosztozott sávszélesség miatt.",
+                    "extensionDescription": "A bővítmény ad a elérhetőséget a legtöbb forráshoz. Egy lokális proxy-ként viselkedik, és tudja kezelni az olyan oldalakat, amiknek speciális sütik vagy \"header\"-ök kellenek a betöltéshez."
+                },
+                "recommended": {
+                    "title": "Nem vagy biztos, hogy mit válassz?",
+                    "subtitle": "Ajánlott konfigurációk:",
+                    "desktop": {
+                        "title": "Asztal:",
+                        "description": "Bővítmény + FED API (privát)"
+                    },
+                    "iOS": {
+                        "title": "iOS:",
+                        "description": "Egyéni proxy + FED API (privát)"
+                    },
+                    "android": {
+                        "title": "Android:",
+                        "description": "Bővítmény + FED API (privát)"
+                    }
+                }
+            },
+            "options": {
+                "or": "vagy",
+                "extension": {
+                    "action": "Bővítmény telepítése",
+                    "description": "Telepítsd a bővítményt, és szerezz hozzáférést mégtöbb forráshoz! Ne felejtsd el engedélyezni ennél az oldalnál.",
+                    "quality": "Legjobb minőség + több forrás",
+                    "title": "Böngészői bővítmény"
+                },
+                "proxy": {
+                    "action": "Proxy beállítása",
+                    "quality": "Jó minőség",
+                    "title": "Egyéni proxy",
+                    "description": "Állíts be egy ingyenes proxy-t csak 5 perc alatt! Javít a betöltési megbízhatóságon!"
+                },
+                "default": {
+                    "text": "Nem akarok jó minőségű sztreameket, használd az alapbeállításokat."
+                }
+            },
+            "explainer": "A legjobb sztreamekért, ki kell választanod, hogy melyik sztreamelési módot akarod használni.",
+            "title": "Állítsuk be neked a film.kace.dev-et"
+        }
+    },
+    "overlays": {
+        "close": "Bezárás"
+    },
+    "player": {
+        "back": {
+            "default": "Vissza a kezdőlapra",
+            "short": "Vissza"
+        },
+        "casting": {
+            "enabled": "Tartalom küldése eszközre"
+        },
+        "menus": {
+            "downloads": {
+                "button": "Letöltés megpróbálása",
+                "disclaimer": "A letöltések közvetlen a szolgáltatótól jönnek. film.kace.dev-nek nincs befolyása, hogy a letöltés hogyan van kínálva.",
+                "copyHlsPlaylist": "HLS lejátszási lista link másolása",
+                "downloadSubtitle": "Jelenlegi felirat letöltése",
+                "downloadVideo": "Videó letöltése",
+                "onAndroid": {
+                    "1": "Ha androidion akarsz letölteni, nyomd meg a letöltés gombot, majd az új ablakon, <bold>tartsd lenyomva az ujjad</bold> a videón, majd válaszd ki a <bold>save</bold> opciót.",
+                    "shortTitle": "Letöltés / Android",
+                    "title": "Letöltés Androidon"
+                },
+                "onIos": {
+                    "shortTitle": "Letöltés / iOS",
+                    "title": "Letöltés iOS-en",
+                    "1": "Ha iOS-en akarsz letölteni, nyomd meg a letöltést, majd az új ablakon nyomd meg ezt a gombot <bold><ios_share /></bold>, majd nyomd a <bold>Save to FIles <ios_files /><bold> gombot."
+                },
+                "onPc": {
+                    "1": "Számítógépen, nyomd meg a letöltés gombot, majd az új ablakban, jobb-klikkelj a videóra, és válaszd ki a <bold>Save video as/Mentés másként</bold> opciót",
+                    "shortTitle": "Letöltés / PC",
+                    "title": "Letöltés PC-re"
+                },
+                "title": "Letöltés",
+                "hlsDownloader": "Vagy, menj ide <0>hls downloader website</0> és illeszd be az alábbi lejátszási lista URL-t.",
+                "hlsDisclaimer": "A letöltések közvetlen a tartalomszolgáltatótól vannak.film.kace.dev-nek nincsen semmi befolyása, hogy a letöltések hogyan vannak szolgáltatva.<br /><br />Vedd figyelembe, hogy egy HLS lejátszási listát töltesz le, <bold>nem ajánlott letölteni, ha nem vagy ismerős a haladó sztreaming formátumokkal</bold>. Próbálj különböző forrásokat más formátumokért."
+            },
+            "episodes": {
+                "button": "Részek",
+                "emptyState": "Nincsenek epizódok ebben az évadban, nézz vissza később (bocsiiiii)...",
+                "episodeBadge": "{{episode}} rész",
+                "loadingError": "Hiba az évad betöltése közben",
+                "loadingList": "Betöltés...",
+                "loadingTitle": "Betöltés...",
+                "unairedEpisodes": "Egy vagy több rész ebben az évadban nincs engedélyezve, mert még nem adták le.",
+                "seasons": "Évadok",
+                "showMore": "Mutass többet",
+                "showLess": "Mutass kevesebbet"
+            },
+            "playback": {
+                "speedLabel": "Lejátszási sebesség",
+                "disabled": "(Kikapcsolva watch party közben)",
+                "title": "Lejátszási beállítások"
+            },
+            "quality": {
+                "automaticLabel": "Automatikus minőség",
+                "title": "Minőség",
+                "auto": "Automatikus",
+                "hint": "Megpróbálhatsz <0>forrást váltani<0/> különböző minőségi beállításokért.",
+                "iosNoQuality": "Az Apple által megadott (gyakori iOS L, de ez csak a szoki) limitációk miatt, a minőség kiválasztása nem elérhető iOS-en ennél a forrásnál. Megpróbálhatsz egy <0>másik forrást választani<0/> hogy legyenek különböző minőségi beállításaid."
+            },
+            "settings": {
+                "downloadItem": "Letöltés",
+                "enableSubtitles": "Feliratok engedélyezése",
+                "experienceSection": "Nézési élmény",
+                "playbackItem": "Lejátszási beállítások",
+                "audioItem": "Hang",
+                "qualityItem": "Minőség",
+                "sourceItem": "Forrás",
+                "subtitleItem": "Feliratok",
+                "videoSection": "Videó beállítások"
+            },
+            "sources": {
+                "noEmbeds": {
+                    "title": "Beágyazások nem találva",
+                    "text": "Nem sikerült taláni beágyazásokat, próbálj egy másik forrást."
+                },
+                "noStream": {
+                    "text": "Ennek a forrásnak nincsenek sztreamjei ehhez a sorozathoz, vagy filmhez.",
+                    "title": "Nincs sztream"
+                },
+                "title": "Források",
+                "unknownOption": "Ismertelen",
+                "editOrder": "Sorrend szerkesztése",
+                "failed": {
+                    "text": "Hiba lépett fel a videó keresése közben... Próbálj egy másik forrást?",
+                    "title": "Sikertelen begyűjtés"
+                }
+            },
+            "subtitles": {
+                "customChoice": "Töltsd fel, vagy húzd be a fájlt",
+                "customizeLabel": "Személyre szabás",
+                "offChoice": "Kikapcsolás",
+                "onChoice": "Bekapcsolás",
+                "SourceChoice": "Forrás feliratai",
+                "OpenSubtitlesChoice": "OpenSubtitles",
+                "settings": {
+                    "backlink": "Egyéni feliratok",
+                    "delay": "Felirat késleltetése",
+                    "fixCapitals": "Kapitalizáció javítása"
+                },
+                "title": "Feliratok",
+                "unknownLanguage": "Ismeretlen",
+                "dropSubtitleFile": "Húzd ide a felirat fájlt!",
+                "scrapeButton": "Feliratok begyűjtése",
+                "notFound": "Egyik elérhető opció sem stimmel a keresésednek",
+                "useNativeSubtitles": "A videó eredeti feliratának használata",
+                "useNativeSubtitlesDescription": "Megjavíthatja a feliratokat kasztolás és PiP közben",
+                "empty": "Nincsenek szolgáltatott feliratok ennek."
+            },
+            "watchparty": {
+                "watchpartyItem": "Watch Party",
+                "legacyWatchparty": "Régi Watch Party használata",
+                "notice": "Régi Watch Party nem feltétlen elérhető minden forrásnál"
+            },
+            "audio": {
+                "default": "Alap"
+            }
+        },
+        "metadata": {
+            "api": {
+                "text": "Nem sikerült betölteni az API metaadatját, kérlek nézd meg az internet kapcsolatodat.",
+                "title": "API metaadatainak betöltése sikertelen"
+            },
+            "legal": {
+                "badge": "Eltávolítva",
+                "title": "A tartalom el lett távolítva",
+                "text": "Ez a tartalom már nem érhető el eltávolítási értesítés vagy szerzői jogi igény miatt."
+            },
+            "extensionPermission": {
+                "badge": "Hiányzó jogosultság",
+                "title": "Bővitmény beállítása",
+                "text": "A böngészőbővítmény telepítve van, de szükségünk van az engedélyedre, hogy elkezdhessük használni.",
+                "button": "Bővitmény használata"
+            },
+            "failed": {
+                "badge": "Sikertelen",
+                "homeButton": "Kezdőlapra",
+                "text": "Nem sikerült betölteni a média metaadatait a TMDB-ről. Kérlek, ellenőrizd, hogy a TMDB elérhető-e, vagy nincs-e letiltva az internetkapcsolatodon.",
+                "title": "Metaadatok betöltése sikertelen"
+            },
+            "notFound": {
+                "badge": "Nem található",
+                "homeButton": "Vissza a kezdőlapra",
+                "title": "Nem találtuk azt a tartalmat.",
+                "text": "Nem találtuk a lekért tartalmat. Vagy el lett távolítva, vagy megbabráltad az URL-t (kis rosszcsont)."
+            }
+        },
+        "nextEpisode": {
+            "replay": "Újrajátszás",
+            "next": "Következő rész",
+            "nextSeason": "Következő évad"
+        },
+        "playbackError": {
+            "badge": "Lejátszási hiba",
+            "errors": {
+                "errorAborted": "A média lekérése meg lett szakítva a felhasználó kérésére.",
+                "errorGenericMedia": "Ismeretlen média hiba lépett fel.",
+                "errorNetwork": "Valamilyen hálózati hiba lépett fel, megakadályozva a tartalom sikeres lekérését, attól függetlenül, hogy korábban elérhető volt.",
+                "errorNotSupported": "A tartalom, vagy a tartalom szolgáltató objektum nem támogatott.",
+                "errorDecode": "Attól függetlenul, hogy korábban használhatónak volt minősítve, hiba lépett fel a média tartalom dekódolása közben, egy hibát okozva."
+            },
+            "homeButton": "Kezdőlapra",
+            "title": "Videó lejátszása sikertelen!",
+            "text": "Hiba lépett fel a media lejátszása közben. Kérlek próbáld újra, vagy próbálj egy másik forrást!"
+        },
+        "scraping": {
+            "items": {
+                "failure": "Hiba lépett fel",
+                "notFound": "Nincsen meg ez a videó",
+                "pending": "Keresés videókért..."
+            },
+            "notFound": {
+                "badge": "Nem található",
+                "detailsButton": "Részletek mutatása",
+                "homeButton": "Kezdőlapra",
+                "discoverButton": "Fedezz fel többet",
+                "title": "Nem találtuk meg azt",
+                "text": "Átnéztük az összes szolgáltatónkat, és nem találtuk a tartalmat amit kerestél! Nem tároljuk/hosztoljuk a médiát, így nincs befolyásunk azon, hogy mi elérjető, és mi nem. Kérlek kattints a 'Részletek mutatása'-ra, további információért."
+            },
+            "extensionFailure": {
+                "badge": "Bővítmény kikapcsolva",
+                "homeButton": "Kezdőlapra",
+                "enableExtension": "Engedélyezd a bővítményt",
+                "title": "Kérlek engedélyezd a bővítményt",
+                "text": "Telepítetted a film.kace.dev bővitményt. Hogy használni tudd, engedélyezned kell a bővítményt ennek az oldalnak."
+            },
+            "tips": {
+                "1": "Nyomj a fogaskerékre, hogy forrásokat válts!",
+                "2": "Nyomj a címre, hogy kimásold a linket!",
+                "3": "Koppints, és tartsd, vagy tartsd lenyomva a SHIFT-et a szélesképernyőért, teljes képernyő helyett!",
+                "5": "Töltsd le a bővítményt több forrásért!",
+                "9": "Vidd át a fiókod egy új backendre a beállításoknál!",
+                "10": "Csatlakozz a Discord szerverre!",
+                "12": "Nyomd le a SPACE-t vagy a 'K'-t hogy lejátszd/megállítsd!",
+                "13": "Használd a BAL és JOBB nyilakat, hogy ugorj 5 másodpercet!",
+                "15": "Nyomd az F billenytűt, hogy ki/be kapcsold a teljes képernyőt!",
+                "16": "Nyomd az M billenytűt, hogy ki/be kapcsold a némítást!",
+                "17": "Használd a FEL és a LE nyilakat, hogy változtass a hangerőn!",
+                "19": "Használd a . és a , billenytűt, hogy képkockánként lépkedj, amikor meg van állítva!",
+                "20": "Használd a C billenytűt hogy ki/be kapcsold a feliratokat!",
+                "21": "Nyomd le az R billenytűt, hogy fordulj egyet!",
+                "7": "Tartsd lenyomva a SHIFT-et és nyomj a címre, hogy kimásold a linket idővel együtt!",
+                "8": "Állíts be egy egyéni felirat színt!",
+                "11": "Használd a '[' és a ']' billenytűt, hogy állítsd a felirat időzítést!",
+                "6": "Tartsd a könyvjelzőket lenyomva, hogy szerkezd, vagy töröld őket!",
+                "4": "Néhány forrás jobban működik, mint a többi!",
+                "14": "Használd a J és az L billenytűket, hogy ugorj 10 másodpercet!",
+                "18": "Használd a < és a > billenytűt, hogy változtass a lejátszási sebességen!"
+            }
+        },
+        "time": {
+            "remaining": "{{timeLeft}} van hátra • Vége {{timeFinished, datetime}}-kor",
+            "shortRegular": "{{timeWatched}}",
+            "shortRemaining": "-{{timeLeft}}",
+            "regular": "{{timeWatched}} / {{duration}}"
+        },
+        "turnstile": {
+            "title": "Robot vagy?",
+            "verifyingHumanity": "Emberiség megerősítése...",
+            "description": "Kérlek bízonyitsd emberi léteted ezzel az egyszerű feladattal, hogy biztonsága tartsuk film.kace.dev-et.",
+            "error": "Nem sikerült bizonyítani emberiséged - sztreamnek nem sikerült betöltenie. Töröld a cache-ed és próbáld újra vagy válts forrást (nyomd a fogaskereket)."
+        }
+    },
+    "support": {
+        "title": "Szupport",
+        "text": "film.kace.dev minnél felhasználó barátabbnak van tervezve. De így is szoktak lenni kérdések, és problémák. Ez az oldal ezeknek a megoldására szolgál",
+        "q1": {
+            "body": "Csatlakozhatsz a hivatalos <0>film.kace.dev discord</0> szerverhez, és ott kérdezhetsz, vagy írhatsz egy emailt az oldal alján található címre.",
+            "title": "Hol kaphatok segítséget?"
+        },
+        "q2": {
+            "title": "Hol tudok jelenteni egy bugot, vagy egy hibát?",
+            "body": "Van egy <0>GitHub</0> oldalunk, ahol csinálhatsz egy részletes probléma jelentést a reponkban. Illetve, ha szeretnéd, csinálhatsz egy pull requestet, hogy te magad javítsd ki a hibát."
+        }
+    },
+    "jip": {
+        "title": "Jip",
+        "text": "film.kace.dev nem került ide a semmiből, nem a fán termett, nagyrészt egy ember által lett csinálva (egy nagyon király ember által).",
+        "q1": {
+            "title": "Hol kaphatok segítséget?",
+            "body": "Csatlakozhatsz a hivatalos <0>film.kace.dev discord</0> szerverhez, és ott kérdezhetsz, vagy írhatsz egy emailt az oldal alján található címre."
+        },
+        "q2": {
+            "title": "Hol tudok jelenteni egy bugot, vagy egy hibát?",
+            "body": "Van egy <0>GitHub</0> oldalunk, ahol csinálhatsz egy részletes probléma jelentést a reponkban. Illetve, ha szeretnéd, csinálhatsz egy pull requestet, hogy te magad javítsd ki a hibát."
+        }
+    },
+    "screens": {
+        "legal": {
+            "title": "Legal / DMCA"
+        },
+        "loadingApp": "Applikáció betöltése",
+        "loadingUser": "Profilod betöltése",
+        "loadingUserError": {
+            "logout": "Kijelentkezés",
+            "reset": "Egyéni szerver alap helyzetbe állítása",
+            "text": "Nem sikerült betölteni a profilodat",
+            "reload": "Újratöltés",
+            "textWithReset": "Nem sikerült betölteni a fiókodat az egyéni szerverről, vissza akarsz állni az alap szerverre?"
+        },
+        "migration": {
+            "failed": "Adataid átvitele sikertelen.",
+            "inProgress": "Kérlek várj, átvisszuk adataidat. Egy pillanat alatt meg is lesz..."
+        }
+    },
+    "settings": {
+        "account": {
+            "accountDetails": {
+                "deviceNameLabel": "Eszköz neve",
+                "deviceNamePlaceholder": "Személyes telefon",
+                "editProfile": "Szerkesztés",
+                "logoutButton": "Kijelentkezés"
+            },
+            "admin": {
+                "title": "Adminisztrátor panel",
+                "button": "Nézd meg",
+                "text": "Használd az eszközöket, amik film.kace.dev állapotának felmérésére lettek tervezve."
+            },
+            "actions": {
+                "delete": {
+                    "button": "Fiók törlése",
+                    "confirmButton": "Fiók törlése",
+                    "confirmDescription": "Biztosan le akarod törölni a fiókodat? Az ÖSSZES adatod el fog veszni!",
+                    "confirmTitle": "Biztos vagy benne?",
+                    "title": "Fiók törlése",
+                    "text": "Ez az folyamat visszafordíthatatlan. Minden adat elvész, és örökre, úgy is marad, semmi sem visszaállítható."
+                },
+                "migration": {
+                    "title": "Fiók átvitele",
+                    "text": "Vidd át a fiókodaz egy új szerverre, vagy töltsd le adataidat.",
+                    "button": "Fiók átvitele"
+                },
+                "title": "Lehetőségek",
+                "logoutAllDevices": {
+                    "title": "Kiléptetés minden eszközről",
+                    "text": "Ez ki fog léptetni minden eszközről, ami a fiókodhoz kötődik.",
+                    "button": "Kijelentkezés az összes eszközről"
+                }
+            },
+            "devices": {
+                "deviceNameLabel": "Eszköz neve",
+                "failed": "Munkamenetek betöltése sikertelen",
+                "removeDevice": "Eltávolítás",
+                "title": "Eszközök"
+            },
+            "profile": {
+                "firstColor": "Első számű profil szín",
+                "secondColor": "Második számű profil szín",
+                "title": "Profilkép módosítása",
+                "userIcon": "Felhasználói ikon",
+                "finish": "Szerkesztés befejezése"
+            },
+            "register": {
+                "cta": "Első lépések",
+                "title": "Szinkronizálás a felhővel",
+                "text": "Oszd meg a nézési előrehaladásodat az eszközeid között, és tartsd őket szinkronban!"
+            },
+            "title": "Fiók"
+        },
+        "appearance": {
+            "activeTheme": "Használatban",
+            "themes": {
+                "blue": "Kék",
+                "default": "Alap",
+                "gray": "Szürke",
+                "red": "Piros",
+                "teal": "Zöldes-kék",
+                "classic": "Klasszikus",
+                "green": "Zöld",
+                "mocha": "Mocha barna",
+                "pink": "Rózsaszín",
+                "noir": "Sötétség",
+                "ember": "Vörös (ember)",
+                "acid": "Savas",
+                "spark": "Szikrás",
+                "grape": "Lila szőlő",
+                "forest": "Erdő",
+                "wolverine": "Rozsomák",
+                "popsicle": "Jégkrém",
+                "hulk": "Hulk",
+                "spiderman": "Pókember"
+            },
+            "title": "Megjelenés",
+            "options": {
+                "discover": "Felfedezési szekció",
+                "featured": "Kiemelt tartalmak",
+                "featuredDescription": "Kiemelt filmek és sorozatok megjelenítése a kezdőlap tetején körhintában. Alapból kikapcsolva.",
+                "discoverLabel": "Felfedezés szekció",
+                "featuredLabel": "Kiemelt tartalmak",
+                "modal": "Részletek ablak",
+                "modalLabel": "Részletek ablak",
+                "logos": "Kép logók",
+                "carouselView": "Körhinta nézet",
+                "modalDescription": "A média kártyára kattintva a részletek ablak jelenjen meg, ahelyett hogy a lejátszási oldalra navigálna. Az előzetes megtekintéséhez proxy vagy bővítmény szükséges. Alapértelmezetten kikapcsolva.",
+                "discoverDescription": "A Felfedezés szekció megjelenítése a kezdőlapon, a könyvjelzők alatt. Alapból bekapcsolva.",
+                "logosNotice": "Leggyakrabban, a kép logók csak angol nyelven vannak. Más nyelvet használók esetében érdemes lehet ezt kikapcsolni!",
+                "logosDescription": "Kép logók megjelenítése szöveges címek helyett a részletek ablakban és a kiemelt szekcióban. Alapértelmezetten bekapcsolva.",
+                "logosLabel": "Kép logók",
+                "carouselViewLabel": "Körhinta nézet",
+                "carouselViewDescription": "A könyvjelzett és jelenleg nézett tartalmak megjelenítése körhinta módon, rács helyett. Alapból kikapcsolva."
+            }
+        },
+        "connections": {
+            "server": {
+                "label": "Egyéni szerver",
+                "migration": {
+                    "link": "Vidd át az adataimat",
+                    "description": "<0>Adataim átvitele</0> egy új szerverre."
+                },
+                "documentation": "Backend dokumentáció",
+                "description": "Ha szeretnél egy egyéni backend-et csatlakoztatni adataid tárolására, engedélyezd ezt, és add meg az URL-t. <0>Utasítások.</0>",
+                "urlLabel": "Egyéni szerver URL-je"
+            },
+            "setup": {
+                "errorStatus": {
+                    "title": "Valaminek szüksége van a figyelmedre",
+                    "description": "Úgy néz ki, hogy egy vagy több elem a beállításoknál a figyelmedre szorul."
+                },
+                "itemError": "Valami félrement ennél a beállításnál, csináld újra a beállítási folyamatot, hogy megold.",
+                "items": {
+                    "default": "Alapbeállítás",
+                    "extension": "Bővítmény",
+                    "proxy": "Egyéni proxy"
+                },
+                "redoSetup": "Beállítás újracsinálása",
+                "successStatus": {
+                    "title": "Minden be van állítva!",
+                    "description": "Minden a helyén van, hogy elkezdjed nézni kedvenc tartalmaidat."
+                },
+                "unsetStatus": {
+                    "description": "Kérlek kattints a gombra innen jobra, hogy elkezd a beállítási folyamatot.",
+                    "title": "Még nem csináltad meg a beállítási folyamatot"
+                },
+                "doSetup": "Beállítás megkezdése"
+            },
+            "title": "Kapcsolatok",
+            "workers": {
+                "addButton": "Új worker hozzáadása",
+                "documentation": "Proxy dokumentáció",
+                "emptyState": "Még nincsenek workerek, adj hozzá egyet lent",
+                "label": "Egyéni proxy workerek használata",
+                "urlLabel": "Worker URL-ek",
+                "urlPlaceholder": "https://",
+                "proxyTMDB": {
+                    "title": "Proxy TMDB-hez",
+                    "description": "Csak akkor szükséges, ha nem tudod elérni a TheMovieDB-t közvetlen, például ha az internetszolgáltatód blokkolja. Ajánlott a felfedezés szekció kikapcsolása, a teljesítmény növeléséhez, ha ezt a funkciót használod."
+                },
+                "description": "Az alkalmazás működéséhez az összes forgalom proxykon keresztül halad. Kapcsold be ezt, ha saját munkafolyamataidat (workereidet) szeretnéd használni. <0>Útmutató.</0>"
+            }
+        },
+        "preferences": {
+            "language": "Applikáció nyelve",
+            "languageDescription": "Nyelv használva az egész applikáción keresztül, csak angolban vannak vicci micci cuccok.",
+            "thumbnail": "Indexképek generálása",
+            "thumbnailDescription": "A legtöbb esetben a videóknak nincs indexképe. Engedélyezheted ezt, hogy legeneráld őket menet közben, de belassíthatják a videódat.",
+            "thumbnailLabel": "Indexképek generálása",
+            "autoplay": "Autómatikus lejátszás",
+            "autoplayLabel": "Automatikus lejátszás",
+            "skipCredits": "Stáblista átugrása",
+            "skipCreditsDescription": "Ha engedélyezve, akkor automatikusan lejátsza a következő részt, amikor a mostani 99%-ban befelyeződött. Ha kikapcsolva, teljesen a végéig vár.",
+            "skipCreditsLabel": "Stáblista átugrása",
+            "sourceOrder": "Források átrendezése",
+            "title": "Preferenciák",
+            "sourceOrderEnableLabel": "Egyéni forrás sorrend",
+            "autoplayDescription": "Automatikusan lejátsza a következő részt, amikor a mostani véget ért. Engedélyezhetik a bővitmény felhasználói, egy egyéni proxy, vagy az alapbeállítással, ha engedi a hoszt.",
+            "sourceOrderDescription": "Húzd és ejtsd a forrásokat a sorrendjük átrendezéséhez. Ez határozza meg, milyen sorrendben ellenőrizzük a forrásokat a megtekinteni kívánt tartalomhoz. Ha egy forrás ki van szürkítve, az azt jelenti, hogy az adott forráshoz <bold>bővítmény</bold> szükséges.<br><br><strong>(Az alapértelmezett sorrend a legtöbb felhasználónak a legjobb)</strong>"
+        },
+        "reset": "Alaphelyzetbe állítás",
+        "save": "Mentés",
+        "sidebar": {
+            "info": {
+                "backendUrl": "Backend URL-je",
+                "backendVersion": "Backend verziója",
+                "hostname": "Hosztnév",
+                "insecure": "Nem biztonságos",
+                "secure": "Biztonságos",
+                "title": "Applikáció statisztikái",
+                "unknownVersion": "Ismeretlen",
+                "userId": "Felhasználó ID",
+                "appVersion": "Alkalmazás verziója",
+                "notLoggedIn": "Nem vagy bejelentkezve"
+            }
+        },
+        "subtitles": {
+            "backgroundLabel": "Háttér áttetszősége",
+            "backgroundBlurLabel": "Háttér homályosítása",
+            "colorLabel": "Szín",
+            "textSizeLabel": "Szöveg méret",
+            "title": "Feliratok",
+            "textBoldLabel": "Félkövér szöveg",
+            "verticalPositionLabel": "Függőleges elhelyezkedés",
+            "low": "Alacsonyan",
+            "default": "Alap magasság",
+            "textStyle": {
+                "title": "Szöveg stílusa",
+                "default": "Alap",
+                "raised": "Megemelt",
+                "depressed": "Besüllyesztett",
+                "uniform": "Egyenletes",
+                "dropShadow": "Árnyékos"
+            },
+            "previewQuote": "Megvagyok győződve, az élet értelmetlen, a bátorság viszont hiányzik, ezt a hitet felvállani nem birom."
+        },
+        "unsaved": "Mentetlen változtatásaid vannak..."
+    },
+    "discover": {
+        "tabs": {
+            "movies": "Filmek",
+            "tvshows": "Sorozatok",
+            "editorpicks": "Szerkesztői válogatás"
+        },
+        "carousel": {
+            "title": {
+                "loading": "Betöltés...",
+                "movies": "{{category}} Filmek",
+                "tvshows": "{{category}} Sorozatok",
+                "inCinemas": "Mozikban",
+                "popular": "Leghíresebb",
+                "nowPlaying": "Mozikban",
+                "topRated": "Legjobban értékelt",
+                "4kReleases": "4K kiadások",
+                "onTheAir": "Adásban",
+                "popularOn": "Felkapott {{type}} {{provider}}-on/-ön",
+                "editorPicksShows": "Szerkesztői válogatás sorozatokból",
+                "moviesOn": "Filmek {{provider}}-on/-ön",
+                "tvshowsOn": "Sorozatok {{provider}}-on/-ön",
+                "recommended": "Mert ezt is nézted: {{title}}",
+                "genreShows": "{{genre}} Sorozatok",
+                "categoryShows": "{{category}} Sorozatok",
+                "editorPicksMovies": "Szerkesztői válogatás filmekből",
+                "categoryMovies": "{{category}} Filmek",
+                "latestReleases": "Legújabbak",
+                "genreMovies": "{{genre}} Filmek",
+                "latestTVReleases": "Legújabb sorozatok"
+            },
+            "change": "Módosítás",
+            "more": "Mutass többet"
+        },
+        "featured": {
+            "playNow": "Lejátszás most",
+            "moreInfo": "Több infó"
+        },
+        "randomMovie": {
+            "button": "Nézz valami randomot",
+            "cancel": "Visszaszámlálás megszakítása",
+            "countdown": "{{countdown}}s",
+            "nowPlaying": "Most játszódik",
+            "in": "–"
+        },
+        "page": {
+            "subtitle": "Ismerd meg a legújabb durranásokat, és a mindenkori klasszikusokat.",
+            "loading": "Betöltés...",
+            "back": "Vissza",
+            "loadMore": "Több betöltése",
+            "title": "Fedezz fel filmeket és sorozatokat"
+        },
+        "scrollToTop": "Vissza a tetejére",
+        "allLists": "Összes film listák",
+        "viewLists": "Az összes film lista megnézése"
+    },
+    "fedapi": {
+        "setup": {
+            "title": "Hogy megszerezd a UI tokened:",
+            "showVideo": "Mutasd a videó útmutatót",
+            "hideVideo": "Rejtsd el a videó útmutatót",
+            "step": {
+                "1": "1. Menj a <0>febbox.com</0> oldalra, és jelentkezz be egy Google fiókkal (használj egy firss, új fiókot!)",
+                "2": "2. Nyisd meg a Fejlesztői Eszközöket, vagy \"inspect\"-eld az oldalt",
+                "3": "3. Menj az application fűlre (Firefox esetén Storage) -> Cookies",
+                "4": "4. Másold ki az 'ui' cookie-t.",
+                "5": "5. Zárd be az ablakot, de NE jelentkezz ki!",
+                "warning": "(Ne oszd meg senkivel ezt a tokent!)"
+            }
+        },
+        "status": {
+            "success": "Sikeres",
+            "invalid_token": "'VIP' sztream lekérése sikertelen. A tokened helytelen!",
+            "api_down": "Nem lehet elérni a FED API-t!"
+        },
+        "onboarding": {
+            "title": "FED API (privát) token",
+            "description": "Hozd az INGYENES Febbox fioókodat, hogy hozzáférést nyerj a FED API (privát-hoz), a legjobb forrás 4K minőséggel, Dolby Atmos hatással, intro átugrással, és a leggyorsabb betöltési sebességekkel! Nagyon ajánlott opció!"
+        }
+    },
+    "watchParty": {
+        "status": {
+            "inSync": "Szinkronban",
+            "outOfSync": "Nincs szinkronban"
+        },
+        "alone": "Egyedül",
+        "withCount": "{{count}} másik emberrel",
+        "isGuest": "Vendénként nézed <0>{{backendName}}</0>-en",
+        "watching": "Nézed",
+        "hosting": "Hosztolás",
+        "syncing": "Szinkronizálás...",
+        "behindHost": "A hoszttól lemaradva {{seconds}} másodpercel",
+        "aheadOfHost": "A hosztnál előrébb járva {{seconds}} másodpercel",
+        "showStatusOverlay": "Állapot átfedés megjelenítése",
+        "leaveWatchParty": "Watch Party elhagyása",
+        "shareCode": "Oszd meg ezt a kódot barátaiddal (kattints a link másolásához)",
+        "connectedAsGuest": "Csatlakozva a watch party-hoz vendégként",
+        "hostParty": "Watch Party hosztolása",
+        "joinParty": "Csatlakozás Watch Party-hoz",
+        "viewers": "Nézők ({{count}})",
+        "copyCode": "Kattints a másoláshoz",
+        "join": "Csatlakozás",
+        "cancel": "Megszakítás",
+        "save": "Mentés",
+        "emptyRoom": "Még nincs senki ebben a szobában",
+        "invalidRoom": "Szobához való csatlakozás sikertelen",
+        "contentMismatch": "Csatlakozás sikertelen: A tartalom nem egyezik meg a hoszt tartalmával.",
+        "episodeMismatch": "Csatlakozás sikertelen: Másik részt nézel, mint a hoszt.",
+        "validating": "Watch Party hitelesítése...",
+        "linkCopied": "Kimásolva!",
+        "isHost": "<0>{{backendName}}</0> hosztolva"
+    }
+}

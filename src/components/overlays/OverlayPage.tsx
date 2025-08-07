@@ -16,6 +16,7 @@ interface Props {
   className?: string;
   height: number;
   width: number;
+  fullWidth?: boolean;
 }
 
 export function OverlayPage(props: Props) {
@@ -29,12 +30,16 @@ export function OverlayPage(props: Props) {
   useEffect(() => {
     registerRoute({
       id: path,
-      width: props.width,
+      width: props.fullWidth ? window.innerWidth - 60 : props.width,
       height: props.height,
     });
-  }, [props.height, props.width, path, registerRoute]);
+  }, [props.height, props.width, props.fullWidth, path, registerRoute]);
 
-  const width = !isMobile ? `${props.width}px` : "100%";
+  const width = !isMobile
+    ? props.fullWidth
+      ? "calc(100vw - 60px)"
+      : `${props.width}px`
+    : "100%";
   let animation: TransitionAnimations = "none";
   if (backwards === "yes" || backwards === "no")
     animation = backwards === "yes" ? "slide-full-left" : "slide-full-right";
@@ -47,7 +52,11 @@ export function OverlayPage(props: Props) {
       show={show}
     >
       <div
-        className={classNames(["grid grid-rows-1 max-h-full", props.className])}
+        className={classNames([
+          "grid grid-rows-1 max-h-full",
+          props.className,
+          props.fullWidth ? "max-w-none" : "",
+        ])}
         style={{
           height: props.height ? `${props.height}px` : undefined,
           width: props.width ? width : undefined,

@@ -1,4 +1,4 @@
-import { Qualities, Stream } from "@movie-web/providers";
+import { Qualities, Stream } from "@p-stream/providers";
 
 import { QualityStore } from "@/stores/quality";
 
@@ -38,7 +38,7 @@ const qualitySorting: Record<SourceQuality, number> = {
   "480": 20,
   "720": 30,
   "1080": 40,
-  "4k": 25, // 4k has lower priority, you need faster internet for it
+  "4k": 35, // 4k has lower priority, you need faster internet for it
 };
 const sortedQualities: SourceQuality[] = Object.entries(qualitySorting)
   .sort((a, b) => b[1] - a[1])
@@ -52,8 +52,11 @@ export function getPreferredQuality(
     qualityPreferences.automaticQuality ||
     qualityPreferences.lastChosenQuality === null ||
     qualityPreferences.lastChosenQuality === "unknown"
-  )
+  ) {
+    // For automatic quality, select the best available quality
+    // Sort by our quality preference order and pick the first (best) available
     return sortedQualities.find((v) => availableQualites.includes(v));
+  }
 
   // get preferred quality - not automatic or unknown
   const chosenQualityIndex = sortedQualities.indexOf(

@@ -1,5 +1,5 @@
-import { RunOutput } from "@movie-web/providers";
-import { useCallback, useEffect, useState } from "react";
+import { RunOutput } from "@p-stream/providers";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Navigate,
   useLocation,
@@ -12,6 +12,7 @@ import { usePlayer } from "@/components/player/hooks/usePlayer";
 import { usePlayerMeta } from "@/components/player/hooks/usePlayerMeta";
 import { convertProviderCaption } from "@/components/player/utils/captions";
 import { convertRunoutputToSource } from "@/components/player/utils/convertRunoutputToSource";
+import { useOverlayRouter } from "@/hooks/useOverlayRouter";
 import { ScrapingItems, ScrapingSegment } from "@/hooks/useProviderScrape";
 import { useQueryParam } from "@/hooks/useQueryParams";
 import { MetaPart } from "@/pages/parts/player/MetaPart";
@@ -38,7 +39,6 @@ export function RealPlayerView() {
   const [startAtParam] = useQueryParam("t");
   const {
     status,
-    meta,
     playMedia,
     reset,
     setScrapeNotFound,
@@ -47,6 +47,8 @@ export function RealPlayerView() {
   } = usePlayer();
   const { setPlayerMeta, scrapeMedia } = usePlayerMeta();
   const backUrl = useLastNonPlayerLink();
+  const router = useOverlayRouter("settings");
+  const openedWatchPartyRef = useRef<boolean>(false);
 
   const paramsData = JSON.stringify({
     media: params.media,
@@ -55,25 +57,35 @@ export function RealPlayerView() {
   });
   useEffect(() => {
     reset();
+    // Reset watch party state when media changes
+    openedWatchPartyRef.current = false;
   }, [paramsData, reset]);
 
+  // Auto-open watch party menu if URL contains watchparty parameter
+  useEffect(() => {
+    if (openedWatchPartyRef.current) return;
+
+    if (status === playerStatus.PLAYING) {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has("watchparty")) {
+        setTimeout(() => {
+          router.navigate("/watchparty");
+          openedWatchPartyRef.current = true;
+        }, 1000);
+      }
+    }
+  }, [status, router]);
+
   const metaChange = useCallback(
-    (newMeta: PlayerMeta) => {
-      // Renamed parameter to avoid shadowing
-      if (newMeta?.type === "show")
+    (meta: PlayerMeta) => {
+      if (meta?.type === "show")
         navigate(
-          `/media/${params.media}/${newMeta.season?.tmdbId}/${newMeta.episode?.tmdbId}`,
+          `/media/${params.media}/${meta.season?.tmdbId}/${meta.episode?.tmdbId}`,
         );
       else navigate(`/media/${params.media}`);
     },
     [navigate, params],
   );
-
-  const trackMediaEvent = (title: string, type: string) => {
-    if (typeof window !== "undefined" && window.umami) {
-      window.umami.track("watch media", { title, type });
-    }
-  };
 
   const playAfterScrape = useCallback(
     (out: RunOutput | null) => {
@@ -81,13 +93,6 @@ export function RealPlayerView() {
 
       let startAt: number | undefined;
       if (startAtParam) startAt = parseTimestamp(startAtParam) ?? undefined;
-
-      // Access the meta information from the usePlayer hook
-      // Ensure meta is available before tracking
-      if (meta) {
-        // Track the media event with title and type from meta
-        trackMediaEvent(meta.title, meta.type);
-      }
 
       playMedia(
         convertRunoutputToSource(out),
@@ -102,7 +107,6 @@ export function RealPlayerView() {
       startAtParam,
       shouldStartFromBeginning,
       setShouldStartFromBeginning,
-      meta,
     ],
   );
 

@@ -34,6 +34,31 @@ export function ColorPicker(props: {
             </button>
           );
         })}
+        <div className="relative w-full h-10">
+          <input
+            type="color"
+            value={props.value}
+            onChange={(e) => props.onInput(e.target.value)}
+            className="absolute opacity-0 cursor-pointer w-full h-10"
+          />
+          <button
+            type="button"
+            tabIndex={0}
+            className={classNames(
+              "w-full h-10 rounded flex justify-center items-center text-white pointer border-2 border-opacity-10 cursor-pointer",
+              !colors.includes(props.value)
+                ? "border-white"
+                : "border-transparent",
+            )}
+            style={{
+              backgroundColor: !colors.includes(props.value)
+                ? props.value
+                : "#333",
+            }}
+          >
+            <Icon icon={Icons.BRUSH} />
+          </button>
+        </div>
       </div>
     </div>
   );

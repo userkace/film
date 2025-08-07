@@ -1,65 +1,28 @@
 {
     "about": {
-        "description": "Bienvenido a film.kace.dev, tu destino definitivo para el streaming ilimitado de películas y programas de televisión. Explora nuestra extensa biblioteca de clásicos y nuevos lanzamientos, disponible en cualquier dispositivo. Disfruta de nuestro servicio 100% libre de suscripciones y 100% libre de anuncios. ¡Sumérgete y únete al maratón hoy!",
-        "faqTitle": "Preguntas Frecuentes",
+        "description": "film.kace.dev es una aplicación web que busca transmisiones en internet. El equipo tiene como objetivo un enfoque principalmente minimalista para consumir contenido.",
+        "faqTitle": "Preguntas frecuentes",
         "q1": {
-            "body": "film.kace.dev no aloja ningún contenido. Cuando haces clic en algo para ver, se busca en internet el medio seleccionado (En la pantalla de carga y en la pestaña 'fuentes de video' puedes ver qué fuente estás utilizando). Los medios nunca son subidos por film.kace.dev, todo es a través de este mecanismo de búsqueda.",
+            "body": "film.kace.dev no aloja ningún contenido. Cuando haces clic en algo para ver, se busca en internet el medio seleccionado (En la pantalla de carga y en la pestaña 'fuentes de vídeo' puedes ver qué fuente estás utilizando). El contenido nunca se carga en film.kace.dev, todo se realiza a través de este mecanismo de búsqueda.",
             "title": "¿De dónde proviene el contenido?"
         },
         "q2": {
-            "body": "No es posible solicitar un programa o película, film.kace.dev no gestiona ningún contenido. Todo el contenido se ve a través de fuentes en internet.",
-            "title": "¿Dónde puedo solicitar un programa o una película?"
+            "body": "No es posible solicitar una serie o película, film.kace.dev no gestiona ningún contenido. Todo el contenido se ve a través de fuentes en internet.",
+            "title": "¿Dónde puedo solicitar una serie o película?"
         },
         "q3": {
-            "body": "Nuestros resultados de búsqueda están impulsados por The Movie Database (TMDB) y se muestran independientemente de si nuestras fuentes realmente tienen el contenido.",
-            "title": "Los resultados de la búsqueda muestran el programa o película, ¿por qué no puedo reproducirlo?"
+            "body": "Nuestros resultados de búsqueda están alimentados por The Movie Database (TMDB) y se muestran independientemente de si nuestras fuentes realmente tienen el contenido.",
+            "title": "Los resultados de búsqueda muestran la serie o película, ¿Por qué no puedo reproducirla?"
+        },
+        "title": "Acerca de film.kace.dev",
+        "q5": {
+            "body": "¡film.kace.dev tiene un servidor de Discord que se puede encontrar en el encabezado de esta página!",
+            "title": "¿Cómo puedo obtener más información?"
         },
         "q4": {
-            "body": "No hay límite en cuanto a cuánto puedes ver en VidBinge. Transmite tanto como quieras, en cualquier momento, sin restricciones ni costos adicionales.",
-            "title": "¿Hay un límite de cuánto puedo ver?"
-        },
-        "q5": {
-            "title": "¿Con qué frecuencia se añade contenido nuevo a film.kace.dev?",
-            "body": "La disponibilidad de contenido nuevo se basa en las fuentes conectadas a nuestra plataforma. A medida que estas fuentes actualizan sus bibliotecas, nuevas películas y programas de televisión se volverán accesibles a través de VidBinge."
-        },
-        "q6": {
-            "title": "¿Qué debo hacer si un video no se reproduce?",
-            "body": "Si un video no se reproduce, podría deberse a problemas con la fuente. Intenta hacer clic de nuevo en el botón de Reproducir o selecciona una fuente diferente en la pestaña 'fuentes de video'. Si los problemas persisten, por favor verifica tu conexión a internet o intenta más tarde."
-        },
-        "q7": {
-            "title": "¿film.kace.dev ofrece subtítulos o contenido doblado?",
-            "body": "La disponibilidad de subtítulos o versiones dobladas depende de la fuente. Algunas fuentes pueden ofrecer opciones para subtítulos en varios idiomas o contenido doblado, que se pueden seleccionar directamente dentro del reproductor de video si están disponibles."
-        },
-        "title": "Acerca de film.kace.dev"
-    },
-    "privacy": {
-        "description": "¡Bienvenido a VidBinge! Tu privacidad es importante para nosotros. VidBinge (vidbinge.com) está comprometido a proteger tu privacidad mientras disfrutas de tus películas y programas favoritos en nuestra plataforma. Esta Política de Privacidad explica cómo manejamos y protegemos tus datos.",
-        "lastUpdated": "Última actualización: 21/4/2024",
-        "p1": {
-            "body": "film.kace.dev no aloja ningún contenido. Cuando haces clic en algo para ver, se busca en internet el medio seleccionado (En la pantalla de carga y en la pestaña 'fuentes de video' puedes ver qué fuente estás utilizando). Los medios nunca son subidos por film.kace.dev, todo es a través de este mecanismo de búsqueda.",
-            "title": "Información que No Recolectamos"
-        },
-        "p2": {
-            "body": "Utilizamos herramientas analíticas de terceros, como Google Analytics, para recopilar y procesar información demográfica básica que incluye ubicación general, tipo de dispositivo y actividades de navegación en nuestro sitio. Esta información se anonimiza y se utiliza únicamente para mejorar la funcionalidad y el contenido de VidBinge, asegurando que tengas una mejor experiencia de streaming.",
-            "title": "Información que Recolectamos"
-        },
-        "p3": {
-            "body": "VidBinge utiliza cookies para mejorar tu experiencia de visualización. Las cookies nos ayudan a entender el comportamiento del usuario dentro de nuestro sitio (como las películas más vistas), lo que nos permite mejorar nuestros servicios. Puedes optar por desactivar las cookies a través de la configuración de tu navegador, pero esto puede afectar la funcionalidad del sitio.",
-            "title": "Uso de Cookies"
-        },
-        "p4": {
-            "body": "Nuestro uso de Google Analytics significa que compartimos datos demográficos anonimizados con Google. Esta información se procesa bajo la política de privacidad de Google. No compartimos ni vendemos ningún dato a otras terceras partes.",
-            "title": "Servicios de Terceros"
-        },
-        "p5": {
-            "title": "Cambios en Esta Política de Privacidad",
-            "body": "Podemos actualizar esta Política de Privacidad de tiempo en tiempo. La versión más reciente de la política siempre estará publicada en nuestro sitio. Te animamos a revisar regularmente esta Política de Privacidad para cualquier cambio."
-        },
-        "p6": {
-            "title": "Contáctanos",
-            "body": "Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contacta por correo electrónico a: user@kace.dev"
-        },
-        "title": "Política de Privacidad para VidBinge"
+            "body": "Todos los datos se sincronizan en el servidor de la comunidad, cualquiera es libre de usarlo.",
+            "title": "¿Qué pasa con mis datos y cosas?"
+        }
     },
     "actions": {
         "copied": "Copiado",
@@ -131,25 +94,26 @@
         },
         "links": {
             "discord": "Discord",
-            "telegram": "Telegram",
-            "facebook": "Facebook",
-            "instagram": "Instagram",
-            "dmca": "DMCA",
-            "github": "GitHub"
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter",
+            "funding": "Apóyanos"
         },
-        "tagline": "¡Sumérgete en horas interminables de entretenimiento en streaming gratuito con film.kace.dev! Únete a la revolución del binge-watching y explora un mundo de películas y programas de televisión, todo sin necesidad de suscripción."
+        "tagline": "Ve tus series y películas favoritas con esta aplicación de transmisión de código abierto."
     },
     "global": {
         "name": "film.kace.dev",
         "pages": {
             "about": "Acerca de",
-            "dmca": "DMCA",
-            "discover": "Descubrir",
+            "legal": "Legal / DMCA",
             "login": "Iniciar sesión",
             "onboarding": "Configurar",
             "pagetitle": "{{title}} - film.kace.dev",
             "register": "Registrarse",
-            "settings": "Configuración"
+            "settings": "Configuración",
+            "discover": "Descubrir",
+            "support": "Soporte",
+            "migration": "Migrar Cuenta"
         }
     },
     "home": {
@@ -173,10 +137,26 @@
                     "¿Qué quieres explorar?",
                     "¿Qué hay en tu lista de reproducción?",
                     "¿Cuál es tu película favorita?",
-                    "¿Cuál es tu serie favorita?"
+                    "¿Cuál es tu serie favorita?",
+                    "¿Qué hay en tu lista de seguimiento hoy?",
+                    "¿Cómo estuvo su día?",
+                    "Mala mia este sitio nunca funciona...",
+                    "¿No es film.kace.dev lo mejor?",
+                    ">ᴗ<"
                 ]
             },
-            "sectionTitle": "Resultados de búsqueda"
+            "sectionTitle": "Resultados de búsqueda",
+            "empty": {
+                "default": "¡Bienvenido! ¡Encuentra contenido para ver aquí!",
+                "extra": [
+                    "No hay nada aquí :(",
+                    "Tan vacío...",
+                    "Qué vacío.",
+                    "Hola nuevo usuario :3"
+                ]
+            },
+            "discoverMore": "Descubre más",
+            "discover": "Descubre"
         },
         "titles": {
             "day": {
@@ -196,7 +176,24 @@
                 "extra": [
                     "¿Cansado? Escuché que “El Exorcista” es buena."
                 ]
+            },
+            "420": {
+                "default": "¿Qué te gustaría ver este 4/20?",
+                "extra": [
+                    "¡Feliz 4/20 🥳!"
+                ]
+            },
+            "69": {
+                "default": "¿Te apetece algo picante?",
+                "extra": [
+                    "¡Feliz día 69 😘!"
+                ]
             }
+        },
+        "mediaCard": {
+            "moreInfo": "Más información",
+            "copyLink": "Copiar enlace",
+            "close": "Cerrar"
         }
     },
     "media": {
@@ -204,7 +201,10 @@
         "types": {
             "movie": "Película",
             "show": "Serie"
-        }
+        },
+        "unreleased": "No Estrenado",
+        "episodeShort": "E",
+        "seasonShort": "S"
     },
     "navigation": {
         "banner": {
@@ -212,19 +212,20 @@
         },
         "menu": {
             "about": "Acerca de nosotros",
-            "donation": "Donar",
-            "discover": "Descubrir",
             "logout": "Cerrar sesión",
             "register": "Sincronizar con la nube",
             "settings": "Configuración",
-            "support": "Soporte"
+            "support": "Soporte",
+            "discover": "Descubrir",
+            "development": "Desarrollo"
         }
     },
     "notFound": {
         "badge": "No encontrado",
         "goHome": "Volver a inicio",
         "message": "Buscamos en todas partes: debajo de los contenedores, en el armario, detrás del proxy, pero al final no pudimos encontrar la página que estás buscando.",
-        "title": "No se puede encontrar esa página"
+        "title": "No se puede encontrar esa página",
+        "reloadButton": "Intentar de nuevo"
     },
     "onboarding": {
         "defaultConfirm": {
@@ -284,9 +285,43 @@
                     "description": "Configura un proxy en tan solo 5 minutos y obtén acceso a buenas fuentes.",
                     "quality": "Buena calidad",
                     "title": "Proxy personalizado"
-                }
+                },
+                "or": "o"
             },
-            "title": "Vamos a configurar film.kace.dev"
+            "title": "Vamos a configurar film.kace.dev",
+            "moreInfo": {
+                "explainer": {
+                    "default": "3. Configuración predeterminada",
+                    "intro": "film.kace.dev no aloja los videos. Depende de sitios de páginas web de terceros para el contenido, asi que tienes que elegir como te conectas a esos sitios.",
+                    "fedapi": {
+                        "fedapi": "Adicional: FED API (Privado) token",
+                        "fedapiDescription": "¡Trae tu propia cuenta GRATIS de Febbox para tener acceso a FED API (Privada), la mejor fuente con calidad 4K,Dolby Atmos, saltar intros y los tiempos de carga mas rapidos! ¡Opción altamente recomendada!"
+                    },
+                    "defaultDescription": "Usa el proxy incorporado de film.kace.dev. Es la opción mas facil pero puede ser mas lenta debido a ancho de banda compartida.",
+                    "extension": "1. Extensión",
+                    "options": "Tus Opciones:",
+                    "extensionDescription": "La extensión te brinda acceso a la mayoría de las fuentes. Actúa como un proxy local y puede manejar sitios que necesitan cookies especiales o encabezados para cargar.",
+                    "proxy": "2. Proxy",
+                    "outro": "¡Si tienes más preguntas en cómo esto funciona, siéntete libre de preguntar en el <0>film.kace.dev Discord</0> servidor!"
+                },
+                "title": "Comprender una configuración",
+                "recommended": {
+                    "title": "¿No estás seguro de qué elegir?",
+                    "subtitle": "Configuraciones recomendadas:",
+                    "desktop": {
+                        "description": "Extensión + FED API (Privada)"
+                    },
+                    "iOS": {
+                        "title": "iOS:",
+                        "description": "Proxy personalizado + FED API (Privada)"
+                    },
+                    "android": {
+                        "title": "Android:",
+                        "description": "Extensión + FED API (Privada)"
+                    }
+                },
+                "button": "Más información"
+            }
         }
     },
     "overlays": {
@@ -322,7 +357,9 @@
                     "shortTitle": "Descargar / PC",
                     "title": "Descargando en PC"
                 },
-                "title": "Descargar"
+                "title": "Descargar",
+                "button": "Intentar descarga",
+                "hlsDownloader": "O, ve a la <0>hls downloader website</0> y pega el URL de la playlist de abajo."
             },
             "episodes": {
                 "button": "Episodios",
@@ -331,17 +368,22 @@
                 "loadingError": "Error al cargar la temporada",
                 "loadingList": "Cargando...",
                 "loadingTitle": "Cargando...",
-                "unairedEpisodes": "Uno o más episodios de esta temporada se han desactivado porque aún no se han emitido."
+                "unairedEpisodes": "Uno o más episodios de esta temporada se han desactivado porque aún no se han emitido.",
+                "seasons": "Temporadas",
+                "showMore": "Mostrar más",
+                "showLess": "Mostrar menos"
             },
             "playback": {
                 "speedLabel": "Velocidad de reproducción",
-                "title": "Configuración de reproducción"
+                "title": "Configuración de reproducción",
+                "disabled": "Desabilitado en Watch party"
             },
             "quality": {
                 "automaticLabel": "Calidad automática",
                 "hint": "Puedes intentar <0>cambiar de fuente</0> para obtener diferentes opciones de calidad.",
                 "iosNoQuality": "Debido a limitaciones definidas por Apple, la selección de calidad no está disponible en iOS para esta fuente. Puedes intentar <0>cambiar a otra fuente</0> para obtener diferentes opciones de calidad.",
-                "title": "Calidad"
+                "title": "Calidad",
+                "auto": "Automático"
             },
             "settings": {
                 "audioItem": "Audio",
@@ -368,7 +410,8 @@
                     "title": "Sin transmisión"
                 },
                 "title": "Fuentes",
-                "unknownOption": "Desconocida"
+                "unknownOption": "Desconocida",
+                "editOrder": "Editar orden"
             },
             "subtitles": {
                 "customChoice": "Sube o arrastra un archivo",
@@ -381,7 +424,13 @@
                     "fixCapitals": "Arreglar capitalización"
                 },
                 "title": "Subtítulos",
-                "unknownLanguage": "Desconocido"
+                "unknownLanguage": "Desconocido",
+                "onChoice": "En",
+                "SourceChoice": "Subtitulos de fuente",
+                "OpenSubtitlesChoice": "OpenSubtitles",
+                "empty": "No hay subtítulos provistos para esto.",
+                "notFound": "Ni una de las opciones habiles coinciden con tus preferencias",
+                "useNativeSubtitles": "Usar subtitulos de video nativos"
             }
         },
         "metadata": {
@@ -389,7 +438,7 @@
                 "text": "No ha sido posible cargar la metadata de la API, por favor, comprueba tu conexión a internet.",
                 "title": "No ha sido posible cargar los metadatos de la API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Eliminado",
                 "text": "Este contenido no va a estar disponible debido a un aviso de eliminación o un reclamo de derechos de autor.",
                 "title": "El contenido ha sido eliminado"
@@ -414,7 +463,6 @@
             }
         },
         "nextEpisode": {
-            "cancel": "Cancelar",
             "next": "Siguiente episodio"
         },
         "playbackError": {
@@ -458,9 +506,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "text": "¡Bienvenido a la página de contacto DMCA de film.kace.dev! Respetamos los derechos de propiedad intelectual y queremos abordar cualquier problema de derechos de autor de manera rápida. Si cree que su trabajo con derechos de autor se ha utilizado incorrectamente en nuestra plataforma, envíe un aviso DMCA detallado al correo electrónico que se muestra a continuación. Incluya una descripción del material con derechos de autor, sus datos de contacto y una declaración de buena fe. Estamos comprometidos a resolver estos asuntos de manera pronta y agradecemos su cooperación para mantener a film.kace.dev como un lugar que respeta la creatividad y los derechos de autor.",
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Cargando la aplicación",
         "loadingUser": "Cargando tu perfil",
@@ -492,7 +539,12 @@
                     "text": "Esta acción es irreversible. Todos los datos se eliminarán y no se podrán recuperar.",
                     "title": "Eliminar cuenta"
                 },
-                "title": "Acciones"
+                "title": "Acciones",
+                "logoutAllDevices": {
+                    "title": "Finalizar todas las sesiones",
+                    "text": "Esto te desconectará de todos los dispositivos vinculados a tu cuenta.",
+                    "button": "Cerrar sesión en todos los dispositivos"
+                }
             },
             "devices": {
                 "deviceNameLabel": "Nombre del dispositivo",
@@ -596,5 +648,159 @@
             "title": "Subtítulos"
         },
         "unsaved": "Tienes cambios sin guardar"
+    },
+    "details": {
+        "rating": "Clasificación:",
+        "season": "Temporada",
+        "resume": "Reanudar",
+        "runtime": "Tiempo de ejecución:",
+        "releaseDate": "Fecha de lanzamiento:",
+        "votes": "votos",
+        "tmdb": "Ver en TMDB",
+        "imdb": "Ver en IMDb",
+        "episodes": "Episodios",
+        "play": "Reproducir",
+        "seasons": "Temporada/s",
+        "trailer": "Trailer",
+        "endsAt": "Termina en {{time}}",
+        "episode": "Episodio",
+        "language": "Idioma:"
+    },
+    "migration": {
+        "loginRequired": "¡Debes iniciar sesión para migrar tus datos! Vuelve e inicia sesión para continuar.",
+        "start": {
+            "options": {
+                "download": {
+                    "description": "Esto descargará tus datos a tu dispositivo. Podrás subirlos al nuevo servidor o simplemente guardarlos para mayor seguridad.",
+                    "title": "Descargar datos",
+                    "quality": "Mas tecnico",
+                    "action": "Descargar datos"
+                },
+                "or": "o",
+                "direct": {
+                    "description": "Esto migrará tus datos directamente al nuevo servidor. Es la opción más rápida. <br /><br />¡Esta opción te permite mantener tu contraseña!",
+                    "title": "Migración directa",
+                    "quality": "Más fácil y rápida",
+                    "action": "Transferir datos"
+                },
+                "upload": {
+                    "title": "Subir Datos",
+                    "description": "Sube tu archivo de datos previamente exportado para restaurar tus marcadores y progreso en esta cuenta.",
+                    "quality": "Restaurar desde copia de seguridad",
+                    "action": "Subir Datos"
+                }
+            },
+            "explainer": "Si desea migrar o hacer una copia de seguridad de sus datos, puede hacerlo mediante las opciones a continuación. Esto le permitirá conservar sus datos al cambiar de servidor backend.",
+            "title": "Migra tus datos"
+        },
+        "direct": {
+            "button": {
+                "processing": "Procesando...",
+                "migrate": "MIgrar",
+                "home": "Ir al inicio",
+                "login": "Continua a iniciar sesión"
+            },
+            "description": "Introduce la URL del servidor backend para migrar los datos de tu cuenta actual al nuevo backend. ¡Así conservarás tu contraseña!",
+            "backendLabel": "URL del Servidor Backend",
+            "recaptchaLabel": "Clave ReCaptcha (opcional)",
+            "toggleLable": "¿Necesita ReCaptcha?",
+            "status": {
+                "error": "No se pudo migrar tus datos. 😿",
+                "success": "¡Tus datos se han migrado correctamente! 🎉"
+            },
+            "title": "Migración directa"
+        },
+        "download": {
+            "status": {
+                "error": "No se pudo descargar tus datos. 😿",
+                "success": "¡Tus datos se han descargado correctamente! 🎉"
+            },
+            "description": "Esto descargará tus datos a tu dispositivo. Podrás subirlos al nuevo servidor o simplemente guardarlos para mayor seguridad.",
+            "title": "Descargar datos",
+            "items": {
+                "description": "La descarga incluye:",
+                "bookmarks": "Marcadores de contenido",
+                "progress": "Progreso de Visualización"
+            },
+            "button": {
+                "download": "Descargar datos",
+                "home": "Ir al Inicio",
+                "login": "Continua a Iniciar sesión"
+            }
+        },
+        "upload": {
+            "description": "Sube tu archivo de datos previamente exportado para restaurar tus marcadores y progreso en esta cuenta.",
+            "title": "Subir datos",
+            "status": {
+                "processing": "Procesando datos...",
+                "error": "No se pudieron cargar tus datos. 😿",
+                "success": "¡Tus datos se han cargado correctamente! 🎉"
+            },
+            "file": {
+                "description": "Seleccione el archivo que desea subir",
+                "select": "Seleccionar archivo",
+                "change": "Cambiar archivo",
+                "name": "Nombre del archivo"
+            },
+            "dataPreview": "Vista Previa:",
+            "items": {
+                "bookmarks": "Marcadores de contenido",
+                "progress": "Progreso de Visualización"
+            },
+            "exportedOn": "Exportado en",
+            "button": {
+                "import": "Importar data",
+                "processing": "Procesando...",
+                "success": "Importación completa"
+            }
+        },
+        "back": "Ir de vuelta"
+    },
+    "watchParty": {
+        "join": "Unirse",
+        "status": {
+            "inSync": "En sincronización",
+            "outOfSync": "Fuera de sincronización"
+        },
+        "copyCode": "Toca para copiar",
+        "behindHost": "Atrás del anfitrión por {{seconds}} segundos",
+        "alone": "Solo",
+        "withCount": "Con {{count}} otros",
+        "isGuest": "Mirando como invitado en <0>{{backendName}}</0>",
+        "watching": "Mirando",
+        "syncing": "Sincronizando...",
+        "shareCode": "Compartir este codigo con amigos (Toca para copiar link)",
+        "viewers": "Espectadores ({{count}})",
+        "aheadOfHost": "Adelantado del anfitrión por {{seconds}} segundos",
+        "linkCopied": "Copiado!",
+        "invalidRoom": "No se pudo conectar a la sala",
+        "emptyRoom": "Nadie está aún en la sala",
+        "save": "Guardar",
+        "cancel": "Cancelar"
+    },
+    "fedapi": {
+        "setup": {
+            "step": {
+                "warning": "(¡No compartas este token!)",
+                "1": "1. Anda a <0>febbox.com</0> y inicia sesión con Google (¡Usa una cuenta nueva!)",
+                "5": "5. Cierra la pestaña, pero NO cierres sesión!",
+                "4": "4. Copia la galleta/cookie de \"ui\".",
+                "3": "3. Ve a la pestaña de Application → Cookies",
+                "2": "2. Abre DevTools o inspecciona la página"
+            },
+            "title": "Para conseguir tu UI token:",
+            "showVideo": "Muestra el Video Tutorial",
+            "hideVideo": "Oculta el Video Tutorial"
+        },
+        "status": {
+            "invalid_token": "¡No se pudo recuperar un stream 'VIP'. Tu token es inválido!",
+            "api_down": "¡No se pudo alcanzar FED API!",
+            "success": "éxito"
+        }
+    },
+    "downtimeNotice": {
+        "message": "film.kace.dev esta experimentando problemas con algunos proveedores de nuevo. Si no puedes encontrar o reproducir un programa, por favor cambie de fuente. Espera que este error persista a lo largo de los siguientes momentos.",
+        "badge": "Problemas",
+        "title": "Problemas de proveedor"
     }
 }

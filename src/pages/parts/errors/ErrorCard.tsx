@@ -5,6 +5,10 @@ import { Button } from "@/components/buttons/Button";
 import { Icon, Icons } from "@/components/Icon";
 import { Modal } from "@/components/overlays/Modal";
 import { DisplayError } from "@/components/player/display/displayInterface";
+import {
+  formatErrorDebugInfo,
+  gatherErrorDebugInfo,
+} from "@/utils/errorDebugInfo";
 
 export function ErrorCard(props: {
   error: DisplayError | string;
@@ -25,7 +29,13 @@ export function ErrorCard(props: {
 
   function copyError() {
     if (!props.error || !navigator.clipboard) return;
-    navigator.clipboard.writeText(`\`\`\`${errorMessage}\`\`\``);
+
+    const debugInfo = gatherErrorDebugInfo(props.error);
+    const formattedDebugInfo = formatErrorDebugInfo(debugInfo);
+
+    const fullErrorReport = `\`\`\`\n${errorMessage}\n\n${formattedDebugInfo}\n\`\`\``;
+
+    navigator.clipboard.writeText(fullErrorReport);
 
     setHasCopied(true);
 
@@ -57,7 +67,7 @@ export function ErrorCard(props: {
               <>
                 <Icon icon={Icons.COPY} className="text-2xl" />
                 <span className="hidden min-[400px]:inline-block ml-3">
-                  {t("actions.copy")}
+                  {t("player.playbackError.copyDebugInfo")}
                 </span>
               </>
             )}
@@ -74,6 +84,7 @@ export function ErrorCard(props: {
       <div className="pointer-events-auto mt-4 h-60 select-text overflow-y-auto whitespace-pre text-left">
         {errorMessage}
       </div>
+      <p className="mt-4 text-sm">{t("player.playbackError.debugInfo")}</p>
     </div>
   );
 }

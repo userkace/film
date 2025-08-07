@@ -8,6 +8,8 @@ export interface FlareProps {
   flareSize?: number;
   cssColorVar?: string;
   enabled?: boolean;
+  gradientOpacity?: number;
+  gradientSpread?: number;
 }
 
 const SIZE_DEFAULT = 200;
@@ -38,6 +40,8 @@ function Light(props: FlareProps) {
   const outerRef = useRef<HTMLDivElement>(null);
   const size = props.flareSize ?? SIZE_DEFAULT;
   const cssVar = props.cssColorVar ?? CSS_VAR_DEFAULT;
+  const opacity = props.gradientOpacity ?? 1;
+  const spread = props.gradientSpread ?? 70;
 
   useEffect(() => {
     function mouseMove(e: MouseEvent) {
@@ -69,7 +73,7 @@ function Light(props: FlareProps) {
         },
       )}
       style={{
-        backgroundImage: `radial-gradient(circle at center, rgba(var(${cssVar}) / 1), rgba(var(${cssVar}) / 0) 70%)`,
+        backgroundImage: `radial-gradient(circle at center, rgba(var(${cssVar}) / ${opacity}), rgba(var(${cssVar}) / 0) ${spread}%)`,
         backgroundPosition: `var(--bg-x) var(--bg-y)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: `${size.toFixed(0)}px ${size.toFixed(0)}px`,
@@ -85,7 +89,7 @@ function Light(props: FlareProps) {
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            background: `radial-gradient(circle at center, rgba(var(${cssVar}) / 1), rgba(var(${cssVar}) / 0) 70%)`,
+            backgroundImage: `radial-gradient(circle at center, rgba(var(${cssVar}) / ${opacity}), rgba(var(${cssVar}) / 0) ${spread}%)`,
             backgroundPosition: `var(--bg-x) var(--bg-y)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: `${size.toFixed(0)}px ${size.toFixed(0)}px`,

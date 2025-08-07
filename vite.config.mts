@@ -57,65 +57,21 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         disable: env.VITE_PWA_ENABLED !== "true",
         registerType: "autoUpdate",
-        filename: '1256762.sw.js',
         workbox: {
           maximumFileSizeToCacheInBytes: 4000000, // 4mb
-          globIgnores: ["**ping.txt**"],
+          globIgnores: ["!assets/**/*"],
         },
         includeAssets: [
-          "OneSignalSDKWorker.js",
           "favicon.ico",
           "apple-touch-icon.png",
           "safari-pinned-tab.svg",
-          "opensearch.xml",
-          "robots.txt",
-          "ping.txt",
-          "favicon-32x32.png",
-          "favicon-16x16.png",
-          "browserconfig.xml",
-          "splash_screens/iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_landscape.png",
-          "splash_screens/iPhone_15_Pro__iPhone_15__iPhone_14_Pro_landscape.png",
-          "splash_screens/iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_landscape.png",
-          "splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_landscape.png",
-          "splash_screens/iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_landscape.png",
-          "splash_screens/iPhone_11_Pro_Max__iPhone_XS_Max_landscape.png",
-          "splash_screens/iPhone_11__iPhone_XR_landscape.png",
-          "splash_screens/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_landscape.png",
-          "splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.png",
-          "splash_screens/4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.png",
-          "splash_screens/12.9__iPad_Pro_landscape.png",
-          "splash_screens/11__iPad_Pro__10.5__iPad_Pro_landscape.png",
-          "splash_screens/10.9__iPad_Air_landscape.png",
-          "splash_screens/10.5__iPad_Air_landscape.png",
-          "splash_screens/10.2__iPad_landscape.png",
-          "splash_screens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_landscape.png",
-          "splash_screens/8.3__iPad_Mini_landscape.png",
-          "splash_screens/iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png",
-          "splash_screens/iPhone_15_Pro__iPhone_15__iPhone_14_Pro_portrait.png",
-          "splash_screens/iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_portrait.png",
-          "splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png",
-          "splash_screens/iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_portrait.png",
-          "splash_screens/iPhone_11_Pro_Max__iPhone_XS_Max_portrait.png",
-          "splash_screens/iPhone_11__iPhone_XR_portrait.png",
-          "splash_screens/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_portrait.png",
-          "splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png",
-          "splash_screens/4__iPhone_SE__iPod_touch_5th_generation_and_later_portrait.png",
-          "splash_screens/12.9__iPad_Pro_portrait.png",
-          "splash_screens/11__iPad_Pro__10.5__iPad_Pro_portrait.png",
-          "splash_screens/10.9__iPad_Air_portrait.png",
-          "splash_screens/10.5__iPad_Air_portrait.png",
-          "splash_screens/10.2__iPad_portrait.png",
-          "splash_screens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png",
-          "splash_screens/8.3__iPad_Mini_portrait.png"
-
         ],
         manifest: {
-          id: "https://film.kace.dev/",
-          name: "film.kace.dev",
-          short_name: "film",
-          description: "Stream a wide array of movies and TV shows on film.kace.dev, completely free. Enjoy unlimited, ad-free viewing with no subscriptions required.",
-          theme_color: "#120f1d",
-          background_color: "#120f1d",
+          name: "Film",
+          short_name: "Film",
+          description: "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)",
+          theme_color: "#000000",
+          background_color: "#000000",
           display: "standalone",
           start_url: "/",
           icons: [
@@ -167,30 +123,29 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        output: {
-          manualChunks(id: string) {
-            if (id.includes("@sozialhelden+ietf-language-tags") || id.includes("country-language")) {
-              return "language-db";
-            }
-            if (id.includes("hls.js")) {
-              return "hls";
-            }
-            if (id.includes("node-forge") || id.includes("crypto-js")) {
-              return "auth";
-            }
-            if (id.includes("locales") && !id.includes("en.json")) {
-              return "locales";
-            }
-            if (id.includes("react-dom")) {
-              return "react-dom";
-            }
-            if (id.includes("Icon.tsx")) {
-              return "Icons";
-            }
-            const isCaptioningPackage = captioningPackages.some(packageName => id.includes(packageName));
-            if (isCaptioningPackage) {
-              return "caption-parsing";
-            }
+        output: {},
+        manualChunks(id: string) {
+          if (id.includes("@sozialhelden+ietf-language-tags") || id.includes("country-language")) {
+            return "language-db";
+          }
+          if (id.includes("hls.js")) {
+            return "hls";
+          }
+          if (id.includes("node-forge") || id.includes("crypto-js")) {
+            return "auth";
+          }
+          if (id.includes("locales") && !id.includes("en.json")) {
+            return "locales";
+          }
+          if (id.includes("react-dom")) {
+            return "react-dom";
+          }
+          if (id.includes("Icon.tsx")) {
+            return "Icons";
+          }
+          const isCaptioningPackage = captioningPackages.some(packageName => id.includes(packageName));
+          if (isCaptioningPackage) {
+            return "caption-parsing";
           }
         }
       }

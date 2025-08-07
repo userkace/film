@@ -32,6 +32,8 @@ export interface InterfaceSlice {
     leftControlHovering: boolean; // is the cursor hovered over the left side of player controls
     isHoveringControls: boolean; // is the cursor hovered over any controls?
     timeFormat: VideoPlayerTimeFormat; // Time format of the video player
+    isSpeedBoosted: boolean; // is playback speed temporarily boosted to 2x
+    showSpeedIndicator: boolean; // should the speed indicator be shown
   };
   updateInterfaceHovering(newState: PlayerHoverState): void;
   setSeeking(seeking: boolean): void;
@@ -42,6 +44,8 @@ export interface InterfaceSlice {
   setLastVolume(state: number): void;
   hideNextEpisodeButton(): void;
   setShouldStartFromBeginning(val: boolean): void;
+  setSpeedBoosted(state: boolean): void;
+  setShowSpeedIndicator(state: boolean): void;
 }
 
 export const createInterfaceSlice: MakeSlice<InterfaceSlice> = (set, get) => ({
@@ -61,6 +65,8 @@ export const createInterfaceSlice: MakeSlice<InterfaceSlice> = (set, get) => ({
     canAirplay: false,
     hideNextEpisodeBtn: false,
     shouldStartFromBeginning: false,
+    isSpeedBoosted: false,
+    showSpeedIndicator: false,
   },
 
   setShouldStartFromBeginning(val) {
@@ -110,6 +116,16 @@ export const createInterfaceSlice: MakeSlice<InterfaceSlice> = (set, get) => ({
   hideNextEpisodeButton() {
     set((s) => {
       s.interface.hideNextEpisodeBtn = true;
+    });
+  },
+  setSpeedBoosted(state) {
+    set((s) => {
+      s.interface.isSpeedBoosted = state;
+    });
+  },
+  setShowSpeedIndicator(state) {
+    set((s) => {
+      s.interface.showSpeedIndicator = state;
     });
   },
 });

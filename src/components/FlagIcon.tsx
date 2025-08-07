@@ -26,6 +26,20 @@ export function FlagIcon(props: FlagIconProps) {
       </div>
     );
 
+  if (props.langCode === "cat")
+    return (
+      <div className="w-8 h-6 rounded bg-[#505050] flex justify-center items-center">
+        <img src="/flags/cat.png" className="w-4 h-4" />
+      </div>
+    );
+
+  if (props.langCode === "uwu")
+    return (
+      <div className="w-8 h-6 rounded bg-[#222] flex justify-center items-center">
+        <img src="/flags/uwu.png" className="w-6 h-6" />
+      </div>
+    );
+
   if (props.langCode === "minion")
     return (
       <div className="w-8 h-6 rounded bg-[#ffff1a] flex justify-center items-center">
@@ -34,6 +48,19 @@ export function FlagIcon(props: FlagIconProps) {
             <div className="absolute top-0 left-0 w-1 h-1 bg-white rounded-full transform -translate-x-1/3 -translate-y-1/3" />
           </div>
         </div>
+      </div>
+    );
+
+  if (props.langCode === "futhark")
+    return (
+      <div className="w-8 h-6 rounded bg-gray-800 flex flex-col">
+        <div className="flex-1 bg-brown-800" />
+        <div className="h-2 bg-yellow-600 flex justify-center items-center">
+          <span className="text-white text-lg translate-y-[-2px] font-bold z-50">
+            ᚠ
+          </span>
+        </div>
+        <div className="flex-1 bg-gray-600" />
       </div>
     );
 

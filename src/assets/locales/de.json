@@ -4,17 +4,41 @@
         "faqTitle": "Häufig gestellte Fragen",
         "q1": {
             "body": "film.kace.dev hostet keinen eigenen Inhalt. Wenn du auf etwas zum Anschauen klickst, wird das Internet danach durchsucht (Auf dem Ladebildschirm und im Tab \"Videoquellen\" kannst du einstellen, welche Quellen verwendet werden sollen). film.kace.dev lädt keine Videos hoch, alleVideos stammen aus der Suche.",
-            "title": "Woher stammen die Videos?"
+            "title": "Woher stammen die Videos?",
+            "section": "allgemein"
         },
         "q2": {
             "body": "Das Anfragen von Serien oder Filmen ist nicht möglich. film.kace.dev verwaltet keine Inhalte. Alle Videos stammen vom Quellen aus dem Internet.",
-            "title": "Wo kann ich eine Serie oder einen Film anfragen?"
+            "title": "Wo kann ich eine Serie oder einen Film anfragen?",
+            "section": "suchen"
         },
         "q3": {
             "body": "Unsere Suchergebnisse werden von The Movie Database (TMDB) bereitgestellt und, egal ob unsere Videoquellen über dieses Video verfügen, angezeigt.",
-            "title": "Die Suche zeigt eine Serie oder einen Film an, warum kann ich den dann nicht abspielen?"
+            "title": "Die Suche zeigt eine Serie oder einen Film an, warum kann ich den dann nicht abspielen?",
+            "section": "suchen"
         },
-        "title": "Über film.kace.dev"
+        "title": "Über film.kace.dev",
+        "q4": {
+            "title": "Was ist mit meinen Daten und dem ganzen Zeug?",
+            "body": "Alle Daten werden mit dem Community-Backend synchronisiert, jeder kann dies ebenfalls nutzen.",
+            "section": "allgemein"
+        },
+        "q5": {
+            "title": "Wie kann ich mehr herausfinden?",
+            "body": "film.kace.dev hat einen Discord-Server, der oben auf der Seite gefunden werden kann!",
+            "section": "allgemein"
+        },
+        "help": "Keine Antwort gefunden? Kontaktiere uns hier.",
+        "sections": {
+            "language": "Sprach- & Untertiteleinstellungen",
+            "general": "Allgemeines",
+            "playback": "Wiedergabeprobleme",
+            "connections": "Verbindungen"
+        },
+        "searchPlaceholder": "FAQ durchsuchen...",
+        "q6": {
+            "title": "Gibt es eine film.kace.dev App?"
+        }
     },
     "actions": {
         "copied": "Kopiert",
@@ -25,7 +49,7 @@
         "deviceNameLabel": "Gerätename",
         "deviceNamePlaceholder": "Handy",
         "generate": {
-            "description": "Deine Passphrase dient als dein Nutzername und Passwort. Speichere sie sicher ab, damit du dich in deinem Konto anmelden kannst",
+            "description": "Deine Passphrase dient als dein Nutzername und Passwort. Speichere sie sicher ab, damit du dich in deinem Konto anmelden kannst. <bold>Verliere deine Passphrase auf keinen Fall!</bold>",
             "next": "Ich habe meine Passphrase gespeichert",
             "passphraseFrameLabel": "Passphrase",
             "title": "Deine Passphrase"
@@ -44,7 +68,7 @@
             "information": {
                 "color1": "Profilfarbe 1",
                 "color2": "Profilfarbe 2",
-                "header": "Gebe einen Namen für dein Gerät ein und wähle ein Symbol",
+                "header": "Gebe einen Namen für dein Gerät ein und wähle Farben und ein Symbol deiner Wahl!",
                 "icon": "Symbol",
                 "next": "Weiter",
                 "title": "Kontoinformationen"
@@ -86,8 +110,10 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "GitHub"
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter",
+            "funding": "Unterstütze uns"
         },
         "tagline": "Schau deine Lieblingsserien und Filme mit dieser quelloffenen Streaming App."
     },
@@ -95,12 +121,16 @@
         "name": "film.kace.dev",
         "pages": {
             "about": "Über",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Anmelden",
             "onboarding": "Einrichtung",
             "pagetitle": "{{title}} - film.kace.dev",
             "register": "Registrieren",
-            "settings": "Einstellungen"
+            "settings": "Einstellungen",
+            "discover": "Entdecken",
+            "support": "Unterstützung",
+            "migration": "Konto übertragen",
+            "jip": "Jip"
         }
     },
     "home": {
@@ -124,10 +154,26 @@
                     "Was möchtest du entdecken?",
                     "Was ist auf deiner Merkliste?",
                     "Was ist dein Lieblingsfilm?",
-                    "Was ist deine Lieblingsserie?"
+                    "Was ist deine Lieblingsserie?",
+                    "Was willst du heute schauen?",
+                    "Wie war dein Tag?",
+                    "Mein Fehler die Seite funktioniert nie...",
+                    "Ist film.kace.dev nicht das beste?",
+                    ">ᴗ<"
                 ]
             },
-            "sectionTitle": "Suchergebnisse"
+            "sectionTitle": "Suchergebnisse",
+            "empty": {
+                "default": "Willkommen, hier finden Sie Medien zum Anschauen!",
+                "extra": [
+                    "Hier ist nichts :(",
+                    "so leer...",
+                    "So eine Leere.",
+                    "Hallo neuer Benutzer :3"
+                ]
+            },
+            "discoverMore": "Entdecke mehr",
+            "discover": "Entdecken"
         },
         "titles": {
             "day": {
@@ -147,7 +193,24 @@
                 "extra": [
                     "Müde? Ich hab gehört The Exorcist soll gut sein."
                 ]
+            },
+            "69": {
+                "default": "Lust auf etwas scharfes?",
+                "extra": [
+                    "Schönen 69. Tag 😘!"
+                ]
+            },
+            "420": {
+                "default": "Was möchten Sie am 4/20 sehen?",
+                "extra": [
+                    "Schönen 4/20 🥳!"
+                ]
             }
+        },
+        "mediaCard": {
+            "moreInfo": "Mehr Infos",
+            "copyLink": "Link kopieren",
+            "close": "Schließen"
         }
     },
     "media": {
@@ -156,7 +219,9 @@
             "movie": "Film",
             "show": "Serie"
         },
-        "unreleased": "Unveröffentlicht"
+        "unreleased": "Unveröffentlicht",
+        "episodeShort": "F",
+        "seasonShort": "S"
     },
     "navigation": {
         "banner": {
@@ -164,18 +229,20 @@
         },
         "menu": {
             "about": "Über uns",
-            "donation": "Spenden",
             "logout": "Abmelden",
             "register": "Mit der Cloud synchronisieren",
             "settings": "Einstellungen",
-            "support": "Support"
+            "support": "Support",
+            "discover": "Entdecken",
+            "development": "Entwicklung"
         }
     },
     "notFound": {
         "badge": "Nicht gefunden",
         "goHome": "Zurück zur Startseite",
         "message": "Wir haben überall gesucht: Unter den Eimern, im Schrank, hinter dem Proxy. Wir konnten die gesuchte Seite nicht finden.",
-        "title": "Diese Seite wurde nicht gefunden"
+        "title": "Diese Seite wurde nicht gefunden",
+        "reloadButton": "Versuchs nochmal"
     },
     "onboarding": {
         "defaultConfirm": {
@@ -235,9 +302,28 @@
                     "description": "Richte in nur 5 Minuten einen Proxy ein und erhalte Zugriff auf großartige Quellen.",
                     "quality": "Gute Qualität",
                     "title": "Eigene Proxy"
-                }
+                },
+                "or": "oder"
             },
-            "title": "Lass uns mit der Einrichtung von film.kace.dev starten"
+            "title": "Lass uns mit der Einrichtung von film.kace.dev starten",
+            "moreInfo": {
+                "explainer": {
+                    "proxyDescription": "Der Proxy sammelt Medien von anderen Websites. Es umgeht Browser-Beschränkungen (wie CORS), um Scraping zu ermöglichen.",
+                    "intro": "film.kace.dev hostet keine Videos. Es ist für den Inhalt auf Websites von Drittanbietern angewiesen, sodass Sie festlegen müssen, wie es mit diesen Websites verbunden wird.",
+                    "fedapi": {
+                        "fedapiDescription": "Wenn du ein eigenes Febbox-Konto hast, kannst du die FED-API freischalten. Unsere beste Quelle mit 4K-Qualität, Dolby Atmos, den meisten Inhalten und den besten (schnellsten) Ladezeiten. Dies ist sehr empfehlenswert!",
+                        "fedapi": "Optionale FED API (Febbox) UI Token"
+                    },
+                    "options": "Deine Optionen:",
+                    "extension": "1. Erweiterung (Empfohlen)",
+                    "extensionDescription": "Die Erweiterung gibt mir Zugriff auf weitere Quellen. Er fungiert als lokaler Proxy und kann mit Websites umgehen, die spezielle Cookies oder Headers zum Laden benötigen.",
+                    "proxy": "2. Proxy",
+                    "default": "3. Standard Einstellungen",
+                    "defaultDescription": "Benützt film.kace.dev's eigener Proxy. Das ist die einfachste Option, kann aber aufgrund der gemeinsam genutzten Bandbreite, langsamer sein.",
+                    "outro": "Wenn du mehr Fragen hast, wie die Seite funktioniert, feel free und frag im <0>film.kace.dev Discord</0> Server nach!"
+                },
+                "button": "Mehr Info"
+            }
         }
     },
     "overlays": {
@@ -273,7 +359,9 @@
                     "shortTitle": "Download / PC",
                     "title": "Am PC herunterladen"
                 },
-                "title": "Download"
+                "title": "Download",
+                "hlsDownloader": "Oder gehen Sie auf die <0>hls downloader website</0> und füg dort die URL der Wiedergabeliste von unten ein.",
+                "button": "Versuch herunterladen"
             },
             "episodes": {
                 "button": "Folgen",
@@ -282,7 +370,8 @@
                 "loadingError": "Fehler beim Laden der Sitzung",
                 "loadingList": "Wird geladen...",
                 "loadingTitle": "Wird geladen...",
-                "unairedEpisodes": "Eine oder mehrere Episoden dieser Staffel wurden deaktiviert, weil sie noch nicht ausgestrahlt wurden."
+                "unairedEpisodes": "Eine oder mehrere Episoden dieser Staffel wurden deaktiviert, weil sie noch nicht ausgestrahlt wurden.",
+                "seasons": "Staffeln"
             },
             "playback": {
                 "speedLabel": "Wiedergabegeschwindigkeit",
@@ -319,7 +408,8 @@
                     "title": "Kein Stream"
                 },
                 "title": "Quellen",
-                "unknownOption": "Unbekannt"
+                "unknownOption": "Unbekannt",
+                "editOrder": "Bestellung bearbeiten"
             },
             "subtitles": {
                 "customChoice": "Untertiteldatei auswählen oder hier ablegen",
@@ -332,7 +422,16 @@
                     "fixCapitals": "Großschreibung korrigieren"
                 },
                 "title": "Untertitel",
-                "unknownLanguage": "Unbekannt"
+                "unknownLanguage": "Unbekannt",
+                "OpenSubtitlesChoice": "offene Untertitel",
+                "notFound": "Keine der verfügbaren Optionen entspricht Ihrer Anfrage",
+                "SourceChoice": "Quellenangaben",
+                "empty": "Es sind hierfür keine Untertitel verfügbar.",
+                "onChoice": "An"
+            },
+            "watchparty": {
+                "notice": "Watch Party ist möglicherweise für einige Quellen nicht verfügbar",
+                "watchpartyItem": "Watch Party"
             }
         },
         "metadata": {
@@ -340,7 +439,7 @@
                 "text": "API Metadaten konnten nicht geladen werden, überprüfe deine Netzwerkverbindung.",
                 "title": "API Metadaten konnten nicht geladen werden"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Entfernt",
                 "text": "Das Video ist aufgrund einer Takedown-Anfrage oder eines Urheberrechtsanspruchs nicht mehr verfügbar.",
                 "title": "Video wurde entfernt"
@@ -365,8 +464,9 @@
             }
         },
         "nextEpisode": {
-            "cancel": "Abbrechen",
-            "next": "Nächste Folge"
+            "next": "Nächste Folge",
+            "replay": "Wiederholung",
+            "nextSeason": "nächste Staffel"
         },
         "playbackError": {
             "badge": "Wiedergabefehler",
@@ -386,7 +486,7 @@
                 "badge": "Erweiterung deaktiviert",
                 "enableExtension": "Erweiterung aktivieren",
                 "homeButton": "Zur Startseite",
-                "text": "Du hast die film.kace.deve Erweiterung installiert. Um die Erweiterung zu benutzen, musst du sie für diese Seite aktivieren.",
+                "text": "Du hast die P-Streame Erweiterung installiert. Um die Erweiterung zu benutzen, musst du sie für diese Seite aktivieren.",
                 "title": "Bitte aktiviere die Erweiterung"
             },
             "items": {
@@ -399,7 +499,25 @@
                 "detailsButton": "Details anzeigen",
                 "homeButton": "Zurück zur Startseite",
                 "text": "Wir haben alle Anbieter durchsucht, konnten aber nicht das Video finden nach dem du suchst! Wir stellen keine eigenen Videos bereit und haben keine Kontrolle darüber, was verfügbar ist. Bitte klicke auf \"Details anzeigen\" für mehr Details.",
-                "title": "Wir konnten das nicht finden"
+                "title": "Wir konnten das nicht finden",
+                "discoverButton": "Endecke mehr"
+            },
+            "tips": {
+                "1": "Klicke auf das Einstellungs-Icon, um die Quelle zu wechseln!",
+                "2": "Klicke auf den Titel, um den Link zu kopieren!",
+                "7": "Halte SHIFT gedrückt und klick auf den Titel, um den Link mit der Zeitangabe zu kopieren!",
+                "3": "Halte SHIFT für Breitbildschirm anstelle von Vollbildschirm!",
+                "4": "Manche Quellen funktionieren besser als andere!",
+                "5": "Hohle dir die Erweiterung für mehr Quellen!",
+                "6": "Halte das Lesezeichen gedrückt, um sie zu verwalten oder zu löschen!",
+                "8": "Lege eine eigene Untertitelfarbe fest!",
+                "9": "Migriere dein Account zu einer neuen Backend in den Einstellungen!",
+                "10": "Tritt dem Discord bei!",
+                "11": "Verwende Sie [ und ], um das Timing der Untertitel anzupassen!",
+                "12": "Drücke LEERTASTE oder K um Abzuspielen/Pausieren!",
+                "14": "Nutze J und L Tasten, um 10 Sekunden vor-/zurückzuspulen!",
+                "13": "Nutze die LINKS und RECHTS Pfeiltasten, um 5 Sekunden vor-/zurückzuspulen!",
+                "15": "Drücke F um den Vollbildmodus umzuschalten!"
             }
         },
         "time": {
@@ -416,9 +534,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "text": "Willkommen zu film.kace.devs DMCA-Kontaktseite! Wir respektieren geistiges Eigentum und wollen uns schnell um urheberrechtlichen Anliegen kümmern. Falls du glaubst, dass dein urheberrechtlich geschütztes Werk unsachgemäß auf unserer Plattform verwendet wurde, sende uns bitte eine genaue DMCA-Anfrage an die unten stehende E-Mail. Diese sollte eine Beschreibung des urheberrechtlich geschützten Material, deine Kontaktinformationen sowie einer Erklärung des guten Glaubens beinhalten. Wir sind engagiert diese Anliegen schnell zu lösen und schätzen deine Hilfe dabei film.kace.dev zu einer Plattform, welche Kreativität und Urheberrechte respektiert.",
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Die App wird geladen",
         "loadingUser": "Dein Profil wird geladen",
@@ -426,7 +543,8 @@
             "logout": "Abmelden",
             "reset": "Eigenen Server zurücksetzen",
             "text": "Beim Laden deines Profils ist ein Fehler aufgetreten",
-            "textWithReset": "Beim Laden deines Profils von deinem Server ist ein Fehler aufgetreten, zurück zum Standard-Server wechseln?"
+            "textWithReset": "Beim Laden deines Profils von deinem Server ist ein Fehler aufgetreten, zurück zum Standard-Server wechseln?",
+            "reload": "Neu laden"
         },
         "migration": {
             "failed": "Beim Migrieren deiner Daten ist ein Fehler aufgetreten.",
@@ -450,7 +568,12 @@
                     "text": "Diese Aktion kann nicht rückgängig gemacht werden. Alle Daten werden gelöscht und können nicht wiederhergestellt werden.",
                     "title": "Konto löschen"
                 },
-                "title": "Aktionen"
+                "title": "Aktionen",
+                "logoutAllDevices": {
+                    "title": "Alle Sitzungen beenden",
+                    "text": "Dies wird dich von allen Geräten abmelden, die mit deinem Konto verbunden sind.",
+                    "button": "Von allen Geräten abmelden"
+                }
             },
             "devices": {
                 "deviceNameLabel": "Gerätename",
@@ -470,7 +593,11 @@
                 "text": "Teilen deinen Fortschritt zwischen Geräten und halte sie synchronisiert.",
                 "title": "Mit der Cloud synchronisieren"
             },
-            "title": "Konto"
+            "title": "Konto",
+            "admin": {
+                "title": "Admin-Bereich",
+                "text": "Nutzen Sie Tools zum Testen des film.kace.dev-Zustands."
+            }
         },
         "appearance": {
             "activeTheme": "Aktiv",
@@ -479,15 +606,27 @@
                 "default": "Standard",
                 "gray": "Grau",
                 "red": "Rot",
-                "teal": "Türkis"
+                "teal": "Türkis",
+                "green": "Grün",
+                "mocha": "Mokka",
+                "pink": "Pink",
+                "classic": "Klassik"
             },
-            "title": "Aussehen"
+            "title": "Aussehen",
+            "options": {
+                "discoverLabel": "Abschnitt „Entdecken“",
+                "discover": "Abschnitt „Entdecken“",
+                "discoverDescription": "Zeigen Sie den Abschnitt „Entdecken“ auf der Startseite unter Ihren mit Lesezeichen versehenen Medien an. Standardmäßig aktiviert."
+            }
         },
         "connections": {
             "server": {
                 "description": "Falls du dich mit einem anderen Server verbinden willst, um deine Daten zu speichern. Aktiviere dies und gebe die URL an. <0>Anweisungen.</0>",
                 "label": "Eigener Server",
-                "urlLabel": "Eigene Server-URL"
+                "urlLabel": "Eigene Server-URL",
+                "migration": {
+                    "link": "übertrage meine Daten"
+                }
             },
             "setup": {
                 "doSetup": "Einrichten",
@@ -527,7 +666,15 @@
             "thumbnail": "Miniaturansichten generieren",
             "thumbnailDescription": "Meistens haben Videos keine Miniaturansicht. Du kannst diese Einstellung anmachen, um sie automatisch zu generieren, aber sie können dein Video langsamer machen.",
             "thumbnailLabel": "Miniaturansichten generieren",
-            "title": "Einstellungen"
+            "title": "Einstellungen",
+            "autoplayLabel": "Automatische Wiedergabe",
+            "skipCredits": "Abspann überspringen",
+            "skipCreditsDescription": "Wenn aktiviert, wird die nächste Episode automatisch abgespielt, wenn 99 % der Episode abgeschlossen sind, um den Abspann zu überspringen. Wenn deaktiviert, wird gewartet, bis die Episode vollständig abgeschlossen ist.",
+            "sourceOrder": "Quellen neu anordnen",
+            "sourceOrderEnableLabel": "Benutzerdefinierte Quellreihenfolge",
+            "autoplay": "Automatische Wiedergabe",
+            "autoplayDescription": "Nach Erreichen des Serienendes wird automatisch die nächste Folge abgespielt. Kann von Benutzern mit der Browsererweiterung, einem benutzerdefinierten Proxy oder mit der Standardkonfiguration aktiviert werden, sofern der Host dies zulässt.",
+            "sourceOrderDescription": "Per Drag & Drop können Sie Quellen neu anordnen. Dadurch wird die Reihenfolge bestimmt, in der die Quellen für die Medien, die Sie ansehen möchten, geprüft werden. Ist eine Quelle ausgegraut, bedeutet dies, dass die <bold>Erweiterung</bold> für diese Quelle erforderlich ist. <br><br> <strong>(Die Standardreihenfolge ist für die meisten Benutzer am besten geeignet)</strong>"
         },
         "reset": "Zurücksetzen",
         "save": "Speichern",
@@ -551,8 +698,192 @@
             "colorLabel": "Farbe",
             "previewQuote": "Das Gras wächst nicht schneller, wenn man daran zieht.",
             "textSizeLabel": "Schriftgröße",
-            "title": "Untertitel"
+            "title": "Untertitel",
+            "textBoldLabel": "Fettgedruckter Text"
         },
         "unsaved": "Du hast ungespeicherte Änderungen"
+    },
+    "migration": {
+        "start": {
+            "title": "übertrage deine Daten",
+            "options": {
+                "or": "oder",
+                "direct": {
+                    "title": "direkt übertragen",
+                    "quality": "Leichtestes und schnellstes",
+                    "action": "Daten übertragen",
+                    "description": "Dadurch werden Ihre Daten direkt auf den neuen Server übertragen. Dies ist die schnellste option. <br /><br /> dieser Option können Sie Ihre Passphrase beibehalten!"
+                },
+                "download": {
+                    "description": "Dadurch werden Ihre Daten auf Ihr Gerät heruntergeladen. Sie können sie dann auf den neuen Server hochladen oder zur sicheren Aufbewahrung behalten.",
+                    "title": "Daten Downloaden",
+                    "quality": "Technischer",
+                    "action": "Daten downloaden"
+                },
+                "upload": {
+                    "title": "Daten hochladen",
+                    "description": "Lade deine zuletzt übertragenen Daten hoch um deine Lesezeichen und deinen Fortschritt auf diesem Account zu speichern.",
+                    "quality": "Wiederherstellen aus der Sicherung",
+                    "action": "Daten Hochladen"
+                }
+            },
+            "explainer": "Wenn Sie Ihre Daten übertragen oder sichern möchten, können Sie dies mit den folgenden Optionen tun. So bleiben Ihre Daten beim Wechsel des Backend-Servers erhalten."
+        },
+        "direct": {
+            "title": "direkte Übertragung",
+            "status": {
+                "error": "Fehlgeschlagen übertragen ihrer Daten 😿",
+                "success": "Ihre Daten wurden erfolgreich übertragen!🎉"
+            },
+            "button": {
+                "migrate": "übertragen",
+                "processing": "Verarbeitet...",
+                "login": "Weiter zum login",
+                "home": "Zur Startseite"
+            },
+            "description": "Geben Sie die Ziel Backend URL ein, um Ihre aktuellen Kontodaten in ein neues Backend zu migrieren. Ihre Passphrase bleibt dabei unverändert!",
+            "backendLabel": "Ziel-Backend-URL",
+            "recaptchaLabel": "ReCaptcha-Schlüssel (optional)",
+            "toggleLable": "Benötigt ReCaptcha?"
+        },
+        "loginRequired": "Du musst eingeloggt sein, um deine Daten zu migrieren! Bitte gehen sie zurück und loggen sie sich ein um fortzufahren.",
+        "download": {
+            "status": {
+                "error": "Das Herunterladen Ihrer Daten ist fehlgeschlagen. 😿",
+                "success": "Ihre Daten wurden erfolgreich heruntergeladen! 🎉"
+            },
+            "title": "Daten downloaden",
+            "description": "Dadurch werden Ihre Daten auf Ihr Gerät heruntergeladen. Sie können sie dann auf den neuen Server hochladen oder zur sicheren Aufbewahrung behalten.",
+            "items": {
+                "description": "Der Download beinhaltet:",
+                "bookmarks": "Mit Lesezeichen versehene Medien",
+                "progress": "Beobachten Sie den Fortschritt"
+            },
+            "button": {
+                "download": "Daten downloaden",
+                "home": "Zur Startseite",
+                "login": "Weiter zum login"
+            }
+        },
+        "upload": {
+            "button": {
+                "processing": "Verarbeitet...",
+                "success": "Import Fertig",
+                "import": "Import Dateien",
+                "home": "Gehe zu home"
+            },
+            "title": "Daten uploaden",
+            "description": "Laden Sie Ihre zuvor exportierte Datendatei hoch, um Ihre Lesezeichen und Fortschritte in diesem Konto wiederherzustellen.",
+            "status": {
+                "processing": "Daten werden verarbeitet…",
+                "error": "Fehler bei Upload deiner Daten. 😿",
+                "success": "Deine Daten wurden erfolgreich hochgeladen! 🎉"
+            },
+            "file": {
+                "description": "Wähle das File, dass du Uploaden möchtest",
+                "select": "Wähle die Datei",
+                "change": "Datei ändern",
+                "name": "Datei Name"
+            },
+            "dataPreview": "Vorschau:",
+            "items": {
+                "progress": "Fortschritt anschauen"
+            },
+            "exportedOn": "Exportiert auf"
+        },
+        "back": "Zurück gehen"
+    },
+    "downtimeNotice": {
+        "badge": "Fehler",
+        "title": "Probleme mit dem Anbieter",
+        "message": "film.kace.dev hat erneut Probleme mit einigen Anbietern. Wenn Sie eine Sendung nicht finden oder abspielen können, ändern Sie bitte die Quelle. Dieser Fehler wird voraussichtlich für die unten angegebene Zeit bestehen bleiben.",
+        "goHome": "Zur Startseite"
+    },
+    "support": {
+        "title": "Unterstützung",
+        "q1": {
+            "body": "Nun, Sie können dem offiziellen <0>film.kace.dev-Discord</0> beitreten und dort Fragen stellen oder Sie können eine E-Mail an den unten auf dieser Seite angegebenen mail senden.",
+            "title": "Wo bekomme ich Hilfe?"
+        },
+        "q2": {
+            "title": "Wo kann ich einen error oder Fehler reklamieren?",
+            "body": "Wir haben einen <0>GitHub</0>, auf dem Sie in unserem Repository ein detailliertes Problem melden können. Zusätzlich können Sie, wenn Sie möchten, einen Pull Request erstellen, um das Problem selbst zu beheben."
+        },
+        "text": "film.kace.dev ist so benutzerfreundlich wie möglich gestaltet. Dennoch gibt es immer wieder Fragen und Probleme. Diese Seite soll helfen, diese Mängel zu beheben"
+    },
+    "jip": {
+        "q1": {
+            "title": "Wo kann ich Hilfe bekommen?",
+            "body": "Nun, Sie können dem offiziellen <0>film.kace.dev-Discord</0> beitreten und dort Fragen stellen oder Sie können eine E-Mail an den unten auf dieser Seite angegebenen mail senden."
+        },
+        "q2": {
+            "title": "Wie kann ich einen Fehler oder ein Problem melden?",
+            "body": "Wir haben einen <0>GitHub</0>, auf dem Sie in unserem Repository ein detailliertes Problem melden können. Zusätzlich können Sie, wenn Sie möchten, einen Pull Request erstellen, um das Problem selbst zu beheben."
+        },
+        "text": "film.kace.dev ist nicht von einer Kokosnusspalme gefallen, es wurde größtenteils von einer einzigen Person (und zwar einer sehr epischen) gemacht.",
+        "title": "Jip"
+    },
+    "details": {
+        "imdb": "Auf IMDb anzeigen",
+        "resume": "Fortsetzen",
+        "play": "Wiedergeben",
+        "releaseDate": "Veröffentlichungsdatum:",
+        "rating": "Bewertung:",
+        "votes": "Stimmen",
+        "tmdb": "Auf TMDB anzeigen",
+        "episodes": "Folgen",
+        "season": "Staffel",
+        "runtime": "Laufzeit:"
+    },
+    "discover": {
+        "tabs": {
+            "movies": "Filme",
+            "tvshows": "Serien",
+            "editorpicks": "Empfehlungen der Redaktion"
+        },
+        "carousel": {
+            "title": {
+                "movies": "{{category}} Filme",
+                "tvshows": "{{category}} Serien",
+                "inCinemas": "Im Kino",
+                "popular": "Am beliebtesten",
+                "nowPlaying": "Im Kino",
+                "topRated": "Am besten bewertet",
+                "latestReleases": "Neueste Veröffentlichungen",
+                "4kReleases": "4K-Veröffentlichungen",
+                "onTheAir": "Aktuell im TV",
+                "popularOn": "Beliebte {{type}} auf {{provider}}",
+                "editorPicksMovies": "Redaktionstipps Filme",
+                "editorPicksShows": "Redaktionstipps Serien",
+                "moviesOn": "Filme auf {{provider}}",
+                "tvshowsOn": "Serien auf {{provider}}",
+                "recommended": "Weil du gesehen hast: {{title}}",
+                "genreMovies": "{{genre}} Filme",
+                "genreShows": "{{genre}} Serien",
+                "categoryMovies": "{{category}} Filme",
+                "categoryShows": "{{category}} Serien"
+            },
+            "change": "Ändern",
+            "more": "Mehr anzeigen"
+        },
+        "featured": {
+            "playNow": "Jetzt abspielen",
+            "moreInfo": "Mehr Infos"
+        },
+        "randomMovie": {
+            "button": "Zufälligen Titel abspielen",
+            "cancel": "Countdown abbrechen",
+            "countdown": "{{countdown}}s",
+            "nowPlaying": "Jetzt läuft",
+            "in": "in"
+        },
+        "page": {
+            "title": "Filme & Serien entdecken",
+            "subtitle": "Entdecke aktuelle Highlights und zeitlose Klassiker.",
+            "loadMore": "Mehr laden",
+            "loading": "Lade...",
+            "back": "Zurück"
+        },
+        "scrollToTop": "Nach oben"
     }
 }

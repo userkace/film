@@ -1,7 +1,7 @@
 export function Card(props: { children: React.ReactNode }) {
   return (
     <div className="h-full grid grid-rows-[1fr]">
-      <div className="px-6 h-full flex flex-col justify-start overflow-y-auto overflow-x-hidden">
+      <div className="px-6 h-full flex flex-col justify-start overflow-y-auto overflow-x-hidden pb-4 scrollbar-none">
         {props.children}
       </div>
     </div>

@@ -1,16 +1,23 @@
 import slugify from "slugify";
 
 import { conf } from "@/setup/config";
+import { useLanguageStore } from "@/stores/language";
+import { usePreferencesStore } from "@/stores/preferences";
+import { getTmdbLanguageCode } from "@/utils/language";
 import { MediaItem } from "@/utils/mediaTypes";
+import { getProxyUrls } from "@/utils/proxyUrls";
 
 import { MWMediaMeta, MWMediaType, MWSeasonMeta } from "./types/mw";
 import {
   ExternalIdMovieSearchResult,
   TMDBContentTypes,
+  TMDBCredits,
   TMDBEpisodeShort,
   TMDBMediaResult,
   TMDBMovieData,
   TMDBMovieSearchResult,
+  TMDBPerson,
+  TMDBPersonImages,
   TMDBSearchResult,
   TMDBSeason,
   TMDBSeasonMetaResult,
@@ -82,6 +89,8 @@ export function formatTMDBMeta(
               number: v.episode_number,
               title: v.title,
               air_date: v.air_date,
+              still_path: v.still_path,
+              overview: v.overview,
             })),
         }
       : (undefined as any),
@@ -143,8 +152,8 @@ export function decodeTMDBId(
   };
 }
 
-const tmdbBaseUrl1 = "https://api.themoviedb.org/3";
-const tmdbBaseUrl2 = "https://api.tmdb.org/3";
+const tmdbBaseUrl1 = "https://api.themoviedb.org/3/";
+const tmdbBaseUrl2 = "https://api.tmdb.org/3/";
 
 const apiKey = conf().TMDB_READ_API_KEY;
 
@@ -159,24 +168,64 @@ function abortOnTimeout(timeout: number): AbortSignal {
   return controller.signal;
 }
 
+let proxyRotationIndex = 0;
+
+function getNextProxy(proxyUrls: string[]): string | undefined {
+  if (!proxyUrls.length) return undefined;
+  const proxy = proxyUrls[proxyRotationIndex % proxyUrls.length];
+  proxyRotationIndex += 1;
+  return proxy;
+}
+
 export async function get<T>(url: string, params?: object): Promise<T> {
+  const proxyUrls = getProxyUrls();
+  const proxy = getNextProxy(proxyUrls);
+  const shouldProxyTmdb = usePreferencesStore.getState().proxyTmdb;
+  const userLanguage = useLanguageStore.getState().language;
+  const formattedLanguage = getTmdbLanguageCode(userLanguage);
+
   if (!apiKey) throw new Error("TMDB API key not set");
+
+  // directly writing parameters, otherwise it will start the first parameter in the proxied request as "&" instead of "?" because it doesnt understand its proxied
+  const fullUrl = new URL(tmdbBaseUrl1 + url);
+  const allParams = {
+    ...params,
+    language: formattedLanguage,
+  };
+
+  if (allParams) {
+    Object.entries(allParams).forEach(([key, value]) => {
+      fullUrl.searchParams.append(key, String(value));
+    });
+  }
+
+  if (proxy && shouldProxyTmdb) {
+    try {
+      return await mwFetch<T>(
+        `/?destination=${encodeURIComponent(fullUrl.toString())}`,
+        {
+          headers: tmdbHeaders,
+          baseURL: proxy,
+          signal: abortOnTimeout(5000),
+        },
+      );
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   try {
     return await mwFetch<T>(encodeURI(url), {
       headers: tmdbHeaders,
       baseURL: tmdbBaseUrl1,
-      params: {
-        ...params,
-      },
+      params: allParams,
       signal: abortOnTimeout(5000),
     });
   } catch (err) {
     return mwFetch<T>(encodeURI(url), {
       headers: tmdbHeaders,
       baseURL: tmdbBaseUrl2,
-      params: {
-        ...params,
-      },
+      params: allParams,
       signal: abortOnTimeout(30000),
     });
   }
@@ -188,7 +237,6 @@ export async function multiSearch(
   const data = await get<TMDBSearchResult>("search/multi", {
     query,
     include_adult: false,
-    language: "en-US",
     page: 1,
   });
   // filter out results that aren't movies or shows
@@ -198,6 +246,38 @@ export async function multiSearch(
       r.media_type === TMDBContentTypes.TV,
   );
   return results;
+}
+
+export async function searchMovies(
+  query: string,
+): Promise<TMDBMovieSearchResult[]> {
+  const data = await get<{
+    results: TMDBMovieSearchResult[];
+  }>("search/movie", {
+    query,
+    include_adult: false,
+    page: 1,
+  });
+  return data.results.map((result) => ({
+    ...result,
+    media_type: TMDBContentTypes.MOVIE,
+  }));
+}
+
+export async function searchTVShows(
+  query: string,
+): Promise<TMDBShowSearchResult[]> {
+  const data = await get<{
+    results: TMDBShowSearchResult[];
+  }>("search/tv", {
+    query,
+    include_adult: false,
+    page: 1,
+  });
+  return data.results.map((result) => ({
+    ...result,
+    media_type: TMDBContentTypes.TV,
+  }));
 }
 
 export async function generateQuickSearchMediaUrl(
@@ -224,21 +304,72 @@ type MediaDetailReturn<T extends TMDBContentTypes> =
       ? TMDBShowData
       : never;
 
-export function getMediaDetails<
+export async function getMediaDetails<
   T extends TMDBContentTypes,
   TReturn = MediaDetailReturn<T>,
 >(id: string, type: T): Promise<TReturn> {
   if (type === TMDBContentTypes.MOVIE) {
-    return get<TReturn>(`/movie/${id}`, { append_to_response: "external_ids" });
+    return get<TReturn>(`/movie/${id}`, {
+      append_to_response: "external_ids,credits,release_dates",
+    });
   }
   if (type === TMDBContentTypes.TV) {
-    return get<TReturn>(`/tv/${id}`, { append_to_response: "external_ids" });
+    const showData = await get<TReturn>(`/tv/${id}`, {
+      append_to_response: "external_ids,credits,content_ratings",
+    });
+
+    // Fetch episodes for each season
+    const showDetails = showData as TMDBShowData;
+    const episodePromises = showDetails.seasons.map(async (season) => {
+      const seasonData = await get<TMDBSeason>(
+        `/tv/${id}/season/${season.season_number}`,
+      );
+      return seasonData.episodes.map((episode) => ({
+        id: episode.id,
+        name: episode.name,
+        episode_number: episode.episode_number,
+        overview: episode.overview,
+        still_path: episode.still_path,
+        air_date: episode.air_date,
+        season_number: season.season_number,
+      }));
+    });
+
+    const allEpisodes = (await Promise.all(episodePromises)).flat();
+
+    return {
+      ...showData,
+      episodes: allEpisodes,
+    } as TReturn;
   }
   throw new Error("Invalid media type");
 }
 
+export function getMediaBackdrop(
+  backdropPath: string | null,
+): string | undefined {
+  const shouldProxyTmdb = usePreferencesStore.getState().proxyTmdb;
+  const imgUrl = `https://image.tmdb.org/t/p/original${backdropPath}`;
+  const proxyUrl = getProxyUrls()[0];
+  if (proxyUrl && shouldProxyTmdb) {
+    return `${proxyUrl}/?destination=${imgUrl}`;
+  }
+  if (backdropPath) return imgUrl;
+}
+
 export function getMediaPoster(posterPath: string | null): string | undefined {
-  if (posterPath) return `https://image.tmdb.org/t/p/w342/${posterPath}`;
+  const shouldProxyTmdb = usePreferencesStore.getState().proxyTmdb;
+  const imgUrl = `https://image.tmdb.org/t/p/w342/${posterPath}`;
+
+  if (shouldProxyTmdb) {
+    const proxyUrls = getProxyUrls();
+    const proxy = getNextProxy(proxyUrls);
+    if (proxy) {
+      return `${proxy}/?destination=${imgUrl}`;
+    }
+  }
+
+  if (posterPath) return imgUrl;
 }
 
 export async function getEpisodes(
@@ -251,6 +382,8 @@ export async function getEpisodes(
     episode_number: e.episode_number,
     title: e.name,
     air_date: e.air_date,
+    still_path: e.still_path,
+    overview: e.overview,
   }));
 }
 
@@ -292,4 +425,83 @@ export function formatTMDBSearchResult(
     original_release_date: new Date(movie.release_date),
     object_type: mediatype,
   };
+}
+
+/**
+ * Fetches the clear logo for a movie or show from TMDB images endpoint.
+ */
+export async function getMediaLogo(
+  id: string,
+  type: TMDBContentTypes,
+  language?: string,
+): Promise<string | undefined> {
+  const userLanguage = language || useLanguageStore.getState().language;
+  const formattedLanguage = getTmdbLanguageCode(userLanguage);
+  const url =
+    type === TMDBContentTypes.MOVIE
+      ? `/movie/${id}/images`
+      : `/tv/${id}/images`;
+  try {
+    const data = await get<any>(url, {
+      include_image_language: `${formattedLanguage},en,null`,
+    });
+    // Try to find a logo in the user's language, then English, then any
+    const logo =
+      data.logos?.find((l: any) => l.iso_639_1 === formattedLanguage) ||
+      data.logos?.find((l: any) => l.iso_639_1 === "en") ||
+      data.logos?.[0];
+    if (logo && logo.file_path) {
+      return `https://image.tmdb.org/t/p/original${logo.file_path}`;
+    }
+    return undefined;
+  } catch (err) {
+    console.error("Failed to fetch TMDB logo:", err);
+    return undefined;
+  }
+}
+
+export async function getMediaCredits(
+  id: string,
+  type: TMDBContentTypes,
+): Promise<TMDBCredits> {
+  const endpoint = type === TMDBContentTypes.MOVIE ? "movie" : "tv";
+  return get<TMDBCredits>(`/${endpoint}/${id}/credits`);
+}
+
+export async function getRelatedMedia(
+  id: string,
+  type: TMDBContentTypes,
+  limit: number = 10,
+): Promise<TMDBMovieSearchResult[] | TMDBShowSearchResult[]> {
+  const endpoint = type === TMDBContentTypes.MOVIE ? "movie" : "tv";
+  const data = await get<{
+    results: TMDBMovieSearchResult[] | TMDBShowSearchResult[];
+  }>(`/${endpoint}/${id}/similar`);
+
+  return data.results.slice(0, limit);
+}
+
+export async function getPersonDetails(id: string): Promise<TMDBPerson> {
+  return get<TMDBPerson>(`/person/${id}`);
+}
+
+export async function getPersonImages(id: string): Promise<TMDBPersonImages> {
+  return get<TMDBPersonImages>(`/person/${id}/images`);
+}
+
+export function getPersonProfileImage(
+  profilePath: string | null,
+): string | undefined {
+  const shouldProxyTmdb = usePreferencesStore.getState().proxyTmdb;
+  const imgUrl = `https://image.tmdb.org/t/p/w185/${profilePath}`;
+
+  if (shouldProxyTmdb) {
+    const proxyUrls = getProxyUrls();
+    const proxy = getNextProxy(proxyUrls);
+    if (proxy) {
+      return `${proxy}/?destination=${imgUrl}`;
+    }
+  }
+
+  if (profilePath) return imgUrl;
 }

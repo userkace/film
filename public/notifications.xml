@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P-Stream Notifications</title>
+    <link>https://pstream.mov</link>
+    <description>Site updates and important notifications for P-Stream users</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Jul 2025 21:53:00 GMT</lastBuildDate>
+    <atom:link href="https://pstream.mov/notifications.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <guid>notification-032</guid>
+      <title>Bug fixes and source updates!</title>
+      <description>
+- Fixed speed boost not working on mobile! You should now be able to hold the screen to 2x the video!
+
+I also briefly broke the site for a few minutes, sorry about that!
+
+Source updates:
+- Added Flicky (thanks lew!)
+- Fixed VidSrcCx (thanks mapler!)
+- Disabled SpeedStrm
+
+If you are interested in adding a new source to P-Stream, I recently created a new guide for it! Check the link below.</description>
+<link>https://providers.pstream.mov/in-depth/development</link>
+      <pubDate>Tue, 05 Aug 2025 10:55:00 MST</pubDate>
+      <category>bugfix</category>
+    </item>
+
+
+    <item>
+      <guid>notification-30</guid>
+      <title>Digital Privacy Survey</title>
+      <description>I am conducting a survey to understand how people use privacy features in their daily lives and how it affects them mentally.
+
+If you have a few minutes, please take the survey linked below!
+      </description>
+      <link>https://forms.gle/7ysDeDR2sZsQJu436</link>
+      <pubDate>Mon, 04 Aug 2025 16:30:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-8-4-25</guid>
+      <title>P-Stream v5.1.0 released!</title>
+      <link>https://pstream.mov/</link>
+      <description>A bigger one this time. Tons of new quality-of-life features and changes!
+
+In no particular order:
+- As you may have noticed, there is a new notifications menu for viewing updates and news on the site! Works through RSS, so you can add movie release dates! Check out the settings page to add custom feeds!
+- Added bookmark groups. Open the details modal to add any item to a group, even multiple! Sort your groups by tapping the pencil icon on the home page!
+- Added a dedicated bookmarks page. Useful when you have many bookmarks, enabling Carousel view allows them to be limited to 20 items, just like the Discover carousels.
+- You can now hold space or hold the screen to 2x the video!
+- Numerous updates to the details modal. A new mark the whole season as watched button and general design updates.
+- Updated the featured carousel to have smoother transitions and show trending movies if you enable it on the homepage. (instead of editor picks)
+- Improved corrupt UTF-8 subtitle handling.
+- Added example Febbox token modal.
+- Fixed an issue that prevented logging in with a custom passphrase.
+- Minor design improvements all over the site.
+- LOTTTSSS of under-the-hood changes and improvements! Sources will now load a LOT faster.
+- Countless bugfixes!
+
+Thanks to everyone who has been testing the beta and providing feedback!</description>
+      <pubDate>Sun, 03 Aug 2025 16:00:00 MST</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-028</guid>
+      <title>P-Stream v5.0.4 released!</title>
+      <description>A bunch more quality-of-life improvements and fixes have been released.
+- Accounts are no longer required for migration downloads and uploads.
+- Right-click to open the details modal has been re-added.
+- Increased hold-to-edit time for media cards.
+- Re-added jiggle physics while editing.
+- Custom passphrase support.
+- Improved subtitle selection experience.
+- Bug fixes and behind-the-scenes changes.
+
+A few new sources have also been added, including Flixer and VidSrc.vip.</description>
+      <pubDate>Tue, 15 Jul 2025 20:58:00 GMT</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-026</guid>
+      <title>New Domain: pstream.mov</title>
+      <link>https://pstream.mov</link>
+      <description>The new domain is https://pstream.mov/
+
+Most pages should now be working. If you had an account on the old site, your data will be there. If you did not have an account, you can download your data from pstream.org and upload it to the new site.</description>
+      <pubDate>Mon, 14 Jul 2025 17:30:00 GMT</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-022</guid>
+      <title>P-Stream v5.0.2 released!</title>
+      <description>This is another minor update with great quality-of-life features.
+- Added "open in..." button to the download menu.
+- Added the ability to set a custom playback speed.
+- Added buttons to mark episodes as watched or unwatched.
+- Added custom color pickers to account styles and more user icons.
+- Estimate quality for non-standard resolution sources.
+- Re-added email to the DMCA page.
+- Added an autoplay toggle to playback settings.
+- Fixed end time to account for playback speed.
+- Updated some translations and fixed many bugs.</description>
+      <pubDate>Mon, 07 Jul 2025 19:55:00 GMT</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-008</guid>
+      <title>P-Stream v5.0.1</title>
+      <description>Some minor updates this time:
+- Added network images to the details modal.
+- Added a letterboxd/trakt list page: "Discover All Lists."
+- Fixed audio description not displaying.
+- Automatically open the settings menu when failing to play.
+- Added a compact episodes view.
+- Updated the "About" page.
+- Added low-performance/bandwidth mode.
+- The share button on the details modal now opens the iOS share sheet.
+- Fixed various bugs.</description>
+      <pubDate>Tue, 24 Jun 2025 18:20:00 GMT</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-003-2</guid>
+      <title>New Movie Lists Page</title>
+      <link>https://pstream.mov/discover/all</link>
+      <description>A new page has been added to discover many movie lists powered by Letterboxd. A couple of minor bugs were also fixed.</description>
+      <pubDate>Sat, 07 Jun 2025 18:41:00 GMT</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-005-2</guid>
+      <title>5.0.0 Released!</title>
+      <description>This release is the largest facelift to the project yet, with many new features and fixes.
+
+New Features
+- Discover Page Overhaul: The Discover page has been completely rewritten.
+- New Trakt Sections: Explore new "Latest Releases" and "Top 4K" sections.
+- Featured Movies/Shows Carousel: A new slideshow of new and popular movies or shows is now on the Discover page.
+- Quality Indicators: See the video quality (HD or CAM) on the Details Modal or Featured Carousel.
+- Expanded Descriptions: Episode descriptions can now be expanded.
+- Watchparty (Beta)! Easily invite anyone to watch with you. Now joinable from the home page.
+- You can now click on actors and directors on a movie or show's detail page to explore their other work.
+
+Improvements
+- (Most) User preferences now sync.
+- UI &amp; UX Refresh: New player settings design and an overhauled Details Modal.
+- You can now toggle Carousel View to show "Currently Watching" and "Bookmarked" lists as carousels.
+
+Bug Fixes
+- Fixed several issues with loading skeletons.
+- Implemented a fix to better handle subtitle files.
+- Fixed various layout issues.
+- Febbox Token now actually syncs with your account.
+- Many other bugs.</description>
+      <pubDate>Fri, 06 Jun 2025 11:29:00 GMT</pubDate>
+      <category>update</category>
+    </item>
+
+  </channel>
+</rss> 

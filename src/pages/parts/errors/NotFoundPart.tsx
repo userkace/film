@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 
@@ -13,12 +12,6 @@ import { ErrorContainer, ErrorLayout } from "@/pages/layouts/ErrorLayout";
 export function NotFoundPart() {
   const { t } = useTranslation();
 
-  const [isIframe, setIsIframe] = useState(false);
-
-  useEffect(() => {
-    setIsIframe(window.self !== window.top);
-  }, []);
-
   return (
     <div className="relative flex flex-1 flex-col">
       <Helmet>
@@ -31,16 +24,24 @@ export function NotFoundPart() {
             <IconPill icon={Icons.EYE_SLASH}>{t("notFound.badge")}</IconPill>
             <Title>{t("notFound.title")}</Title>
             <Paragraph>{t("notFound.message")}</Paragraph>
-            {!isIframe && (
+            <div className="flex gap-3">
               <Button
                 href="/"
-                theme="purple"
+                theme="secondary"
                 padding="md:px-12 p-2.5"
                 className="mt-6"
               >
                 {t("notFound.goHome")}
               </Button>
-            )}
+              <Button
+                onClick={() => window.location.reload()}
+                theme="purple"
+                padding="md:px-12 p-2.5"
+                className="mt-6"
+              >
+                {t("notFound.reloadButton")}
+              </Button>
+            </div>
           </ErrorContainer>
         </ErrorLayout>
       </div>

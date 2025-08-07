@@ -15,7 +15,12 @@ export function MwLink(props: {
     </span>
   );
 
-  if (isExternal) return <a href={props.url}>{content}</a>;
+  if (isExternal)
+    return (
+      <a href={props.url} target="_blank" rel="noreferrer">
+        {content}
+      </a>
+    );
   if (isInternal) return <LinkRouter to={props.to ?? ""}>{content}</LinkRouter>;
   return (
     <span onClick={() => props.onClick && props.onClick()}>{content}</span>

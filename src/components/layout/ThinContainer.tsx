@@ -18,6 +18,18 @@ export function ThinContainer(props: ThinContainerProps) {
   );
 }
 
+export function ThiccContainer(props: ThinContainerProps) {
+  return (
+    <div
+      className={`mx-auto w-[980px] max-w-full px-6 sm:px-0 ${
+        props.classNames || ""
+      }`}
+    >
+      {props.children}
+    </div>
+  );
+}
+
 export function CenterContainer(props: ThinContainerProps) {
   return (
     <div
@@ -27,6 +39,19 @@ export function CenterContainer(props: ThinContainerProps) {
       )}
     >
       <div className="w-[700px] max-w-full">{props.children}</div>
+    </div>
+  );
+}
+
+export function BiggerCenterContainer(props: ThinContainerProps) {
+  return (
+    <div
+      className={classNames(
+        "min-h-screen w-full flex justify-center p-8 py-24 items-center",
+        props.classNames,
+      )}
+    >
+      <div className="w-[1100px] max-w-full">{props.children}</div>
     </div>
   );
 }

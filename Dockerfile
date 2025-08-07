@@ -8,7 +8,7 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-ARG PWA_ENABLED="false"
+ARG PWA_ENABLED="true"
 ARG GA_ID
 ARG APP_DOMAIN
 ARG OPENSEARCH_ENABLED="false"
@@ -23,7 +23,7 @@ ARG ONBOARDING_PROXY_INSTALL_LINK
 ARG DISALLOWED_IDS
 ARG CDN_REPLACEMENTS
 ARG TURNSTILE_KEY
-ARG ALLOW_AUTOPLAY="true"
+ARG ALLOW_AUTOPLAY="false"
 
 ENV VITE_PWA_ENABLED=${PWA_ENABLED}
 ENV VITE_GA_ID=${GA_ID}

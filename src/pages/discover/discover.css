@@ -1,0 +1,18 @@
+h2 {
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  position: relative;
+  z-index: 2;
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: -ms-autohiding-scrollbar !important;
+}

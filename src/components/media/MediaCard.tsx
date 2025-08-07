@@ -1,18 +1,22 @@
+// I'm sorry this is so confusing 😭
+
 import classNames from "classnames";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import { mediaItemToId } from "@/backend/metadata/tmdb";
 import { DotList } from "@/components/text/DotList";
 import { Flare } from "@/components/utils/Flare";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import { useSearchQuery } from "@/hooks/useSearchQuery";
+import { useOverlayStack } from "@/stores/interface/overlayStack";
+import { usePreferencesStore } from "@/stores/preferences";
 import { MediaItem } from "@/utils/mediaTypes";
 
 import { MediaBookmarkButton } from "./MediaBookmark";
 import { IconPatch } from "../buttons/IconPatch";
-import { Icons } from "../Icon";
+import { Icon, Icons } from "../Icon";
+import { DetailsModal } from "../overlays/detailsModal";
 
 export interface MediaCardProps {
   media: MediaItem;
@@ -26,6 +30,7 @@ export interface MediaCardProps {
   percentage?: number;
   closable?: boolean;
   onClose?: () => void;
+  onShowDetails?: (media: MediaItem) => void;
 }
 
 function checkReleased(media: MediaItem): boolean {
@@ -49,6 +54,7 @@ function MediaCardContent({
   percentage,
   closable,
   onClose,
+  onShowDetails,
 }: MediaCardProps) {
   const { t } = useTranslation();
   const percentageString = `${Math.round(percentage ?? 0).toFixed(0)}%`;
@@ -61,9 +67,11 @@ function MediaCardContent({
 
   const [searchQuery] = useSearchQuery();
 
-  const isMobile = useIsMobile();
+  const enableLowPerformanceMode = usePreferencesStore(
+    (state) => state.enableLowPerformanceMode,
+  );
 
-  if (media.year) {
+  if (isReleased() && media.year) {
     dotListContent.push(media.year.toFixed());
   }
 
@@ -75,7 +83,7 @@ function MediaCardContent({
     <Flare.Base
       className={`group -m-[0.705em] rounded-xl bg-background-main transition-colors duration-300 focus:relative focus:z-10 ${
         canLink ? "hover:bg-mediaCard-hoverBackground tabbable" : ""
-      }`}
+      } ${closable ? "jiggle" : ""}`}
       tabIndex={canLink ? 0 : -1}
       onKeyUp={(e) => e.key === "Enter" && e.currentTarget.click()}
     >
@@ -100,7 +108,9 @@ function MediaCardContent({
             },
           )}
           style={{
-            backgroundImage: media.poster ? `url(${media.poster})` : undefined,
+            backgroundImage: media.poster
+              ? `url(${media.poster})`
+              : "url(/placeholder.png)",
           }}
         >
           {series ? (
@@ -148,16 +158,16 @@ function MediaCardContent({
             </>
           ) : null}
 
-          <div
-            className={classNames("absolute", {
-              "bookmark-button": !isMobile,
-            })}
-            onClick={(e) => e.preventDefault()}
-          >
-            <MediaBookmarkButton media={media} />
-          </div>
+          {!closable && (
+            <div
+              className="absolute bookmark-button"
+              onClick={(e) => e.preventDefault()}
+            >
+              <MediaBookmarkButton media={media} />
+            </div>
+          )}
 
-          {searchQuery.length > 0 ? (
+          {searchQuery.length > 0 && !closable ? (
             <div className="absolute" onClick={(e) => e.preventDefault()}>
               <MediaBookmarkButton media={media} />
             </div>
@@ -176,17 +186,47 @@ function MediaCardContent({
             />
           </div>
         </div>
+
         <h1 className="mb-1 line-clamp-3 max-h-[4.5rem] text-ellipsis break-words font-bold text-white">
           <span>{media.title}</span>
         </h1>
-        <DotList className="text-xs" content={dotListContent} />
+        <div className="media-info-container justify-content-center flex flex-wrap">
+          <DotList className="text-xs" content={dotListContent} />
+        </div>
+
+        {!closable && !enableLowPerformanceMode && (
+          <div className="absolute bottom-0 translate-y-1 right-1">
+            <button
+              className="media-more-button p-2"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onShowDetails?.(media);
+              }}
+            >
+              <Icon
+                className="text-xs font-semibold text-type-secondary"
+                icon={Icons.ELLIPSIS}
+              />
+            </button>
+          </div>
+        )}
       </Flare.Child>
     </Flare.Base>
   );
 }
 
 export function MediaCard(props: MediaCardProps) {
-  const content = <MediaCardContent {...props} />;
+  const { media, onShowDetails } = props;
+  const [detailsData, setDetailsData] = useState<{
+    id: number;
+    type: "movie" | "show";
+  } | null>(null);
+  const { showModal } = useOverlayStack();
+  const enableDetailsModal = usePreferencesStore(
+    (state) => state.enableDetailsModal,
+  );
 
   const isReleased = useCallback(
     () => checkReleased(props.media),
@@ -208,7 +248,54 @@ export function MediaCard(props: MediaCardProps) {
     }
   }
 
-  if (!canLink) return <span>{content}</span>;
+  const handleShowDetails = useCallback(async () => {
+    if (onShowDetails) {
+      onShowDetails(media);
+      return;
+    }
+
+    setDetailsData({
+      id: Number(media.id),
+      type: media.type === "movie" ? "movie" : "show",
+    });
+    showModal("details");
+  }, [media, showModal, onShowDetails]);
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (enableDetailsModal && canLink) {
+      e.preventDefault();
+      handleShowDetails();
+    }
+  };
+
+  const handleCardContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleShowDetails();
+  };
+
+  const content = (
+    <>
+      <MediaCardContent {...props} onShowDetails={handleShowDetails} />
+      {detailsData && <DetailsModal id="details" data={detailsData} />}
+    </>
+  );
+
+  if (!canLink) {
+    return (
+      <span
+        className="relative"
+        onClick={(e) => {
+          if (e.defaultPrevented) {
+            e.preventDefault();
+          }
+        }}
+        onContextMenu={handleCardContextMenu}
+      >
+        {content}
+      </span>
+    );
+  }
+
   return (
     <Link
       to={link}
@@ -217,6 +304,8 @@ export function MediaCard(props: MediaCardProps) {
         "tabbable",
         props.closable ? "hover:cursor-default" : "",
       )}
+      onClick={handleCardClick}
+      onContextMenu={handleCardContextMenu}
     >
       {content}
     </Link>

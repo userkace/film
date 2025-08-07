@@ -8,6 +8,7 @@ import { durationExceedsHour, formatSeconds } from "@/utils/formatSeconds";
 export function Time(props: { short?: boolean }) {
   const timeFormat = usePlayerStore((s) => s.interface.timeFormat);
   const setTimeFormat = usePlayerStore((s) => s.setTimeFormat);
+  const playbackRate = usePlayerStore((s) => s.mediaPlaying.playbackRate);
 
   const {
     duration: timeDuration,
@@ -32,12 +33,16 @@ export function Time(props: { short?: boolean }) {
   );
   const secondsRemaining = Math.abs(currentTime - timeDuration);
 
+  // Adjust seconds remaining based on playback speed
+  const secondsRemainingAdjusted =
+    playbackRate > 0 ? secondsRemaining / playbackRate : secondsRemaining;
+
   const timeLeft = formatSeconds(
     secondsRemaining,
     durationExceedsHour(secondsRemaining),
   );
   const timeWatched = formatSeconds(currentTime, hasHours);
-  const timeFinished = new Date(Date.now() + secondsRemaining * 1e3);
+  const timeFinished = new Date(Date.now() + secondsRemainingAdjusted * 1e3);
   const duration = formatSeconds(timeDuration, hasHours);
 
   let localizationKey =

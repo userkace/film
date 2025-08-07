@@ -8,6 +8,7 @@ export interface IconPatchProps {
   icon: Icons;
   transparent?: boolean;
   downsized?: boolean;
+  navigation?: boolean;
 }
 
 export function IconPatch(props: IconPatchProps) {
@@ -17,6 +18,9 @@ export function IconPatch(props: IconPatchProps) {
   const transparentClasses = props.transparent
     ? "bg-opacity-0 hover:bg-opacity-50"
     : "";
+  const navigationClasses = props.navigation
+    ? "bg-opacity-50 hover:bg-opacity-100"
+    : "";
   const activeClasses = props.active
     ? "bg-pill-backgroundHover text-white"
     : "";
@@ -25,7 +29,7 @@ export function IconPatch(props: IconPatchProps) {
   return (
     <div className={props.className || undefined} onClick={props.onClick}>
       <div
-        className={`flex items-center justify-center rounded-full border-2 border-transparent bg-pill-background bg-opacity-100 transition-[background-color,color,transform,border-color] duration-75 ${transparentClasses} ${clickableClasses} ${activeClasses} ${sizeClasses}`}
+        className={`flex items-center justify-center rounded-full border-2 border-transparent bg-pill-background bg-opacity-100 transition-[background-color,color,transform,border-color] duration-75 ${transparentClasses} ${navigationClasses} ${clickableClasses} ${activeClasses} ${sizeClasses}`}
       >
         <Icon icon={props.icon} />
       </div>

@@ -1,433 +1,643 @@
 {
-    "about": {
-        "description": "film.kace.dev é uma aplicação web que pesquisa a internet por streams. A equipa visa uma abordagem maioritariamente minimalista na consumação de conteúdos.",
-        "faqTitle": "Perguntas frequentes",
-        "q1": {
-            "body": "film.kace.dev não hospeda nenhum conteúdo. Quando clica para assistir a algo, a internet é pesquisada para o media selecionado (Na tela de carregamento e na aba 'fontes de vídeo', pode ver qual a fonte que está a ser utilizada). O media nunca é carregado pelo film.kace.dev, tudo é feito através deste mecanismo de pesquisa.",
-            "title": "De onde vem o conteúdo?"
-        },
-        "q2": {
-            "body": "Não é possível solicitar um programa ou filme, o film.kace.dev não gere nenhum conteúdo. Todo o conteúdo é visualizado através de fontes na internet.",
-            "title": "Onde posso solicitar um programa ou filme?"
-        },
-        "q3": {
-            "body": "Os nossos resultados de pesquisa são alimentados pela The Movie Database (TMDB) e são exibidos independentemente de as nossas fontes realmente terem o conteúdo.",
-            "title": "Os resultados da pesquisa mostram o programa ou filme, por que não consigo reproduzi-lo?"
-        },
-        "title": "Sobre o film.kace.dev"
+  "about": {
+    "description": "O film.kace.dev é um fork do movie-web e foi criado para continuar ativo mesmo após o encerramento do movie-web.app. O film.kace.dev corre num VPS privado e autoalojado. Mantenho este site com prejuízo; há muito poucos anúncios devido à minha crença no acesso livre a conteúdos.",
+    "faqTitle": "Perguntas frequentes",
+    "q1": {
+      "body": "O film.kace.dev não aloja qualquer conteúdo. Quando carregas para ver algo, é feita uma pesquisa na internet pelo conteúdo selecionado (No ecrã de carregamento e na aba 'fontes de vídeo', podes ver qual a fonte que está a ser utilizada). O conteúdo nunca é carregado pelo film.kace.dev, tudo funciona através deste mecanismo de pesquisa.",
+      "title": "De onde vem o conteúdo?",
+      "section": "geral"
     },
-    "actions": {
-        "copied": "Copiado",
-        "copy": "Copiar"
+    "q2": {
+      "body": "Não é possível solicitar um programa ou filme, o film.kace.dev não gere nenhum conteúdo. Todo o conteúdo é visualizado através de fontes na internet.",
+      "title": "Onde posso solicitar um programa ou filme?",
+      "section": "pesquisa"
     },
-    "auth": {
-        "createAccount": "Ainda não tem uma conta? <0>Crie uma conta.</0>",
+    "q3": {
+      "body": "Os nossos resultados de pesquisa são alimentados pela The Movie Database (TMDB) e são exibidos independentemente das nossas fontes realmente terem o conteúdo.",
+      "title": "Os resultados da pesquisa mostram o programa ou filme, porque é que não consigo reproduzi-lo?",
+      "section": "pesquisa"
+    },
+    "title": "Sobre o film.kace.dev e FAQ (^▽^)",
+    "q5": {
+      "section": "geral",
+      "title": "Como posso saber mais?",
+      "body": "O film.kace.dev tem um servidor no Discord, que podes encontrar no topo desta página!"
+    },
+    "q25": {
+      "section": "linguagem",
+      "body": "Damos prioridade ao inglês, mas algumas fontes oferecem outras línguas. Experimenta mudar de fonte. Na FED API, só o Safari suporta a troca de áudio em ficheiros MP4.",
+      "title": "Como mudo de linguagem?"
+    },
+    "q9": {
+      "body": "Não, como não alojamos conteúdo, não podemos adicionar nem alterar o que está disponível. A lista de conteúdos baseia-se no que está publicamente acessível através do mecanismo de pesquisa.",
+      "title": "Este conteúdo está em falta / Posso pedir para adicionarem conteúdo?",
+      "section": "pesquisa"
+    },
+    "q6": {
+      "body": "Ainda não, mas podes instalá-lo como uma PWA (Progressive Web App). No iOS, usa o Safari → Partilhar → Adicionar ao Ecrã Principal. No Android, usa o Chrome → 3 pontos → Adicionar ao Ecrã Principal. Há um APK experimental disponível no nosso Discord, mas não é recomendado.",
+      "title": "Existe alguma app do film.kace.dev?",
+      "section": "geral"
+    },
+    "q12": {
+      "body": "Muda para uma fonte diferente. Nós não controlamos qualquer conteudo nem a precisão dos episódios.",
+      "title": "O episódio que estou a assistor é o incorreto.",
+      "section": "reprodução"
+    },
+    "q13": {
+      "body": "Tenta mudar de fonte. A qualidade varia por provedor. FED API tem mais opções maior parte das vezes.",
+      "title": "A qualidade do vídeo não é o que estava à espera.",
+      "section": "reprodução"
+    },
+    "q18": {
+      "body": "A velocidade depende do site onde o conteúdo está alojado. Muda para outra fonte para melhor desempenho.",
+      "title": "A fonte está a carregar devagar.",
+      "section": "reprodução"
+    },
+    "q26": {
+      "title": "As minhas legendas não estão sincronizadas.",
+      "body": "Usa a opção \"Customizar\" nas definições das legendas ou carrega [ and ] no teu teclado para ajustar. Também podes fazer upload do teu prórpio ficheiro de legendas.",
+      "section": "linguagem"
+    },
+    "q15": {
+      "body": "Certifica-te que o teu dispositivo não está em silêncio e tenta mudar de fonte. Problemas de áudio podem estar relacionados com a fonte específica.",
+      "title": "Porque não há áudio?",
+      "section": "reprodução"
+    },
+    "q20": {
+      "body": "A FED API é o nosso scraper privado que obtém streams diretamente do Febbox. Cada conta gratuita do Febbox inclui 100 GB/mês de largura de banda ilimitada, e usamos o teu token de interface para fazer a pesquisa como se estivesses a ver o conteúdo pessoalmente. A configuração é mais fácil através do navegador no computador, mas há instruções para telemóvel disponíveis no nosso Discord.",
+      "title": "O que é o FED API?",
+      "section": "conexões"
+    },
+    "q22": {
+      "body": "Algumas fontes bloqueiam os scrapers. A extensão funciona como um proxy local e contorna esses bloqueios usando o teu IP, cabeçalhos e cookies.",
+      "title": "Porque preciso da extensão ou de um proxy personalizado?",
+      "section": "conexões"
+    },
+    "q23": {
+      "body": "É uma ferramenta de proxy local usada para aceder a streams que restringem os scrapers. Ela imita a tua sessão de navegação. É também completamente open source e está disponível no nosso GitHub.",
+      "title": "O que é a extensão? É segura?",
+      "section": "conexões"
+    },
+    "help": "Não encontra uma resposta? <0>Obtenha suporte aqui.</0>",
+    "searchPlaceholder": "Pesquisar FAQ...",
+    "sections": {
+      "general": "Geral",
+      "search": "Pesquisa & Disponibilidade do Conteúdo",
+      "playback": "Problemas de Reprodução",
+      "connections": "Conexões",
+      "language": "Linguagem & Definições de Legendas"
+    },
+    "q4": {
+      "title": "E os meus dados e essas coisas?",
+      "body": "Todos os dados são sincronizados com o backend da comunidade, que está disponível para qualquer pessoa usar.",
+      "section": "geral"
+    },
+    "q7": {
+      "title": "Como crio uma conta?",
+      "body": "Carrega em \"Sincronizar para a Cloud\" no menu dropdown ou vai às definições para criares e sincronizares uma conta da comunidade.",
+      "section": "geral"
+    },
+    "q10": {
+      "title": "Não consigo encontrar o filme/programa que estou à procura!",
+      "body": "A pesquisa é alimentada pelo TMDB. Experimenta clicar no ícone 🔎 para aceder a opções avançadas de pesquisa, caso os resultados não sejam precisos.",
+      "section": "pesquisa"
+    },
+    "q11": {
+      "title": "Porque estou a ver um ecrã preto?",
+      "body": "Provavelmente é um ficheiro de vídeo corrupto. Tenta mudar de fonte.",
+      "section": "reprodução"
+    },
+    "q14": {
+      "title": "4K não está disponível.",
+      "body": "Se a opção 4K não aparece é porque provavelmente está indisponível para essa fonte.",
+      "section": "reprodução"
+    },
+    "q16": {
+      "title": "O vídeo está com uma cor estranha ou desbotada.",
+      "body": "Pode ser um ficheiro com defeito ou um vídeo HDR. Certifica-te que o teu dispositivo suporta HDR, ou muda de fonte.",
+      "section": "reprodução"
+    },
+    "q17": {
+      "title": "Estou a ter problemas visuais no vídeo.",
+      "body": "Os erros visuais geralmente devem-se a ficheiros mal carregados. Experimenta mudar de fonte.",
+      "section": "reprodução"
+    },
+    "q19": {
+      "title": "Como mudo de fontes?",
+      "body": "Durante a reprodução, toca no ícone ⚙️ e depois escolhe outra fonte na secção \"fontes de vídeo\".",
+      "section": "reprodução"
+    },
+    "q21": {
+      "title": "O FED API funciona em todos os dispositivos?",
+      "body": "Sim. Uma vez configurado, o teu token funciona em todos os dispositivos em que estiveres ligado.",
+      "section": "conexões"
+    },
+    "q24": {
+      "title": "O meu token do Febbox falha durante a configuração. O que devo fazer?",
+      "body": "O teu ISP pode estar a bloquear o FED API. Configura um DNS personalizado como 1.1.1.1 ou NextDNS. Também podes mudar a tua região no painel de administração.",
+      "section": "conexões"
+    }
+  },
+  "actions": {
+    "copied": "Copiado",
+    "copy": "Copiar"
+  },
+  "auth": {
+    "createAccount": "Ainda não tem uma conta? 😬 <0>Crie uma conta.</0>",
+    "deviceNameLabel": "Nome do dispositivo",
+    "deviceNamePlaceholder": "Telemóvel pessoal",
+    "generate": {
+      "description": "A tua frase-passe funciona como nome de utilizador e palavra-passe. Certifica-te de que a guardas num local seguro, pois vais precisar dela para aceder à tua conta. <bold>Não percas a tua frase de segurança!</bold>",
+      "next": "Guardei a minha frase-passe",
+      "passphraseFrameLabel": "Frase-passe",
+      "title": "A tua frase-passe"
+    },
+    "hasAccount": "Já tens uma conta? <0>Entra aqui.</0>",
+    "login": {
+      "description": "Por favor, introduz a tua frase-passe para entrar na tua conta",
+      "deviceLengthError": "Por favor, introduz um nome de dispositivo",
+      "passphraseLabel": "Frase-passe de 12 palavras",
+      "passphrasePlaceholder": "Frase-passe",
+      "submit": "Entrar",
+      "title": "Entrar na tua conta",
+      "validationError": "Frase-passe incorreta ou incompleta /ᐠ. .ᐟ\\"
+    },
+    "register": {
+      "information": {
+        "color1": "Cor de perfil um",
+        "color2": "Cor de perfil dois",
+        "header": "Introduz um nome para o teu dispositivo e escolhe cores e um ícone de utilizador à tua escolha",
+        "icon": "Ícone de utilizador",
+        "next": "Próximo",
+        "title": "Informações da conta"
+      }
+    },
+    "trust": {
+      "failed": {
+        "text": "Configuraste corretamente?",
+        "title": "Falha ao conectar-se ao servidor"
+      },
+      "host": "Estás a conectar-te a <0>{{hostname}}</0> - confirma se confias antes de criar uma conta...",
+      "no": "Voltar",
+      "title": "Confias neste servidor?",
+      "yes": "Confio neste servidor 🤞",
+      "noHost": "O servidor não foi configurado, por isso não podes criar uma conta",
+      "noHostTitle": "Servidor não configurado!"
+    },
+    "verify": {
+      "description": "Por favor, introduz a tua frase-passe anterior para confirmar que a guardaste e para criar a tua conta",
+      "invalidData": "Dados inválidos",
+      "noMatch": "A frase-passe não coincide",
+      "passphraseLabel": "A tua frase-passe de 12 palavras",
+      "recaptchaFailed": "Falha na validação do ReCaptcha",
+      "register": "Criar conta",
+      "title": "Confirmar a sua frase-passe"
+    }
+  },
+  "errors": {
+    "badge": "Houve um erro",
+    "details": "Detalhes do erro",
+    "reloadPage": "Recarregar a página",
+    "showError": "Mostrar detalhes do erro",
+    "title": "Encontrámos um erro!"
+  },
+  "footer": {
+    "legal": {
+      "disclaimer": "Aviso legal",
+      "disclaimerText": "film.kace.dev não hospeda quaisquer ficheiros, apenas faz ligações para serviços de terceiros. Problemas legais devem ser tratados com os anfitriões e fornecedores de ficheiros. O film.kace.dev não é responsável por quaisquer ficheiros multimédia mostrados pelos fornecedores de vídeo."
+    },
+    "links": {
+      "discord": "Discord",
+      "legal": "Legal / DMCA",
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "funding": "Contribui"
+    },
+    "tagline": "Assista aos seus programas e filmes favoritos com esta aplicação de streaming de código aberto."
+  },
+  "global": {
+    "name": "film.kace.dev",
+    "pages": {
+      "about": "Sobre",
+      "legal": "Legal / DMCA",
+      "login": "Entrar",
+      "pagetitle": "{{title}} - film.kace.dev",
+      "register": "Registrar",
+      "settings": "Configurações",
+      "discover": "Explorar",
+      "support": "Suporte",
+      "onboarding": "Configuração",
+      "migration": "Migrar Conta"
+    }
+  },
+  "home": {
+    "bookmarks": {
+      "sectionTitle": "Marcadores"
+    },
+    "continueWatching": {
+      "sectionTitle": "Continuar a assistir"
+    },
+    "mediaList": {
+      "stopEditing": "Parar de editar"
+    },
+    "search": {
+      "allResults": "É tudo o que temos!",
+      "failed": "Falha ao encontrar mídia, tente novamente!",
+      "loading": "A carregar...",
+      "noResults": "Não conseguimos encontrar nada!",
+      "placeholder": {
+        "default": "O que deseja assistir?",
+        "extra": [
+          "O que te apetece ver?",
+          "Devemos apagar o teu histórico do browser?",
+          "O que queres ver em streaming?",
+          "film.kace.dev é o melhor site de sempre!",
+          "O qu está na tua lista para ver hoje?",
+          "Como foi o teu dia?",
+          "Foi erro meu, o site nunca funciona como deve ser...",
+          "O film.kace.dev não é simplesmente o melhor?",
+          ">ᴗ<"
+        ]
+      },
+      "sectionTitle": "Resultados da pesquisa",
+      "empty": {
+        "default": "Bem-vindo, encontra conteúdo aqui para veres!",
+        "extra": [
+          "Não há nada aqui :(",
+          "Tão vazio...",
+          "Que vazio.",
+          "Olá novo utilizador :3"
+        ]
+      },
+      "discoverMore": "Descobre mais",
+      "discover": "Explora"
+    },
+    "titles": {
+      "day": {
+        "default": "O que gostaria de assistir esta tarde?",
+        "extra": [
+          "Sentindo-se aventureiro? Jurassic Park pode ser a escolha perfeita."
+        ]
+      },
+      "morning": {
+        "default": "O que gostaria de assistir esta manhã?",
+        "extra": ["Dizem que Antes do Amanhecer é bom"]
+      },
+      "night": {
+        "default": "O que gostaria de assistir esta noite?",
+        "extra": ["Cansado? Dizem que O Exorcista é bom."]
+      },
+      "420": {
+        "default": "O que gostarias de ver neste 4/20?",
+        "extra": ["Feliz 4/20 🥳!"]
+      },
+      "69": {
+        "default": "Apetece-te algo picante?",
+        "extra": ["Feliz dia 69 😘!"]
+      }
+    },
+    "mediaCard": {
+      "moreInfo": "Mais info",
+      "copyLink": "Copiar Link",
+      "close": "Fechar"
+    }
+  },
+  "media": {
+    "episodeDisplay": "T{{season}} E{{episode}}",
+    "types": {
+      "movie": "Filme",
+      "show": "Série"
+    },
+    "unreleased": "Por Lançar",
+    "episodeShort": "E",
+    "seasonShort": "S"
+  },
+  "navigation": {
+    "banner": {
+      "offline": "Verifique a sua conexão à internet"
+    },
+    "menu": {
+      "about": "Sobre nós",
+      "logout": "Sair",
+      "register": "Sincronizar com a nuvem",
+      "settings": "Configurações",
+      "support": "Suporte"
+    }
+  },
+  "notFound": {
+    "badge": "Não encontrado",
+    "goHome": "Voltar para casa",
+    "message": "Procurámos em todo lugar: embaixo dos caixotes, no armário, atrás do proxy, mas, no final, não conseguimos encontrar a página que procura.",
+    "title": "Não foi possível encontrar essa página"
+  },
+  "overlays": {
+    "close": "Fechar"
+  },
+  "player": {
+    "back": {
+      "default": "Voltar para casa",
+      "short": "Voltar"
+    },
+    "casting": {
+      "enabled": "Transmitindo para o dispositivo..."
+    },
+    "menus": {
+      "downloads": {
+        "disclaimer": "Os downloads são feitos diretamente pelo fornecedor. O film.kace.dev não tem controle sobre como os downloads são fornecidos.",
+        "downloadSubtitle": "Baixar legenda atual",
+        "downloadVideo": "Baixar vídeo",
+        "hlsDisclaimer": "Os downloads são feitos diretamente pelo fornecedor. O film.kace.dev não tem controle sobre como os downloads são fornecidos. Por favor, note que está a baixar uma lista de reprodução HLS, isso é destinado a utilizadores familiarizados com streaming multimídia avançado.",
+        "onAndroid": {
+          "1": "Para baixar no Android, clique no botão de download e, na nova página, <bold>toque e segure</bold> no vídeo, depois selecione <bold>guardar</bold>.",
+          "shortTitle": "Baixar / Android",
+          "title": "Baixando no Android"
+        },
+        "onIos": {
+          "1": "Para baixar no iOS, clique no botão de download e, na nova página, clique em <bold><ios_share /></bold>, depois em <bold>Guardar no Ficheiro <ios_files /></bold>.",
+          "shortTitle": "Baixar / iOS",
+          "title": "Baixando no iOS"
+        },
+        "onPc": {
+          "1": "No PC, clique no botão de download e, na nova página, clique com o botão direito no vídeo e selecione <bold>Guardar vídeo como</bold>",
+          "shortTitle": "Baixar / PC",
+          "title": "Baixando no PC"
+        },
+        "title": "Baixar"
+      },
+      "episodes": {
+        "button": "Episódios",
+        "emptyState": "Não há episódios nesta temporada, volte mais tarde!",
+        "episodeBadge": "E{{episode}}",
+        "loadingError": "Erro ao carregar a temporada",
+        "loadingList": "A carregar...",
+        "loadingTitle": "A carregar...",
+        "unairedEpisodes": "Um ou mais episódios nesta temporada foram desativados porque ainda não foram transmitidos."
+      },
+      "playback": {
+        "speedLabel": "Velocidade de reprodução",
+        "title": "Configurações de reprodução"
+      },
+      "quality": {
+        "automaticLabel": "Qualidade automática",
+        "hint": "Pode tentar <0>mudar de fonte</0> para obter opções de qualidade diferentes.",
+        "iosNoQuality": "Devido a limitações definidas pela Apple, a seleção de qualidade não está disponível no iOS para esta fonte. Pode tentar <0>mudar para outra fonte</0> para obter opções de qualidade diferentes.",
+        "title": "Qualidade"
+      },
+      "settings": {
+        "downloadItem": "Download",
+        "enableSubtitles": "Ativar legendas",
+        "experienceSection": "Experiência de visualização",
+        "playbackItem": "Configurações de reprodução",
+        "qualityItem": "Qualidade",
+        "sourceItem": "Fontes de vídeo",
+        "subtitleItem": "Configurações de legendas",
+        "videoSection": "Configurações de vídeo"
+      },
+      "sources": {
+        "failed": {
+          "text": "Houve um erro ao tentar encontrar vídeos, por favor, tente uma fonte diferente.",
+          "title": "Falha ao obter"
+        },
+        "noEmbeds": {
+          "text": "Não conseguimos encontrar nenhum embed, por favor, tente uma fonte diferente.",
+          "title": "Nenhum embed encontrado"
+        },
+        "noStream": {
+          "text": "Esta fonte não tem transmissões para este filme ou série.",
+          "title": "Sem transmissão"
+        },
+        "title": "Fontes",
+        "unknownOption": "Desconhecido"
+      },
+      "subtitles": {
+        "customChoice": "Selecionar legenda do arquivo",
+        "customizeLabel": "Personalizar",
+        "offChoice": "Desativar",
+        "settings": {
+          "backlink": "Legendas personalizadas",
+          "delay": "Atraso das legendas",
+          "fixCapitals": "Corrigir maiúsculas"
+        },
+        "title": "Legendas",
+        "unknownLanguage": "Desconhecido"
+      }
+    },
+    "metadata": {
+      "api": {
+        "text": "Não foi possível carregar os metadados da API, por favor verifique a sua conexão à internet.",
+        "title": "Falha ao carregar os metadados da API"
+      },
+      "failed": {
+        "badge": "Falhou",
+        "homeButton": "Ir para casa",
+        "text": "Não foi possível carregar os metadados do media da TMDB. Por favor, verifique se a TMDB está indisponível ou bloqueada na sua conexão à internet.",
+        "title": "Falha ao carregar os metadados"
+      },
+      "notFound": {
+        "badge": "Não encontrado",
+        "homeButton": "Voltar para casa",
+        "text": "Não conseguimos encontrar o conteúdo que solicitou. Ou foi removido ou houve manipulação na URL.",
+        "title": "Não foi possível encontrar esse conteúdo."
+      }
+    },
+    "nextEpisode": {
+      "next": "Próximo episódio"
+    },
+    "playbackError": {
+      "badge": "Erro de reprodução",
+      "errors": {
+        "errorAborted": "A recuperação do conteúdo foi cancelada a pedido do utilizador.",
+        "errorDecode": "Apesar de ter sido anteriormente considerado utilizável, ocorreu um erro ao tentar decodificar o recurso multimédia, resultando em um erro.",
+        "errorGenericMedia": "Ocorreu um erro desconhecido no multimédia.",
+        "errorNetwork": "Ocorreu algum tipo de erro de rede que impediu a recuperação bem-sucedida do multimédia, apesar de estar disponível anteriormente.",
+        "errorNotSupported": "O objeto multimédia ou do fornecedor de multimédia não é suportado."
+      },
+      "homeButton": "Ir para casa",
+      "text": "Ocorreu um erro ao tentar reproduzir o conteúdo multimédia. Por favor, tente novamente.",
+      "title": "Falha ao reproduzir o vídeo!"
+    },
+    "scraping": {
+      "items": {
+        "failure": "Ocorreu um erro",
+        "notFound": "Não possui o vídeo",
+        "pending": "A verificar vídeos..."
+      },
+      "notFound": {
+        "badge": "Não encontrado",
+        "detailsButton": "Mostrar detalhes",
+        "homeButton": "Ir para casa",
+        "text": "Pesquisámos pelos nossos fornecedores e não conseguimos encontrar o conteúdo que procura! Não alojamos o conteúdo multimédia e não temos controlo sobre o que está disponível. Por favor, clique em 'Mostrar detalhes' abaixo para mais informações.",
+        "title": "Não conseguimos encontrar isso"
+      }
+    },
+    "time": {
+      "regular": "{{timeWatched}} / {{duration}}",
+      "remaining": "{{timeLeft}} restantes • Termina às {{timeFinished, datetime}}",
+      "shortRegular": "{{timeWatched}}",
+      "shortRemaining": "-{{timeLeft}}"
+    },
+    "turnstile": {
+      "description": "Por favor, verifique que é humano completando o Captcha à direita. Isso é para manter o film.kace.dev seguro!",
+      "error": "Falha ao verificar a sua humanidade. Por favor, tente novamente.",
+      "title": "Precisamos verificar que você é humano.",
+      "verifyingHumanity": "Verificando a sua humanidade..."
+    }
+  },
+  "screens": {
+    "legal": {
+      "title": "Legal / DMCA"
+    },
+    "loadingApp": "A carregar a aplicação",
+    "loadingUser": "A carregar o seu perfil",
+    "loadingUserError": {
+      "logout": "Terminar sessão",
+      "reset": "Repor servidor personalizado",
+      "text": "Falha ao carregar o seu perfil",
+      "textWithReset": "Falha ao carregar o seu perfil do servidor personalizado. Deseja repor para o servidor padrão?"
+    },
+    "migration": {
+      "failed": "Falha ao migrar os seus dados.",
+      "inProgress": "Por favor aguarde, estamos a migrar os seus dados. Isto não deverá demorar muito."
+    }
+  },
+  "settings": {
+    "account": {
+      "accountDetails": {
         "deviceNameLabel": "Nome do dispositivo",
         "deviceNamePlaceholder": "Telemóvel pessoal",
-        "generate": {
-            "description": "A sua frase-passe age como o seu nome de utilizador e senha. Certifique-se de a manter segura, pois precisará dela para entrar na sua conta",
-            "next": "Guardei a minha frase-passe",
-            "passphraseFrameLabel": "Frase-passe",
-            "title": "A sua frase-passe"
+        "editProfile": "Editar",
+        "logoutButton": "Terminar sessão"
+      },
+      "actions": {
+        "delete": {
+          "button": "Eliminar conta",
+          "confirmButton": "Eliminar conta",
+          "confirmDescription": "Tem a certeza de que deseja eliminar a sua conta? Todos os seus dados serão perdidos!",
+          "confirmTitle": "Tem a certeza?",
+          "text": "Esta ação é irreversível. Todos os dados serão eliminados e nada poderá ser recuperado.",
+          "title": "Eliminar conta"
         },
-        "hasAccount": "Já tem uma conta? <0>Entre aqui.</0>",
-        "login": {
-            "description": "Por favor, introduza a sua frase-passe para entrar na sua conta",
-            "deviceLengthError": "Por favor, introduza um nome de dispositivo",
-            "passphraseLabel": "Frase-passe de 12 palavras",
-            "passphrasePlaceholder": "Frase-passe",
-            "submit": "Entrar",
-            "title": "Entrar na sua conta",
-            "validationError": "Frase-passe incorreta ou incompleta"
-        },
-        "register": {
-            "information": {
-                "color1": "Cor de perfil um",
-                "color2": "Cor de perfil dois",
-                "header": "Introduza um nome para o seu dispositivo e escolha cores e um ícone de utilizador da sua escolha",
-                "icon": "Ícone de utilizador",
-                "next": "Próximo",
-                "title": "Informações da conta"
-            }
-        },
-        "trust": {
-            "failed": {
-                "text": "Configurou corretamente?",
-                "title": "Falha ao conectar-se ao servidor"
-            },
-            "host": "Está a conectar-se a <0>{{hostname}}</0> - confirme se confia antes de criar uma conta",
-            "no": "Voltar",
-            "title": "Confia neste servidor?",
-            "yes": "Confio neste servidor"
-        },
-        "verify": {
-            "description": "Por favor, introduza a sua frase-passe anterior para confirmar que a guardou e para criar a sua conta",
-            "invalidData": "Dados inválidos",
-            "noMatch": "A frase-passe não coincide",
-            "passphraseLabel": "A sua frase-passe de 12 palavras",
-            "recaptchaFailed": "Falha na validação do ReCaptcha",
-            "register": "Criar conta",
-            "title": "Confirmar a sua frase-passe"
+        "title": "Ações",
+        "logoutAllDevices": {
+          "title": "Terminar todas as sessões",
+          "text": "Isso irá desconectar você de todos os dispositivos ligados à sua conta.",
+          "button": "Sair de todos os dispositivos"
         }
+      },
+      "devices": {
+        "deviceNameLabel": "Nome do dispositivo",
+        "failed": "Falha ao carregar as sessões",
+        "removeDevice": "Remover",
+        "title": "Dispositivos"
+      },
+      "profile": {
+        "finish": "Terminar edição",
+        "firstColor": "Cor do perfil um",
+        "secondColor": "Cor do perfil dois",
+        "title": "Editar imagem de perfil",
+        "userIcon": "Ícone de utilizador"
+      },
+      "register": {
+        "cta": "Começar",
+        "text": "Partilhe o seu progresso de visualização entre dispositivos e mantenha-os sincronizados.",
+        "title": "Sincronizar com a nuvem"
+      },
+      "title": "Conta"
     },
-    "errors": {
-        "badge": "Houve um erro",
-        "details": "Detalhes do erro",
-        "reloadPage": "Recarregar a página",
-        "showError": "Mostrar detalhes do erro",
-        "title": "Encontrámos um erro!"
+    "appearance": {
+      "activeTheme": "Ativo",
+      "themes": {
+        "blue": "Azul",
+        "default": "Padrão",
+        "gray": "Cinzento",
+        "red": "Vermelho",
+        "teal": "Verde-azulado"
+      },
+      "title": "Aparência"
     },
-    "footer": {
-        "legal": {
-            "disclaimer": "Aviso legal",
-            "disclaimerText": "film.kace.dev não hospeda quaisquer ficheiros, apenas faz ligações para serviços de terceiros. Problemas legais devem ser tratados com os anfitriões e fornecedores de ficheiros. O film.kace.dev não é responsável por quaisquer ficheiros multimédia mostrados pelos fornecedores de vídeo."
+    "connections": {
+      "server": {
+        "description": "Se desejar ligar a um servidor personalizado para armazenar os seus dados, ative isto e forneça o URL.",
+        "label": "Servidor personalizado",
+        "urlLabel": "URL do servidor personalizado"
+      },
+      "title": "Conexões",
+      "workers": {
+        "addButton": "Adicionar novo trabalhador",
+        "description": "Para que a aplicação funcione, todo o tráfego é encaminhado através de proxies. Ative isto se quiser utilizar os seus próprios trabalhadores.",
+        "emptyState": "Ainda não há trabalhadores, adicione um abaixo",
+        "label": "Utilizar trabalhadores de proxy personalizados",
+        "urlLabel": "URLs do trabalhador",
+        "urlPlaceholder": "https://"
+      }
+    },
+    "reset": "Repor",
+    "save": "Guardar",
+    "sidebar": {
+      "info": {
+        "appVersion": "Versão da aplicação",
+        "backendUrl": "URL do backend",
+        "backendVersion": "Versão do backend",
+        "hostname": "Hostname",
+        "insecure": "Inseguro",
+        "notLoggedIn": "Não está autenticado",
+        "secure": "Seguro",
+        "title": "Informações da aplicação",
+        "unknownVersion": "Desconhecida",
+        "userId": "ID de utilizador"
+      }
+    },
+    "subtitles": {
+      "backgroundLabel": "Opacidade do fundo",
+      "colorLabel": "Cor",
+      "previewQuote": "Não devo temer. O medo é o assassino da mente.",
+      "textSizeLabel": "Tamanho do texto",
+      "title": "Legendas"
+    },
+    "unsaved": "Tem alterações não guardadas"
+  },
+  "migration": {
+    "loginRequired": "Tens de ter sessão iniciada para migrar os teus dados! Por favor, volta atrás e inicia sessão para continuar.",
+    "start": {
+      "explainer": "Se quiseres migrar ou fazer backup dos teus dados, podes fazê-lo através das opções abaixo. Isto vai permitir-te manter os teus dados quando mudares de servidor backend.",
+      "options": {
+        "download": {
+          "description": "Isto vai descarregar os teus dados para o teu dispositivo. Depois podes carregar esses dados para o novo servidor ou simplesmente guardá-los para segurança.",
+          "title": "Descarregar dados",
+          "quality": "Mais técnico",
+          "action": "Descarregar dados"
         },
-        "links": {
-            "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "GitHub"
+        "or": "ou",
+        "direct": {
+          "description": "Isto vai migrar os teus dados diretamente para o novo servidor. Esta é a opção mais rápida.<br /><br />Esta opção permite-te manter a tua frase de segurança igual!",
+          "title": "Migração direta",
+          "quality": "A mais fácil e rápida",
+          "action": "Transferir dados"
         },
-        "tagline": "Assista aos seus programas e filmes favoritos com esta aplicação de streaming de código aberto."
-    },
-    "global": {
-        "name": "film.kace.dev",
-        "pages": {
-            "about": "Sobre",
-            "dmca": "DMCA",
-            "login": "Entrar",
-            "pagetitle": "{{title}} - film.kace.dev",
-            "register": "Registrar",
-            "settings": "Configurações"
+        "upload": {
+          "title": "Carregar Dados",
+          "description": "Carrega o ficheiro de dados que exportaste anteriormente para restaurar os teus favoritos e progresso nesta conta.",
+          "quality": "Restaurar de um backup"
         }
-    },
-    "home": {
-        "bookmarks": {
-            "sectionTitle": "Marcadores"
-        },
-        "continueWatching": {
-            "sectionTitle": "Continuar a assistir"
-        },
-        "mediaList": {
-            "stopEditing": "Parar de editar"
-        },
-        "search": {
-            "allResults": "É tudo o que temos!",
-            "failed": "Falha ao encontrar mídia, tente novamente!",
-            "loading": "A carregar...",
-            "noResults": "Não conseguimos encontrar nada!",
-            "placeholder": {
-                "default": "O que deseja assistir?"
-            },
-            "sectionTitle": "Resultados da pesquisa"
-        },
-        "titles": {
-            "day": {
-                "default": "O que gostaria de assistir esta tarde?",
-                "extra": [
-                    "Sentindo-se aventureiro? Jurassic Park pode ser a escolha perfeita."
-                ]
-            },
-            "morning": {
-                "default": "O que gostaria de assistir esta manhã?",
-                "extra": [
-                    "Dizem que Antes do Amanhecer é bom"
-                ]
-            },
-            "night": {
-                "default": "O que gostaria de assistir esta noite?",
-                "extra": [
-                    "Cansado? Dizem que O Exorcista é bom."
-                ]
-            }
-        }
-    },
-    "media": {
-        "episodeDisplay": "T{{season}} E{{episode}}",
-        "types": {
-            "movie": "Filme",
-            "show": "Série"
-        }
-    },
-    "navigation": {
-        "banner": {
-            "offline": "Verifique a sua conexão à internet"
-        },
-        "menu": {
-            "about": "Sobre nós",
-            "donation": "Doar",
-            "logout": "Sair",
-            "register": "Sincronizar com a nuvem",
-            "settings": "Configurações",
-            "support": "Suporte"
-        }
-    },
-    "notFound": {
-        "badge": "Não encontrado",
-        "goHome": "Voltar para casa",
-        "message": "Procurámos em todo lugar: embaixo dos caixotes, no armário, atrás do proxy, mas, no final, não conseguimos encontrar a página que procura.",
-        "title": "Não foi possível encontrar essa página"
-    },
-    "overlays": {
-        "close": "Fechar"
-    },
-    "player": {
-        "back": {
-            "default": "Voltar para casa",
-            "short": "Voltar"
-        },
-        "casting": {
-            "enabled": "Transmitindo para o dispositivo..."
-        },
-        "menus": {
-            "downloads": {
-                "disclaimer": "Os downloads são feitos diretamente pelo fornecedor. O film.kace.dev não tem controle sobre como os downloads são fornecidos.",
-                "downloadSubtitle": "Baixar legenda atual",
-                "downloadVideo": "Baixar vídeo",
-                "hlsDisclaimer": "Os downloads são feitos diretamente pelo fornecedor. O film.kace.dev não tem controle sobre como os downloads são fornecidos. Por favor, note que está a baixar uma lista de reprodução HLS, isso é destinado a utilizadores familiarizados com streaming multimídia avançado.",
-                "onAndroid": {
-                    "1": "Para baixar no Android, clique no botão de download e, na nova página, <bold>toque e segure</bold> no vídeo, depois selecione <bold>guardar</bold>.",
-                    "shortTitle": "Baixar / Android",
-                    "title": "Baixando no Android"
-                },
-                "onIos": {
-                    "1": "Para baixar no iOS, clique no botão de download e, na nova página, clique em <bold><ios_share /></bold>, depois em <bold>Guardar no Ficheiro <ios_files /></bold>.",
-                    "shortTitle": "Baixar / iOS",
-                    "title": "Baixando no iOS"
-                },
-                "onPc": {
-                    "1": "No PC, clique no botão de download e, na nova página, clique com o botão direito no vídeo e selecione <bold>Guardar vídeo como</bold>",
-                    "shortTitle": "Baixar / PC",
-                    "title": "Baixando no PC"
-                },
-                "title": "Baixar"
-            },
-            "episodes": {
-                "button": "Episódios",
-                "emptyState": "Não há episódios nesta temporada, volte mais tarde!",
-                "episodeBadge": "E{{episode}}",
-                "loadingError": "Erro ao carregar a temporada",
-                "loadingList": "A carregar...",
-                "loadingTitle": "A carregar...",
-                "unairedEpisodes": "Um ou mais episódios nesta temporada foram desativados porque ainda não foram transmitidos."
-            },
-            "playback": {
-                "speedLabel": "Velocidade de reprodução",
-                "title": "Configurações de reprodução"
-            },
-            "quality": {
-                "automaticLabel": "Qualidade automática",
-                "hint": "Pode tentar <0>mudar de fonte</0> para obter opções de qualidade diferentes.",
-                "iosNoQuality": "Devido a limitações definidas pela Apple, a seleção de qualidade não está disponível no iOS para esta fonte. Pode tentar <0>mudar para outra fonte</0> para obter opções de qualidade diferentes.",
-                "title": "Qualidade"
-            },
-            "settings": {
-                "downloadItem": "Download",
-                "enableSubtitles": "Ativar legendas",
-                "experienceSection": "Experiência de visualização",
-                "playbackItem": "Configurações de reprodução",
-                "qualityItem": "Qualidade",
-                "sourceItem": "Fontes de vídeo",
-                "subtitleItem": "Configurações de legendas",
-                "videoSection": "Configurações de vídeo"
-            },
-            "sources": {
-                "failed": {
-                    "text": "Houve um erro ao tentar encontrar vídeos, por favor, tente uma fonte diferente.",
-                    "title": "Falha ao obter"
-                },
-                "noEmbeds": {
-                    "text": "Não conseguimos encontrar nenhum embed, por favor, tente uma fonte diferente.",
-                    "title": "Nenhum embed encontrado"
-                },
-                "noStream": {
-                    "text": "Esta fonte não tem transmissões para este filme ou série.",
-                    "title": "Sem transmissão"
-                },
-                "title": "Fontes",
-                "unknownOption": "Desconhecido"
-            },
-            "subtitles": {
-                "customChoice": "Selecionar legenda do arquivo",
-                "customizeLabel": "Personalizar",
-                "offChoice": "Desativar",
-                "settings": {
-                    "backlink": "Legendas personalizadas",
-                    "delay": "Atraso das legendas",
-                    "fixCapitals": "Corrigir maiúsculas"
-                },
-                "title": "Legendas",
-                "unknownLanguage": "Desconhecido"
-            }
-        },
-        "metadata": {
-            "api": {
-                "text": "Não foi possível carregar os metadados da API, por favor verifique a sua conexão à internet.",
-                "title": "Falha ao carregar os metadados da API"
-            },
-            "failed": {
-                "badge": "Falhou",
-                "homeButton": "Ir para casa",
-                "text": "Não foi possível carregar os metadados do media da TMDB. Por favor, verifique se a TMDB está indisponível ou bloqueada na sua conexão à internet.",
-                "title": "Falha ao carregar os metadados"
-            },
-            "notFound": {
-                "badge": "Não encontrado",
-                "homeButton": "Voltar para casa",
-                "text": "Não conseguimos encontrar o conteúdo que solicitou. Ou foi removido ou houve manipulação na URL.",
-                "title": "Não foi possível encontrar esse conteúdo."
-            }
-        },
-        "nextEpisode": {
-            "cancel": "Cancelar",
-            "next": "Próximo episódio"
-        },
-        "playbackError": {
-            "badge": "Erro de reprodução",
-            "errors": {
-                "errorAborted": "A recuperação do conteúdo foi cancelada a pedido do utilizador.",
-                "errorDecode": "Apesar de ter sido anteriormente considerado utilizável, ocorreu um erro ao tentar decodificar o recurso multimédia, resultando em um erro.",
-                "errorGenericMedia": "Ocorreu um erro desconhecido no multimédia.",
-                "errorNetwork": "Ocorreu algum tipo de erro de rede que impediu a recuperação bem-sucedida do multimédia, apesar de estar disponível anteriormente.",
-                "errorNotSupported": "O objeto multimédia ou do fornecedor de multimédia não é suportado."
-            },
-            "homeButton": "Ir para casa",
-            "text": "Ocorreu um erro ao tentar reproduzir o conteúdo multimédia. Por favor, tente novamente.",
-            "title": "Falha ao reproduzir o vídeo!"
-        },
-        "scraping": {
-            "items": {
-                "failure": "Ocorreu um erro",
-                "notFound": "Não possui o vídeo",
-                "pending": "A verificar vídeos..."
-            },
-            "notFound": {
-                "badge": "Não encontrado",
-                "detailsButton": "Mostrar detalhes",
-                "homeButton": "Ir para casa",
-                "text": "Pesquisámos pelos nossos fornecedores e não conseguimos encontrar o conteúdo que procura! Não alojamos o conteúdo multimédia e não temos controlo sobre o que está disponível. Por favor, clique em 'Mostrar detalhes' abaixo para mais informações.",
-                "title": "Não conseguimos encontrar isso"
-            }
-        },
-        "time": {
-            "regular": "{{timeWatched}} / {{duration}}",
-            "remaining": "{{timeLeft}} restantes • Termina às {{timeFinished, datetime}}",
-            "shortRegular": "{{timeWatched}}",
-            "shortRemaining": "-{{timeLeft}}"
-        },
-        "turnstile": {
-            "description": "Por favor, verifique que é humano completando o Captcha à direita. Isso é para manter o film.kace.dev seguro!",
-            "error": "Falha ao verificar a sua humanidade. Por favor, tente novamente.",
-            "title": "Precisamos verificar que você é humano.",
-            "verifyingHumanity": "Verificando a sua humanidade..."
-        }
-    },
-    "screens": {
-        "dmca": {
-            "text": "Bem-vindo à página de contacto DMCA da film.kace.dev! Respeitamos os direitos de propriedade intelectual e queremos resolver rapidamente quaisquer preocupações de direitos autorais. Se acredita que a sua obra protegida por direitos autorais foi usada indevidamente na nossa plataforma, envie um aviso DMCA detalhado para o email abaixo. Inclua uma descrição do material protegido por direitos autorais, os seus detalhes de contacto e uma declaração de boa fé. Comprometemo-nos a resolver essas questões prontamente e agradecemos a sua cooperação para manter a film.kace.dev como um lugar que respeita a criatividade e os direitos autorais.",
-            "title": "DMCA"
-        },
-        "loadingApp": "A carregar a aplicação",
-        "loadingUser": "A carregar o seu perfil",
-        "loadingUserError": {
-            "logout": "Terminar sessão",
-            "reset": "Repor servidor personalizado",
-            "text": "Falha ao carregar o seu perfil",
-            "textWithReset": "Falha ao carregar o seu perfil do servidor personalizado. Deseja repor para o servidor padrão?"
-        },
-        "migration": {
-            "failed": "Falha ao migrar os seus dados.",
-            "inProgress": "Por favor aguarde, estamos a migrar os seus dados. Isto não deverá demorar muito."
-        }
-    },
-    "settings": {
-        "account": {
-            "accountDetails": {
-                "deviceNameLabel": "Nome do dispositivo",
-                "deviceNamePlaceholder": "Telemóvel pessoal",
-                "editProfile": "Editar",
-                "logoutButton": "Terminar sessão"
-            },
-            "actions": {
-                "delete": {
-                    "button": "Eliminar conta",
-                    "confirmButton": "Eliminar conta",
-                    "confirmDescription": "Tem a certeza de que deseja eliminar a sua conta? Todos os seus dados serão perdidos!",
-                    "confirmTitle": "Tem a certeza?",
-                    "text": "Esta ação é irreversível. Todos os dados serão eliminados e nada poderá ser recuperado.",
-                    "title": "Eliminar conta"
-                },
-                "title": "Ações"
-            },
-            "devices": {
-                "deviceNameLabel": "Nome do dispositivo",
-                "failed": "Falha ao carregar as sessões",
-                "removeDevice": "Remover",
-                "title": "Dispositivos"
-            },
-            "profile": {
-                "finish": "Terminar edição",
-                "firstColor": "Cor do perfil um",
-                "secondColor": "Cor do perfil dois",
-                "title": "Editar imagem de perfil",
-                "userIcon": "Ícone de utilizador"
-            },
-            "register": {
-                "cta": "Começar",
-                "text": "Partilhe o seu progresso de visualização entre dispositivos e mantenha-os sincronizados.",
-                "title": "Sincronizar com a nuvem"
-            },
-            "title": "Conta"
-        },
-        "appearance": {
-            "activeTheme": "Ativo",
-            "themes": {
-                "blue": "Azul",
-                "default": "Padrão",
-                "gray": "Cinzento",
-                "red": "Vermelho",
-                "teal": "Verde-azulado"
-            },
-            "title": "Aparência"
-        },
-        "connections": {
-            "server": {
-                "description": "Se desejar ligar a um servidor personalizado para armazenar os seus dados, ative isto e forneça o URL.",
-                "label": "Servidor personalizado",
-                "urlLabel": "URL do servidor personalizado"
-            },
-            "title": "Conexões",
-            "workers": {
-                "addButton": "Adicionar novo trabalhador",
-                "description": "Para que a aplicação funcione, todo o tráfego é encaminhado através de proxies. Ative isto se quiser utilizar os seus próprios trabalhadores.",
-                "emptyState": "Ainda não há trabalhadores, adicione um abaixo",
-                "label": "Utilizar trabalhadores de proxy personalizados",
-                "urlLabel": "URLs do trabalhador",
-                "urlPlaceholder": "https://"
-            }
-        },
-        "reset": "Repor",
-        "save": "Guardar",
-        "sidebar": {
-            "info": {
-                "appVersion": "Versão da aplicação",
-                "backendUrl": "URL do backend",
-                "backendVersion": "Versão do backend",
-                "hostname": "Hostname",
-                "insecure": "Inseguro",
-                "notLoggedIn": "Não está autenticado",
-                "secure": "Seguro",
-                "title": "Informações da aplicação",
-                "unknownVersion": "Desconhecida",
-                "userId": "ID de utilizador"
-            }
-        },
-        "subtitles": {
-            "backgroundLabel": "Opacidade do fundo",
-            "colorLabel": "Cor",
-            "previewQuote": "Não devo temer. O medo é o assassino da mente.",
-            "textSizeLabel": "Tamanho do texto",
-            "title": "Legendas"
-        },
-        "unsaved": "Tem alterações não guardadas"
+      },
+      "title": "Migrar os teus dados"
     }
+  },
+  "details": {
+    "runtime": "Duração:",
+    "releaseDate": "Data de Lançamento:",
+    "resume": "Resumir",
+    "play": "Reproduzir",
+    "language": "Linguagem:",
+    "rating": "Avaliação:",
+    "votes": "votos",
+    "tmdb": "Ver no TMDB",
+    "imdb": "Ver no IMDb",
+    "episodes": "Episódios",
+    "seasons": "Temporada/s",
+    "season": "Temporada",
+    "episode": "Episódio",
+    "endsAt": "Acaba a {{time}}",
+    "trailer": "Trailer"
+  }
 }

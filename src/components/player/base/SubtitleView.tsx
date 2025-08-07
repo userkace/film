@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { useMemo } from "react";
 
 import {
@@ -48,9 +47,35 @@ export function CaptionCue({
     return html;
   }, [text, overrideCasing]);
 
+  const getTextEffectStyles = () => {
+    switch (styling.fontStyle) {
+      case "raised":
+        return {
+          textShadow: "0 2px 0 rgba(0,0,0,0.8), 0 1.5px 1.5px rgba(0,0,0,0.9)",
+        };
+      case "depressed":
+        return {
+          textShadow:
+            "0 -2px 0 rgba(0,0,0,0.8), 0 -1.5px 1.5px rgba(0,0,0,0.9)",
+        };
+      case "uniform":
+        return {
+          textShadow:
+            "1.5px 1.5px 1.5px rgba(0,0,0,0.8), -1.5px -1.5px 1.5px rgba(0,0,0,0.8), 1.5px -1.5px 1.5px rgba(0,0,0,0.8), -1.5px 1.5px 1.5px rgba(0,0,0,0.8)",
+        };
+      case "dropShadow":
+        return { textShadow: "2.5px 2.5px 4.5px rgba(0,0,0,0.9)" };
+      case "default":
+      default:
+        return { textShadow: "0 2px 4px rgba(0,0,0,0.5)" }; // Default is a light drop shadow
+    }
+  };
+
+  const textEffectStyles = getTextEffectStyles();
+
   return (
     <p
-      className="pointer-events-none mb-1 select-none rounded px-4 py-1 text-center leading-normal [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]"
+      className="mb-1 rounded px-4 py-1 text-center leading-normal"
       style={{
         color: styling.color,
         fontSize: `${(1.5 * styling.size).toFixed(2)}em`,
@@ -60,6 +85,7 @@ export function CaptionCue({
             ? `blur(${Math.floor(styling.backgroundBlur * 64)}px)`
             : "none",
         fontWeight: styling.bold ? "bold" : "normal",
+        ...textEffectStyles,
       }}
     >
       <span
@@ -114,20 +140,19 @@ export function SubtitleView(props: { controlsShown: boolean }) {
   const captionAsTrack = usePlayerStore((s) => s.caption.asTrack);
   const display = usePlayerStore((s) => s.display);
   const isCasting = display?.getType() === "casting";
+  const styling = useSubtitleStore((s) => s.styling);
 
   if (captionAsTrack || !caption || isCasting) return null;
 
   return (
-    <Transition
-      className="absolute inset-0 pointer-events-none"
-      animation="slide-up"
-      show
-    >
+    <Transition animation="slide-up" show>
       <div
-        className={classNames([
-          "text-white absolute flex w-full flex-col items-center transition-[bottom]",
-          props.controlsShown ? "bottom-24" : "bottom-12",
-        ])}
+        className="text-white absolute w-full flex flex-col items-center transition-[bottom]"
+        style={{
+          bottom: props.controlsShown
+            ? "6rem"
+            : `${styling.verticalPosition}rem`,
+        }}
       >
         <SubtitleRenderer />
       </div>

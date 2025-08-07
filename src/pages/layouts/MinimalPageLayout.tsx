@@ -14,7 +14,7 @@ export function MinimalPageLayout(props: { children: React.ReactNode }) {
     >
       <BlurEllipsis />
       {/* Main page */}
-      <div className="fixed px-7 py-5 left-0 top-0">
+      <div className="fixed px-7 py-5 left-0 top-0 z-20">
         <Link
           className="block tabbable rounded-full text-xs ssm:text-base"
           to="/"

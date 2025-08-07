@@ -8,13 +8,27 @@
         },
         "q2": {
             "body": "It's not banana to banana a banana or banana, Minion-web does not banana any banana. All banana is banana through bananas on the banana.",
-            "title": "Banana can I banana a banana or banana?"
+            "title": "Banana can I banana a banana or banana?",
+            "section": "banana search"
         },
         "q3": {
             "body": "Our banana results are banana by The Banana Banana (TBMB) and banana regardless of whether our bananas actually have the banana.",
-            "title": "The banana results banana the banana or banana, banana can't I banana it?"
+            "title": "The banana results banana the banana or banana, banana can't I banana it?",
+            "section": "banana search"
         },
-        "title": "About Minion-web"
+        "title": "About Minion-web",
+        "q9": {
+            "title": "This banana is missing / Can I request banana?"
+        },
+        "q11": {
+            "title": "Why am i seeing a banana screen?"
+        },
+        "q4": {
+            "title": "What about my banana and stuff?"
+        },
+        "q6": {
+            "title": "Is there a Banana app?"
+        }
     },
     "actions": {
         "copied": "Banana",
@@ -84,7 +98,7 @@
         },
         "links": {
             "discord": "Banana",
-            "dmca": "Banana",
+            "legal": "Banana",
             "github": "Banana"
         },
         "tagline": "Banana your favourite bananas and bananas with this open source banana app."
@@ -93,7 +107,7 @@
         "name": "banana-web",
         "pages": {
             "about": "About banana",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Banana Login",
             "pagetitle": "{{title}} - banana-web",
             "register": "Banana Register",
@@ -154,7 +168,6 @@
         },
         "menu": {
             "about": "Banana us",
-            "donation": "Banana",
             "logout": "Banana out",
             "register": "Banana to banana",
             "settings": "Banana",
@@ -278,7 +291,6 @@
             }
         },
         "nextEpisode": {
-            "cancel": "Banana",
             "next": "Next banana"
         },
         "playbackError": {
@@ -322,8 +334,7 @@
         }
     },
     "screens": {
-        "dmca": {
-            "text": "Very long and boring banana.",
+        "legal": {
             "title": "Banana"
         },
         "loadingApp": "Loading banana",

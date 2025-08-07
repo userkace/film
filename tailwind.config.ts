@@ -11,12 +11,16 @@ const config: Config = {
     extend: {
       /* breakpoints */
       screens: {
+        xs: "350px",
         ssm: "400px",
+        '2xl': '1921px', // Custom breakpoint for screens at least 1920px wide
+        '3xl': '2650px', // Custom breakpoint for screens at least 2650px wide
+        '4xl': '3840px', // Custom breakpoint for screens at least 4096px wide
       },
 
       /* fonts */
       fontFamily: {
-        "open-sans": "'Open Sans'",
+        "main": "'DM Sans'", // "main": "'Open Sans'",
       },
 
       /* animations */
@@ -25,8 +29,15 @@ const config: Config = {
           "0%, 40%, 100%": { height: "0.5em", "background-color": "#282336" },
           "20%": { height: "1em", "background-color": "white" },
         },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
-      animation: { "loading-pin": "loading-pin 1.8s ease-in-out infinite" },
+      animation: { 
+        "loading-pin": "loading-pin 1.8s ease-in-out infinite",
+        "fade-in": "fade-in 200ms ease-out forwards",
+      },
     },
   },
   plugins: [

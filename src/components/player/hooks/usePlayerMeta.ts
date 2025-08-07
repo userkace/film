@@ -40,11 +40,13 @@ export function usePlayerMeta() {
             number: v.number,
             title: v.title,
             tmdbId: v.id,
+            air_date: v.air_date,
           })),
           episode: {
             number: ep.number,
             title: ep.title,
             tmdbId: ep.id,
+            air_date: ep.air_date,
           },
           season: {
             number: m.meta.seasonData.number,

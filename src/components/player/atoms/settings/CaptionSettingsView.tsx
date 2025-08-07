@@ -2,12 +2,16 @@ import classNames from "classnames";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { Button } from "@/components/buttons/Button";
 import { Toggle } from "@/components/buttons/Toggle";
+import { Dropdown } from "@/components/form/Dropdown";
 import { Icon, Icons } from "@/components/Icon";
 import { Menu } from "@/components/player/internals/ContextMenu";
 import { useOverlayRouter } from "@/hooks/useOverlayRouter";
 import { useProgressBar } from "@/hooks/useProgressBar";
-import { useSubtitleStore } from "@/stores/subtitles";
+import { usePlayerStore } from "@/stores/player/store";
+import { usePreferencesStore } from "@/stores/preferences";
+import { SubtitleStyling, useSubtitleStore } from "@/stores/subtitles";
 
 export function ColorOption(props: {
   color: string;
@@ -214,96 +218,291 @@ export function CaptionSetting(props: {
   );
 }
 
-export const colors = ["#ffffff", "#b0b0b0", "#80b1fa", "#e2e535"];
+export const colors = ["#ffffff", "#80b1fa", "#e2e535", "#10B239FF"];
 
-export function CaptionSettingsView({ id }: { id: string }) {
+export function CaptionSettingsView({
+  id,
+  overlayBackLink,
+}: {
+  id: string;
+  overlayBackLink?: boolean;
+}) {
   const { t } = useTranslation();
   const router = useOverlayRouter(id);
-  const styling = useSubtitleStore((s) => s.styling);
-  const overrideCasing = useSubtitleStore((s) => s.overrideCasing);
-  const delay = useSubtitleStore((s) => s.delay);
-  const setOverrideCasing = useSubtitleStore((s) => s.setOverrideCasing);
-  const setDelay = useSubtitleStore((s) => s.setDelay);
-  const updateStyling = useSubtitleStore((s) => s.updateStyling);
+  const subtitleStore = useSubtitleStore();
+  const preferencesStore = usePreferencesStore();
+  const styling = subtitleStore.styling;
+  const overrideCasing = subtitleStore.overrideCasing;
+  const delay = subtitleStore.delay;
+  const setOverrideCasing = subtitleStore.setOverrideCasing;
+  const setDelay = subtitleStore.setDelay;
+  const updateStyling = subtitleStore.updateStyling;
+  const setCaptionAsTrack = usePlayerStore((s) => s.setCaptionAsTrack);
+  const enableNativeSubtitles = preferencesStore.enableNativeSubtitles;
+
+  useEffect(() => {
+    subtitleStore.updateStyling(styling);
+  }, [styling, subtitleStore]);
+
+  // Sync preferences with player store
+  useEffect(() => {
+    setCaptionAsTrack(enableNativeSubtitles);
+  }, [enableNativeSubtitles, setCaptionAsTrack]);
+
+  const handleStylingChange = (newStyling: SubtitleStyling) => {
+    updateStyling(newStyling);
+  };
+
+  const resetSubStyling = () => {
+    subtitleStore.updateStyling({
+      color: "#ffffff",
+      backgroundOpacity: 0.5,
+      size: 1,
+      backgroundBlur: 0.5,
+      bold: false,
+      fontStyle: "default",
+    });
+  };
 
   return (
     <>
-      <Menu.BackLink onClick={() => router.navigate("/captions")}>
+      <Menu.BackLink
+        onClick={() =>
+          router.navigate(overlayBackLink ? "/captionsOverlay" : "/captions")
+        }
+      >
         {t("player.menus.subtitles.settings.backlink")}
       </Menu.BackLink>
       <Menu.Section className="space-y-6 pb-5">
-        <CaptionSetting
-          label={t("player.menus.subtitles.settings.delay")}
-          max={10}
-          min={-10}
-          onChange={(v) => setDelay(v)}
-          value={delay}
-          textTransformer={(s) => `${s}s`}
-          decimalsAllowed={1}
-          controlButtons
-        />
-        <div className="flex justify-between items-center">
-          <Menu.FieldTitle>
-            {t("player.menus.subtitles.settings.fixCapitals")}
-          </Menu.FieldTitle>
-          <div className="flex justify-center items-center">
-            <Toggle
-              enabled={overrideCasing}
-              onClick={() => setOverrideCasing(!overrideCasing)}
+        {!enableNativeSubtitles ? (
+          <>
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("player.menus.subtitles.useNativeSubtitles")}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center">
+                <Toggle
+                  enabled={enableNativeSubtitles}
+                  onClick={() =>
+                    preferencesStore.setEnableNativeSubtitles(
+                      !enableNativeSubtitles,
+                    )
+                  }
+                />
+              </div>
+            </div>
+            <span className="text-xs text-type-secondary">
+              {t("player.menus.subtitles.useNativeSubtitlesDescription")}
+            </span>
+            <CaptionSetting
+              label={t("player.menus.subtitles.settings.delay")}
+              max={20}
+              min={-20}
+              onChange={(v) => setDelay(v)}
+              value={delay}
+              textTransformer={(s) => `${s}s`}
+              decimalsAllowed={1}
+              controlButtons
             />
-          </div>
-        </div>
-        <Menu.Divider />
-        <CaptionSetting
-          label={t("settings.subtitles.backgroundLabel")}
-          max={100}
-          min={0}
-          onChange={(v) => updateStyling({ backgroundOpacity: v / 100 })}
-          value={styling.backgroundOpacity * 100}
-          textTransformer={(s) => `${s}%`}
-        />
-        <CaptionSetting
-          label={t("settings.subtitles.backgroundBlurLabel")}
-          max={100}
-          min={0}
-          onChange={(v) => updateStyling({ backgroundBlur: v / 100 })}
-          value={styling.backgroundBlur * 100}
-          textTransformer={(s) => `${s}%`}
-        />
-        <CaptionSetting
-          label={t("settings.subtitles.textSizeLabel")}
-          max={200}
-          min={1}
-          textTransformer={(s) => `${s}%`}
-          onChange={(v) => updateStyling({ size: v / 100 })}
-          value={styling.size * 100}
-        />
-        <div className="flex justify-between items-center">
-          <Menu.FieldTitle>
-            {t("settings.subtitles.textBoldLabel")}
-          </Menu.FieldTitle>
-          <div className="flex justify-center items-center">
-            <Toggle
-              enabled={styling.bold}
-              onClick={() => updateStyling({ bold: !styling.bold })}
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("player.menus.subtitles.settings.fixCapitals")}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center">
+                <Toggle
+                  enabled={overrideCasing}
+                  onClick={() => setOverrideCasing(!overrideCasing)}
+                />
+              </div>
+            </div>
+            <Menu.Divider />
+            <CaptionSetting
+              label={t("settings.subtitles.backgroundLabel")}
+              max={100}
+              min={0}
+              onChange={(v) =>
+                handleStylingChange({ ...styling, backgroundOpacity: v / 100 })
+              }
+              value={styling.backgroundOpacity * 100}
+              textTransformer={(s) => `${s}%`}
             />
-          </div>
-        </div>
-        <div className="flex justify-between items-center">
-          <Menu.FieldTitle>
-            {t("settings.subtitles.colorLabel")}
-          </Menu.FieldTitle>
-          <div className="flex justify-center items-center">
-            {colors.map((v) => (
-              <ColorOption
-                onClick={() => updateStyling({ color: v })}
-                color={v}
-                active={styling.color === v}
-                key={v}
+            <CaptionSetting
+              label={t("settings.subtitles.backgroundBlurLabel")}
+              max={100}
+              min={0}
+              onChange={(v) =>
+                handleStylingChange({ ...styling, backgroundBlur: v / 100 })
+              }
+              value={styling.backgroundBlur * 100}
+              textTransformer={(s) => `${s}%`}
+            />
+            <CaptionSetting
+              label={t("settings.subtitles.textSizeLabel")}
+              max={200}
+              min={1}
+              textTransformer={(s) => `${s}%`}
+              onChange={(v) =>
+                handleStylingChange({ ...styling, size: v / 100 })
+              }
+              value={styling.size * 100}
+            />
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("settings.subtitles.textStyle.title") || "Font Style"}
+              </Menu.FieldTitle>
+              <Dropdown
+                options={[
+                  {
+                    id: "default",
+                    name: t("settings.subtitles.textStyle.default"),
+                  },
+                  {
+                    id: "raised",
+                    name: t("settings.subtitles.textStyle.raised"),
+                  },
+                  {
+                    id: "depressed",
+                    name: t("settings.subtitles.textStyle.depressed"),
+                  },
+                  {
+                    id: "uniform",
+                    name: t("settings.subtitles.textStyle.uniform"),
+                  },
+                  {
+                    id: "dropShadow",
+                    name: t("settings.subtitles.textStyle.dropShadow"),
+                  },
+                ]}
+                selectedItem={{
+                  id: styling.fontStyle,
+                  name:
+                    t(`settings.subtitles.textStyle.${styling.fontStyle}`) ||
+                    styling.fontStyle,
+                }}
+                setSelectedItem={(item) =>
+                  handleStylingChange({
+                    ...styling,
+                    fontStyle: item.id,
+                  })
+                }
               />
-            ))}
-          </div>
-        </div>
+            </div>
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("settings.subtitles.textBoldLabel")}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center">
+                <Toggle
+                  enabled={styling.bold}
+                  onClick={() =>
+                    handleStylingChange({ ...styling, bold: !styling.bold })
+                  }
+                />
+              </div>
+            </div>
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("settings.subtitles.colorLabel")}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center space-x-2">
+                {colors.map((color) => (
+                  <ColorOption
+                    key={color}
+                    color={color}
+                    active={styling.color === color}
+                    onClick={() => handleStylingChange({ ...styling, color })}
+                  />
+                ))}
+                <div className="relative inline-block">
+                  <input
+                    type="color"
+                    value={styling.color}
+                    onChange={(e) => {
+                      const color = e.target.value;
+                      handleStylingChange({ ...styling, color });
+                    }}
+                    className="absolute opacity-0 cursor-pointer w-10 h-10"
+                  />
+                  <div style={{ color: styling.color }}>
+                    <Icon icon={Icons.BRUSH} className="text-2xl" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t("settings.subtitles.verticalPositionLabel")}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center space-x-2">
+                <button
+                  type="button"
+                  className={classNames(
+                    "px-3 py-1 rounded transition-colors duration-100",
+                    styling.verticalPosition === 3
+                      ? "bg-video-context-buttonFocus"
+                      : "bg-video-context-buttonFocus bg-opacity-0 hover:bg-opacity-50",
+                  )}
+                  onClick={() =>
+                    handleStylingChange({
+                      ...styling,
+                      verticalPosition: 3,
+                    })
+                  }
+                >
+                  {t("settings.subtitles.default")}
+                </button>
+                <button
+                  type="button"
+                  className={classNames(
+                    "px-3 py-1 rounded transition-colors duration-100",
+                    styling.verticalPosition === 1
+                      ? "bg-video-context-buttonFocus"
+                      : "bg-video-context-buttonFocus bg-opacity-0 hover:bg-opacity-50",
+                  )}
+                  onClick={() =>
+                    handleStylingChange({
+                      ...styling,
+                      verticalPosition: 1,
+                    })
+                  }
+                >
+                  {t("settings.subtitles.low")}
+                </button>
+              </div>
+            </div>
+            <Button
+              className="w-full md:w-auto"
+              theme="secondary"
+              onClick={resetSubStyling}
+            >
+              {t("settings.reset")}
+            </Button>
+          </>
+        ) : (
+          <>
+            <div className="flex justify-between items-center">
+              <Menu.FieldTitle>
+                {t(
+                  "player.menus.subtitles.settings.useNativeSubtitles",
+                  "Use native video subtitles",
+                )}
+              </Menu.FieldTitle>
+              <div className="flex justify-center items-center">
+                <Toggle
+                  enabled={enableNativeSubtitles}
+                  onClick={() =>
+                    preferencesStore.setEnableNativeSubtitles(
+                      !enableNativeSubtitles,
+                    )
+                  }
+                />
+              </div>
+            </div>
+            <span className="text-xs text-type-secondary">
+              {t("player.menus.subtitles.useNativeSubtitlesDescription")}
+            </span>
+          </>
+        )}
       </Menu.Section>
     </>
   );

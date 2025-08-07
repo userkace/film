@@ -77,7 +77,7 @@ export function MetaPart(props: MetaPartProps) {
     }
     if (!data) return null;
 
-    if (isDisallowedMedia(data.id, data.type)) throw new Error("dmca");
+    if (isDisallowedMedia(data.id, data.type)) throw new Error("legal");
 
     let meta: AsyncReturnType<typeof getMetaFromId> = null;
     try {
@@ -138,15 +138,15 @@ export function MetaPart(props: MetaPartProps) {
     );
   }
 
-  if (error && error.message === "dmca") {
+  if (error && error.message === "legal") {
     return (
       <ErrorLayout>
         <ErrorContainer>
           <IconPill icon={Icons.DRAGON}>
-            {t("player.metadata.dmca.badge")}
+            {t("player.metadata.legal.badge")}
           </IconPill>
-          <Title>{t("player.metadata.dmca.title")}</Title>
-          <Paragraph>{t("player.metadata.dmca.text")}</Paragraph>
+          <Title>{t("player.metadata.legal.title")}</Title>
+          <Paragraph>{t("player.metadata.legal.text")}</Paragraph>
           <Button
             href="/"
             theme="purple"

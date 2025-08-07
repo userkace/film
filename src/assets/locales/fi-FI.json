@@ -1,292 +1,451 @@
 {
-    "about": {
-        "description": "film.kace.dev on verkkosovellus, joka etsii suoratoistoja internetistä. Tiimi pyrkii enimmäkseen minimalistiseen lähestymistapaan sisällön kuluttamiseen.",
-        "faqTitle": "Yleisiä kysymyksiä",
-        "q1": {
-            "body": "film.kace.dev ei isännöi mitään sisältöä. Kun klikkaat jotain katsottavaa, valittua mediaa etsitään internetistä (latausnäytössä ja 'videolähteet'-välilehdellä näet, mitä lähdettä käytät). film.kace.dev ei koskaan lataa mediaa, kaikki tapahtuu tämän hakumekanismin kautta.",
-            "title": "Mistä sisältö tulee?"
-        },
-        "q2": {
-            "body": "Ohjelmaa tai elokuvaa ei voi pyytää, film.kace.dev ei hallinnoi sisältöä. Kaikki sisältö katsotaan internetin lähteistä.",
-            "title": "Missä voin pyytää sarjaa tai elokuvaa?"
-        },
-        "q3": {
-            "body": "Hakutuloksemme perustuvat The Movie Database (TMDB) -tietokantaan, ja ne näkyvät riippumatta siitä, onko sisältöä oikeasti lähteissämme.",
-            "title": "Hakutuloksissa näytetään ohjelma tai elokuva. Miksi en voi toistaa sitä?"
-        },
-        "title": "Tietoja film.kace.devistä"
+  "about": {
+    "description": "film.kace.dev on movie-webin haarukka, joka pysyy pystyssä, vaikka movie-web.app suljettiin. film.kace.dev pyörii yksityisellä, itse ylläpitämälläni VPS:llä. Pyöritän sivua tappiolla; mainoksia ei ole, koska uskon ilmaiseen mediaan.",
+    "faqTitle": "Yleisiä kysymyksiä",
+    "q1": {
+      "body": "film.kace.dev ei isännöi mitään sisältöä. Kun klikkaat jotain katsottavaa, valittua mediaa etsitään internetistä (latausnäytössä ja 'videolähteet'-välilehdellä näet, mitä lähdettä käytät). film.kace.dev ei koskaan lataa mediaa, kaikki tapahtuu tämän hakumekanismin kautta.",
+      "title": "Mistä sisältö tulee?"
     },
-    "actions": {
-        "copied": "Kopioitu",
-        "copy": "Kopioi"
+    "q2": {
+      "body": "Ohjelmaa tai elokuvaa ei voi pyytää, film.kace.dev ei hallinnoi sisältöä. Kaikki sisältö katsotaan internetin lähteistä.",
+      "title": "Missä voin pyytää sarjaa tai elokuvaa?"
     },
-    "auth": {
-        "createAccount": "Eikö sinulla ole vielä tiliä? <0>Luo tili.</0>",
-        "deviceNameLabel": "Laitteen nimi",
-        "deviceNamePlaceholder": "Henkilökohtainen puhelin",
-        "generate": {
-            "description": "Tunnuslauseesi toimii käyttäjätunnuksena ja salasanana. Varmista, että pidät sen turvassa, sillä sinun on annettava se kirjautuaksesi tilillesi",
-            "next": "Olen tallentanut tunnuslauseeni",
-            "passphraseFrameLabel": "Tunnuslause",
-            "title": "Sinun tunnuslause"
-        },
-        "hasAccount": "Onko sinulla jo tili? <0>Kirjaudu sisään tästä.</0>",
-        "login": {
-            "description": "Anna tunnuslauseesi kirjautuaksesi tilillesi",
-            "deviceLengthError": "Anna laitteen nimi",
-            "passphraseLabel": "12-sanainen tunnuslause",
-            "passphrasePlaceholder": "Tunnuslause",
-            "submit": "Kirjaudu sisään",
-            "title": "Kirjaudu tilillesi",
-            "validationError": "Väärä tai puutteellinen tunnuslause"
-        },
-        "register": {
-            "information": {
-                "color1": "Profiilin väri yksi",
-                "color2": "Profiilin väri kaksi",
-                "header": "Anna laitteellesi nimi ja valitse haluamasi värit ja käyttäjäkuvake",
-                "icon": "Käyttäjäkuvake",
-                "next": "Seuraava",
-                "title": "Tilitiedot"
-            }
-        },
-        "trust": {
-            "failed": {
-                "text": "Oletko määrittänyt sen oikein?",
-                "title": "Palvelimeen ei saada yhteyttä"
-            },
-            "host": "Olet muodostamassa yhteyttä <0>{{hostname}}</0> - vahvista, että luotat siihen ennen kuin luot tilin",
-            "no": "Mene takaisin",
-            "title": "Luotatko tähän palvelimeen?",
-            "yes": "Luotan tähän palvelimeen"
-        },
-        "verify": {
-            "description": "Anna aikaisemmin saamasi tunnuslause vahvistaaksesi, että olet tallentanut sen ja luodaksesi tilisi",
-            "invalidData": "Tiedot eivät kelpaa",
-            "noMatch": "Tunnuslause ei täsmää",
-            "passphraseLabel": "12-sanainen tunnuslauseesi",
-            "recaptchaFailed": "ReCaptcha-tarkistus epäonnistui",
-            "register": "Luo tili",
-            "title": "Vahvista tunnuslauseesi"
-        }
+    "q3": {
+      "body": "Hakutuloksemme perustuvat The Movie Database (TMDB) -tietokantaan, ja ne näkyvät riippumatta siitä, onko sisältöä oikeasti lähteissämme.",
+      "title": "Hakutuloksissa näytetään ohjelma tai elokuva. Miksi en voi toistaa sitä?"
     },
-    "errors": {
-        "badge": "Se hajosi",
-        "details": "Virheen tiedot",
-        "reloadPage": "Lataa sivu uudelleen",
-        "showError": "Näytä virheen tiedot",
-        "title": "Havaitsimme virheen!"
+    "title": "Tietoja P-Streamistä",
+    "q4": {
+      "body": "Kaikki data synkronoidaan yhteisön taustajärjestelmään, ja kuka tahansa voi vapaasti käyttää tätä.",
+      "title": "Entä tietoni ja muut asiat?"
     },
-    "footer": {
-        "legal": {
-            "disclaimer": "Vastuuvapauslauseke",
-            "disclaimerText": "film.kace.dev ei isännöi tiedostoja, se vain linkittää kolmannen osapuolen palveluihin. Lakiasioista tulee ottaa yhteyttä tiedostoisäntään ja palveluntarjoajiin. film.kace.dev ei ole vastuussa videontarjoajien näyttämistä mediatiedostoista."
-        },
-        "links": {
-            "discord": "Discord",
-            "dmca": "DMCA",
-            "github": "GitHub"
-        },
-        "tagline": "Katso suosikkiohjelmiasi ja elokuviasi tällä avoimen lähdekoodin suoratoistosovelluksella."
+    "q5": {
+      "body": "P-Streamilla on Discord-palvelin, jonka löydät tämän sivun yläosasta!",
+      "title": "Miten voin saada lisätietoa?"
+    }
+  },
+  "actions": {
+    "copied": "Kopioitu",
+    "copy": "Kopioi"
+  },
+  "auth": {
+    "createAccount": "Eikö sinulla ole vielä tiliä? <0>Luo tili.</0>",
+    "deviceNameLabel": "Laitteen nimi",
+    "deviceNamePlaceholder": "Henkilökohtainen puhelin",
+    "generate": {
+      "description": "Tunnuslauseesi toimii käyttäjätunnuksena ja salasanana. Varmista, että pidät sen turvassa, sillä sinun on annettava se kirjautuaksesi tilillesi. <bold>Älä hävitä tunnuslausettasi!</bold>",
+      "next": "Olen tallentanut tunnuslauseeni",
+      "passphraseFrameLabel": "Tunnuslause",
+      "title": "Sinun tunnuslause"
     },
-    "global": {
-        "name": "film.kace.dev",
-        "pages": {
-            "about": "Meistä",
-            "dmca": "DMCA",
-            "login": "Kirjaudu sisään",
-            "onboarding": "asetus",
-            "pagetitle": "{{title}} - film.kace.dev",
-            "register": "Rekisteröidy",
-            "settings": "Asetukset"
-        }
+    "hasAccount": "Onko sinulla jo tili? <0>Kirjaudu sisään tästä.</0>",
+    "login": {
+      "description": "Anna tunnuslauseesi kirjautuaksesi tilillesi",
+      "deviceLengthError": "Anna laitteen nimi",
+      "passphraseLabel": "12-sanainen tunnuslause",
+      "passphrasePlaceholder": "Tunnuslause",
+      "submit": "Kirjaudu sisään",
+      "title": "Kirjaudu tilillesi",
+      "validationError": "Väärä tai puutteellinen tunnuslause"
     },
-    "home": {
-        "bookmarks": {
-            "sectionTitle": "Kirjanmerkit"
-        },
-        "continueWatching": {
-            "sectionTitle": "Jatka katselua"
-        },
-        "mediaList": {
-            "stopEditing": "Lopeta muokkaaminen"
-        },
-        "search": {
-            "allResults": "Siinä kaikki mitä meillä on!",
-            "failed": "Mediaa ei löytynyt, yritä uudelleen!",
-            "loading": "Ladataan...",
-            "noResults": "Emme löytäneet mitään!",
-            "placeholder": {
-                "default": "Mitä haluat katsoa?"
-            },
-            "sectionTitle": "Hakutulokset"
-        },
-        "titles": {
-            "day": {
-                "default": "Mitä haluaisit katsoa tänä iltapäivänä?",
-                "extra": [
-                    "Onko seikkailunhaluinen olo? Jurassic Park saattaa olla täydellinen valinta."
-                ]
-            },
-            "morning": {
-                "default": "Mitä haluaisit katsoa tänä aamuna?",
-                "extra": [
-                    "Kuulen, että Rakkautta ennen aamua (Before Sunrise) on hyvä"
-                ]
-            },
-            "night": {
-                "default": "Mitä haluaisit katsoa tänä iltana?",
-                "extra": [
-                    "Väsynyt? Kuulin, että Manaaja (The Exorcist) on hyvä."
-                ]
-            }
-        }
+    "register": {
+      "information": {
+        "color1": "Profiilin väri yksi",
+        "color2": "Profiilin väri kaksi",
+        "header": "Anna laitteellesi nimi ja valitse sitten haluamasi värit ja käyttäjäkuvake!",
+        "icon": "Käyttäjäkuvake",
+        "next": "Seuraava",
+        "title": "Tilitiedot"
+      }
     },
-    "media": {
-        "episodeDisplay": "K{{season}} J{{episode}}",
-        "types": {
-            "movie": "Elokuva",
-            "show": "Sarja"
-        }
+    "trust": {
+      "failed": {
+        "text": "Oletko määrittänyt sen oikein?",
+        "title": "Palvelimeen ei saada yhteyttä"
+      },
+      "host": "Olet muodostamassa yhteyttä <0>{{hostname}}</0> - vahvista, että luotat siihen ennen kuin luot tilin...",
+      "no": "Takaisin",
+      "title": "Luotatko tähän palvelimeen?",
+      "yes": "Luotan tähän palvelimeen 🤞",
+      "noHostTitle": "Palvelinta ei ole konfiguroitu!",
+      "noHost": "Palvelinta ei ole konfiguroitu, joten et voi luoda tiliä"
     },
-    "navigation": {
-        "banner": {
-            "offline": "Tarkista Internet-yhteytesi"
-        },
-        "menu": {
-            "about": "Meistä",
-            "donation": "Lahjoita",
-            "logout": "Kirjaudu ulos",
-            "register": "Synkronoi pilveen",
-            "settings": "Asetukset",
-            "support": "Tuki"
-        }
+    "verify": {
+      "description": "Anna aikaisemmin saamasi tunnuslause vahvistaaksesi, että olet tallentanut sen ja luodaksesi tilisi",
+      "invalidData": "Tiedot eivät kelpaa",
+      "noMatch": "Tunnuslause ei täsmää",
+      "passphraseLabel": "12-sanainen tunnuslauseesi",
+      "recaptchaFailed": "ReCaptcha-tarkistus epäonnistui",
+      "register": "Luo tili",
+      "title": "Vahvista tunnuslauseesi"
+    }
+  },
+  "errors": {
+    "badge": "Se hajosi",
+    "details": "Virheen tiedot",
+    "reloadPage": "Lataa sivu uudelleen",
+    "showError": "Näytä virheen tiedot",
+    "title": "Havaitsimme virheen!"
+  },
+  "footer": {
+    "legal": {
+      "disclaimer": "Vastuuvapauslauseke",
+      "disclaimerText": "film.kace.dev ei isännöi tiedostoja, se vain linkittää kolmannen osapuolen palveluihin. Lakiasioista tulee ottaa yhteyttä tiedostoisäntään ja palveluntarjoajiin. film.kace.dev ei ole vastuussa videontarjoajien näyttämistä mediatiedostoista."
     },
-    "notFound": {
-        "badge": "Ei löydetty",
-        "goHome": "Takaisin kotiin",
-        "message": "Etsimme kaikkialta: roskakorien alta, kaapista, välityspalvelimen takaa, mutta emme lopulta löytäneet etsimääsi sivua.",
-        "title": "Sivua ei löytynyt"
+    "links": {
+      "discord": "Discord",
+      "legal": "Legal / DMCA",
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "funding": "Tue meitä"
     },
-    "onboarding": {
-        "defaultConfirm": {
-            "cancel": "Peruuta",
-            "confirm": "Käytä oletuksia",
-            "description": "Oletuksissa ei ole parhaita suoratoistoja ja se voi olla sietämättömän hidasta.",
-            "title": "Oletko varma?"
+    "tagline": "Katso suosikkiohjelmiasi ja elokuviasi täysin ilmaiseksi ilman mainoksia! (っ'ヮ'c)"
+  },
+  "global": {
+    "name": "film.kace.dev",
+    "pages": {
+      "about": "Tietoja",
+      "legal": "Legal / DMCA",
+      "login": "Kirjaudu sisään",
+      "onboarding": "asetus",
+      "pagetitle": "{{title}} - film.kace.dev",
+      "register": "Rekisteröidy",
+      "settings": "Asetukset",
+      "migration": "Siirrä käyttäjätili",
+      "discover": "Löydä uutta",
+      "support": "Tuki",
+      "jip": "Jip"
+    }
+  },
+  "home": {
+    "bookmarks": {
+      "sectionTitle": "Kirjanmerkit"
+    },
+    "continueWatching": {
+      "sectionTitle": "Jatka katselua..."
+    },
+    "mediaList": {
+      "stopEditing": "Lopeta muokkaaminen"
+    },
+    "search": {
+      "allResults": "Siinä kaikki mitä meillä löytyy...",
+      "failed": "Mediaa ei löytynyt, yritä uudelleen!",
+      "loading": "Ladataan...",
+      "noResults": "Emme löytäneet mitään :(",
+      "placeholder": {
+        "default": "Mitä haluat katsoa?",
+        "extra": [
+          "Mitä tekisi mieli?",
+          "Poistetaanko selaushistoriasi?",
+          "Mitä haluat striimata?",
+          "film.kace.dev on paras sivusto ikinä!",
+          "Mitä katselulistallasi on tänään?",
+          "Miten päiväsi sujui?",
+          "Pahoittelut, sivusto ei toimi koskaan...",
+          "Eikö film.kace.dev olekin paras?",
+          ">ᴗ<"
+        ]
+      },
+      "sectionTitle": "Hakutulokset",
+      "empty": {
+        "default": "Tervetuloa! Löydä katsottavaa täältä!",
+        "extra": [
+          "Täällä ei ole mitään :(",
+          "Niin tyhjää...",
+          "Aivan tyhjää.",
+          "Hei uusi tyyppi :3"
+        ]
+      },
+      "discoverMore": "Löydä lisää",
+      "discover": "Löydä katsottavaa"
+    },
+    "titles": {
+      "day": {
+        "default": "Mitä haluaisit katsoa tänä iltapäivänä?",
+        "extra": [
+          "Onko seikkailunhaluinen olo? Jurassic Park saattaa olla täydellinen valinta!"
+        ]
+      },
+      "morning": {
+        "default": "Mitä haluaisit katsoa tänä aamuna?",
+        "extra": [
+          "Kuulen, että Rakkautta ennen aamua (Before Sunrise) on hyvä!"
+        ]
+      },
+      "night": {
+        "default": "Mitä haluaisit katsoa tänä iltana?",
+        "extra": ["Väsynyt? Kuulin, että Manaaja (The Exorcist) on hyvä!"]
+      },
+      "420": {
+        "default": "Mitä tekisi mieli katsoa tänä 4/20-päivänä?",
+        "extra": ["Hyvää 4/20-päivää 🥳!"]
+      },
+      "69": {
+        "default": "Ootko valmis johonkin kuumaan?",
+        "extra": ["Hyvää 69-päivää 😘!"]
+      }
+    },
+    "mediaCard": {
+      "moreInfo": "Lisätietoja",
+      "copyLink": "Kopioi Linkki",
+      "close": "Sulje"
+    }
+  },
+  "media": {
+    "episodeDisplay": "K{{season}} J{{episode}}",
+    "types": {
+      "movie": "Elokuva",
+      "show": "Sarja"
+    },
+    "unreleased": "Julkaisematon",
+    "episodeShort": "J",
+    "seasonShort": "K"
+  },
+  "navigation": {
+    "banner": {
+      "offline": "Tarkista Internet-yhteytesi"
+    },
+    "menu": {
+      "about": "Meistä",
+      "logout": "Kirjaudu ulos",
+      "register": "Synkronoi pilveen",
+      "settings": "Asetukset",
+      "support": "Tuki"
+    }
+  },
+  "notFound": {
+    "badge": "Ei löydetty",
+    "goHome": "Takaisin kotiin",
+    "message": "Etsimme kaikkialta: roskisten alta, kaapista, välityspalvelimen takaa… mutta emme silti löytäneet etsimääsi sivua. (ಥ﹏ಥ)",
+    "title": "Sivua ei löytynyt"
+  },
+  "onboarding": {
+    "defaultConfirm": {
+      "cancel": "Peruuta",
+      "confirm": "Käytä oletuksia",
+      "description": "Oletusasetuksilla ei ole parhaat streamit. Jäät paitsi parhaista lähteistä!",
+      "title": "Oletko varma?"
+    },
+    "extension": {
+      "back": "Mene takaisin",
+      "explainer": "Selainlaajennuksen avulla saat käyttöön parhaat streamimme. Vain yksinkertainen asennus riittää. 👌",
+      "explainerIos": "Valitettavasti selainlaajennusta ei tueta iOS:ssä. Valitse toinen vaihtoehto painamalla <bold>Palaa</bold>.",
+      "extensionHelp": "Jos olet asentanut laajennuksen, mutta se ei havaitse sitä, <bold>avaa laajennus selaimen laajennusvalikosta</bold> ja noudata näytön ohjeita.",
+      "linkChrome": "Asenna Chromen laajennus",
+      "linkFirefox": "Asenna Firefoxin laajennus",
+      "notDetecting": "Asensitko sen Chromelle, mutta sivusto ei havaitse sitä? Kokeile ladata sivu uudelleen!",
+      "notDetectingAction": "Lataa sivu uudelleen",
+      "status": {
+        "disallowed": "Laajennus ei ole otettu käyttöön tälle sivulle",
+        "disallowedAction": "Ota laajennus käyttöön",
+        "failed": "Pyynnön tilan hakeminen epäonnistui",
+        "loading": "Odottaa, että asennat laajennuksen",
+        "outdated": "Laajennuksen versio on liian vanha",
+        "success": "Laajennus toimii odotetusti!"
+      },
+      "submit": "Jatketaan",
+      "title": "Aloitetaan laajennuksella"
+    },
+    "proxy": {
+      "back": "Mene takaisin",
+      "explainer": "Proxy-menetelmällä voit saada erinomaisen laadukkaita suoratoistoja luomalla itsepalveluvaltuutetun proxyn.",
+      "input": {
+        "errorConnection": "Yhteys proxyn kanssa ei onnistunut",
+        "errorInvalidUrl": "Ei kelvollinen URL-osoite",
+        "errorNotProxy": "Odotettiin proxya, mutta saatiinkin verkkosivu",
+        "label": "Proxyn URL-osoite",
+        "placeholder": "https://"
+      },
+      "link": "Opi luomaan proxy",
+      "submit": "Toimita proxy",
+      "title": "Luodaan uusi proxy"
+    },
+    "start": {
+      "explainer": "Parhaiden suoratoistojen saamiseksi sinun täytyy valita, mitä suoratoistomenetelmää haluat käyttää.",
+      "options": {
+        "default": {
+          "text": "En halua hyvälaatuisia streameja, käytä oletusasetuksia."
         },
         "extension": {
-            "back": "Mene takaisin",
-            "explainer": "Käyttämällä selainlaajennusta voit saada parhaat tarjoamamme suoratoistot. Yksinkertaisella asennuksella.",
-            "explainerIos": "Valitettavasti selainlaajennusta ei tueta iOS:ssä. Valitse toinen vaihtoehto painamalla <bold>Palaa</bold>.",
-            "extensionHelp": "Jos olet asentanut laajennuksen, mutta se ei havaitse sitä, <bold>avaa laajennus selaimen laajennusvalikosta</bold> ja noudata näytön ohjeita.",
-            "linkChrome": "Asenna Chromen laajennus",
-            "linkFirefox": "Asenna Firefoxin laajennus",
-            "notDetecting": "Asensitko sen Chromelle, mutta sivusto ei havaitse sitä? Kokeile ladata sivu uudelleen!",
-            "notDetectingAction": "Lataa sivu uudelleen",
-            "status": {
-                "disallowed": "Laajennus ei ole otettu käyttöön tälle sivulle",
-                "disallowedAction": "Ota laajennus käyttöön",
-                "failed": "Pyynnön tilan hakeminen epäonnistui",
-                "loading": "Odottaa, että asennat laajennuksen",
-                "outdated": "Laajennuksen versio on liian vanha",
-                "success": "Laajennus toimii odotetusti!"
-            },
-            "submit": "Jatketaan",
-            "title": "Aloitetaan laajennuksella"
-        },
-        "proxy": {
-            "back": "Mene takaisin",
-            "explainer": "Proxy-menetelmällä voit saada erinomaisen laadukkaita suoratoistoja luomalla itsepalveluvaltuutetun proxyn.",
-            "input": {
-                "errorConnection": "Yhteys proxyn kanssa ei onnistunut",
-                "errorInvalidUrl": "Ei kelvollinen URL-osoite",
-                "errorNotProxy": "Odotettiin proxya, mutta saatiinkin verkkosivu",
-                "label": "Proxyn URL-osoite",
-                "placeholder": "https://"
-            },
-            "link": "Opi luomaan proxy",
-            "submit": "Toimita proxy",
-            "title": "Luodaan uusi proxy"
-        },
-        "start": {
-            "explainer": "Parhaiden suoratoistojen saamiseksi sinun täytyy valita, mitä suoratoistomenetelmää haluat käyttää.",
-            "options": {
-                "default": {
-                    "text": "En halua hyvälaatuisia suoratoistoja,<0 /> <1>käytä oletusasetusta</1>"
-                },
-                "extension": {
-                    "action": "Asenna laajennus",
-                    "description": "Asenna selaimen laajennus ja saa pääsy parhaisiin lähteisiin."
-                }
-            },
-            "title": "Aloitetaan asennus elokuva-webin kanssa"
+          "action": "Asenna laajennus",
+          "description": "Asenna selaimen laajennus ja saa pääsy parhaisiin lähteisiin."
         }
-    },
-    "player": {
-        "menus": {
-            "episodes": {
-                "emptyState": "Tässä kaudessa ei ole jaksoja, tarkista myöhemmin!"
-            },
-            "quality": {
-                "hint": "Voit kokeilla <0>vaihtaa lähdettä</0> saadaksesi eri laatuasetuksia."
-            },
-            "sources": {
-                "noEmbeds": {
-                    "text": "Emme löytäneet upotuksia, kokeile toista lähdettä."
-                },
-                "noStream": {
-                    "text": "Tässä lähteessä ei ole suoratoistoja tälle elokuvalle tai ohjelmalle."
-                }
-            }
+      },
+      "title": "Aloitetaan asennus elokuva-webin kanssa",
+      "moreInfo": {
+        "explainer": {
+          "extension": "1. Laajennus",
+          "options": "Vaihtoehtosi:",
+          "proxy": "2. Proxy"
         },
-        "metadata": {
-            "api": {
-                "text": "API-metatietoja ei voitu ladata, tarkista internet-yhteys.",
-                "title": "Ei voitu ladata API:n metatietoja."
-            }
-        },
-        "playbackError": {
-            "errors": {
-                "errorAborted": "Mediatiedon haku keskeytettiin käyttäjän pyynnöstä.",
-                "errorNotSupported": "Mediaa tai mediantarjoajaa ei tueta."
-            },
-            "text": "Tapahtui virhe yritettäessä toistaa mediaa. Yritä uudelleen."
-        },
-        "time": {
-            "remaining": "{{timeLeft}} jäljellä • Päättyy {{timeFinished, datetime}}"
-        },
-        "turnstile": {
-            "error": "Ei voitu varmistaa inhimillisyyttäsi. Yritä uudelleen.",
-            "title": "Meidän täytyy varmistaa, että olet ihminen."
-        }
-    },
-    "screens": {
-        "migration": {
-            "inProgress": "Pysy hetkisen odotuksessa, siirrämme tietojasi. Tämä ei kestä kauan."
-        }
-    },
-    "settings": {
-        "account": {
-            "register": {
-                "text": "Jaa katseluetenemisesi laitteiden välillä ja pidä ne synkronoituina."
-            }
-        },
-        "connections": {
-            "setup": {
-                "unsetStatus": {
-                    "description": "Käynnistä asennusprosessi napsauttamalla oikealla olevaa painiketta."
-                }
-            },
-            "workers": {
-                "emptyState": "Ei vielä työntekijöitä, lisää yksi alle"
-            }
-        },
-        "preferences": {
-            "languageDescription": "Kieli sovellettu koko sovellukseen."
-        },
-        "subtitles": {
-            "previewQuote": "Minun ei pidä pelätä. Pelko on mielen tappaja."
-        }
+        "button": "Lisää tietoja"
+      }
     }
+  },
+  "player": {
+    "menus": {
+      "episodes": {
+        "emptyState": "Tässä kaudessa ei ole jaksoja – tarkista myöhemmin uudelleen (sori :3)..."
+      },
+      "quality": {
+        "hint": "Voit kokeilla <0>vaihtaa lähdettä</0> saadaksesi eri laatuasetuksia."
+      },
+      "sources": {
+        "noEmbeds": {
+          "text": "Emme löytäneet upotuksia, kokeile toista lähdettä."
+        },
+        "noStream": {
+          "text": "Tällä lähteellä ei ole streameja tälle elokuvalle tai sarjalle. /ᐠ - ˕ -マ Ⳋ"
+        }
+      }
+    },
+    "metadata": {
+      "api": {
+        "text": "API-metatietoja ei voitu ladata, tarkista internet-yhteys.",
+        "title": "API-metatietojen lataus epäonnistui"
+      }
+    },
+    "playbackError": {
+      "errors": {
+        "errorAborted": "Mediatiedon haku keskeytettiin käyttäjän pyynnöstä.",
+        "errorNotSupported": "Mediaa tai mediantarjoajaa ei tueta."
+      },
+      "text": "Median toistossa tapahtui virhe 😖. Yritä uudelleen tai kokeile toista lähdettä!"
+    },
+    "time": {
+      "remaining": "{{timeLeft}} jäljellä • Päättyy {{timeFinished, datetime}}"
+    },
+    "turnstile": {
+      "error": "Ei voitu varmistaa inhimillisyyttäsi. Yritä uudelleen.",
+      "title": "Oletko robotti?"
+    }
+  },
+  "screens": {
+    "migration": {
+      "inProgress": "Pysy hetkisen odotuksessa, siirrämme tietojasi. Tämä ei kestä kauan."
+    }
+  },
+  "settings": {
+    "account": {
+      "register": {
+        "text": "Jaa katseluedistymisesi laitteiden välillä ja pidä ne synkronoituna. ( ̧⸝⸝⍢⸝⸝)ෆ"
+      }
+    },
+    "connections": {
+      "setup": {
+        "unsetStatus": {
+          "description": "Käynnistä asennusprosessi napsauttamalla oikealla olevaa painiketta."
+        }
+      },
+      "workers": {
+        "emptyState": "Ei vielä työntekijöitä, lisää yksi alle"
+      }
+    },
+    "preferences": {
+      "languageDescription": "Kieli sovellettu koko sovellukseen."
+    },
+    "subtitles": {
+      "previewQuote": "Minun ei pidä pelätä. Pelko on mielen tappaja."
+    }
+  },
+  "details": {
+    "resume": "Jatka",
+    "play": "Toista",
+    "runtime": "Kesto:",
+    "releaseDate": "Julkaisupäivä:",
+    "rating": "Arvosana:",
+    "tmdb": "Näytä TMDB:ssä",
+    "imdb": "Näytä IMDb:ssä",
+    "episodes": "Jaksot",
+    "season": "Kausi",
+    "airs": "Esitetään",
+    "language": "Kieli:",
+    "episode": "Jakso",
+    "endsAt": "Loppuu {{time}}",
+    "votes": "arvostelut"
+  },
+  "migration": {
+    "loginRequired": "Sinun täytyy olla kirjautuneena siirtääksesi tietosi! Palaa takaisin ja kirjaudu sisään jatkaaksesi.",
+    "start": {
+      "title": "Siirrä tietosi",
+      "explainer": "Jos haluat siirtää tai varmuuskopioida tietosi, voit tehdä sen alla olevien vaihtoehtojen avulla. Näin säilytät tietosi, kun vaihdat taustapalvelinta.",
+      "options": {
+        "or": "tai",
+        "direct": {
+          "description": "Tämä siirtää tietosi suoraan uudelle palvelimelle. Tämä on nopein vaihtoehto.<br /><br />Tämän vaihtoehdon avulla voit säilyttää saman tunnuslauseen!",
+          "title": "Suora siirto",
+          "quality": "Helpoin ja nopein",
+          "action": "Siirrä tiedot"
+        },
+        "download": {
+          "description": "Tämä lataa tietosi laitteellesi. Voit sen jälkeen lähettää ne uudelle palvelimelle tai säilyttää ne varmuuden vuoksi.",
+          "title": "Lataa tiedot",
+          "quality": "Teknisempi versio",
+          "action": "Lataa tiedot"
+        },
+        "upload": {
+          "title": "Lähetä tiedot",
+          "quality": "Palauta varmuuskopiosta",
+          "action": "Lähetä tiedot"
+        }
+      }
+    },
+    "direct": {
+      "recaptchaLabel": "ReCaptcha Avain (Vaihtoehtoinen)",
+      "button": {
+        "processing": "Käsitellään...",
+        "home": "Takaisin Etusivulle",
+        "login": "Jatka kirjautumiseen"
+      },
+      "backendLabel": "Kohdepalvelimen URL-osoite",
+      "title": "Suora siirto",
+      "toggleLable": "Tarviiko ReCaptchaa?"
+    },
+    "upload": {
+      "status": {
+        "success": "Tietosi lataaminen onnistui! 🎉",
+        "processing": "Käsitellään tietoja...",
+        "error": "Tietojesi lataaminen epäonnistui. 😿"
+      },
+      "file": {
+        "select": "Valitse tiedosto",
+        "name": "Tiedoston nimi",
+        "change": "Vaihda tiedosto",
+        "description": "Valitse tiedosto, jonka haluat ladata"
+      },
+      "dataPreview": "Esikatsele:",
+      "items": {
+        "bookmarks": "Suosikit",
+        "progress": "Katselun edistyminen"
+      },
+      "exportedOn": "Viety",
+      "button": {
+        "import": "Tuo tiedot",
+        "processing": "Käsitellään...",
+        "success": "Tuonti valmis",
+        "home": "Jatka etusivulle"
+      },
+      "title": "Vie tiedot",
+      "description": "Lähetä aiemmin viedyt tiedostosi palauttaaksesi suosikkisi ja etenemisesi tällä tilillä."
+    },
+    "download": {
+      "description": "Tämä lataa tietosi laitteellesi. Voit sen jälkeen joko lähettää ne uudelle palvelimelle tai säilyttää ne varmuuden vuoksi.",
+      "title": "Lataa tiedot",
+      "items": {
+        "description": "Lataus sisältää:",
+        "progress": "Katselun edistyminen",
+        "bookmarks": "Suosikit"
+      },
+      "status": {
+        "error": "Tietojen lataus epäonnistui. 😿",
+        "success": "Tietojesi lataaminen onnistui! 🎉"
+      },
+      "button": {
+        "download": "Lataa tietosi",
+        "home": "Takaisin etusivulle",
+        "login": "Jatka kirjautumiseen"
+      }
+    },
+    "back": "Takaisin"
+  }
 }

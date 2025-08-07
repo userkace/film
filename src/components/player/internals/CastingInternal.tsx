@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import { mediaItemTypeToMediaType } from "@/backend/metadata/tmdb";
 import { makeVideoElementDisplayInterface } from "@/components/player/display/base";
@@ -80,38 +80,67 @@ export function CastingInternal() {
     });
   }, [metaTitle, metaType, display]);
 
-  useEffect(() => {
-    if (!available) return;
-
-    const ins = cast.framework.CastContext.getInstance();
-    setInstance(ins);
-    ins.setOptions({
-      receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
-      autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED,
-    });
-
-    const newPlayer = new cast.framework.RemotePlayer();
-    setPlayer(newPlayer);
-    const newControlller = new cast.framework.RemotePlayerController(newPlayer);
-    setController(newControlller);
-
-    function connectionChanged(e: cast.framework.RemotePlayerChangedEvent) {
+  const connectionChanged = useCallback(
+    (e: cast.framework.RemotePlayerChangedEvent) => {
       if (e.field === "isConnected") {
         setIsCasting(e.value);
       }
-    }
-    newControlller.addEventListener(
-      cast.framework.RemotePlayerEventType.IS_CONNECTED_CHANGED,
-      connectionChanged,
-    );
+    },
+    [setIsCasting],
+  );
 
-    return () => {
-      newControlller.removeEventListener(
+  useEffect(() => {
+    if (!available || !window.cast || !window.chrome || !window.chrome.cast)
+      return;
+
+    if (!chrome.cast || !chrome.cast.media) {
+      console.error(
+        "Chrome Cast API not fully initialized: chrome.cast.media is undefined",
+      );
+      return;
+    }
+
+    try {
+      const ins = cast.framework.CastContext.getInstance();
+      setInstance(ins);
+
+      const receiverAppId = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
+      const autoJoinPolicy = chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED;
+
+      ins.setOptions({
+        receiverApplicationId: receiverAppId,
+        autoJoinPolicy,
+      });
+
+      const newPlayer = new cast.framework.RemotePlayer();
+      setPlayer(newPlayer);
+      const newControlller = new cast.framework.RemotePlayerController(
+        newPlayer,
+      );
+      setController(newControlller);
+
+      newControlller.addEventListener(
         cast.framework.RemotePlayerEventType.IS_CONNECTED_CHANGED,
         connectionChanged,
       );
-    };
-  }, [available, setPlayer, setController, setInstance, setIsCasting]);
+
+      return () => {
+        newControlller.removeEventListener(
+          cast.framework.RemotePlayerEventType.IS_CONNECTED_CHANGED,
+          connectionChanged,
+        );
+      };
+    } catch (error) {
+      console.error("Error initializing Chromecast:", error);
+    }
+  }, [
+    available,
+    setPlayer,
+    setController,
+    setInstance,
+    setIsCasting,
+    connectionChanged,
+  ]);
 
   return null;
 }

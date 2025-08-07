@@ -10,6 +10,14 @@ type Keys = {
   seed: Uint8Array;
 };
 
+function uint8ArrayToBuffer(array: Uint8Array): forge.util.ByteStringBuffer {
+  return forge.util.createBuffer(
+    Array.from(array)
+      .map((byte) => String.fromCharCode(byte))
+      .join(""),
+  );
+}
+
 async function seedFromMnemonic(mnemonic: string) {
   return pbkdf2Async(sha256, mnemonic, "mnemonic", {
     c: 2048,
@@ -18,21 +26,33 @@ async function seedFromMnemonic(mnemonic: string) {
 }
 
 export function verifyValidMnemonic(mnemonic: string) {
-  return validateMnemonic(mnemonic, wordlist);
+  // First try to validate as BIP39 mnemonic
+  if (validateMnemonic(mnemonic, wordlist)) {
+    return true;
+  }
+
+  // If not a valid BIP39 mnemonic, check if it's a valid custom passphrase
+  const validPassphraseRegex =
+    /^[a-zA-Z0-9\s\-_.,!?@#$%^&*()+=:;"'<>[\]{}|\\/`~]+$/;
+  return mnemonic.length >= 8 && validPassphraseRegex.test(mnemonic);
 }
 
-export async function keysFromMnemonic(mnemonic: string): Promise<Keys> {
-  const seed = await seedFromMnemonic(mnemonic);
-
+export async function keysFromSeed(seed: Uint8Array): Promise<Keys> {
   const { privateKey, publicKey } = forge.pki.ed25519.generateKeyPair({
     seed,
   });
 
   return {
-    privateKey,
-    publicKey,
+    privateKey: new Uint8Array(privateKey),
+    publicKey: new Uint8Array(publicKey),
     seed,
   };
+}
+
+export async function keysFromMnemonic(mnemonic: string): Promise<Keys> {
+  const seed = await seedFromMnemonic(mnemonic);
+
+  return keysFromSeed(seed);
 }
 
 export function genMnemonic(): string {
@@ -43,11 +63,12 @@ export async function signCode(
   code: string,
   privateKey: Uint8Array,
 ): Promise<Uint8Array> {
-  return forge.pki.ed25519.sign({
+  const signature = forge.pki.ed25519.sign({
     encoding: "utf8",
     message: code,
-    privateKey,
+    privateKey: uint8ArrayToBuffer(privateKey),
   });
+  return new Uint8Array(signature);
 }
 
 export function bytesToBase64(bytes: Uint8Array) {
@@ -71,7 +92,9 @@ export function base64ToBuffer(data: string) {
 }
 
 export function base64ToStringBuffer(data: string) {
-  return forge.util.createBuffer(base64ToBuffer(data));
+  const decoded = base64ToBuffer(data);
+
+  return uint8ArrayToBuffer(decoded);
 }
 
 export function stringBufferToBase64(buffer: forge.util.ByteStringBuffer) {
@@ -91,7 +114,7 @@ export async function encryptData(data: string, secret: Uint8Array) {
 
   const cipher = forge.cipher.createCipher(
     "AES-GCM",
-    forge.util.createBuffer(secret),
+    uint8ArrayToBuffer(secret),
   );
   cipher.start({
     iv,
@@ -115,7 +138,7 @@ export function decryptData(data: string, secret: Uint8Array) {
 
   const decipher = forge.cipher.createDecipher(
     "AES-GCM",
-    forge.util.createBuffer(secret),
+    uint8ArrayToBuffer(secret),
   );
   decipher.start({
     iv: base64ToStringBuffer(iv),

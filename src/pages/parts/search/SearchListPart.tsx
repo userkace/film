@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { useAsyncFn } from "react-use";
 
 import { searchForMedia } from "@/backend/metadata/search";
@@ -9,16 +10,17 @@ import { Icons } from "@/components/Icon";
 import { SectionHeading } from "@/components/layout/SectionHeading";
 import { MediaGrid } from "@/components/media/MediaGrid";
 import { WatchedMediaCard } from "@/components/media/WatchedMediaCard";
+import { Button } from "@/pages/About";
 import { SearchLoadingPart } from "@/pages/parts/search/SearchLoadingPart";
 import { MediaItem } from "@/utils/mediaTypes";
 
 function SearchSuffix(props: { failed?: boolean; results?: number }) {
   const { t } = useTranslation();
-
+  const navigate = useNavigate();
   const icon: Icons = props.failed ? Icons.WARNING : Icons.EYE_SLASH;
 
   return (
-    <div className="mb-24 mt-40  flex flex-col items-center justify-center space-y-3 text-center">
+    <div className="mt-40 flex flex-col items-center justify-center space-y-3 text-center">
       <IconPatch
         icon={icon}
         className={`text-xl ${
@@ -30,7 +32,15 @@ function SearchSuffix(props: { failed?: boolean; results?: number }) {
       {!props.failed ? (
         <div>
           {(props.results ?? 0) > 0 ? (
-            <p>{t("home.search.allResults")}</p>
+            <>
+              <p>{t("home.search.allResults")}</p>
+              <Button
+                className="px-py p-[0.3em] mt-3 rounded-xl text-type-dimmed box-content text-[17px] bg-largeCard-background justify-center items-center"
+                onClick={() => navigate("/discover")}
+              >
+                {t("home.search.discoverMore")}
+              </Button>
+            </>
           ) : (
             <p>{t("home.search.noResults")}</p>
           )}
@@ -47,7 +57,13 @@ function SearchSuffix(props: { failed?: boolean; results?: number }) {
   );
 }
 
-export function SearchListPart({ searchQuery }: { searchQuery: string }) {
+export function SearchListPart({
+  searchQuery,
+  onShowDetails,
+}: {
+  searchQuery: string;
+  onShowDetails?: (media: MediaItem) => void;
+}) {
   const { t } = useTranslation();
 
   const [results, setResults] = useState<MediaItem[]>([]);
@@ -77,7 +93,11 @@ export function SearchListPart({ searchQuery }: { searchQuery: string }) {
           />
           <MediaGrid>
             {results.map((v) => (
-              <WatchedMediaCard key={v.id.toString()} media={v} />
+              <WatchedMediaCard
+                key={v.id.toString()}
+                media={v}
+                onShowDetails={onShowDetails}
+              />
             ))}
           </MediaGrid>
         </div>

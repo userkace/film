@@ -70,6 +70,10 @@ export function getProxyUrls() {
     .map((v) => v.url);
 }
 
+export function getM3U8ProxyUrls(): string[] {
+  return conf().M3U8_PROXY_URLS;
+}
+
 export function getProviderApiUrls() {
   return getParsedUrls()
     .filter((v) => v.type === "api")

@@ -25,22 +25,19 @@ import App from "@/setup/App";
 import { conf } from "@/setup/config";
 import { useAuthStore } from "@/stores/auth";
 import { BookmarkSyncer } from "@/stores/bookmarks/BookmarkSyncer";
+import { GroupSyncer } from "@/stores/groupOrder/GroupSyncer";
 import { changeAppLanguage, useLanguageStore } from "@/stores/language";
 import { ProgressSyncer } from "@/stores/progress/ProgressSyncer";
 import { SettingsSyncer } from "@/stores/subtitles/SettingsSyncer";
 import { ThemeProvider } from "@/stores/theme";
-import { TurnstileProvider } from "@/stores/turnstile";
+import { detectRegion, useRegionStore } from "@/utils/detectRegion";
 
-import { AdsScript } from "./AdsScript";
 import {
   extensionInfo,
   isExtensionActiveCached,
 } from "./backend/extension/messaging";
 import { initializeChromecast } from "./setup/chromecast";
-// eslint-disable-next-line import/order
 import { initializeOldStores } from "./stores/__old/migrations";
-
-// Import the IframeMessage component
 
 // initialize
 initializeChromecast();
@@ -141,6 +138,9 @@ function MigrationRunner() {
   const status = useAsync(async () => {
     changeAppLanguage(useLanguageStore.getState().language);
     await initializeOldStores();
+
+    const region = await detectRegion();
+    useRegionStore.getState().setRegion(region);
   }, []);
   const { t } = useTranslation();
 
@@ -174,25 +174,23 @@ function ExtensionStatus() {
   }
   return null;
 }
-
 const container = document.getElementById("root");
 const root = createRoot(container!);
 
 root.render(
   <StrictMode>
     <ErrorBoundary>
-      <TurnstileProvider />
       <HelmetProvider>
         <Suspense fallback={<LoadingScreen type="lazy" />}>
           <ExtensionStatus />
           <ThemeProvider applyGlobal>
             <ProgressSyncer />
             <BookmarkSyncer />
+            <GroupSyncer />
             <SettingsSyncer />
             <TheRouter>
               <MigrationRunner />
             </TheRouter>
-            <AdsScript />
           </ThemeProvider>
         </Suspense>
       </HelmetProvider>

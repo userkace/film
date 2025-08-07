@@ -1,314 +1,290 @@
 {
     "about": {
-        "description": "Velkommen til film.kace.dev, din ultimative destination for ubegrænset streaming af film og tv-shows. Udforsk vores omfattende bibliotek af klassikere og nye udgivelser, tilgængelige på enhver enhed. Nyd vores tjeneste 100% abonnement-fri og 100% annonce-fri. Dyk ind og begynd binge i dag!",
-        "faqTitle": "Ofte Stillede Spørgsmål",
+        "faqTitle": "Ofte stillede spørgsmål",
         "q1": {
-            "body": "film.kace.dev hoster ikke noget indhold. Når du klikker på noget for at se, bliver internettet gennemsøgt efter det valgte medie (På indlæsningsskærmen og i fanen 'video sources' kan du se, hvilken kilde du bruger). Medier bliver aldrig uploadet af film.kace.dev, alt er gennem denne søgemekanisme.",
-            "title": "Hvor kommer indholdet fra?"
+            "title": "Hvor kommer indholdet fra?",
+            "body": "film.kace.dev er ikke udbyder af indholdet. Når du klikker på et medie for at se det, søges der på internettet efter det valgte medie (på indlæsningsskærmen og i fanen 'videokilder' kan du se, hvilken kilde du bruger). Medier bliver aldrig uploadet af film.kace.dev, alt sker gennem denne søgemaskine."
         },
         "q2": {
-            "body": "Det er ikke muligt at anmode om et show eller en film, film.kace.dev administrerer ikke noget indhold. Alt indhold vises gennem kilder på internettet.",
-            "title": "Hvor kan jeg anmode om et show eller en film?"
+            "body": "Det er ikke muligt at anmode om en serie eller film, film.kace.dev administrerer ikke noget indhold. Alt indhold ses gennem kilder på internettet.",
+            "title": "Hvor kan jeg ønske en serie eller film?"
         },
         "q3": {
-            "body": "Vores søgeresultater er drevet af The Movie Database (TMDB) og vises uanset om vores kilder faktisk har indholdet.",
-            "title": "Søgeresultaterne viser showet eller filmen, hvorfor kan jeg ikke afspille det?"
+            "body": "Vores søgeresultater er leveret af The Movie Database (TMDB) og vises, uanset om kilderne rent faktisk har indholdet.",
+            "title": "Søgeresultaterne viser serien eller filmen, men hvorfor kan jeg ikke afspille den?"
         },
         "q4": {
-            "body": "Der er ingen grænse for, hvor meget du kan se på VidBinge. Stream så meget du vil, når som helst, uden nogen restriktioner eller ekstra omkostninger.",
-            "title": "Er der en grænse for, hvor meget jeg kan se?"
+            "title": "Hvad med mine data og andet?",
+            "body": "Alle oplysninger synkroniseres til sudo-backend, som er anderledes end community-backend og hostes selvstændigt af mig, men alle er velkomne til at bruge den."
         },
         "q5": {
-            "title": "Hvor ofte tilføjes nyt indhold til film.kace.dev?",
-            "body": "Tilgængeligheden af nyt indhold er baseret på de kilder, der er forbundet til vores platform. Når disse kilder opdaterer deres biblioteker, vil nye film og tv-shows blive tilgængelige gennem VidBinge."
+            "body": "film.kace.dev har en Discord server, som kan findes i toppen af den side!",
+            "title": "Hvordan kan jeg finde ud af mere?"
         },
-        "q6": {
-            "title": "Hvad skal jeg gøre, hvis en video ikke afspilles?",
-            "body": "Hvis en video ikke afspilles, kan det skyldes problemer med kilden. Prøv at klikke på afspilningsknappen igen eller vælge en anden kilde fra fanen 'video sources'. Hvis problemerne fortsætter, skal du kontrollere din internetforbindelse eller prøve igen senere."
-        },
-        "q7": {
-            "title": "Tilbyder film.kace.dev undertekster eller dubbede indhold?",
-            "body": "Tilgængeligheden af undertekster eller dubbede versioner afhænger af kilden. Nogle kilder kan tilbyde muligheder for undertekster på forskellige sprog eller dubbede indhold, som kan vælges direkte inden for videoafspilleren, hvis det er tilgængeligt."
-        },
-        "title": "Om film.kace.dev"
-    },
-    "privacy": {
-        "description": "Velkommen til VidBinge! Din privatliv er vigtig for os. VidBinge (vidbinge.com) er forpligtet til at beskytte dit privatliv, mens du nyder dine yndlingsfilm og shows på vores platform. Denne privatlivspolitik forklarer, hvordan vi håndterer og beskytter dine data.",
-        "lastUpdated": "Sidst opdateret: April 21, 2024",
-        "p1": {
-            "body": "film.kace.dev hoster ikke noget indhold. Når du klikker på noget for at se, bliver internettet gennemsøgt efter det valgte medie (På indlæsningsskærmen og i fanen 'video sources' kan du se, hvilken kilde du bruger). Medier bliver aldrig uploadet af film.kace.dev, alt er gennem denne søgemekanisme.",
-            "title": "Information Vi Ikke Indsamler"
-        },
-        "p2": {
-            "body": "Vi bruger tredjeparts analyseværktøjer, såsom Google Analytics, til at indsamle og behandle grundlæggende demografiske oplysninger, der inkluderer generel placering, enhedstype og browsingaktiviteter på vores side. Disse oplysninger er anonymiserede og bruges udelukkende til at forbedre funktionaliteten og indholdet af VidBinge, så du får en bedre streamingoplevelse.",
-            "title": "Information Vi Indsamler"
-        },
-        "p3": {
-            "body": "VidBinge bruger cookies til at forbedre din visningsoplevelse. Cookies hjælper os med at forstå brugeradfærd på vores side (såsom mest sete film), hvilket gør det muligt for os at forbedre vores tjenester. Du kan vælge at deaktivere cookies gennem dine browserindstillinger, men dette kan påvirke sidens funktionalitet.",
-            "title": "Brug af Cookies"
-        },
-        "p4": {
-            "body": "Vores brug af Google Analytics betyder, at vi deler anonymiserede demografiske data med Google. Disse oplysninger behandles under Googles privatlivspolitik. Vi deler eller sælger ikke nogen data til andre tredjeparter.",
-            "title": "Tredjeparts Tjenester"
-        },
-        "p5": {
-            "title": "Ændringer til Denne Privatlivspolitik",
-            "body": "Vi kan opdatere denne privatlivspolitik fra tid til anden. Den nyeste version af politikken vil altid være offentliggjort på vores side. Vi opfordrer dig til at gennemgå denne privatlivspolitik regelmæssigt for eventuelle ændringer."
-        },
-        "p6": {
-            "title": "Kontakt Os",
-            "body": "Hvis du har spørgsmål til denne privatlivspolitik, bedes du kontakte os via e-mail på: user@kace.dev"
-        },
-        "title": "Privatlivspolitik for VidBinge"
+        "title": "Om film.kace.dev (^▽^)",
+        "description": "film.kace.dev er en variant af movie-web, som er sikret at forblive oppe, selv efter at movie-web.app er lukket ned. film.kace.dev.lol kører på en privat, selvhostet VPS. Jeg driver denne hjemmeside med underskud; der er ingen reklamer på grund af min tro på gratis medie."
     },
     "actions": {
         "copied": "Kopieret",
         "copy": "Kopier"
     },
     "auth": {
-        "createAccount": "Har du ikke en konto endnu? <0>Opret en konto.</0>",
-        "deviceNameLabel": "Enhedsnavn",
+        "createAccount": "Du har ikke en profil endnu 😬 <0>Opret en profil.</0>",
+        "deviceNameLabel": "Navn på enhed",
         "deviceNamePlaceholder": "Personlig telefon",
         "generate": {
-            "description": "Din adgangssætning fungerer som dit brugernavn og adgangskode. Sørg for at opbevare det sikkert, da du skal indtaste det for at logge ind på din konto",
             "next": "Jeg har gemt min adgangssætning",
             "passphraseFrameLabel": "Adgangssætning",
-            "title": "Din adgangssætning"
+            "title": "Din adgangssætning",
+            "description": "Din adgangssætning fungerer som dit brugernavn og adgangskode. Sørg for at opbevare den sikkert, da du skal bruge den til at logge ind på din profil. <bold>Husk IKKE at glemme din adgangskode!</bold>"
         },
-        "hasAccount": "Har du allerede en konto? <0>Log ind her.</0>",
+        "hasAccount": "Har du allerede en profil? <0>Log ind her.</0>",
         "login": {
-            "description": "Indtast venligst din adgangssætning for at logge ind på din konto",
-            "deviceLengthError": "Indtast venligst et enhedsnavn",
-            "passphraseLabel": "12-Ord adgangssætning",
+            "description": "Indtast din adgangssætning for at logge ind på din profil",
+            "deviceLengthError": "Indtast venligst et enhedens navn",
+            "passphraseLabel": "Adgangssætning på 12 ord",
             "passphrasePlaceholder": "Adgangssætning",
             "submit": "Log ind",
-            "title": "Log ind på din konto",
-            "validationError": "Forkert eller ufuldstændig adgangssætning"
+            "title": "Log ind på din profil",
+            "validationError": "Forkert eller ukomplet adgangssætning /ᐠ. .ᐟ\\"
         },
         "register": {
             "information": {
-                "color1": "Profilfarve en",
-                "color2": "Profilfarve to",
-                "header": "Indtast et navn til din enhed og vælg farver og et brugerikon efter eget valg",
                 "icon": "Brugerikon",
                 "next": "Næste",
-                "title": "Kontoinformation"
+                "title": "Oplysninger om din profil",
+                "color1": "Profil farve 1",
+                "color2": "Profil farve 2",
+                "header": "Indtast et navn til din enhed, vælg farver og et brugerikon efter eget valg!"
             }
         },
         "trust": {
             "failed": {
-                "text": "Konfigurerede du det korrekt?",
-                "title": "Kunne ikke nå serveren"
+                "text": "Har du konfigureret det korrekt?",
+                "title": "Det lykkedes ikke at kontakte serveren"
             },
-            "noHostTitle": "Server ikke konfigureret!",
-            "noHost": "Serveren er ikke konfigureret, derfor kan du ikke oprette en konto",
-            "host": "Du forbinder til <0>{{hostname}}</0> - bekræft venligst, at du stoler på det, før du opretter en konto",
+            "noHostTitle": "Serveren er ikke konfigureret!",
+            "noHost": "Serveren er ikke konfigureret, derfor kan du ikke oprette en profil",
+            "title": "Stoler du på den her server?",
             "no": "Gå tilbage",
-            "title": "Opret en konto på denne server?",
-            "yes": "Jeg stoler på denne server"
+            "yes": "Jeg stoler på denne server 🤞",
+            "host": "Du forbinder til <0>{{hostname}}</0> - vær sikker på, at du stoler på den, før du opretter en profil..."
         },
         "verify": {
-            "description": "Indtast venligst din adgangssætning fra tidligere for at bekræfte, at du har gemt den og oprette din konto",
-            "invalidData": "Data er ikke gyldige",
-            "noMatch": "Adgangssætningen stemmer ikke overens",
-            "passphraseLabel": "Din 12-ord adgangssætning",
+            "invalidData": "Oplysningerne er ikke gyldige",
+            "noMatch": "Adgangssætningen stemmer ikke overens 😭",
+            "passphraseLabel": "Din adgangssætning på 12 ord",
             "recaptchaFailed": "ReCaptcha validering mislykkedes",
-            "register": "Opret konto",
-            "title": "Bekræft din adgangssætning"
+            "register": "Opret profil",
+            "title": "Bekræft din adgangssætning",
+            "description": "Indtast din adgangssætning fra tidligere for at bekræfte, at du har gemt den, og for at oprette din profil"
         }
     },
     "errors": {
-        "badge": "Det gik i stykker",
-        "details": "Fejldetaljer",
+        "details": "Fejloplysninger",
         "reloadPage": "Genindlæs siden",
-        "showError": "Vis fejldetaljer",
-        "title": "Vi stødte på en fejl!"
+        "showError": "Vis fejloplysninger",
+        "title": "Der er opstået en fejl!",
+        "badge": "Noget gik galt 💀"
     },
     "footer": {
         "legal": {
-            "disclaimer": "Ansvarsfraskrivelse",
-            "disclaimerText": "film.kace.dev hoster ikke nogen filer, det trækker kun streams fra tredjepartstjenester. Juridiske spørgsmål skal rettes til filværterne og udbyderne. film.kace.dev er ikke ansvarlig for nogen mediefiler vist af video-udbyderne."
+            "disclaimer": "Ansvarsfraskrivelse ◝(ᵔᵕᵔ)◜",
+            "disclaimerText": "Bemærk: film.kace.dev hoster ikke selv nogen filer, men viser i stedet kun indhold fra tredjepartsudbydere. Lovmæssige forhold bør afklares med dem."
         },
         "links": {
             "discord": "Discord",
-            "telegram": "Telegram",
-            "facebook": "Facebook",
-            "instagram": "Instagram",
-            "dmca": "DMCA",
-            "github": "GitHub"
+            "legal": "Legal / DMCA",
+            "github": "GitHub",
+            "twitter": "Twitter"
         },
-        "tagline": "Dyk ned i endeløse timer af gratis streaming underholdning med film.kace.dev! Deltag i binge-watching revolutionen og udforsk en verden af film og tv-shows - alt sammen uden abonnement."
+        "tagline": "Se dine favoritserier og -film gratis og uden reklamer! (っ'ヮ'c)"
     },
     "global": {
         "name": "film.kace.dev",
         "pages": {
-            "about": "Om",
-            "dmca": "DMCA",
-            "discover": "Oplev",
+            "about": "Om os",
+            "legal": "Legal / DMCA",
+            "support": "Support",
             "login": "Log ind",
-            "privacy": "Privatlivspolitik",
             "onboarding": "Opsætning",
             "pagetitle": "{{title}} - film.kace.dev",
-            "register": "Opret konto",
-            "settings": "Indstillinger"
+            "register": "Registrer",
+            "settings": "Indstillinger",
+            "discover": "Opdag",
+            "migration": "Migrer Profil"
         }
     },
     "home": {
+        "continueWatching": {
+            "sectionTitle": "Fortsæt med at se..."
+        },
+        "mediaList": {
+            "stopEditing": "Stop med at redigere"
+        },
+        "search": {
+            "allResults": "Det er alt, hvad vi har...",
+            "failed": "Kunne ikke finde noget, prøv igen!",
+            "loading": "Indlæser...",
+            "noResults": "Vi kunne ikke finde noget :(",
+            "placeholder": {
+                "extra": [
+                    "Hvad har du lyst til?",
+                    "Skal vi slette din browserhistorik?",
+                    "Hvad ønsker du at streame?",
+                    "film.kace.dev er den bedste side nogensinde!",
+                    "Hvad er der på din favoritliste i dag?",
+                    "Hvordan har din dag været?",
+                    "Min fejl, siden virker aldrig...",
+                    "Er film.kace.dev ikke bare det bedste?",
+                    ">ᴗ<"
+                ],
+                "default": "Hvad har du lyst til at se?"
+            },
+            "empty": {
+                "default": "Velkommen, find noget at se her!",
+                "extra": [
+                    "Der er intet her :(",
+                    "Så tomt...",
+                    "Sikke en masse luft.",
+                    "Hej nye medlem :3"
+                ]
+            },
+            "sectionTitle": "Søgeresultater",
+            "discoverMore": "Opdag mere",
+            "discover": "Opdag"
+        },
         "bookmarks": {
             "sectionTitle": "Bogmærker"
         },
-        "continueWatching": {
-            "sectionTitle": "Fortsæt med at se"
-        },
-        "mediaList": {
-            "stopEditing": "Stop redigering"
-        },
-        "search": {
-            "allResults": "Det er alt, hvad vi har!",
-            "failed": "Kunne ikke finde medie, prøv igen!",
-            "loading": "Indlæser...",
-            "noResults": "Vi kunne ikke finde noget!",
-            "placeholder": {
-                "default": "Hvad vil du se?",
+        "titles": {
+            "day": {
+                "default": "Hvad vil du gerne se i eftermiddag?",
                 "extra": [
-                    "Hvad vil du udforske?",
-                    "Hvad er på din watchlist?",
-                    "Hvad er din yndlingsfilm?",
-                    "Hvad er din yndlingsserie?"
+                    "Længe leve film.kace.dev!"
                 ]
             },
-            "sectionTitle": "Søgeresultater"
-        },
-        "titles": {
+            "morning": {
+                "default": "Hvad vil du gerne se her til morgen?",
+                "extra": [
+                    "Længe leve film.kace.dev!"
+                ]
+            },
+            "night": {
+                "extra": [
+                    "Længe leve film.kace.dev!"
+                ],
+                "default": "Hvad vil du gerne se i aften?"
+            },
             "420": {
-                "default": "Hvad vil du se denne 4/20?",
+                "default": "Hvad vil du gerne se denne 4/20?",
                 "extra": [
                     "Glædelig 4/20 🥳!"
                 ]
             },
-            "day": {
-                "default": "Hvad vil du se denne eftermiddag?",
+            "69": {
+                "default": "Har du lyst til at \"hygge\"?",
                 "extra": [
-                    "Viva la film.kace.dev!",
-                    "Velkommen til film.kace.dev!",
-                    "Du kan ikke gå galt i byen med The Big Lebowski!"
-                ]
-            },
-            "morning": {
-                "default": "Hvad vil du se denne morgen?",
-                "extra": [
-                    "God morgen! Hvad med noget \"Always Sunny\"?",
-                    "Jeg har hørt, at The Expanse er populær",
-                    "Viva la film.kace.dev!"
-                ]
-            },
-            "night": {
-                "default": "Hvad vil du se i aften?",
-                "extra": [
-                    "Rick & Morty er fantastisk med venner!",
-                    "The Godfather er en klassiker!",
-                    "Gå ud og se The Simpsons!",
-                    "The Office er altid et godt valg!",
-                    "Viva la film.kace.dev!"
-                ]
-            },
-            "halloween": {
-                "default": "Hvad vil du se denne Halloween?",
-                "extra": [
-                    "Glædelig Halloween 👻🎃!"
+                    "Glædelig 69-dag 😘!"
                 ]
             }
         }
     },
     "media": {
-        "episodeDisplay": "S{{season}} E{{episode}}",
+        "episodeDisplay": "S{{season}} - E{{episode}}",
         "unreleased": "Ikke udgivet",
         "types": {
             "movie": "Film",
-            "show": "Show"
+            "show": "Serie"
         }
     },
     "navigation": {
-        "banner": {
-            "offline": "Kontroller din internetforbindelse"
-        },
         "menu": {
             "about": "Om os",
-            "donation": "Doner",
-            "discover": "Oplev",
             "logout": "Log ud",
-            "register": "Synkroniser til skyen",
+            "register": "Synkroniser til Cloud",
             "settings": "Indstillinger",
-            "support": "Support"
+            "support": "Support",
+            "discover": "Opdag"
+        },
+        "banner": {
+            "offline": "Kontroller din internetforbindelse, fjollehoved!"
         }
     },
     "notFound": {
         "badge": "Ikke fundet",
-        "goHome": "Tilbage til start",
-        "message": "Vi har ledt overalt: under skraldespandene, i skabet, bag proxyen, men vi kunne ikke finde den side, du leder efter.",
-        "title": "Kunne ikke finde den side"
+        "reloadButton": "Prøv igen",
+        "title": "Kunne ikke finde den side",
+        "goHome": "Tilbage til hjem",
+        "message": "Vi har ledt overalt: under skraldespandene, i skabet, bag proxy'en, men i sidste ende kunne vi ikke finde den side, du leder efter. (ಥ﹏ಥ)"
+    },
+    "downtimeNotice": {
+        "badge": "Problemer",
+        "goHome": "Gå til hjem",
+        "title": "Problemer med udbydere",
+        "message": "film.kace.dev.lol har igen problemer med nogle udbydere. Hvis du ikke kan finde eller afspille et afsnit, skal du skifte kilde. Vi forventer, at denne fejl fortsætter i tidsrummet nedenfor."
     },
     "onboarding": {
         "defaultConfirm": {
             "cancel": "Annuller",
             "confirm": "Brug standardopsætning",
-            "description": "Standardopsætningen har ikke de bedste streams og kan være uutholdelig langsom.",
+            "description": "Standardopsætningen har ikke de bedste streams og kan være ulideligt langsom ( ͠° ͟ʖ ͡°)",
             "title": "Er du sikker?"
         },
         "extension": {
             "back": "Gå tilbage",
-            "explainer": "Ved at bruge browserudvidelsen kan du få adgang til de bedste streams, vi har at tilbyde. Med blot en enkel installation.",
-            "explainerIos": "Desværre understøttes browserudvidelsen ikke på iOS. Tryk på <bold>Gå tilbage</bold> for at vælge en anden mulighed.",
-            "extensionHelp": "Hvis du har installeret udvidelsen, men den ikke er detekteret, <bold>åbn udvidelsen gennem din browsers udvidelsesmenu</bold> og følg trinnene på skærmen.",
+            "explainer": "Ved hjælp af browserudvidelsen kan du få de bedste streams, vi har at byde på. Med blot en simpel installation. 👌",
+            "explainerIos": "Desværre understøttes browserudvidelsen ikke på iOS, tryk på <bold>Gå tilbage</bold> for at vælge en anden mulighed.",
+            "extensionHelp": "Hvis du har installeret udvidelsen, men den ikke registreres, skal du <bold>åbne udvidelsen via din browsers udvidelsesmenu</bold> og følge trinnene på skærmen.",
             "linkChrome": "Installer Chrome-udvidelse",
             "linkFirefox": "Installer Firefox-udvidelse",
-            "notDetecting": "Installeret på Chrome, men siden detekterer det ikke? Prøv at genindlæse siden!",
-            "notDetectingAction": "Genindlæs side",
+            "notDetecting": "Installeret på Chrome, men siden registrerer den ikke? Prøv at genindlæse siden!",
+            "notDetectingAction": "Genindlæs siden",
             "status": {
-                "disallowed": "Udvidelsen er ikke aktiveret for denne side",
-                "disallowedAction": "Aktiver udvidelse",
-                "failed": "Kunne ikke anmode om status",
+                "disallowed": "Udvidelse er ikke aktiveret for denne side (,,>﹏<,,)",
+                "failed": "Anmodning om status mislykkedes",
                 "loading": "Venter på, at du installerer udvidelsen",
-                "outdated": "Udvidelsesversionen er for gammel",
-                "success": "Udvidelsen fungerer som forventet!"
+                "outdated": "Udvidelsesversion for gammel",
+                "success": "Udvidelsen fungerer som forventet!",
+                "disallowedAction": "Aktiver udvidelse"
             },
             "submit": "Fortsæt",
             "title": "Lad os starte med en udvidelse"
         },
         "proxy": {
             "back": "Gå tilbage",
-            "explainer": "Med proxy-metoden kan du få kvalitetsstreams ved at lave en selvbetjeningsproxy.",
             "input": {
-                "errorConnection": "Kunne ikke oprette forbindelse til proxy",
-                "errorInvalidUrl": "Ikke en gyldig URL",
-                "errorNotProxy": "Forventede en proxy, men fik et websted",
+                "errorConnection": "Kunne ikke forbinde til proxy",
+                "errorInvalidUrl": "Ikke en gyldig webadresse",
+                "errorNotProxy": "Forventede en proxy, men fik en hjemmeside",
                 "label": "Proxy URL",
                 "placeholder": "https://"
             },
-            "link": "Lær hvordan man laver en proxy",
+            "link": "Lær, hvordan du laver en proxy",
             "submit": "Indsend proxy",
-            "title": "Lad os lave en ny proxy"
+            "title": "Lad os lave en ny proxy",
+            "explainer": "Med proxymetoden kan du få streams af høj kvalitet ved at lave en selvbetjent proxy."
         },
         "start": {
-            "explainer": "For at få de bedste streams muligt, skal du vælge, hvilken streamingmetode du vil bruge.",
             "options": {
-                "default": {
-                    "text": "Jeg vil ikke have gode kvalitetsstreams, <0 /> <1>brug standardopsætningen</1>"
-                },
                 "extension": {
                     "action": "Installer udvidelse",
-                    "description": "Installer browserudvidelse og få adgang til de bedste kilder.",
+                    "description": "Installer browserudvidelsen og få adgang til de bedste kilder, men husk at aktivere den for denne side.",
                     "quality": "Bedste kvalitet",
                     "title": "Browserudvidelse"
                 },
                 "proxy": {
-                    "action": "Opsæt proxy",
-                    "description": "Opsæt en proxy på blot 5 minutter og få adgang til gode kilder.",
                     "quality": "God kvalitet",
-                    "title": "Brugerdefineret proxy"
+                    "title": "Brugerdefineret proxy",
+                    "description": "Opret en gratis proxy på bare 5 minutter, og få adgang til gode kilder...",
+                    "action": "Opsæt proxy"
+                },
+                "default": {
+                    "text": "Jeg vil ikke have god kvalitet, <0 /> <1>brug standardopsætningen ▄︻デ══━一 ʕ-͡--ʔ</1>"
                 }
             },
-            "title": "Lad os få dig opsat med film.kace.dev"
+            "title": "Lad os få dig sat op med film.kace.dev 🥳",
+            "explainer": "For at få de bedst mulige streams skal du vælge, hvilken streamingmetode du vil bruge."
         }
     },
     "overlays": {
@@ -316,183 +292,197 @@
     },
     "player": {
         "back": {
-            "default": "Tilbage til start",
+            "default": "Tilbage til hjem",
             "short": "Tilbage"
         },
         "casting": {
-            "enabled": "Casting til enhed..."
+            "enabled": "Cast til enhed 🎬"
         },
         "menus": {
             "downloads": {
-                "disclaimer": "Downloads tages direkte fra udbyderen. film.kace.dev har ingen kontrol over, hvordan downloadene leveres.",
-                "copyHlsPlaylist": "Kopier HLS-playliste link",
-                "downloadSubtitle": "Download nuværende undertekst",
+                "copyHlsPlaylist": "Kopier link til HLS-playliste",
+                "downloadSubtitle": "Download aktuel undertekst",
                 "downloadVideo": "Download video",
-                "downloadHlsAsVideo": "Download HLS som video",
-                "hlsDisclaimer": "Downloads er direkte fra udbyderen; film.kace.dev kan ikke kontrollere dem. <br> <br> Du downloader en HLS-playliste, som er for avancerede brugere. Prøv forskellige kilder for andre formater.<br /><br />Du kan også prøve vores HLS til Video downloader værktøj, men det kan ikke virke for nogle kilder.",
                 "onAndroid": {
-                    "1": "For at downloade på Android, klik på download-knappen, og på den nye side, <bold>tryk og hold</bold> på videoen, og vælg derefter <bold>gem</bold>.",
+                    "1": "For at downloade på Android skal du klikke på download-knappen og derefter, på den nye side, <bold>trykke og holde</bold> på videoen og derefter vælge <bold>gem</bold>.",
                     "shortTitle": "Download / Android",
                     "title": "Download på Android"
                 },
                 "onIos": {
-                    "1": "For at downloade på iOS, klik på download-knappen, og på den nye side, klik <bold><ios_share /></bold>, og derefter <bold>Gem til filer <ios_files /></bold>.",
+                    "1": "For at downloade på iOS skal du klikke på download-knappen og derefter på den nye side klikke på <bold><ios_share /></bold> og derefter <bold>Save to Files <ios_files /></bold>.",
                     "shortTitle": "Download / iOS",
                     "title": "Download på iOS"
                 },
                 "onPc": {
-                    "1": "På PC, klik på download-knappen, og på den nye side, højreklik på videoen og vælg <bold>Gem video som</bold>",
                     "shortTitle": "Download / PC",
-                    "title": "Download på PC"
+                    "title": "Download på pc",
+                    "1": "På PC skal du klikke på download-knappen og derefter højreklikke på videoen på den nye side og vælge <bold>Gem video som</bold>"
                 },
-                "title": "Download"
+                "title": "Download",
+                "hlsDisclaimer": "Downloads tages direkte fra udbyderen. film.kace.dev har ikke kontrol over, hvordan downloads leveres.<br /><br />Vær opmærksom på, at du downloader en HLS-playliste, <bold>det anbefales ikke at downloade, hvis du ikke er bekendt med avancerede streamingformater</bold>. Prøv forskellige kilder til forskellige formater.",
+                "disclaimer": "Downloads tages direkte fra udbyderen. film.kace.dev har ikke kontrol over, hvordan downloads leveres."
             },
             "episodes": {
                 "button": "Episoder",
-                "emptyState": "Der er ingen episoder i denne sæson, tjek tilbage senere!",
+                "emptyState": "Der er ingen episoder i denne sæson, kom tilbage senere (undskyld :3)...",
                 "episodeBadge": "E{{episode}}",
-                "loadingError": "Fejl ved indlæsning af sæson",
+                "loadingError": "Fejl under indlæsning af sæson",
                 "loadingList": "Indlæser...",
                 "loadingTitle": "Indlæser...",
-                "unairedEpisodes": "En eller flere episoder i denne sæson er blevet deaktiveret, fordi de endnu ikke er sendt.",
+                "unairedEpisodes": "Et eller flere afsnit i denne sæson er blevet deaktiveret, fordi de ikke er blevet udgivet endnu.",
                 "seasons": "Sæsoner"
             },
             "playback": {
-                "speedLabel": "Afspilningshastighed",
-                "title": "Afspilningsindstillinger"
+                "title": "Afspilningsindstillinger",
+                "speedLabel": "Afspilningshastighed"
             },
             "quality": {
                 "automaticLabel": "Automatisk kvalitet",
-                "hint": "Du kan prøve <0>skifte kilde</0> for at få forskellige kvalitetsmuligheder.",
-                "iosNoQuality": "På grund af Apple-definerede begrænsninger er kvalitetsvalg ikke tilgængelig på iOS for denne kilde. Du kan prøve <0>skifte til en anden kilde</0> for at få forskellige kvalitetsmuligheder.",
-                "title": "Kvalitet"
+                "title": "Kvalitet",
+                "hint": "Du kan prøve <0>at skifte kilde</0> for at få forskellige muligheder for kvalitet.",
+                "iosNoQuality": "På grund af Apple-definerede (almindelige IOS L) begrænsninger er valg af kvalitet ikke tilgængelig på iOS for denne kilde. Du kan prøve <0>at skifte til en anden kilde</0> for at få forskellige muligheder for kvalitet."
             },
             "settings": {
                 "downloadItem": "Download",
-                "enableSubtitles": "Aktiver undertekster",
-                "experienceSection": "Visningsoplevelse",
+                "experienceSection": "Oplevelse af visning",
                 "playbackItem": "Afspilningsindstillinger",
                 "audioItem": "Lyd",
                 "qualityItem": "Kvalitet",
                 "sourceItem": "Videokilder",
                 "subtitleItem": "Undertekstindstillinger",
-                "videoSection": "Videoindstillinger"
+                "videoSection": "Videoindstillinger",
+                "enableSubtitles": "Aktiver undertekster"
             },
             "sources": {
                 "failed": {
-                    "text": "Der opstod en fejl under forsøget på at finde nogen videoer, prøv en anden kilde.",
+                    "text": "Der skete en fejl under søgningen efter videoer... Prøv en anden kilde?",
                     "title": "Kunne ikke scrape"
                 },
                 "noEmbeds": {
-                    "text": "Vi kunne ikke finde nogen embeds, prøv en anden kilde.",
+                    "text": "Vi kunne ikke finde nogen embeds, prøv venligst en anden kilde.",
                     "title": "Ingen embeds fundet"
                 },
                 "noStream": {
-                    "text": "Denne kilde har ingen streams for denne film eller show.",
-                    "title": "Ingen stream"
+                    "text": "Denne kilde har ingen streams for denne film eller serie. /ᐠ - ˕ -マ Ⳋ",
+                    "title": "Ingen stream :("
                 },
                 "title": "Kilder",
                 "unknownOption": "Ukendt"
             },
             "subtitles": {
                 "customChoice": "Drop eller upload fil",
-                "customizeLabel": "Tilpas",
-                "offChoice": "Slukket",
+                "customizeLabel": "Tilpasning",
+                "offChoice": "Fra",
+                "OpenSubtitlesChoice": "OpenSubtitles",
                 "settings": {
-                    "backlink": "Brugerdefinerede undertekster",
-                    "delay": "Undertekst forsinkelse",
-                    "fixCapitals": "Rettelse af store bogstaver"
+                    "delay": "Undertekstforsinkelse",
+                    "fixCapitals": "Ret store bogstaver",
+                    "backlink": "Brugerdefinerede undertekster"
                 },
                 "title": "Undertekster",
                 "unknownLanguage": "Ukendt",
-                "dropSubtitleFile": "Drop undertekstfil her"
+                "dropSubtitleFile": "Drop undertekstfilen her! >_<",
+                "scrapeButton": "Scrape undertekster",
+                "empty": "Der er ingen undertekster til dette."
             }
         },
         "metadata": {
             "api": {
-                "text": "Kunne ikke indlæse API-metadata, kontroller venligst din internetforbindelse.",
-                "title": "Kunne ikke indlæse API-metadata"
+                "text": "API-metadata kunne ikke indlæses, tjek venligst din internetforbindelse.",
+                "title": "API-metadata kunne ikke indlæses"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Fjernet",
-                "text": "Dette medie er ikke længere tilgængeligt på grund af en fjernelsesanmodning eller ophavsretlig påstand.",
-                "title": "Mediet er blevet fjernet"
+                "title": "Mediet er blevet fjernet",
+                "text": "Dette medie er ikke længere tilgængeligt på grund af en meddelelse om fjernelse eller krav om ophavsret. 😨"
             },
             "extensionPermission": {
-                "badge": "Tilladelse Mangler",
+                "badge": "Tilladelse mangler",
                 "button": "Brug udvidelse",
-                "text": "Du har browserudvidelsen, men vi har brug for din tilladelse til at komme i gang med at bruge udvidelsen.",
+                "text": "Du har browserudvidelsen, men vi har brug for din tilladelse til at komme i gang med at bruge udvidelsen. (¬_¬)",
                 "title": "Konfigurer udvidelsen"
             },
             "failed": {
-                "badge": "Mislykket",
-                "homeButton": "Gå hjem",
-                "text": "Kunne ikke indlæse mediets metadata fra TMDB. Kontroller venligst, om TMDB er nede eller blokeret på din internetforbindelse.",
-                "title": "Kunne ikke indlæse metadata"
+                "homeButton": "Gå til hjem",
+                "title": "Kunne ikke indlæse metadata",
+                "badge": "Fejlede",
+                "text": "Mediets metadata kunne ikke indlæses fra TMDB. Tjek venligst, om TMDB er nede eller blokeret på din internetforbindelse."
             },
             "notFound": {
                 "badge": "Ikke fundet",
-                "homeButton": "Tilbage til start",
-                "text": "Vi kunne ikke finde det medie, du anmodede om. Enten er det blevet fjernet, eller du har manipuleret med URL'en.",
-                "title": "Kunne ikke finde det medie."
+                "homeButton": "Tilbage til hjem",
+                "title": "Kunne ikke finde det medie.",
+                "text": "Vi kunne ikke finde det medie, du bad om. Enten er det blevet fjernet, eller også har du pillet ved URL'en (din pillefinger)."
+            }
+        },
+        "playbackError": {
+            "homeButton": "Gå til hjem",
+            "badge": "Afspilningsfejl",
+            "errors": {
+                "errorAborted": "Indlæsningen af mediet blev afbrudt efter brugerens anmodning.",
+                "errorDecode": "På trods af at mediet tidligere er blevet vurderet til at være brugbart, opstod der en fejl under forsøget på at afkode medieressourcen, hvilket resulterede i en fejl.",
+                "errorGenericMedia": "Der opstod en ukendt mediefejl.",
+                "errorNotSupported": "Mediet eller medieudbyderobjektet understøttes ikke.",
+                "errorNetwork": "Der opstod en netværksfejl, som forhindrede, at mediet kunne hentes, selv om det tidligere havde været tilgængeligt."
+            },
+            "text": "Der opstod en fejl under forsøget på at afspille mediet 😖. Prøv venligst igen!",
+            "title": "Kunne ikke afspille videoen!"
+        },
+        "scraping": {
+            "notFound": {
+                "homeButton": "Gå til hjem",
+                "badge": "Ikke fundet",
+                "detailsButton": "Vis detaljer",
+                "title": "Vi kunne ikke finde det",
+                "discoverButton": "Opdag mere",
+                "text": "Vi har søgt gennem vores udbydere og kan ikke finde de medier, du leder efter! Vi hoster ikke medierne og har ingen kontrol over, hvad der er tilgængeligt. Klik på 'Vis detaljer' nedenfor for at få flere detaljer."
+            },
+            "extensionFailure": {
+                "homeButton": "Gå til hjem",
+                "badge": "Udvidelse deaktiveret",
+                "text": "Du har installeret film.kace.dev-udvidelsen. For at begynde at bruge den skal du aktivere udvidelsen for dette websted.",
+                "enableExtension": "Aktiver udvidelse",
+                "title": "Aktiver venligst udvidelsen"
+            },
+            "items": {
+                "failure": "Der opstod en fejl",
+                "notFound": "Har ikke videoen (╥﹏╥)",
+                "pending": "Tjekker for videoer..."
             }
         },
         "nextEpisode": {
-            "cancel": "Annuller",
+            "replay": "Gentag",
             "next": "Næste episode",
             "nextSeason": "Næste sæson"
         },
-        "playbackError": {
-            "badge": "Afspilningsfejl",
-            "errors": {
-                "errorAborted": "Indhentningen af mediet blev afbrudt af brugerens anmodning.",
-                "errorDecode": "På trods af at det tidligere blev bestemt at være brugbart, opstod der en fejl under forsøget på at afkode medieressourcen, hvilket resulterede i en fejl.",
-                "errorGenericMedia": "Ukendt mediefejl opstod.",
-                "errorNetwork": "En form for netværksfejl opstod, hvilket forhindrede mediet i at blive hentet, på trods af at det tidligere var tilgængeligt.",
-                "errorNotSupported": "Mediet eller medieudbyderobjektet understøttes ikke."
-            },
-            "homeButton": "Gå hjem",
-            "text": "Der opstod en fejl under forsøg på at afspille mediet. Prøv igen.",
-            "title": "Kunne ikke afspille video!"
-        },
-        "scraping": {
-            "items": {
-                "failure": "Fejl opstod",
-                "notFound": "Har ikke videoen",
-                "pending": "Kontrollerer for videoer..."
-            },
-            "notFound": {
-                "badge": "Ikke fundet",
-                "detailsButton": "Vis detaljer",
-                "homeButton": "Gå hjem",
-                "text": "Vi har søgt gennem vores udbydere og kan ikke finde det medie, du leder efter! Vi hoster ikke mediet og har ingen kontrol over, hvad der er tilgængeligt. Klik venligst 'Vis detaljer' nedenfor for flere detaljer.",
-                "title": "Vi kunne ikke finde det"
-            },
-            "extensionFailure": {
-                "badge": "Udvidelse deaktiveret",
-                "homeButton": "Gå hjem",
-                "enableExtension": "Aktiver udvidelse",
-                "title": "Aktiver venligst udvidelsen",
-                "text": "Du har installeret film.kace.dev-udvidelsen. For at begynde at bruge den, skal du aktivere udvidelsen for denne side."
-            }
-        },
         "time": {
             "regular": "{{timeWatched}} / {{duration}}",
-            "remaining": "{{timeLeft}} tilbage • Slut ved {{timeFinished, datetime}}",
+            "remaining": "{{timeLeft}} tilbage • Færdig til {{timeFinished, datetime}}",
             "shortRegular": "{{timeWatched}}",
             "shortRemaining": "-{{timeLeft}}"
         },
         "turnstile": {
-            "description": "Bekræft venligst, at du er menneske ved at gennemføre Captcha til højre. Dette er for at holde film.kace.dev sikker!",
-            "error": "Kunne ikke bekræfte din menneskelighed. Prøv igen.",
-            "title": "Vi skal bekræfte, at du er menneske.",
-            "verifyingHumanity": "Bekræfter din menneskelighed..."
+            "description": "Bevis at du er et menneske ved at udføre den hurtige opgave, det er for at holde film.kace.dev sikker.",
+            "verifyingHumanity": "Bekræfter at du er et menneske... (^▽^)👍",
+            "title": "Er du en robot 🤖?",
+            "error": "Kunne ikke bekræfte at du er et menneske! Prøv venligst igen."
         }
     },
+    "support": {
+        "title": "Support",
+        "q1": {
+            "body": "Du kan deltage i den officielle <0>film.kace.dev discord</0> og stille spørgsmål der, eller du kan sende en e-mail til den, der er angivet nederst på denne side.",
+            "title": "Hvor kan jeg få hjælp?"
+        },
+        "q2": {
+            "title": "Hvordan kan jeg rapportere en fejl eller et problem?",
+            "body": "Vi har en <0>GitHub</0>, hvor du kan oprette et detaljeret problem i vores repository. Hvis du ønsker det, kan du desuden oprette en pull request for selv at løse problemet."
+        },
+        "text": "film.kace.dev er designet til at være så brugervenlig som muligt. Men folk har stadig spørgsmål og problemer. Denne side er her for at hjælpe med at løse disse problemer"
+    },
     "screens": {
-        "dmca": {
-            "text": "Velkommen til film.kace.dev's DMCA-kontaktside! Vi respekterer intellektuelle ejendomsrettigheder og ønsker at tage fat på eventuelle ophavsretsproblemer hurtigt. Hvis du mener, at dit ophavsretligt beskyttede arbejde er blevet brugt forkert på vores platform, bedes du sende en detaljeret DMCA-anmodning til nedenstående e-mail. Inkluder venligst en beskrivelse af det ophavsretligt beskyttede materiale, dine kontaktoplysninger og en god tro-erklæring. Vi er forpligtet til at løse disse sager hurtigt og værdsætter din samarbejde med at holde film.kace.dev et sted, der respekterer kreativitet og ophavsret.",
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA :("
         },
         "loadingApp": "Indlæser applikation",
         "loadingUser": "Indlæser din profil",
@@ -500,51 +490,62 @@
             "logout": "Log ud",
             "reset": "Nulstil brugerdefineret server",
             "text": "Kunne ikke indlæse din profil",
-            "textWithReset": "Kunne ikke indlæse din profil fra din brugerdefinerede server, vil du nulstille tilbage til standardserveren?"
+            "reload": "Genindlæs",
+            "textWithReset": "Kunne du ikke indlæse din profil fra din brugerdefinerede server, og vil du nulstille til standardserveren?"
         },
         "migration": {
-            "failed": "Kunne ikke migrere dine data.",
-            "inProgress": "Vent venligst, vi migrerer dine data. Dette bør ikke tage lang tid."
+            "failed": "Det lykkedes ikke at migrere dine data. 😿",
+            "inProgress": "Vent venligst, vi er ved at overfører dine data. Det burde ikke tage lang tid..."
         }
     },
     "settings": {
         "account": {
-            "accountDetails": {
-                "deviceNameLabel": "Enhedsnavn",
-                "deviceNamePlaceholder": "Personlig telefon",
-                "editProfile": "Rediger",
-                "logoutButton": "Log ud"
-            },
-            "actions": {
-                "delete": {
-                    "button": "Slet konto",
-                    "confirmButton": "Slet konto",
-                    "confirmDescription": "Er du sikker på, at du vil slette din konto? Alle dine data vil gå tabt!",
-                    "confirmTitle": "Er du sikker?",
-                    "text": "Denne handling er uigenkaldelig. Alle data vil blive slettet, og intet kan gendannes.",
-                    "title": "Slet konto"
-                },
-                "title": "Handlinger"
-            },
             "devices": {
-                "deviceNameLabel": "Enhedsnavn",
+                "deviceNameLabel": "Navn på enhed",
                 "failed": "Kunne ikke indlæse sessioner",
                 "removeDevice": "Fjern",
                 "title": "Enheder"
             },
+            "accountDetails": {
+                "deviceNameLabel": "Navn på enhed",
+                "deviceNamePlaceholder": "Personlig telefon",
+                "editProfile": "Rediger",
+                "logoutButton": "Log ud"
+            },
+            "admin": {
+                "title": "Administratorpanel",
+                "text": "Brug værktøjer, der er lavet til at teste film.kace.dev' tilstand.",
+                "button": "Tjek det ud"
+            },
+            "actions": {
+                "delete": {
+                    "title": "Slet profil",
+                    "confirmButton": "Bekræft sletning",
+                    "button": "Slet profil",
+                    "confirmDescription": "Er du sikker på, at du vil slette din profil? Alle dine data vil gå tabt! ૮₍˶Ó﹏Ò ⑅₎ა",
+                    "confirmTitle": "Er du sikker?",
+                    "text": "Denne handling er permanent. Alle data slettes, og intet kan gendannes."
+                },
+                "title": "Handlinger",
+                "logoutAllDevices": {
+                    "title": "Afslut alle sessioner",
+                    "text": "Dette vil logge dig ud fra alle enheder, der er tilknyttet din konto.",
+                    "button": "Log ud af alle enheder"
+                }
+            },
             "profile": {
                 "finish": "Afslut redigering",
-                "firstColor": "Profilfarve en",
-                "secondColor": "Profilfarve to",
+                "firstColor": "Profil farve 1",
+                "secondColor": "Profil farve 2",
                 "title": "Rediger profilbillede",
                 "userIcon": "Brugerikon"
             },
             "register": {
-                "cta": "Kom i gang",
-                "text": "Del dine se fremskridt mellem enheder og hold dem synkroniseret.",
-                "title": "Synkroniser til skyen"
+                "text": "Del fremskridt mellem enheder, og hold dem synkroniseret. ( ̧⸝⸝⍢⸝⸝)ෆ",
+                "title": "Synkroniser med Cloud",
+                "cta": "Kom godt i gang"
             },
-            "title": "Konto"
+            "title": "Profil"
         },
         "appearance": {
             "activeTheme": "Aktiv",
@@ -553,24 +554,24 @@
                 "default": "Standard",
                 "gray": "Grå",
                 "red": "Rød",
-                "teal": "Teal",
-                "amoled": "AMOLED"
+                "teal": "Blågrøn",
+                "classic": "Classic"
             },
             "title": "Udseende"
         },
         "connections": {
             "server": {
-                "description": "Hvis du vil oprette forbindelse til en brugerdefineret backend for at gemme dine data, aktiver dette og angiv URL'en. <0>Instruktioner.</0>",
                 "label": "Brugerdefineret server",
-                "urlLabel": "Brugerdefineret server URL"
+                "urlLabel": "Brugerdefineret server URL",
+                "description": "Hvis du gerne vil oprette forbindelse til en brugerdefineret server for at gemme dine data, skal du aktivere dette og angive URL'en. <0>Instruktioner.</0>"
             },
             "setup": {
-                "doSetup": "Udfør opsætning",
+                "doSetup": "Lav opsætning",
                 "errorStatus": {
-                    "description": "Det ser ud til, at et eller flere emner i denne opsætning har brug for din opmærksomhed.",
-                    "title": "Noget kræver din opmærksomhed"
+                    "description": "Det ser ud til, at en eller flere ting i denne opsætning kræver din opmærksomhed.",
+                    "title": "Noget kræver din opmærksomhed 😱"
                 },
-                "itemError": "Der er noget galt med denne indstilling. Gå gennem opsætningen igen for at rette det.",
+                "itemError": "Der er noget galt med denne indstilling. Gå gennem opsætningen igen for at rette det. (ᴗ_ ᴗ。)",
                 "items": {
                     "default": "Standardopsætning",
                     "extension": "Udvidelse",
@@ -578,34 +579,36 @@
                 },
                 "redoSetup": "Gentag opsætning",
                 "successStatus": {
-                    "description": "Alt er på plads for dig til at begynde at se dit yndlingsmedie.",
-                    "title": "Alt er opsat!"
+                    "title": "Alt er sat op!",
+                    "description": "Alt er på plads, så du kan begynde at se dine yndlingsmedier. (๑>◡<๑)"
                 },
                 "unsetStatus": {
-                    "description": "Klik venligst på knappen til højre for at starte opsætningsprocessen.",
-                    "title": "Du har ikke gennemgået opsætning"
+                    "description": "Klik på knappen til højre for at starte opsætningen.",
+                    "title": "Du har ikke gennemgået opsætningen"
                 }
             },
             "title": "Forbindelser",
             "workers": {
-                "addButton": "Tilføj ny worker",
-                "description": "For at applikationen kan fungere, dirigeres al trafik gennem proxies. Aktiver dette, hvis du vil bruge dine egne workers. <0>Instruktioner.</0>",
-                "emptyState": "Ingen workers endnu, tilføj en nedenfor",
-                "label": "Brug brugerdefinerede proxy workers",
-                "urlLabel": "Worker URLs",
-                "urlPlaceholder": "https://"
+                "addButton": "Tilføj ny arbejder",
+                "emptyState": "Ingen arbejdere endnu (｡-́︿-̀｡), tilføj en nedenfor",
+                "label": "Brug brugerdefinerede proxy-arbejdere",
+                "urlLabel": "Arbejder-URL'er",
+                "urlPlaceholder": "https://",
+                "description": "For at få applikationen til at fungere dirigeres al trafik gennem proxyer. Aktiver dette, hvis du vil have dine egne arbejdere. <0>Instruktioner.</0>"
             }
         },
         "preferences": {
-            "language": "Applikationssprog",
-            "languageDescription": "Sprog anvendt på hele applikationen.",
-            "thumbnail": "Generer thumbnails",
-            "thumbnailDescription": "Det meste af tiden har videoer ikke thumbnails. Du kan aktivere denne indstilling for at generere dem undervejs, men de kan gøre din video langsommere.",
-            "thumbnailLabel": "Generer thumbnails",
+            "language": "Applikationens sprog",
+            "languageDescription": "Sproget gælder for hele applikationen, kun engelsk har fjollede ting 🙁.",
+            "thumbnailLabel": "Generer miniaturebilleder",
+            "thumbnail": "Generer miniaturebilleder",
             "autoplay": "Autoplay",
-            "autoplayDescription": "Afspil automatisk den næste episode i en serie, efter du har nået slutningen. Kan aktiveres af brugere med browserudvidelsen, en brugerdefineret proxy eller med standardopsætningen, hvis værten tillader det.",
             "autoplayLabel": "Autoplay",
-            "title": "Præferencer"
+            "sourceOrder": "Omorganisering af kilder",
+            "sourceOrderDescription": "Træk og slip for at omarrangere kilder. Det afgør, i hvilken rækkefølge kilderne tjekkes for de medier, du prøver at se. Hvis en kilde er nedtonet, betyder det, at den ikke er tilgængelig på din enhed.",
+            "title": "Præferencer",
+            "thumbnailDescription": "Det meste af tiden har videoer ikke miniaturebilleder. Du kan aktivere denne indstilling for at generere dem undervejs, men de kan gøre din video mere langsom.",
+            "autoplayDescription": "Afspil automatisk den næste episode i en serie, når den er slut. Kan aktiveres af brugere med browserudvidelsen, en brugerdefineret proxy eller med standardopsætningen, hvis hosten tillader det."
         },
         "reset": "Nulstil",
         "save": "Gem",
@@ -614,23 +617,44 @@
                 "appVersion": "App version",
                 "backendUrl": "Backend URL",
                 "backendVersion": "Backend version",
-                "hostname": "Værtsnavn",
+                "hostname": "Hostname",
                 "insecure": "Usikker",
                 "notLoggedIn": "Du er ikke logget ind",
                 "secure": "Sikker",
-                "title": "App information",
+                "title": "Appstatistik (for nørder) 🤓",
                 "unknownVersion": "Ukendt",
-                "userId": "Bruger-ID"
+                "userId": "Bruger ID"
             }
         },
         "subtitles": {
             "backgroundLabel": "Baggrundsopacitet",
-            "backgroundBlurLabel": "Baggrundssløring",
             "colorLabel": "Farve",
-            "previewQuote": "Jeg må ikke frygte. Frygt er tankens dræber.",
+            "previewQuote": "Vil du helst have en lesbisk datter eller en homoseksuel søn? 🤔",
             "textSizeLabel": "Tekststørrelse",
-            "title": "Undertekster"
+            "title": "Undertekster",
+            "textBoldLabel": "Fed tekst",
+            "backgroundBlurLabel": "Sløring af baggrund"
         },
-        "unsaved": "Du har ikke-gemte ændringer"
+        "unsaved": "Du har ændringer, der ikke er gemt... ฅ^•ﻌ•^ฅ"
+    },
+    "fedapi": {
+        "setup": {
+            "showVideo": "Vis video vejledning",
+            "title": "For at få din Ui-token:"
+        },
+        "onboarding": {
+            "description": "Brug din egen Febbox-konto for at få det bedste streaming med 4k kvalitet, Dolby Atmos, spring intro og de bedste (hurtigste) indlæsningstider!",
+            "title": "Valgfrit: FED API (Fedbox) token"
+        }
+    },
+    "discover": {
+        "scrollToTop": "Tilbage til toppen",
+        "page": {
+            "subtitle": "Udforsk de seneste hits og tidløse klassikere.",
+            "title": "Opdag Film og TV"
+        },
+        "randomMovie": {
+            "in": "i"
+        }
     }
 }

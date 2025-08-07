@@ -1,80 +1,164 @@
 {
   "about": {
-    "description": "Welcome to film.kace.dev, your ultimate destination for unlimited streaming of movies and TV shows. Explore our extensive library of classics and new releases, available on any device. Culture shouldn't exist only for those who can afford it.",
-    "contact": "Have any questions? Feel free to contact us at our Discord Server or email us at user@kace.dev",
-    "faqTitle": "Frequently Asked Questions",
+    "description": "film.kace.dev is a fork of movie-web that is ensured to stay up even after the shutdown of movie-web.app. film.kace.dev runs on a private, self-hosted VPS. I run this site at a loss; there are very minimal ads due to my beliefs in free media.",
+    "help": "Can't find an answer? <0>Get support here.</0>",
+    "faqTitle": "Common questions",
+    "searchPlaceholder": "Search FAQ...",
+    "sections": {
+      "general": "General",
+      "search": "Search & Content Availability",
+      "playback": "Playback Issues",
+      "connections": "Connections",
+      "language": "Language & Subtitle Settings"
+    },
     "q1": {
-      "body": "Imagine film.kace.dev as a giant movie library catalog. It doesn't actually store any movies itself. Instead, when you pick a movie or TV show, it searches the internet for it. So, film.kace.dev is like a helpful friend pointing you in the right direction, not the place where the movies are actually stored.",
-      "title": "Where does the content come from?"
+      "title": "Where does the content come from?",
+      "body": "film.kace.dev does not host any content. When you click on something to watch, the internet is searched for the selected media (On the loading screen and in the 'video sources' tab you can see which source you're using). Media never gets uploaded by film.kace.dev, everything is through this searching mechanism.",
+      "section": "general"
     },
     "q2": {
-      "body": "film.kace.dev can't add new movies or shows. It just finds what's already out there on the web, like a search engine for movies! You can't ask for something specific, but you can explore what it finds.",
-      "title": "Where can I request a show or movie?"
+      "title": "Where can I request a show or movie?",
+      "body": "It's not possible to request a show or movie, film.kace.dev does not manage any content. All content is viewed through sources on the internet.",
+      "section": "search"
     },
     "q3": {
-      "body": "We use a database called The Movie Database (TMDB) to find movies and shows. Sometimes, we might show you a movie that's in the database, but you won't be able to watch it right away because it's not available on the sources we use.",
-      "title": "The search results display the show or movie, why can't I play it?"
+      "title": "The search results display the show or movie, why can't I play it?",
+      "body": "Our search results are powered by The Movie Database (TMDB) and display regardless of whether our sources actually have the content.",
+      "section": "search"
     },
     "q4": {
-      "body":"Binge away! film.kace.dev lets you watch as much as you want, whenever you want. No limits, no fees, just pure streaming fun!",
-      "title": "Is there a limit to how much I can watch?"
+      "title": "What about my data and stuff?",
+      "body": "All data is synced to the community backend, anyone is free to use this as well.",
+      "section": "general"
     },
-    "q5":{
-      "title": "How often is new content added to film.kace.dev?",
-      "body": "film.kace.dev is like a movie theater that shows what other websites have! New movies and shows pop up on film.kace.dev whenever the websites it works with add them to their collections. So, keep checking back to see what's new!"
+    "q5": {
+      "title": "How can I find out more?",
+      "body": "film.kace.dev has a Discord server that can be found at the header of this page!",
+      "section": "general"
     },
-    "q6":{
-      "title": "What should I do if a video doesn't play?",
-      "body": "If a movie doesn't play, it might be a problem with the website where it's hosted. Try clicking play again or choosing a different source from the 'video sources' tab. If it still doesn't work, check your internet connection or try again later."
+    "q6": {
+      "title": "Is there a film.kace.dev app?",
+      "body": "Not yet, but you can install it as a PWA (Progressive Web App). On iOS, use Safari → Share → Add to Home Screen. On Android, use Chrome → 3 dots → Add to Home Screen. An experimental APK is available via our Discord, but it's not recommended.",
+      "section": "general"
     },
-    "q7":{
-      "title": "Does film.kace.dev offer subtitles or dubbed content?",
-      "body": "Whether you can watch a movie with subtitles or in a different language depends on where it's being streamed from. Some websites offer subtitles or dubbed versions, which you can usually choose from right in the video player."
+    "q7": {
+      "title": "How do I make an account?",
+      "body": "Tap \"Sync to Cloud\" in the dropdown menu or go to Settings to create and sync a community account.",
+      "section": "general"
     },
-    "title": "About film.kace.dev"
-  },
-  "privacy": {
-    "description": "Welcome to film.kace.dev! Your privacy is important to us. Film (film.kace.dev) is committed to protecting your privacy while you enjoy your favorite movies and shows on our platform. This Privacy Policy explains how we handle and protect your data.",
-    "lastUpdated": "Last Updated: December 4, 2024",
-    "p1": {
-      "body": "film.kace.dev does not host any content. When you click on something to watch, the internet is searched for the selected media (On the loading screen and in the 'video sources' tab you can see which source you're using). Media never gets uploaded by film.kace.dev, everything is through this searching mechanism.",
-      "title": "Information We Do Not Collect"
+    "q9": {
+      "title": "This media is missing / Can I request media?",
+      "body": "No—since we don't host content, we cannot add or change what's available. The content list is based on what's publicly accessible through the search mechanism.",
+      "section": "search"
     },
-    "p2": {
-      "body": "We use third-party analytics tools, such as Google Analytics, to collect and process basic demographic information which includes general location, device type, and browsing activities on our site. This information is anonymized and used solely to improve the functionality and content of VidBinge, ensuring you have a better streaming experience.",
-      "title": "Information We Collect"
+    "q10": {
+      "title": "I can't find the movie/show I'm searching for!",
+      "body": "TMDB powers our search. Try tapping the 🔎 icon for advanced search options if results aren't accurate.",
+      "section": "search"
     },
-    "p3": {
-      "body": "Film uses cookies to enhance your viewing experience. Cookies help us understand user behavior within our site (such as most watched movies), which enables us to improve our services. You can choose to disable cookies through your browser settings, but this may affect the functionality of the site.",
-      "title": "Use of Cookies"
+    "q11": {
+      "title": "Why am I seeing a black screen?",
+      "body": "Likely a corrupt or broken video file. Try switching sources.",
+      "section": "playback"
     },
-    "p4": {
-      "body":"Our use of Cloudflare Analytics means we share anonymized demographic data with Cloudflare. This information is processed under Cloudflare's privacy policy. We do not share or sell any data to other third parties.",
-      "title": "Third-Party Services"
+    "q12": {
+      "title": "The episode I'm watching is incorrect.",
+      "body": "Switch to a different source. We don't control any content or episode accuracy.",
+      "section": "playback"
     },
-    "p5":{
-      "title": "Changes to This Privacy Policy",
-      "body": "We may update this Privacy Policy from time to time. The most recent version of the policy will always be posted on our site. We encourage you to review this Privacy Policy regularly for any changes."
+    "q13": {
+      "title": "The video quality isn't what I expected.",
+      "body": "Try switching sources. Quality varies by provider; FED API often offers more options.",
+      "section": "playback"
     },
-    "p6":{
-      "title": "Contact Us",
-      "body": "If you have any questions about this Privacy Policy, please contact via email at: user@kace.dev"  
+    "q14": {
+      "title": "4K isn't available.",
+      "body": "If 4K is not shown, it's likely unavailable from that source.",
+      "section": "playback"
     },
-    "title": "Privacy Policy for Film (film.kace.dev)"
+    "q15": {
+      "title": "Why is there no audio?",
+      "body": "Ensure your device isn't muted and try switching sources. Audio issues may be source-specific.",
+      "section": "playback"
+    },
+    "q16": {
+      "title": "The video is tinted or washed out.",
+      "body": "Could be a faulty file or an HDR video. Ensure your device supports HDR, or switch sources.",
+      "section": "playback"
+    },
+    "q17": {
+      "title": "I'm experiencing visual glitches.",
+      "body": "Visual bugs usually come from poor file uploads. Try switching sources.",
+      "section": "playback"
+    },
+    "q18": {
+      "title": "The source is loading slowly.",
+      "body": "Speed depends on the hosting site. Switch to another source for better performance.",
+      "section": "playback"
+    },
+    "q19": {
+      "title": "How do I switch sources?",
+      "body": "While playing, tap the ⚙️ icon, then choose another source under \"video sources\".",
+      "section": "playback"
+    },
+    "q20": {
+      "title": "What is FED API?",
+      "body": "FED API is our private scraper that pulls streams directly from Febbox. Each free Febbox account includes 100 GB/month of unlimited bandwidth, and we use your UI token to scrape content as if you're watching it yourself. Setup is easiest via desktop browser, but mobile instructions are available on our Discord.",
+      "section": "connections"
+    },
+    "q21": {
+      "title": "Does FED API work on all devices?",
+      "body": "Yes. Once set up, your token works across all logged-in devices.",
+      "section": "connections"
+    },
+    "q22": {
+      "title": "Why do I need the extension or custom proxy?",
+      "body": "Some sources block scrapers. The extension acts like a local proxy and bypasses such blocks using your IP, headers, and cookies.",
+      "section": "connections"
+    },
+    "q23": {
+      "title": "What is the extension? Is it safe?",
+      "body": "It's a local proxy tool used to access streams that restrict scrapers. It mimics your browsing session. It's also completly opensource and can be found on our github.",
+      "section": "connections"
+    },
+    "q24": {
+      "title": "My febbox token fails during setup. What should I do?",
+      "body": "Your ISP might be blocking FED API. Set a custom DNS like 1.1.1.1 or NextDNS. You can also change your region in the admin panel.",
+      "section": "connections"
+    },
+    "q25": {
+      "title": "How do I change languages?",
+      "body": "We prioritize English, but some sources offer other languages. Try switching sources. For FED API, only Safari supports audio switching in MP4 files.",
+      "section": "language"
+    },
+    "q26": {
+      "title": "My subtitles aren't in sync.",
+      "body": "Use the \"Customize\" option in subtitle settings or tap [ and ] on your keyboard to adjust. You can also upload your own subtitle file.",
+      "section": "language"
+    },
+    "title": "About film.kace.dev and FAQ (^▽^)"
   },
   "actions": {
     "copied": "Copied",
-    "copy": "Copy"
+    "copy": "Copy",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   },
   "auth": {
-    "createAccount": "Don't have an account yet? <0>Create an account.</0>",
+    "createAccount": "Don't have an account yet 😬 <0>Create an account.</0>",
     "deviceNameLabel": "Device name",
     "deviceNamePlaceholder": "Personal phone",
     "generate": {
-      "description": "Your passphrase acts as your username and password. Make sure to keep it safe as you will need to enter it to login to your account",
+      "description": "Your passphrase acts as your username and password. Make sure to keep it safe as you will need to enter it to login to your account. <bold>Do NOT lose your passphrase!</bold>",
       "next": "I have saved my passphrase",
       "passphraseFrameLabel": "Passphrase",
-      "title": "Your passphrase"
+      "title": "Your passphrase",
+      "custom": "Custom",
+      "customPassphraseLabel": "Custom Passphrase",
+      "customPassphrasePlaceholder": "Enter your custom passphrase",
+      "useCustomPassphrase": "Use Custom Passphrase",
+      "invalidPassphraseCharacters": "Invalid passphrase characters. Only English letters, numbers 1-10, and normal symbols are allowed.",
+      "passphraseTooShort": "Passphrase must be at least 8 characters long."
     },
     "hasAccount": "Already have an account? <0>Login here.</0>",
     "login": {
@@ -84,13 +168,13 @@
       "passphrasePlaceholder": "Passphrase",
       "submit": "Login",
       "title": "Login to your account",
-      "validationError": "Incorrect or incomplete passphrase"
+      "validationError": "Incorrect or incomplete passphrase /ᐠ. .ᐟ\\"
     },
     "register": {
       "information": {
         "color1": "Profile color one",
         "color2": "Profile color two",
-        "header": "Enter a name for your device and pick colours and a user icon of your choosing",
+        "header": "Enter a name for your device then pick colors and a user icon of your choosing!",
         "icon": "User icon",
         "next": "Next",
         "title": "Account information"
@@ -103,15 +187,15 @@
       },
       "noHostTitle": "Server not configured!",
       "noHost": "The server has not been configured, therefore you cannot create an account",
-      "host": "You are connecting to <0>{{hostname}}</0> - please confirm you trust it before making an account",
+      "host": "You are connecting to <0>{{hostname}}</0> - please confirm you trust it before making an account...",
       "no": "Go back",
-      "title": "Create an account on this server?",
-      "yes": "I trust this server"
+      "title": "Do you trust this server?",
+      "yes": "I trust this server 🤞"
     },
     "verify": {
       "description": "Please enter your passphrase from earlier to confirm you have saved it and to create your account",
       "invalidData": "Data is not valid",
-      "noMatch": "Passphrase doesn't match",
+      "noMatch": "Passphrase doesn't match 😭",
       "passphraseLabel": "Your 12-word passphrase",
       "recaptchaFailed": "ReCaptcha validation failed",
       "register": "Create account",
@@ -119,7 +203,7 @@
     }
   },
   "errors": {
-    "badge": "It broke",
+    "badge": "It broke 💀",
     "details": "Error details",
     "reloadPage": "Reload the page",
     "showError": "Show error details",
@@ -127,134 +211,282 @@
   },
   "footer": {
     "legal": {
-      "disclaimer": "Disclaimer",
-      "disclaimerText": "film.kace.dev does not host any files, it merely pulls streams from 3rd party services. Legal issues should be taken up with the file hosts and providers. film.kace.dev is not responsible for any media files shown by the video providers."
+      "disclaimer": "Disclaimer ◝(ᵔᵕᵔ)◜",
+      "disclaimerText": "Please note: film.kace.dev does not host any files itself but instead only display's content from 3rd party providers. Legal issues should be taken up with them."
     },
     "links": {
       "discord": "Discord",
-      "telegram": "Telegram",
-      "facebook": "Facebook",
-      "instagram": "Instagram",
-      "dmca": "DMCA",
-      "github": "GitHub"
+      "legal": "Legal / DMCA",
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "funding": "Support us"
     },
-    "tagline": "Dive into endless hours of free streaming entertainment with film.kace.dev! Join the binge-watching revolution and explore a world of movies and TV shows—all without a subscription."
+    "tagline": "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)"
   },
   "global": {
     "name": "film.kace.dev",
     "pages": {
-      "about": "About",
-      "dmca": "DMCA",
+      "about": "About and FAQ",
+      "legal": "Legal / DMCA",
       "discover": "Discover",
+      "support": "Support",
       "login": "Login",
-      "privacy": "Privacy Policy",
       "onboarding": "Setup",
       "pagetitle": "{{title}} - film.kace.dev",
       "register": "Register",
-      "settings": "Settings"
+      "settings": "Settings",
+      "migration": "Migrate Account",
+      "jip": "Jip"
     }
   },
   "home": {
     "bookmarks": {
-      "sectionTitle": "Bookmarks"
+      "sectionTitle": "Bookmarks",
+      "showAll": "Show all",
+      "groups": {
+        "dropdown": {
+          "placeholderButton": "Add to group",
+          "empty": "No groups yet",
+          "addButton": "Add",
+          "removeFromGroup": "Remove from group",
+          "removeAll": "Remove all"
+        },
+        "reorder": {
+          "button": "Reorder",
+          "done": "Done",
+          "title": "Edit Group Order",
+          "description": "Drag and drop to reorder your bookmark groups",
+          "cancel": "Cancel",
+          "save": "Save"
+        }
+      }
     },
     "continueWatching": {
-      "sectionTitle": "Continue Watching"
+      "sectionTitle": "Continue Watching..."
     },
     "mediaList": {
       "stopEditing": "Stop editing"
     },
     "search": {
-      "allResults": "That's all we have!",
+      "allResults": "That's all we have...",
       "failed": "Failed to find media, try again!",
       "loading": "Loading...",
-      "noResults": "We couldn't find anything!",
+      "noResults": "We couldn't find anything :(",
       "placeholder": {
         "default": "What do you want to watch?",
         "extra": [
-          "What do you want to explore?",
-          "What's on your watchlist?",
-          "What's your favorite movie?",
-          "What's your favorite series?"
+          "What are you in the mood for?",
+          "Should we delete your browser history?",
+          "What do you want to stream?",
+          "film.kace.dev is the best site ever!",
+          "What's on your watchlist today?",
+          "How was your day?",
+          "My bad the site never works...",
+          "Isn't film.kace.dev just the best?",
+          ">ᴗ<"
         ]
       },
-      "sectionTitle": "Search results"
+      "empty": {
+        "default": "Welcome, find media to watch here!",
+        "extra": [
+          "There's nothing here :(",
+          "So empty...",
+          "Such emptiness.",
+          "Hi new user :3"
+        ]
+      },
+      "sectionTitle": "Search results",
+      "discoverMore": "Discover more",
+      "discover": "Discover"
+    },
+    "mediaCard": {
+      "moreInfo": "More Info",
+      "copyLink": "Copy Link",
+      "close": "Close"
     },
     "titles": {
       "day": {
         "default": "What would you like to watch this afternoon?",
-        "extra": [
-          "Viva la film.kace.dev!",
-          "Welcome to film.kace.dev!",
-          "Can't go wrong with The Big Lebowski!"
-          ]
+        "extra": ["Viva la film.kace.dev!"]
       },
       "morning": {
         "default": "What would you like to watch this morning?",
-        "extra": [
-          "Good morning! How about some \"Always Sunny\"?",
-          "I hear The Expanse is popular",
-          "Viva la film.kace.dev!"
-        ]
+        "extra": ["Viva la film.kace.dev!"]
       },
       "night": {
         "default": "What would you like to watch tonight?",
-        "extra": [
-          "Rick & Morty is great with friends!",
-          "The Godfather is a classic!",
-          "Go smoke and watch The Simpsons!",
-          "The Office is always a good choice!",
-          "Viva la film.kace.dev!"
-        ]
+        "extra": ["Viva la film.kace.dev!"]
       },
       "420": {
         "default": "What would you like to watch this 4/20?",
         "extra": ["Happy 4/20 🥳!"]
       },
-      "halloween": {
-        "default": "What would you like to watch this Halloween?",
-        "extra": ["Happy Halloween 👻🎃!"]
+      "69": {
+        "default": "Up for something spicy?",
+        "extra": ["Happy 69 day 😘!"]
       }
     }
   },
   "media": {
-    "episodeDisplay": "S{{season}} E{{episode}}",
+    "episodeDisplay": "S{{season}} - E{{episode}}",
     "unreleased": "Unreleased",
     "types": {
       "movie": "Movie",
       "show": "Show"
-    }
+    },
+    "episodeShort": "E",
+    "seasonShort": "S",
+    "seasonWatched": "Are you sure you want to mark the season as watched?",
+    "seasonUnwatched": "Are you sure you want to mark the season as unwatched?"
+  },
+  "details": {
+    "resume": "Resume",
+    "play": "Play",
+    "runtime": "Runtime:",
+    "language": "Language:",
+    "releaseDate": "Release Date:",
+    "rating": "Rating:",
+    "votes": "votes",
+    "tmdb": "View on TMDB",
+    "imdb": "View on IMDb",
+    "episodes": "Episodes",
+    "seasons": "Season/s",
+    "season": "Season",
+    "episode": "Episode",
+    "airs": "Airs",
+    "endsAt": "Ends at {{time}}",
+    "trailer": "Trailer"
+  },
+  "migration": {
+    "loginRequired": "You must be logged in to migrate your data! Please go back and login to continue.",
+    "start": {
+      "title": "Migrate your data",
+      "explainer": "If you wish to migrate or backup your data, you can do so using the options below. This will allow you to keep your data when you switch backend servers.",
+      "options": {
+        "or": "or",
+        "direct": {
+          "description": "This will directly migrate your data to the new server. This is the fastest option. <br /><br />This option allows you to keep your passphrase the same!",
+          "title": "Direct migration",
+          "quality": "Easiest and fastest",
+          "action": "Transfer data"
+        },
+        "download": {
+          "description": "This will download your data to your device. You can then upload it to the new server or just keep it for safekeeping.",
+          "title": "Download data",
+          "quality": "More technical",
+          "action": "Download data"
+        },
+        "upload": {
+          "title": "Upload Data",
+          "description": "Upload your previously exported data file to restore your bookmarks and progress on this account.",
+          "quality": "Restore from backup",
+          "action": "Upload Data"
+        }
+      }
+    },
+    "direct": {
+      "title": "Direct migration",
+      "description": "Enter the destination backend URL to migrate your current account data to a new backend. This keeps your passphrase the same!",
+      "backendLabel": "Destination Backend URL",
+      "recaptchaLabel": "ReCaptcha Key (Optional)",
+      "toggleLable": "Needs ReCaptcha?",
+      "status": {
+        "error": "Failed to migrate your data. 😿",
+        "success": "Your data has been migrated successfully! 🎉"
+      },
+      "button": {
+        "migrate": "Migrate",
+        "processing": "Processing...",
+        "home": "Go home",
+        "login": "Continue to login"
+      }
+    },
+    "download": {
+      "title": "Download data",
+      "description": "This will download your data to your device. You can then upload it to the new server or just keep it for safekeeping.",
+      "items": {
+        "description": "Download includes:",
+        "bookmarks": "Bookmarked media",
+        "progress": "Watch progress"
+      },
+      "status": {
+        "error": "Failed to download your data. 😿",
+        "success": "Your data has been downloaded successfully! 🎉"
+      },
+      "button": {
+        "download": "Download data",
+        "home": "Go home",
+        "login": "Continue to login"
+      }
+    },
+    "upload": {
+      "title": "Upload data",
+      "description": "Upload your previously exported data file to restore your bookmarks and progress on this account.",
+      "status": {
+        "processing": "Processing data...",
+        "error": "Failed to upload your data. 😿",
+        "success": "Your data has been uploaded successfully! 🎉",
+        "successLocal": "Your data has been saved locally! 🎉"
+      },
+      "file": {
+        "description": "Select the file you want to upload",
+        "select": "Select file",
+        "change": "Change file",
+        "name": "File name"
+      },
+      "dataPreview": "Preview:",
+      "items": {
+        "bookmarks": "Bookmarked media",
+        "progress": "Watch progress"
+      },
+      "exportedOn": "Exported on",
+      "button": {
+        "import": "Import data",
+        "processing": "Processing...",
+        "success": "Import complete",
+        "home": "Continue to home",
+        "saveLocal": "Save locally"
+      }
+    },
+    "back": "Go back"
   },
   "navigation": {
     "banner": {
-      "offline": "Check your internet connection"
+      "offline": "Check your internet connection, silly goose! 🦢"
     },
     "menu": {
-      "about": "About us",
-      "donation": "Donate",
-      "discover": "Discover",
+      "about": "About and FAQ",
       "logout": "Log out",
-      "register": "Sync to cloud",
+      "register": "Sync to Cloud",
       "settings": "Settings",
-      "support": "Support"
+      "support": "Support",
+      "discover": "Discover",
+      "development": "Development"
     }
   },
   "notFound": {
     "badge": "Not found",
     "goHome": "Back to home",
-    "message": "We looked everywhere: under the bins, in the closet, behind the proxy but ultimately couldn't find the page you are looking for.",
+    "reloadButton": "Try again",
+    "message": "We looked everywhere: under the bins, in the closet, behind the proxy, but ultimately couldn't find the page you are looking for. (ಥ﹏ಥ)",
     "title": "Couldn't find that page"
+  },
+  "downtimeNotice": {
+    "badge": "Issues",
+    "goHome": "Go home",
+    "message": "film.kace.dev is experiencing issues with some providers again, if you cant find or play a show please change the source. Expect this error to persist throughout the below times.",
+    "title": "Provider issues"
   },
   "onboarding": {
     "defaultConfirm": {
       "cancel": "Cancel",
       "confirm": "Use default setup",
-      "description": "The default setup does not have the best streams and can be unbearably slow.",
+      "description": "The default setup does not have the best streams. You'll be missing out on the best sources!",
       "title": "Are you sure?"
     },
     "extension": {
       "back": "Go back",
-      "explainer": "Using the browser extension, you can get the best streams we have to offer. With just a simple install.",
+      "explainer": "Using the browser extension, you can get the best streams we have to offer. With just a simple install. 👌",
       "explainerIos": "Unfortunately, the browser extension is not supported on iOS, Press <bold>Go back</bold> to choose another option.",
       "extensionHelp": "If you've installed the extension but it's not detected, <bold>open the extension through your browsers extension menu</bold> and follow the steps on screen.",
       "linkChrome": "Install Chrome extension",
@@ -262,7 +494,7 @@
       "notDetecting": "Installed on Chrome, but the site isn't detecting it? Try reloading the page!",
       "notDetectingAction": "Reload page",
       "status": {
-        "disallowed": "Extension is not enabled for this page",
+        "disallowed": "Extension is not enabled for this page (,,>﹏<,,)",
         "disallowedAction": "Enable extension",
         "failed": "Failed to request status",
         "loading": "Waiting for you to install the extension",
@@ -288,24 +520,60 @@
     },
     "start": {
       "explainer": "To get the best streams possible, you will need to choose which streaming method you want to use.",
+      "moreInfo": {
+        "button": "More info",
+        "title": "Understanding a setup",
+        "explainer": {
+          "intro": "film.kace.dev doesn't host videos. It relies on third-party websites for content, so you need to choose how it connects to those sites.",
+          "options": "Your Options:",
+          "extension": "1. Extension",
+          "extensionDescription": "The extension gives you access to the most sources. It acts as a local proxy and can handle sites that need special cookies or headers to load.",
+          "proxy": "2. Proxy",
+          "proxyDescription": "The proxy scrapes media from other websites. It bypasses browser restrictions (like CORS) to allow scraping.",
+          "default": "3. Default Setup",
+          "defaultDescription": "Uses film.kace.dev's built-in proxy. It's the easiest option but might be slower due to shared bandwidth.",
+          "fedapi": {
+            "fedapi": "Additional: Febbox token",
+            "fedapiDescription": "Bring your own FREE Febbox account to gain access to FED API and CIA API, the best sources with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
+          },
+          "outro": "If you have more questions on how this works, feel free to ask on the <0>film.kace.dev Discord</0> server!"
+        },
+        "recommended": {
+          "title": "Not sure what to choose?",
+          "subtitle": "Recommended Configurations:",
+          "desktop": {
+            "title": "Desktop:",
+            "description": "Extension + Febbox token"
+          },
+          "iOS": {
+            "title": "iOS:",
+            "description": "Custom proxy + Febbox token"
+          },
+          "android": {
+            "title": "Android:",
+            "description": "Extension + Febbox token"
+          }
+        }
+      },
       "options": {
+        "or": "or",
         "default": {
-          "text": "I don't want good quality streams,<0 /> <1>use the default setup</1>"
+          "text": "I don't want good quality streams, use the default setup."
         },
         "extension": {
           "action": "Install extension",
-          "description": "Install browser extension and gain access to the best sources.",
-          "quality": "Best quality",
+          "description": "Install browser extension and gain access to additional sources! Remember to enable it for this site.",
+          "quality": "Best quality + More Sources",
           "title": "Browser extension"
         },
         "proxy": {
           "action": "Setup proxy",
-          "description": "Setup a proxy in just 5 minutes and gain access to great sources.",
+          "description": "Setup a free proxy in just 5 minutes! Improves loading reliability!",
           "quality": "Good quality",
           "title": "Custom proxy"
         }
       },
-      "title": "Let's get you setup with film.kace.dev"
+      "title": "Let's get you setup with film.kace.dev 🥳"
     }
   },
   "overlays": {
@@ -317,16 +585,22 @@
       "short": "Back"
     },
     "casting": {
-      "enabled": "Casting to device..."
+      "enabled": "Casting to device 🎬"
     },
     "menus": {
       "downloads": {
+        "button": "Atempt download",
+        "hlsDownloader": "Or, go to the <0>hls downloader website</0> and paste the playlist URL from below.",
         "disclaimer": "Downloads are taken directly from the provider. film.kace.dev does not have control over how the downloads are provided.",
         "copyHlsPlaylist": "Copy HLS playlist link",
         "downloadSubtitle": "Download current subtitle",
         "downloadVideo": "Download video",
-        "downloadHlsAsVideo": "Download HLS as video",
-        "hlsDisclaimer": "Downloads are direct from the provider; film.kace.dev cannot control them. <br> <br> You're downloading an HLS playlist, which is for advanced users. Try different sources for other formats.<br /><br />You may also try our HLS to Video downloader tool, but it may not work for some sources.",
+        "openIn": "Open in...",
+        "vlc": "VLC",
+        "iina": "IINA",
+        "outplayer": "Outplayer",
+        "hlsOpenInDisclaimer": "Opening HLS streams in an external player MAY NOT WORK!",
+        "hlsDisclaimer": "Downloads are taken directly from the provider. film.kace.dev does not have control over how the downloads are provided.<br /><br />Please note you are downloading an HLS playlist, <bold>it is not recommended to download if you are not familiar with advanced streaming formats</bold>. Try different sources for different formats.",
         "onAndroid": {
           "1": "To download on Android, click the download button then, on the new page, <bold>tap and hold</bold> on the video, then select <bold>save</bold>.",
           "shortTitle": "Download / Android",
@@ -346,39 +620,46 @@
       },
       "episodes": {
         "button": "Episodes",
-        "emptyState": "There are no episodes in this season, check back later!",
+        "emptyState": "There are no episodes in this season, check back later (sorry :3)...",
         "episodeBadge": "E{{episode}}",
         "loadingError": "Error loading season",
         "loadingList": "Loading...",
         "loadingTitle": "Loading...",
         "unairedEpisodes": "One or more episodes in this season have been disabled because they haven't been aired yet.",
-        "seasons": "Seasons"
+        "seasons": "Seasons",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "markAsWatched": "Mark as watched",
+        "markAsUnwatched": "Mark as unwatched"
       },
       "playback": {
         "speedLabel": "Playback speed",
-        "title": "Playback settings"
+        "title": "Playback settings",
+        "disabled": "(Disabled in watch party)",
+        "speedBoosted": "Playback speed boosted to 2x",
+        "speedUnboosted": "Playback speed reset to {{speed}}x"
       },
       "quality": {
         "automaticLabel": "Automatic quality",
         "hint": "You can try <0>switching source</0> to get different quality options.",
-        "iosNoQuality": "Due to Apple-defined limitations, quality selection is not available on iOS for this source. You can try <0>switching to another source</0> to get different quality options.",
-        "title": "Quality"
+        "iosNoQuality": "Due to Apple-defined (common IOS L) limitations, quality selection is not available on iOS for this source. You can try <0>switching to another source</0> to get different quality options.",
+        "title": "Quality",
+        "auto": "Auto"
       },
       "settings": {
         "downloadItem": "Download",
-        "watchParty": "Watch Party",
         "enableSubtitles": "Enable Subtitles",
         "experienceSection": "Viewing experience",
         "playbackItem": "Playback settings",
         "audioItem": "Audio",
         "qualityItem": "Quality",
-        "sourceItem": "Video sources",
-        "subtitleItem": "Subtitle settings",
+        "sourceItem": "Source",
+        "subtitleItem": "Subtitles",
         "videoSection": "Video settings"
       },
       "sources": {
         "failed": {
-          "text": "There was an error while trying to find any videos, please try a different source.",
+          "text": "There was an error while trying to find any videos... Try a different source?",
           "title": "Failed to scrape"
         },
         "noEmbeds": {
@@ -386,17 +667,20 @@
           "title": "No embeds found"
         },
         "noStream": {
-          "text": "This source has no streams for this movie or show.",
-          "title": "No stream"
+          "text": "This source has no streams for this movie or show. /ᐠ - ˕ -マ Ⳋ",
+          "title": "No stream :("
         },
         "title": "Sources",
-        "unknownOption": "Unknown"
+        "unknownOption": "Unknown",
+        "editOrder": "Edit order"
       },
       "subtitles": {
         "customChoice": "Drop or upload file",
         "customizeLabel": "Customize",
         "offChoice": "Off",
-        "OpenSubtitlesChoice": "OpenSubtitles",
+        "onChoice": "On",
+        "SourceChoice": "Source Subtitles",
+        "OpenSubtitlesChoice": "External Subtitles",
         "settings": {
           "backlink": "Custom subtitles",
           "delay": "Subtitle delay",
@@ -404,7 +688,22 @@
         },
         "title": "Subtitles",
         "unknownLanguage": "Unknown",
-        "dropSubtitleFile": "Drop subtitle file here"
+        "dropSubtitleFile": "Drop subtitle file here! >_<",
+        "scrapeButton": "Scrape subtitles",
+        "refresh": "Refresh External Subtitles",
+        "refreshing": "Refreshing...",
+        "empty": "There are no provided subtitles for this.",
+        "notFound": "None of the available options match your query",
+        "useNativeSubtitles": "Use native video subtitles",
+        "useNativeSubtitlesDescription": "May fix subtitles when casting and in PiP"
+      },
+      "watchparty": {
+        "watchpartyItem": "Watch Party",
+        "notice": "Legacy Watch Party might not be available for some sources",
+        "legacyWatchparty": "Use legacy Watch Party"
+      },
+      "audio": {
+        "default": "Default"
       }
     },
     "metadata": {
@@ -412,15 +711,15 @@
         "text": "Could not load API metadata, please check your internet connection.",
         "title": "Failed to load API metadata"
       },
-      "dmca": {
+      "legal": {
         "badge": "Removed",
-        "text": "This media is no longer available due to a takedown notice or copyright claim.",
+        "text": "This media is no longer available due to a takedown notice or copyright claim. 😨",
         "title": "Media has been removed"
       },
       "extensionPermission": {
         "badge": "Permission Missing",
         "button": "Use extension",
-        "text": "You have the browser extension, but we need your permission to get started using the extension.",
+        "text": "You have the browser extension, but we need your permission to get started using the extension. (¬_¬)",
         "title": "Configure the extension"
       },
       "failed": {
@@ -432,12 +731,12 @@
       "notFound": {
         "badge": "Not found",
         "homeButton": "Back to home",
-        "text": "We couldn't find the media you requested. Either it's been removed or you tampered with the URL.",
+        "text": "We couldn't find the media you requested. Either it's been removed or you tampered with the URL (naughty, naughty).",
         "title": "Couldn't find that media."
       }
     },
     "nextEpisode": {
-      "cancel": "Cancel",
+      "replay": "Replay",
       "next": "Next episode",
       "nextSeason": "Next season"
     },
@@ -450,20 +749,23 @@
         "errorNetwork": "Some kind of network error occurred which prevented the media from being successfully fetched, despite having previously been available.",
         "errorNotSupported": "The media or media provider object is not supported."
       },
+      "copyDebugInfo": "Copy debug info",
+      "debugInfo": "Check console for more details.",
       "homeButton": "Go home",
-      "text": "There was an error trying to play the media. Please try again.",
+      "text": "There was an error trying to play the media 😖. Please try again or try a different source!",
       "title": "Failed to play video!"
     },
     "scraping": {
       "items": {
         "failure": "Error occurred",
-        "notFound": "Doesn't have the video",
+        "notFound": "Doesn't have the video (╥﹏╥)",
         "pending": "Checking for videos..."
       },
       "notFound": {
         "badge": "Not found",
         "detailsButton": "Show details",
         "homeButton": "Go home",
+        "discoverButton": "Discover more",
         "text": "We have searched through our providers and cannot find the media you are looking for! We do not host the media and have no control over what is available. Please click 'Show details' below for more details.",
         "title": "We couldn't find that"
       },
@@ -473,6 +775,29 @@
         "enableExtension": "Enable extension",
         "title": "Please enable the extension",
         "text": "You've installed the film.kace.dev extension. To start using it, you need to enable the extension for this site."
+      },
+      "tips": {
+        "1": "Tap the gear icon to switch sources!",
+        "2": "Tap the title to copy the link!",
+        "3": "Tap and hold or hold SHIFT to show widescreen button instead of fullscreen!",
+        "4": "Some sources work better than others!",
+        "5": "Get the extension for more sources!",
+        "6": "Hold bookmarks to edit or delete them!",
+        "7": "Hold SHIFT and tap the title to copy the link with time!",
+        "8": "Set a custom subtitle color!",
+        "9": "Migrate your account to a new backend in settings!",
+        "10": "Join the Discord!",
+        "11": "Use [ and ] to adjust subtitle timing!",
+        "12": "Press SPACE or K to play/pause!",
+        "13": "Use LEFT and RIGHT arrow keys to skip 5 seconds!",
+        "14": "Use J and L keys to skip 10 seconds!",
+        "15": "Press F to toggle fullscreen!",
+        "16": "Press M to toggle mute!",
+        "17": "Use UP and DOWN arrows to change volume!",
+        "18": "Press < and > to change playback speed!",
+        "19": "Press . and , to move frame by frame when paused!",
+        "20": "Press C to toggle subtitles!",
+        "21": "Press R to do a barrel roll!"
       }
     },
     "time": {
@@ -482,16 +807,39 @@
       "shortRemaining": "-{{timeLeft}}"
     },
     "turnstile": {
-      "description": "Please verify that you are human by completing the Captcha on the right. This is to keep film.kace.dev safe!",
-      "error": "Failed to verify your humanity. Please try again.",
-      "title": "We need to verify that you're human.",
-      "verifyingHumanity": "Verifying your humanity..."
+      "description": "Please prove your humanity by completing the quick challenge, this is to keep film.kace.dev safe.",
+      "error": "Failed to verify your humanity - stream failed to load. Clear your cache and try again, or switch to a different source (tap the gear).",
+      "title": "Are You a Robot 🤖?",
+      "verifyingHumanity": "Verifying your humanity... (^▽^)👍"
+    }
+  },
+  "support": {
+    "title": "Support",
+    "text": "film.kace.dev is designed to be as user-friendly as possible. However, people still have questions and issues. This page is here to help resolve these shortcomings",
+    "q1": {
+      "body": "Well, you can join the official <0>film.kace.dev discord</0> and ask questions there or you can email the one provided at the bottom of this page.",
+      "title": "Where can I get help?"
+    },
+    "q2": {
+      "body": "We have a <0>GitHub</0> where you can create a detailed issue in our repository. Additionally, if you wish, you can create a pull request to fix the issue yourself.",
+      "title": "How can I report a bug or issue?"
+    }
+  },
+  "jip": {
+    "title": "Jip",
+    "text": "film.kace.dev didn't fall out of a coconut tree, it was made mostly by a single person (a very epic one at that).",
+    "q1": {
+      "body": "Well, you can join the official <0>film.kace.dev discord</0> and ask questions there or you can email the one provided at the bottom of this page.",
+      "title": "Where can I get help?"
+    },
+    "q2": {
+      "body": "We have a <0>GitHub</0> where you can create a detailed issue in our repository. Additionally, if you wish, you can create a pull request to fix the issue yourself.",
+      "title": "How can I report a bug or issue?"
     }
   },
   "screens": {
-    "dmca": {
-      "text": "Welcome to film.kace.dev's DMCA contact page! We respect intellectual property rights and want to address any copyright concerns swiftly. If you believe your copyrighted work has been improperly used on our platform, please send a detailed DMCA notice to the email below. Please include a description of the copyrighted material, your contact details, and a statement of good faith belief. We're committed to resolving these matters promptly and appreciate your cooperation in keeping film.kace.dev a place that respects creativity and copyrights.",
-      "title": "DMCA"
+    "legal": {
+      "title": "Legal / DMCA"
     },
     "loadingApp": "Loading application",
     "loadingUser": "Loading your profile",
@@ -499,11 +847,12 @@
       "logout": "Logout",
       "reset": "Reset custom server",
       "text": "Failed to load your profile",
+      "reload": "Reload",
       "textWithReset": "Failed to load your profile from your custom server, want to reset back to the default server?"
     },
     "migration": {
-      "failed": "Failed to migrate your data.",
-      "inProgress": "Please hold, we are migrating your data. This shouldn't take long."
+      "failed": "Failed to migrate your data. 😿",
+      "inProgress": "Please hold, we are migrating your data. This shouldn't take long..."
     }
   },
   "settings": {
@@ -514,16 +863,31 @@
         "editProfile": "Edit",
         "logoutButton": "Log out"
       },
+      "admin": {
+        "title": "Admin panel",
+        "text": "Utilize tools made for testing film.kace.dev's condition.",
+        "button": "Check it out"
+      },
       "actions": {
         "delete": {
           "button": "Delete account",
           "confirmButton": "Delete account",
-          "confirmDescription": "Are you sure you want to delete your account? All your data will be lost!",
+          "confirmDescription": "Are you sure you want to delete your account? All your data will be lost! ૮₍˶Ó﹏Ò ⑅₎ა",
           "confirmTitle": "Are you sure?",
           "text": "This action is irreversible. All data will be deleted and nothing can be recovered.",
           "title": "Delete account"
         },
-        "title": "Actions"
+        "migration": {
+          "title": "Account migration",
+          "text": "Migrate your account to a new server or download your data.",
+          "button": "Migrate account"
+        },
+        "title": "Actions",
+        "logoutAllDevices": {
+          "title": "End All Sessions",
+          "text": "This will sign you out from all devices linked to your account.",
+          "button": "Log Out of All Devices"
+        }
       },
       "devices": {
         "deviceNameLabel": "Device name",
@@ -540,8 +904,8 @@
       },
       "register": {
         "cta": "Get started",
-        "text": "Share your watch progress between devices and keep them synced.",
-        "title": "Sync to the cloud"
+        "text": "Share your watch progress between devices and keep them synced. ( ̧⸝⸝⍢⸝⸝)ෆ",
+        "title": "Sync to the Cloud"
       },
       "title": "Account"
     },
@@ -553,23 +917,62 @@
         "gray": "Gray",
         "red": "Red",
         "teal": "Teal",
-        "blck": "BLCK"
+        "classic": "Classic",
+        "green": "Green",
+        "mocha": "Mocha",
+        "pink": "Pink",
+        "noir": "Noir",
+        "ember": "Ember",
+        "acid": "Acid",
+        "spark": "Spark",
+        "grape": "Grape",
+        "spiderman": "Spiderman",
+        "forest": "Forest",
+        "wolverine": "Wolverine",
+        "popsicle": "Popsicle",
+        "hulk": "Hulk"
       },
-      "title": "Appearance"
+      "title": "Appearance",
+      "options": {
+        "discover": "Discover section",
+        "discoverDescription": "Show the Discover section on the Homepage below your bookmarked media. Enabled by default.",
+        "discoverLabel": "Discover section",
+        "featured": "Featured media",
+        "featuredDescription": "Show a carousel of featured movies and shows at the top of your homepage! Disabled by default.",
+        "featuredLabel": "Featured media",
+        "modal": "Details modal",
+        "modalDescription": "Show the details modal when you click on a media card instead of going to the watch page. Proxy or Extension required for trailer. Disabled by default.",
+        "modalLabel": "Details modal",
+        "logos": "Image logos",
+        "logosDescription": "Show image logos instead of text titles in the details modal and featured section. Enabled by default.",
+        "logosNotice": "Most of the time, logos are English only. Other languages might want to disable this!",
+        "logosLabel": "Image logos",
+        "carouselView": "Carousel view",
+        "carouselViewDescription": "Display your currently watching and bookmark sections as carousels instead of a grid. Disabled by default.",
+        "carouselViewLabel": "Carousel view",
+        "forceCompactEpisodeView": "Force compact episode view",
+        "forceCompactEpisodeViewDescription": "Force the episode carousel in the player to use the \"classic\" compact vertical view. Disabled by default.",
+        "forceCompactEpisodeViewLabel": "Compact episodes"
+      }
     },
     "connections": {
       "server": {
         "description": "If you would like to connect to a custom backend to store your data, enable this and provide the URL. <0>Instructions.</0>",
         "label": "Custom server",
-        "urlLabel": "Custom server URL"
+        "urlLabel": "Custom server URL",
+        "migration": {
+          "description": "<0>Migrate my data</0> to a new server.",
+          "link": "Migrate my data"
+        },
+        "documentation": "Backend documentation"
       },
       "setup": {
         "doSetup": "Do setup",
         "errorStatus": {
           "description": "It seems that one or more items in this setup need your attention.",
-          "title": "Something needs your attention"
+          "title": "Something needs your attention 😱"
         },
-        "itemError": "There is something wrong with this setting. Go through setup again to fix it.",
+        "itemError": "There is something wrong with this setting. Go through setup again to fix it. (ᴗ_ ᴗ。)",
         "items": {
           "default": "Default setup",
           "extension": "Extension",
@@ -577,7 +980,7 @@
         },
         "redoSetup": "Redo setup",
         "successStatus": {
-          "description": "All things are in place for you to start watching your favourite media.",
+          "description": "All things are in place for you to start watching your favorite media. (๑>◡<๑)",
           "title": "Everything is set up!"
         },
         "unsetStatus": {
@@ -589,27 +992,36 @@
       "workers": {
         "addButton": "Add new worker",
         "description": "To make the application function, all traffic is routed through proxies. Enable this if you want to bring your own workers. <0>Instructions.</0>",
-        "emptyState": "No workers yet, add one below",
+        "documentation": "Proxy documentation",
+        "emptyState": "No workers yet (｡•́︿•̀｡), add one below",
         "label": "Use custom proxy workers",
         "urlLabel": "Worker URLs",
-        "urlPlaceholder": "https://"
+        "urlPlaceholder": "https://",
+        "proxyTMDB": {
+          "title": "Proxy TMDB",
+          "description": "Only needed if you can't access TheMovieDB directly, such as if your ISP blocks it. It is recomended to disable the Discover section to improve performance with this."
+        }
       }
     },
     "preferences": {
+      "title": "Preferences",
       "language": "Application language",
-      "languageDescription": "Language applied to the entire application.",
+      "languageDescription": "Language applied to the entire application, only English has silly stuff 🙁.",
       "thumbnail": "Generate thumbnails",
-      "ads": "Enable Ads",
-      "adsDescription": "Ads help support the platform and keep it free for everyone. Disabling this will remove all ads.",
-      "adsLabel": "Enable Ads",
       "thumbnailDescription": "Most of the time, videos don't have thumbnails. You can enable this setting to generate them on the fly but they can make your video slower.",
       "thumbnailLabel": "Generate thumbnails",
       "autoplay": "Autoplay",
       "autoplayDescription": "Automatically play the next episode in a series after reaching the end. Can be enabled by users with the browser extension, a custom proxy, or with the default setup if allowed by the host.",
       "autoplayLabel": "Autoplay",
+      "skipCredits": "Skip End Credits",
+      "skipCreditsDescription": "When enabled, automatically play the next episode at 99% completion to skip end credits. When disabled, wait until the episode is fully completed.",
+      "skipCreditsLabel": "Skip end credits",
+      "lowPerformanceMode": "Low performance/bandwidth mode",
+      "lowPerformanceModeDescription": "Optimizes the application for slower connections and devices by disabling bandwidth-heavy features. This mode reduces data usage and improves performance while keeping the core search and watch functionality intact. ",
+      "lowPerformanceModeLabel": "Low performance mode",
       "sourceOrder": "Reordering sources",
-      "sourceOrderDescription": "Drag and drop to reorder sources. This will determine the order in which sources are checked for the media you are trying to watch. If a source is greyed out, it means it is not available on your device.",
-      "title": "Preferences"
+      "sourceOrderDescription": "Drag and drop to reorder sources. This will determine the order in which sources are checked for the media you are trying to watch. If a source is greyed out, it means the <bold>extension</bold> is required for that source. <br><br> <strong>(The default order is best for most users)</strong>",
+      "sourceOrderEnableLabel": "Custom source order"
     },
     "reset": "Reset",
     "save": "Save",
@@ -622,7 +1034,7 @@
         "insecure": "Insecure",
         "notLoggedIn": "You are not logged in",
         "secure": "Secure",
-        "title": "App information",
+        "title": "App stats",
         "unknownVersion": "Unknown",
         "userId": "User ID"
       }
@@ -631,11 +1043,151 @@
       "backgroundLabel": "Background opacity",
       "backgroundBlurLabel": "Background blur",
       "colorLabel": "Color",
-      "previewQuote": "The quick brown fox jumps over the lazy dog.",
+      "previewQuote": "Convinced life is meaningless, I lack the courage of my conviction.",
       "textSizeLabel": "Text size",
       "title": "Subtitles",
-      "textBoldLabel": "Bold text"
+      "textBoldLabel": "Bold text",
+      "verticalPositionLabel": "Vertical position",
+      "default": "Default",
+      "low": "Low",
+      "textStyle": {
+        "title": "Text style",
+        "default": "Default",
+        "raised": "Raised",
+        "depressed": "Depressed",
+        "uniform": "Uniform",
+        "dropShadow": "Drop Shadow"
+      }
     },
-    "unsaved": "You have unsaved changes"
+    "unsaved": "You have unsaved changes... ฅ^•ﻌ•^ฅ"
+  },
+  "discover": {
+    "tabs": {
+      "movies": "Movies",
+      "tvshows": "TV Shows",
+      "editorpicks": "Editor Picks"
+    },
+    "carousel": {
+      "title": {
+        "loading": "Loading...",
+        "movies": "{{category}} Movies",
+        "tvshows": "{{category}} Shows",
+        "inCinemas": "In Cinemas",
+        "popular": "Most Popular",
+        "nowPlaying": "In Cinemas",
+        "topRated": "Top Rated",
+        "latestReleases": "Latest Releases",
+        "4kReleases": "4K Releases",
+        "onTheAir": "On The Air",
+        "latestTVReleases": "Latest TV Shows",
+        "popularOn": "Popular {{type}} on {{provider}}",
+        "editorPicksMovies": "Editor Picks Movies",
+        "editorPicksShows": "Editor Picks Shows",
+        "moviesOn": "Movies on {{provider}}",
+        "tvshowsOn": "Shows on {{provider}}",
+        "recommended": "Because You Watched: {{title}}",
+        "genreMovies": "{{genre}} Movies",
+        "genreShows": "{{genre}} Shows",
+        "categoryMovies": "{{category}} Movies",
+        "categoryShows": "{{category}} Shows"
+      },
+      "change": "Change",
+      "more": "View more"
+    },
+    "featured": {
+      "playNow": "Play Now",
+      "moreInfo": "More Info"
+    },
+    "randomMovie": {
+      "button": "Watch Something Random",
+      "cancel": "Cancel Countdown",
+      "countdown": "{{countdown}}s",
+      "nowPlaying": "Now Playing",
+      "in": "in"
+    },
+    "page": {
+      "title": "Discover Movies & TV",
+      "subtitle": "Explore the latest hits and timeless classics.",
+      "loadMore": "Load more",
+      "loading": "Loading...",
+      "back": "Go back"
+    },
+    "viewLists": "View All Movie Lists",
+    "allLists": "All Movie Lists",
+    "scrollToTop": "Back to top"
+  },
+  "fedapi": {
+    "onboarding": {
+      "title": "Febbox token",
+      "description": "Bring your own FREE Febbox account to gain access to FED API and CIA API, the best sources with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
+    },
+    "setup": {
+      "title": "To get your UI token:",
+      "showVideo": "Show Video Tutorial",
+      "hideVideo": "Hide Video Tutorial",
+      "step": {
+        "1": "1. Go to <0>febbox.com</0> and log in with Google (use a fresh account!)",
+        "2": "2. Open DevTools or inspect the page",
+        "3": "3. Go to Application tab → Cookies",
+        "4": "4. Copy the 'ui' cookie's value.",
+        "5": "5. Close the tab, but do NOT logout!",
+        "warning": "(Do not share this token!)"
+      },
+      "tokenLabel": "Token",
+      "tokenExample": {
+        "button": "(Example)",
+        "title": "Example Token",
+        "description": "This is what a Febbox UI token looks like:",
+        "warning": "Don't try to use, it's fake.",
+        "close": "Got it"
+      }
+    },
+    "status": {
+      "success": "success",
+      "api_down": "Cannot reach FED API!",
+      "invalid_token": "Failed to fetch a 'VIP' stream. Your token is invalid!"
+    }
+  },
+  "realdebrid": {
+    "title": "Real Debrid (Beta)",
+    "description": "Enter your Real Debrid API key to access Real Debrid. Extension required.",
+    "tokenLabel": "API Key",
+    "status": {
+      "failure": "Failed to connect to Real Debrid. Please check your API key.",
+      "api_down": "Real Debrid API is currently unavailable. Please try again later.",
+      "invalid_token": "Invalid API key or non-premium account. Real Debrid requires a premium account."
+    }
+  },
+  "watchParty": {
+    "status": {
+      "inSync": "In sync",
+      "outOfSync": "Out of sync"
+    },
+    "alone": "Alone",
+    "withCount": "With {{count}} others",
+    "isHost": "Hosting on <0>{{backendName}}</0>",
+    "isGuest": "Watching as a guest on <0>{{backendName}}</0>",
+    "hosting": "Hosting",
+    "watching": "Watching",
+    "syncing": "Syncing...",
+    "behindHost": "Behind host by {{seconds}} seconds",
+    "aheadOfHost": "Ahead of host by {{seconds}} seconds",
+    "showStatusOverlay": "Show status overlay",
+    "leaveWatchParty": "Leave Watch Party",
+    "shareCode": "Share this code with friends (click to copy link)",
+    "connectedAsGuest": "Connected to watch party as guest",
+    "hostParty": "Host a Watch Party",
+    "joinParty": "Join a Watch Party",
+    "viewers": "Viewers ({{count}})",
+    "copyCode": "Click to copy",
+    "join": "Join",
+    "cancel": "Cancel",
+    "save": "Save",
+    "emptyRoom": "No one is in this room yet",
+    "invalidRoom": "Unable to connect to this room",
+    "contentMismatch": "Cannot join watch party: The content does not match the host's content.",
+    "episodeMismatch": "Cannot join watch party: You are watching a different episode than the host.",
+    "validating": "Validating watch party...",
+    "linkCopied": "Copied!"
   }
 }

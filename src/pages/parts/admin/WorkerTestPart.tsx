@@ -15,7 +15,10 @@ export function WorkerItem(props: {
   errored?: boolean;
   success?: boolean;
   errorText?: string;
+  url?: string;
 }) {
+  const urlWithoutProtocol = props.url ? new URL(props.url).host : null;
+
   return (
     <div className="flex mb-2">
       <Icon
@@ -36,6 +39,7 @@ export function WorkerItem(props: {
       <div className="flex-1">
         <p className="text-white font-bold">{props.name}</p>
         {props.errorText ? <p>{props.errorText}</p> : null}
+        {urlWithoutProtocol ? <p>{urlWithoutProtocol}</p> : null}
       </div>
     </div>
   );
@@ -52,6 +56,7 @@ export function WorkerTestPart() {
     { id: string; status: "error" | "success"; error?: Error }[]
   >([]);
 
+  const [buttonClicked, setButtonClicked] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const [testState, runTests] = useAsyncFn(async () => {
@@ -116,19 +121,60 @@ export function WorkerTestPart() {
               />
             );
           if (s.status === "success")
-            return <WorkerItem name={name} success key={v.id} />;
+            return <WorkerItem name={name} url={v.url} success key={v.id} />;
           return <WorkerItem name={name} key={v.id} />;
         })}
         <Divider />
         <div className="flex justify-end">
-          <Button
-            theme="purple"
-            loading={testState.loading}
-            onClick={buttonDisabled ? undefined : runTests}
-            disabled={buttonDisabled}
-          >
-            Test workers
-          </Button>
+          {buttonClicked ? (
+            workerState.every((worker) => worker.status === "success") ? (
+              <p>
+                All workers have passed the test!{" "}
+                <span className="font-bold">٩(ˊᗜˋ*)و♡</span>
+              </p>
+            ) : (
+              <div>
+                <div className="text-right">
+                  <p>
+                    Some workers have failed the test...{" "}
+                    <span className="font-bold">(•᷄∩•᷅ )</span>
+                  </p>
+                  {/* Show button if tests fail */}
+                  <div className="flex justify-end">
+                    <Button
+                      theme="purple"
+                      loading={testState.loading}
+                      onClick={async (event) => {
+                        event.preventDefault();
+                        setButtonDisabled(true);
+                        await runTests();
+                        setButtonClicked(true);
+                        setTimeout(() => setButtonDisabled(false), 250);
+                      }}
+                      disabled={buttonDisabled}
+                    >
+                      Test workers
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )
+          ) : (
+            <Button
+              theme="purple"
+              loading={testState.loading}
+              onClick={async (event) => {
+                event.preventDefault();
+                setButtonDisabled(true);
+                await runTests();
+                setButtonClicked(true);
+                setTimeout(() => setButtonDisabled(false), 5000); // Turn the button back on
+              }}
+              disabled={buttonDisabled}
+            >
+              Test workers
+            </Button>
+          )}
         </div>
       </Box>
     </>

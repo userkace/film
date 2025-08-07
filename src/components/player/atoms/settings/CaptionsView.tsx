@@ -1,8 +1,6 @@
 import classNames from "classnames";
-import Fuse from "fuse.js";
-import { type DragEvent, useMemo, useRef, useState } from "react";
+import { type DragEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAsyncFn } from "react-use";
 import { convert } from "subsrt-ts";
 
 import { subtitleTypeList } from "@/backend/helpers/subs";
@@ -11,16 +9,12 @@ import { FlagIcon } from "@/components/FlagIcon";
 import { Icon, Icons } from "@/components/Icon";
 import { useCaptions } from "@/components/player/hooks/useCaptions";
 import { Menu } from "@/components/player/internals/ContextMenu";
-import { Input } from "@/components/player/internals/ContextMenu/Input";
 import { SelectableLink } from "@/components/player/internals/ContextMenu/Links";
+import { fixUTF8Encoding } from "@/components/player/utils/captions";
 import { useOverlayRouter } from "@/hooks/useOverlayRouter";
-import { CaptionListItem } from "@/stores/player/slices/source";
 import { usePlayerStore } from "@/stores/player/store";
 import { useSubtitleStore } from "@/stores/subtitles";
-import {
-  getPrettyLanguageNameFromLocale,
-  sortLangCodes,
-} from "@/utils/language";
+import { getPrettyLanguageNameFromLocale } from "@/utils/language";
 
 export function CaptionOption(props: {
   countryCode?: string;
@@ -29,30 +23,111 @@ export function CaptionOption(props: {
   loading?: boolean;
   onClick?: () => void;
   error?: React.ReactNode;
-  chevron?: boolean;
+  flag?: boolean;
+  subtitleUrl?: string;
+  subtitleType?: string;
+  // subtitle details from wyzie
+  subtitleSource?: string;
+  subtitleEncoding?: string;
+  isHearingImpaired?: boolean;
 }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const tooltipContent = useMemo(() => {
+    if (!props.subtitleUrl && !props.subtitleSource) return null;
+
+    const parts = [];
+
+    if (props.subtitleSource) {
+      parts.push(`Source: ${props.subtitleSource}`);
+    }
+
+    if (props.subtitleEncoding) {
+      parts.push(`Encoding: ${props.subtitleEncoding}`);
+    }
+
+    if (props.isHearingImpaired) {
+      parts.push(`Hearing Impaired: Yes`);
+    }
+
+    if (props.subtitleUrl) {
+      parts.push(`URL: ${props.subtitleUrl}`);
+    }
+
+    return parts.join("\n");
+  }, [
+    props.subtitleUrl,
+    props.subtitleSource,
+    props.subtitleEncoding,
+    props.isHearingImpaired,
+  ]);
+
+  const handleMouseEnter = () => {
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+    }
+    tooltipTimeoutRef.current = setTimeout(() => setShowTooltip(true), 500);
+  };
+
+  const handleMouseLeave = () => {
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+    }
+    setShowTooltip(false);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeoutRef.current) {
+        clearTimeout(tooltipTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <SelectableLink
-      selected={props.selected}
-      loading={props.loading}
-      error={props.error}
-      onClick={props.onClick}
-      chevron={props.chevron}
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <span
-        data-active-link={props.selected ? true : undefined}
-        className="flex items-center"
+      <SelectableLink
+        selected={props.selected}
+        loading={props.loading}
+        error={props.error}
+        onClick={props.onClick}
       >
-        <span data-code={props.countryCode} className="mr-3 inline-flex">
-          <FlagIcon langCode={props.countryCode} />
+        <span
+          data-active-link={props.selected ? true : undefined}
+          className="flex items-center"
+        >
+          {props.flag ? (
+            <span data-code={props.countryCode} className="mr-3 inline-flex">
+              <FlagIcon langCode={props.countryCode} />
+            </span>
+          ) : null}
+          <span>{props.children}</span>
+          {props.subtitleType && (
+            <span className="ml-2 px-2 py-0.5 rounded bg-video-context-hoverColor bg-opacity-80 text-video-context-type-main text-xs font-semibold">
+              {props.subtitleType.toUpperCase()}
+            </span>
+          )}
+          {props.isHearingImpaired && (
+            <Icon icon={Icons.EAR} className="ml-2" />
+          )}
         </span>
-        <span>{props.children}</span>
-      </span>
-    </SelectableLink>
+      </SelectableLink>
+      {tooltipContent && showTooltip && (
+        <div className="absolute z-50 left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-2 bg-black/80 text-white/80 text-xs rounded-lg backdrop-blur-sm w-60 break-all whitespace-pre-line">
+          {tooltipContent}
+        </div>
+      )}
+    </div>
   );
 }
 
-function CustomCaptionOption() {
+export function CustomCaptionOption() {
   const { t } = useTranslation();
   const lang = usePlayerStore((s) => s.caption.selected?.language);
   const setCaption = usePlayerStore((s) => s.setCaption);
@@ -76,7 +151,15 @@ function CustomCaptionOption() {
           reader.addEventListener("load", (event) => {
             if (!event.target || typeof event.target.result !== "string")
               return;
-            const converted = convert(event.target.result, "srt");
+
+            // Ensure the data is in UTF-8 and fix any encoding issues
+            const encoder = new TextEncoder();
+            const decoder = new TextDecoder("utf-8");
+            const utf8Bytes = encoder.encode(event.target.result);
+            const utf8Data = decoder.decode(utf8Bytes);
+            const fixedData = fixUTF8Encoding(utf8Data);
+
+            const converted = convert(fixedData, "srt");
             setCaption({
               language: "custom",
               srtData: converted,
@@ -91,45 +174,17 @@ function CustomCaptionOption() {
   );
 }
 
-function useSubtitleList(subs: CaptionListItem[], searchQuery: string) {
-  const { t: translate } = useTranslation();
-  const unknownChoice = translate("player.menus.subtitles.unknownLanguage");
-  return useMemo(() => {
-    const input = subs
-      .map((t) => ({
-        ...t,
-        languageName:
-          getPrettyLanguageNameFromLocale(t.language) ?? unknownChoice,
-      }))
-      .filter((x) => !x.opensubtitles);
-    const sorted = sortLangCodes(input.map((t) => t.language));
-    let results = input.sort((a, b) => {
-      return sorted.indexOf(a.language) - sorted.indexOf(b.language);
-    });
-
-    if (searchQuery.trim().length > 0) {
-      const fuse = new Fuse(input, {
-        includeScore: true,
-        keys: ["languageName"],
-      });
-
-      results = fuse.search(searchQuery).map((res) => res.item);
-    }
-
-    return results;
-  }, [subs, searchQuery, unknownChoice]);
-}
-
-export function CaptionsView({ id }: { id: string }) {
+export function CaptionsView({
+  id,
+  backLink,
+}: {
+  id: string;
+  backLink?: true;
+}) {
   const { t } = useTranslation();
   const router = useOverlayRouter(id);
   const selectedCaptionId = usePlayerStore((s) => s.caption.selected?.id);
-  const [currentlyDownloading, setCurrentlyDownloading] = useState<
-    string | null
-  >(null);
-  const { selectCaptionById, disable } = useCaptions();
-  const captionList = usePlayerStore((s) => s.captionList);
-  const getHlsCaptionList = usePlayerStore((s) => s.display?.getCaptionList);
+  const { disable, toggleLastUsed } = useCaptions();
   const [dragging, setDragging] = useState(false);
   const setCaption = usePlayerStore((s) => s.setCaption);
   const selectedCaptionLanguage = usePlayerStore(
@@ -150,7 +205,14 @@ export function CaptionsView({ id }: { id: string }) {
     reader.addEventListener("load", (e) => {
       if (!e.target || typeof e.target.result !== "string") return;
 
-      const converted = convert(e.target.result, "srt");
+      // Ensure the data is in UTF-8 and fix any encoding issues
+      const encoder = new TextEncoder();
+      const decoder = new TextDecoder("utf-8");
+      const utf8Bytes = encoder.encode(e.target.result);
+      const utf8Data = decoder.decode(utf8Bytes);
+      const fixedData = fixUTF8Encoding(utf8Data);
+
+      const converted = convert(fixedData, "srt");
 
       setCaption({
         language: "custom",
@@ -159,45 +221,8 @@ export function CaptionsView({ id }: { id: string }) {
       });
     });
 
-    reader.readAsText(firstFile);
+    reader.readAsText(firstFile, "utf-8");
   }
-
-  const captions = useMemo(
-    () =>
-      captionList.length !== 0 ? captionList : (getHlsCaptionList?.() ?? []),
-    [captionList, getHlsCaptionList],
-  );
-
-  const [searchQuery, setSearchQuery] = useState("");
-  const subtitleList = useSubtitleList(captions, searchQuery);
-
-  const [downloadReq, startDownload] = useAsyncFn(
-    async (captionId: string) => {
-      setCurrentlyDownloading(captionId);
-      return selectCaptionById(captionId);
-    },
-    [selectCaptionById, setCurrentlyDownloading],
-  );
-
-  const content = subtitleList.map((v) => {
-    return (
-      <CaptionOption
-        // key must use index to prevent url collisions
-        key={v.id}
-        countryCode={v.language}
-        selected={v.id === selectedCaptionId}
-        loading={v.id === currentlyDownloading && downloadReq.loading}
-        error={
-          v.id === currentlyDownloading && downloadReq.error
-            ? downloadReq.error.toString()
-            : undefined
-        }
-        onClick={() => startDownload(v.id)}
-      >
-        {v.languageName}
-      </CaptionOption>
-    );
-  });
 
   const selectedLanguagePretty = selectedCaptionLanguage
     ? (getPrettyLanguageNameFromLocale(selectedCaptionLanguage) ??
@@ -221,20 +246,36 @@ export function CaptionsView({ id }: { id: string }) {
           </div>
         </div>
 
-        <Menu.BackLink
-          onClick={() => router.navigate("/")}
-          rightSide={
-            <button
-              type="button"
-              onClick={() => router.navigate("/captions/settings")}
-              className="-mr-2 -my-1 px-2 p-[0.4em] rounded tabbable hover:bg-video-context-light hover:bg-opacity-10"
-            >
-              {t("player.menus.subtitles.customizeLabel")}
-            </button>
-          }
-        >
-          {t("player.menus.subtitles.title")}
-        </Menu.BackLink>
+        {backLink ? (
+          <Menu.BackLink
+            onClick={() => router.navigate("/")}
+            rightSide={
+              <button
+                type="button"
+                onClick={() => router.navigate("/captions/settings")}
+                className="-mr-2 -my-1 px-2 p-[0.4em] rounded tabbable hover:bg-video-context-light hover:bg-opacity-10"
+              >
+                {t("player.menus.subtitles.customizeLabel")}
+              </button>
+            }
+          >
+            {t("player.menus.subtitles.title")}
+          </Menu.BackLink>
+        ) : (
+          <Menu.Title
+            rightSide={
+              <button
+                type="button"
+                onClick={() => router.navigate("/captions/settingsOverlay")}
+                className="-mr-2 -my-1 px-2 p-[0.4em] rounded tabbable hover:bg-video-context-light hover:bg-opacity-10"
+              >
+                {t("player.menus.subtitles.customizeLabel")}
+              </button>
+            }
+          >
+            {t("player.menus.subtitles.title")}
+          </Menu.Title>
+        )}
       </div>
       <FileDropHandler
         className={`transition duration-300 ${dragging ? "opacity-20" : ""}`}
@@ -243,9 +284,6 @@ export function CaptionsView({ id }: { id: string }) {
         }}
         onDrop={(event) => onDrop(event)}
       >
-        <div className="mt-3">
-          <Input value={searchQuery} onInput={setSearchQuery} />
-        </div>
         <Menu.ScrollToActiveSection className="!pt-1 mt-2 pb-3">
           <CaptionOption
             onClick={() => disable()}
@@ -253,9 +291,35 @@ export function CaptionsView({ id }: { id: string }) {
           >
             {t("player.menus.subtitles.offChoice")}
           </CaptionOption>
+          <CaptionOption
+            onClick={() => toggleLastUsed().catch(() => {})}
+            selected={!!selectedCaptionId}
+          >
+            {t("player.menus.subtitles.onChoice")}
+          </CaptionOption>
           <CustomCaptionOption />
           <Menu.ChevronLink
-            onClick={() => router.navigate("/captions/opensubtitles")}
+            onClick={() =>
+              router.navigate(
+                backLink ? "/captions/source" : "/captions/sourceOverlay",
+              )
+            }
+            rightText={
+              useSubtitleStore((s) => s.isOpenSubtitles)
+                ? ""
+                : selectedLanguagePretty
+            }
+          >
+            {t("player.menus.subtitles.SourceChoice")}
+          </Menu.ChevronLink>
+          <Menu.ChevronLink
+            onClick={() =>
+              router.navigate(
+                backLink
+                  ? "/captions/opensubtitles"
+                  : "/captions/opensubtitlesOverlay",
+              )
+            }
             rightText={
               useSubtitleStore((s) => s.isOpenSubtitles)
                 ? selectedLanguagePretty
@@ -264,7 +328,6 @@ export function CaptionsView({ id }: { id: string }) {
           >
             {t("player.menus.subtitles.OpenSubtitlesChoice")}
           </Menu.ChevronLink>
-          {content}
         </Menu.ScrollToActiveSection>
       </FileDropHandler>
     </>

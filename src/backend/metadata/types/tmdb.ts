@@ -14,6 +14,8 @@ export type TMDBEpisodeShort = {
   id: number;
   episode_number: number;
   air_date: string;
+  still_path: string | null;
+  overview: string;
 };
 
 export type TMDBMediaResult = {
@@ -128,6 +130,27 @@ export interface TMDBShowData {
   external_ids: {
     imdb_id: string | null;
   };
+  credits?: {
+    cast: Array<{
+      id: number;
+      name: string;
+      character: string;
+      profile_path: string | null;
+    }>;
+    crew: Array<{
+      id: number;
+      name: string;
+      job: string;
+      department: string;
+      profile_path: string | null;
+    }>;
+  };
+  content_ratings?: {
+    results: Array<{
+      iso_3166_1: string;
+      rating: string;
+    }>;
+  };
 }
 
 export interface TMDBMovieData {
@@ -178,6 +201,30 @@ export interface TMDBMovieData {
   vote_count: number;
   external_ids: {
     imdb_id: string | null;
+  };
+  credits?: {
+    cast: Array<{
+      id: number;
+      name: string;
+      character: string;
+      profile_path: string | null;
+    }>;
+    crew: Array<{
+      id: number;
+      name: string;
+      job: string;
+      department: string;
+      profile_path: string | null;
+    }>;
+  };
+  release_dates?: {
+    results: Array<{
+      iso_3166_1: string;
+      release_dates: Array<{
+        certification: string;
+        release_date: string;
+      }>;
+    }>;
   };
 }
 
@@ -286,4 +333,51 @@ export interface TMDBSearchResult {
   results: (TMDBMovieSearchResult | TMDBShowSearchResult)[];
   total_pages: number;
   total_results: number;
+}
+
+export interface TMDBCastMember {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string | null;
+  order: number;
+}
+
+export interface TMDBCrewMember {
+  id: number;
+  name: string;
+  job: string;
+  department: string;
+  profile_path: string | null;
+}
+
+export interface TMDBCredits {
+  id: number;
+  cast: TMDBCastMember[];
+  crew: TMDBCrewMember[];
+}
+
+export interface TMDBPerson {
+  id: number;
+  name: string;
+  biography: string;
+  birthday: string | null;
+  deathday: string | null;
+  place_of_birth: string | null;
+  profile_path: string | null;
+  known_for_department: string;
+}
+
+export interface TMDBPersonImage {
+  file_path: string;
+  aspect_ratio: number;
+  height: number;
+  width: number;
+  vote_average: number;
+  vote_count: number;
+}
+
+export interface TMDBPersonImages {
+  id: number;
+  profiles: TMDBPersonImage[];
 }
