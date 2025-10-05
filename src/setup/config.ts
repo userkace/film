@@ -2,7 +2,7 @@ import {
   APP_VERSION,
   BACKEND_URL,
   DISCORD_LINK,
-  // GITHUB_LINK,
+  GITHUB_LINK,
   TWITTER_LINK,
 } from "./constants";
 
@@ -115,7 +115,7 @@ function getKey(key: keyof Config, defaultString?: string): string | null {
 export function conf(): RuntimeConfig {
   return {
     APP_VERSION,
-    GITHUB_LINK: getKey("GITHUB_LINK", ""),
+    GITHUB_LINK,
     DISCORD_LINK,
     TWITTER_LINK,
     DMCA_EMAIL: getKey("DMCA_EMAIL"),

@@ -5,6 +5,7 @@ import { useAsync } from "react-use";
 
 import { getMetaFromId } from "@/backend/metadata/getmeta";
 import { MWMediaType, MWSeasonMeta } from "@/backend/metadata/types/mw";
+import { Button } from "@/components/buttons/Button";
 import { Icon, Icons } from "@/components/Icon";
 import { usePlayerMeta } from "@/components/player/hooks/usePlayerMeta";
 import { Transition } from "@/components/utils/Transition";
@@ -27,7 +28,7 @@ function shouldShowNextEpisodeButton(
   return "none";
 }
 
-function Button(props: {
+function ActionButton(props: {
   className: string;
   onClick?: () => void;
   children: React.ReactNode;
@@ -94,6 +95,7 @@ export function NextEpisodeButton(props: {
   controlsShowing: boolean;
   onChange?: (meta: PlayerMeta) => void;
   inControl: boolean;
+  showAsButton?: boolean;
 }) {
   const { t } = useTranslation();
   const duration = usePlayerStore((s) => s.progress.duration);
@@ -213,6 +215,22 @@ export function NextEpisodeButton(props: {
   if (!meta?.episode || !nextEp) return null;
   if (metaType !== "show") return null;
 
+  if (props.showAsButton) {
+    return (
+      <Button
+        onClick={() => loadNextEpisode()}
+        theme="secondary"
+        padding="md:px-12 p-2.5"
+        className="w-full"
+      >
+        <Icon className="mr-2" icon={Icons.SKIP_EPISODE} />
+        {isLastEpisode && nextEp
+          ? t("player.nextEpisode.nextSeason")
+          : t("player.nextEpisode.next")}
+      </Button>
+    );
+  }
+
   return (
     <Transition
       animation={animation}
@@ -225,13 +243,13 @@ export function NextEpisodeButton(props: {
           bottom,
         ])}
       >
-        <Button
+        <ActionButton
           className="py-px box-content bg-buttons-secondary hover:bg-buttons-secondaryHover bg-opacity-90 text-buttons-secondaryText justify-center items-center"
           onClick={() => startCurrentEpisodeFromBeginning()}
         >
           {t("player.nextEpisode.replay")}
-        </Button>
-        <Button
+        </ActionButton>
+        <ActionButton
           onClick={() => loadNextEpisode()}
           className="bg-buttons-primary hover:bg-buttons-primaryHover text-buttons-primaryText flex justify-center items-center"
         >
@@ -239,7 +257,7 @@ export function NextEpisodeButton(props: {
           {isLastEpisode && nextEp
             ? t("player.nextEpisode.nextSeason")
             : t("player.nextEpisode.next")}
-        </Button>
+        </ActionButton>
       </div>
     </Transition>
   );

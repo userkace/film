@@ -113,6 +113,20 @@ export function CaptionOption(props: {
               {props.subtitleType.toUpperCase()}
             </span>
           )}
+          {props.subtitleSource && (
+            <span
+              className={classNames(
+                "ml-2 px-2 py-0.5 rounded text-white text-xs font-semibold overflow-hidden text-ellipsis whitespace-nowrap",
+                {
+                  "bg-blue-500": props.subtitleSource.includes("wyzie"),
+                  "bg-orange-500": props.subtitleSource === "opensubs",
+                  "bg-purple-500": props.subtitleSource === "febbox",
+                },
+              )}
+            >
+              {props.subtitleSource.toUpperCase()}
+            </span>
+          )}
           {props.isHearingImpaired && (
             <Icon icon={Icons.EAR} className="ml-2" />
           )}

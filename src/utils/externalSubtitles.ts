@@ -101,14 +101,6 @@ function labelToLanguageCode(languageName: string): string {
   return languageMap[languageName] || languageName.toLowerCase();
 }
 
-const timeout = (ms: number, source: string) =>
-  new Promise<null>((resolve) => {
-    setTimeout(() => {
-      console.error(`${source} captions request timed out after ${ms}ms`);
-      resolve(null);
-    }, ms);
-  });
-
 export async function scrapeWyzieCaptions(
   tmdbId: string | number,
   imdbId: string,
@@ -149,10 +141,7 @@ export async function scrapeWyzieCaptions(
       display: subtitle.display,
       media: subtitle.media,
       isHearingImpaired: subtitle.isHearingImpaired,
-      source:
-        typeof subtitle.source === "number"
-          ? subtitle.source.toString()
-          : subtitle.source,
+      source: `wyzie ${subtitle.source.toString() === "opensubtitles" ? "opensubs" : subtitle.source}`,
       encoding: subtitle.encoding,
     }));
 
@@ -202,12 +191,95 @@ export async function scrapeOpenSubtitlesCaptions(
         type: caption.SubFormat || "srt",
         needsProxy: false,
         opensubtitles: true,
+        source: "opensubs", // shortened becuase used on CaptionView for badge
       });
     }
 
     return openSubtitlesCaptions;
   } catch (error) {
     console.error("Error fetching OpenSubtitles:", error);
+    return [];
+  }
+}
+
+export async function scrapeFebboxCaptions(
+  imdbId: string,
+  season?: number,
+  episode?: number,
+): Promise<CaptionListItem[]> {
+  try {
+    let url: string;
+    if (season && episode) {
+      url = `https://fed-subs.pstream.mov/tv/${imdbId}/${season}/${episode}`;
+    } else {
+      url = `https://fed-subs.pstream.mov/movie/${imdbId}`;
+    }
+
+    // console.log("Searching Febbox subtitles with URL:", url);
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Febbox API returned ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Check for error response
+    if (data.error) {
+      console.log("Febbox API error:", data.error);
+      return [];
+    }
+
+    // Check if subtitles exist
+    if (!data.subtitles || typeof data.subtitles !== "object") {
+      console.log("No subtitles found in Febbox response");
+      return [];
+    }
+
+    const febboxCaptions: CaptionListItem[] = [];
+
+    // Iterate through all available languages
+    for (const [languageName, subtitleData] of Object.entries(data.subtitles)) {
+      if (typeof subtitleData === "object" && subtitleData !== null) {
+        const subtitle = subtitleData as {
+          subtitle_link: string;
+          subtitle_name: string;
+        };
+
+        if (subtitle.subtitle_link) {
+          const language = labelToLanguageCode(languageName);
+          const fileExtension = subtitle.subtitle_link
+            .split(".")
+            .pop()
+            ?.toLowerCase();
+
+          // Determine subtitle type based on file extension
+          let type: string = "srt";
+          if (fileExtension === "vtt") {
+            type = "vtt";
+          } else if (fileExtension === "sub") {
+            type = "sub";
+          }
+
+          febboxCaptions.push({
+            id: subtitle.subtitle_link,
+            language,
+            url: subtitle.subtitle_link,
+            type,
+            needsProxy: false,
+            opensubtitles: true,
+            display: subtitle.subtitle_name,
+            source: "febbox",
+          });
+        }
+      }
+    }
+
+    console.log(`Found ${febboxCaptions.length} Febbox subtitles`);
+    return febboxCaptions;
+  } catch (error) {
+    console.error("Error fetching Febbox subtitles:", error);
     return [];
   }
 }
@@ -227,25 +299,61 @@ export async function scrapeExternalSubtitles(
     const episode = meta.episode?.number;
     const tmdbId = meta.tmdbId;
 
-    // Fetch both Wyzie and OpenSubtitles captions with timeouts
-    const [wyzieCaptions, openSubsCaptions] = await Promise.all([
-      Promise.race([
-        scrapeWyzieCaptions(tmdbId, imdbId, season, episode),
-        timeout(2000, "Wyzie"),
-      ]),
-      Promise.race([
-        scrapeOpenSubtitlesCaptions(imdbId, season, episode),
-        timeout(5000, "OpenSubtitles"),
-      ]),
-    ]);
+    // Set a reasonable timeout for each source (10 seconds)
+    const timeout = 10000;
 
+    // Create promises for each source with individual timeouts
+    const wyziePromise = scrapeWyzieCaptions(tmdbId, imdbId, season, episode);
+    const openSubsPromise = scrapeOpenSubtitlesCaptions(
+      imdbId,
+      season,
+      episode,
+    );
+    const febboxPromise = scrapeFebboxCaptions(imdbId, season, episode);
+
+    // Create timeout promises
+    const timeoutPromise = new Promise<CaptionListItem[]>((resolve) => {
+      setTimeout(() => resolve([]), timeout);
+    });
+
+    // Start all promises and collect results as they complete
     const allCaptions: CaptionListItem[] = [];
+    let completedSources = 0;
+    const totalSources = 3;
 
-    if (wyzieCaptions) allCaptions.push(...wyzieCaptions);
-    if (openSubsCaptions) allCaptions.push(...openSubsCaptions);
+    // Helper function to handle individual source completion
+    const handleSourceCompletion = (
+      sourceName: string,
+      captions: CaptionListItem[],
+    ) => {
+      allCaptions.push(...captions);
+      completedSources += 1;
+      console.log(
+        `${sourceName} completed with ${captions.length} captions (${completedSources}/${totalSources} sources done)`,
+      );
+    };
+
+    // Start all sources concurrently and handle them as they complete
+    const promises = [
+      Promise.race([wyziePromise, timeoutPromise]).then((captions) => {
+        handleSourceCompletion("Wyzie", captions);
+        return captions;
+      }),
+      Promise.race([openSubsPromise, timeoutPromise]).then((captions) => {
+        handleSourceCompletion("OpenSubtitles", captions);
+        return captions;
+      }),
+      Promise.race([febboxPromise, timeoutPromise]).then((captions) => {
+        handleSourceCompletion("Febbox", captions);
+        return captions;
+      }),
+    ];
+
+    // Wait for all sources to complete (with timeouts)
+    await Promise.allSettled(promises);
 
     console.log(
-      `Found ${allCaptions.length} external captions (Wyzie: ${wyzieCaptions?.length || 0}, OpenSubtitles: ${openSubsCaptions?.length || 0})`,
+      `Found ${allCaptions.length} total external captions from all sources`,
     );
 
     return allCaptions;

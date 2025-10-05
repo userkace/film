@@ -70,7 +70,7 @@
         "q11": {
             "title": "Wiso gseni en Black-Screen?",
             "body": "Wahrschindlech ein beschädigts Video. Versuech en anderi Quelle.",
-            "section": "Wedergot"
+            "section": "Wedergab"
         },
         "q12": {
             "title": "D‘Episode woni lueg stemt net.",
@@ -83,7 +83,17 @@
             "section": "Wedergob"
         },
         "q16": {
-            "title": "S‘Video esch blass oder verschwome."
+            "title": "S‘Video esch blass oder verschwome.",
+            "body": "Das chönnt e defekts File oder es HDR-Video sii.\nSorg derfür, dass dis Gerät HDR unterstötzt, oder wechsle d’Quälle.",
+            "section": "wedergab"
+        },
+        "q17": {
+            "title": "Ich erläb visuelli störige.",
+            "section": "Wedergab",
+            "body": "Visuelli bugs chöme normalerwis us schlächt ufegladene files. Due t Quelle wächsle."
+        },
+        "q18": {
+            "title": "D‘Quelle ladet langsam."
         }
     },
     "actions": {
@@ -478,7 +488,7 @@
                 },
                 "title": "Quellene",
                 "unknownOption": "Onbekannt",
-                "editOrder": "Bestellig bearbeite"
+                "editOrder": "Reiefolg bearbeite"
             },
             "subtitles": {
                 "customChoice": "Drop oder lad dis File ufe",
@@ -568,7 +578,7 @@
             "items": {
                 "failure": "En Fehler esch ufträte",
                 "notFound": "Mer hei s‘Video net (╥﹏╥)",
-                "pending": "Sueche nach Videos…"
+                "pending": "Video werd gsuecht…"
             },
             "notFound": {
                 "badge": "Net gfonde",

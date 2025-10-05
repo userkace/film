@@ -1,5 +1,5 @@
 import { Listbox } from "@headlessui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "react-use";
@@ -109,9 +109,6 @@ export function MediaCarousel({
   const { setLastView } = useDiscoverStore();
   const { isMobile } = useIsMobile();
   const browser = !!window.chrome;
-
-  // Track overflow state
-  const [hasOverflow, setHasOverflow] = useState(false);
 
   // State for selected options
   const [selectedProviderId, setSelectedProviderId] = useState<string>("");
@@ -275,45 +272,8 @@ export function MediaCarousel({
     }
   }, [showRecommendations, recommendationSources, selectedRecommendationId]);
 
-  const categorySlug = React.useMemo(() => {
-    return `${sectionTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${isTVShow ? "tv" : "movie"}`;
-  }, [sectionTitle, isTVShow]);
-
-  // Function to check overflow for the carousel
-  const checkOverflow = React.useCallback((element: HTMLDivElement | null) => {
-    if (!element) {
-      setHasOverflow(false);
-      return;
-    }
-
-    const hasHorizontalOverflow = element.scrollWidth > element.clientWidth;
-    setHasOverflow(hasHorizontalOverflow);
-  }, []);
-
-  // Function to set carousel ref and check overflow
-  const setCarouselRef = React.useCallback(
-    (element: HTMLDivElement | null) => {
-      carouselRefs.current[categorySlug] = element;
-
-      // Check overflow after a short delay to ensure content is rendered
-      setTimeout(() => checkOverflow(element), 100);
-    },
-    [carouselRefs, categorySlug, checkOverflow],
-  );
-
-  // Effect to recheck overflow on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      const element = carouselRefs.current[categorySlug];
-      if (element) {
-        checkOverflow(element);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [carouselRefs, categorySlug, checkOverflow]);
-  const isScrollingRef = React.useRef(false);
+  const categorySlug = `${sectionTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${isTVShow ? "tv" : "movie"}`;
+  const isScrollingRef = useRef(false);
 
   const handleWheel = React.useCallback(
     (e: React.WheelEvent) => {
@@ -568,7 +528,9 @@ export function MediaCarousel({
         <div
           id={`carousel-${categorySlug}`}
           className="grid grid-flow-col auto-cols-max gap-4 pt-0 overflow-x-scroll scrollbar-none rounded-xl overflow-y-hidden md:pl-8 md:pr-8"
-          ref={setCarouselRef}
+          ref={(el) => {
+            carouselRefs.current[categorySlug] = el;
+          }}
           onWheel={handleWheel}
         >
           <div className="md:w-12" />
@@ -623,7 +585,6 @@ export function MediaCarousel({
           <CarouselNavButtons
             categorySlug={categorySlug}
             carouselRefs={carouselRefs}
-            hasOverflow={hasOverflow}
           />
         )}
       </div>

@@ -130,12 +130,9 @@ export function ListView({
                           >
                             {notification.title}
                           </h3>
-                          {!isRead && (
-                            <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
-                          )}
                         </div>
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 order-1 sm:order-2">
-                          {/* Mobile: Source • Category */}
+                          {/* Mobile: Source & Category */}
                           <div className="flex items-center gap-1 sm:hidden">
                             {getCategoryColor(notification.category) && (
                               <span

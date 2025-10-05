@@ -44,6 +44,7 @@ import { conf } from "@/setup/config";
 import { usePreferencesStore } from "@/stores/preferences";
 import { getProxyUrls } from "@/utils/proxyUrls";
 
+import { RegionSelectorPart } from "../parts/settings/RegionSelectorPart";
 import {
   Status,
   testFebboxKey,
@@ -155,7 +156,7 @@ export function FEDAPISetup() {
                             src="https://player.vimeo.com/video/1059834885?h=c3ab398d42&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                             className="absolute top-0 left-0 w-full h-full border border-type-secondary rounded-lg bg-black"
-                            title="P-Stream FED API Setup Tutorial"
+                            title="film.kace.dev FED API Setup Tutorial"
                           />
                         </div>
                         <br />
@@ -189,11 +190,8 @@ export function FEDAPISetup() {
                 <p className="text-white font-bold mb-3">
                   {t("fedapi.setup.tokenLabel")}
                 </p>
-                <div className="flex items-center w-full">
-                  <StatusCircle
-                    type={statusMap[status]}
-                    className="mx-2 mr-4"
-                  />
+                <div className="flex items-center w-full gap-4">
+                  <StatusCircle type={statusMap[status]} className="mx-2" />
                   <AuthInputBox
                     onChange={(newToken) => {
                       setFebboxKey(newToken);
@@ -203,6 +201,7 @@ export function FEDAPISetup() {
                     passwordToggleable
                     className="flex-grow"
                   />
+                  <RegionSelectorPart />
                 </div>
                 {status === "error" && (
                   <p className="text-type-danger mt-4">

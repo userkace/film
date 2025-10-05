@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { useAsync } from "react-use";
 
+import { DetailedMeta } from "@/backend/metadata/getmeta";
 import { usePlayer } from "@/components/player/hooks/usePlayer";
 import { usePlayerMeta } from "@/components/player/hooks/usePlayerMeta";
 import { convertProviderCaption } from "@/components/player/utils/captions";
@@ -18,10 +19,12 @@ import { useQueryParam } from "@/hooks/useQueryParams";
 import { MetaPart } from "@/pages/parts/player/MetaPart";
 import { PlaybackErrorPart } from "@/pages/parts/player/PlaybackErrorPart";
 import { PlayerPart } from "@/pages/parts/player/PlayerPart";
+import { ResumePart } from "@/pages/parts/player/ResumePart";
 import { ScrapeErrorPart } from "@/pages/parts/player/ScrapeErrorPart";
 import { ScrapingPart } from "@/pages/parts/player/ScrapingPart";
 import { useLastNonPlayerLink } from "@/stores/history";
 import { PlayerMeta, playerStatus } from "@/stores/player/slices/source";
+import { useProgressStore } from "@/stores/progress";
 import { needsOnboarding } from "@/utils/onboarding";
 import { parseTimestamp } from "@/utils/timestamp";
 
@@ -44,11 +47,13 @@ export function RealPlayerView() {
     setScrapeNotFound,
     shouldStartFromBeginning,
     setShouldStartFromBeginning,
+    setStatus,
   } = usePlayer();
   const { setPlayerMeta, scrapeMedia } = usePlayerMeta();
   const backUrl = useLastNonPlayerLink();
   const router = useOverlayRouter("settings");
   const openedWatchPartyRef = useRef<boolean>(false);
+  const progressItems = useProgressStore((s) => s.items);
 
   const paramsData = JSON.stringify({
     media: params.media,
@@ -87,6 +92,53 @@ export function RealPlayerView() {
     [navigate, params],
   );
 
+  // Check if episode is more than 80% watched
+  const shouldShowResumeScreen = useCallback(
+    (meta: PlayerMeta) => {
+      if (!meta?.tmdbId) return false;
+
+      const item = progressItems[meta.tmdbId];
+      if (!item) return false;
+
+      if (meta.type === "movie") {
+        if (!item.progress) return false;
+        const percentage =
+          (item.progress.watched / item.progress.duration) * 100;
+        return percentage > 80;
+      }
+
+      if (meta.type === "show" && meta.episode?.tmdbId) {
+        const episode = item.episodes?.[meta.episode.tmdbId];
+        if (!episode) return false;
+        const percentage =
+          (episode.progress.watched / episode.progress.duration) * 100;
+        return percentage > 80;
+      }
+
+      return false;
+    },
+    [progressItems],
+  );
+
+  const handleMetaReceived = useCallback(
+    (detailedMeta: DetailedMeta, episodeId?: string) => {
+      const playerMeta = setPlayerMeta(detailedMeta, episodeId);
+      if (playerMeta && shouldShowResumeScreen(playerMeta)) {
+        setStatus(playerStatus.RESUME);
+      }
+    },
+    [shouldShowResumeScreen, setStatus, setPlayerMeta],
+  );
+
+  const handleResume = useCallback(() => {
+    setStatus(playerStatus.SCRAPING);
+  }, [setStatus]);
+
+  const handleRestart = useCallback(() => {
+    setShouldStartFromBeginning(true);
+    setStatus(playerStatus.SCRAPING);
+  }, [setShouldStartFromBeginning, setStatus]);
+
   const playAfterScrape = useCallback(
     (out: RunOutput | null) => {
       if (!out) return;
@@ -113,7 +165,14 @@ export function RealPlayerView() {
   return (
     <PlayerPart backUrl={backUrl} onMetaChange={metaChange}>
       {status === playerStatus.IDLE ? (
-        <MetaPart onGetMeta={setPlayerMeta} />
+        <MetaPart onGetMeta={handleMetaReceived} />
+      ) : null}
+      {status === playerStatus.RESUME ? (
+        <ResumePart
+          onResume={handleResume}
+          onRestart={handleRestart}
+          onMetaChange={metaChange}
+        />
       ) : null}
       {status === playerStatus.SCRAPING && scrapeMedia ? (
         <ScrapingPart

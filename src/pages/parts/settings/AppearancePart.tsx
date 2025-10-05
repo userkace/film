@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Toggle } from "@/components/buttons/Toggle";
+import { SortableList } from "@/components/form/SortableList";
 import { Icon, Icons } from "@/components/Icon";
 import { Heading1 } from "@/components/utils/Text";
 
@@ -46,6 +47,11 @@ const availableThemes = [
     id: "forest",
     selector: "theme-forest",
     key: "settings.appearance.themes.forest",
+  },
+  {
+    id: "autumn",
+    selector: "theme-autumn",
+    key: "settings.appearance.themes.autumn",
   },
   {
     id: "mocha",
@@ -101,6 +107,11 @@ const availableThemes = [
     id: "popsicle",
     selector: "theme-popsicle",
     key: "settings.appearance.themes.popsicle",
+  },
+  {
+    id: "skyRealm",
+    selector: "theme-skyrealm",
+    key: "settings.appearance.themes.skyrealm",
   },
 ];
 
@@ -219,6 +230,9 @@ export function AppearancePart(props: {
 
   forceCompactEpisodeView: boolean;
   setForceCompactEpisodeView: (v: boolean) => void;
+
+  homeSectionOrder: string[];
+  setHomeSectionOrder: (v: string[]) => void;
 
   enableLowPerformanceMode: boolean;
 }) {
@@ -463,6 +477,28 @@ export function AppearancePart(props: {
               <p className="flex-1 text-white font-bold">
                 {t("settings.appearance.options.forceCompactEpisodeViewLabel")}
               </p>
+            </div>
+          </div>
+
+          {/* Home Section Order */}
+          <div>
+            <p className="text-white font-bold mb-3">
+              {t("settings.appearance.options.homeSectionOrder")}
+            </p>
+            <p className="max-w-[25rem] font-medium">
+              {t("settings.appearance.options.homeSectionOrderDescription")}
+            </p>
+            <div className="my-4 max-w-[25rem]">
+              <SortableList
+                items={props.homeSectionOrder.map((section) => ({
+                  id: section,
+                  name: t(`settings.appearance.sections.${section}`),
+                }))}
+                setItems={(items) => {
+                  const newOrder = items.map((item) => item.id);
+                  props.setHomeSectionOrder(newOrder);
+                }}
+              />
             </div>
           </div>
         </div>

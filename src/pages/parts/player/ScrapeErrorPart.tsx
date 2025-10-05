@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-import { sendPage } from "@/backend/extension/messaging";
+import {
+  isExtensionActiveCached,
+  sendPage,
+} from "@/backend/extension/messaging";
 import { Button } from "@/components/buttons/Button";
 import { Icons } from "@/components/Icon";
 import { IconPill } from "@/components/layout/IconPill";
@@ -11,6 +14,9 @@ import { Paragraph } from "@/components/text/Paragraph";
 import { Title } from "@/components/text/Title";
 import { ScrapingItems, ScrapingSegment } from "@/hooks/useProviderScrape";
 import { ErrorContainer, ErrorLayout } from "@/pages/layouts/ErrorLayout";
+import { conf } from "@/setup/config";
+import { useOnboardingStore } from "@/stores/onboarding";
+import { usePreferencesStore } from "@/stores/preferences";
 import { getExtensionState } from "@/utils/extension";
 import type { ExtensionStatus } from "@/utils/extension";
 import { getProviderApiUrls } from "@/utils/proxyUrls";
@@ -30,7 +36,8 @@ export function ScrapeErrorPart(props: ScrapeErrorPartProps) {
   const location = useLocation();
   const [extensionState, setExtensionState] =
     useState<ExtensionStatus>("unknown");
-  const navigate = useNavigate();
+  const setOnboardingCompleted = useOnboardingStore((s) => s.setCompleted);
+  const febboxKey = usePreferencesStore((s) => s.febboxKey);
 
   const error = useMemo(() => {
     const data = props.data;
@@ -100,6 +107,11 @@ export function ScrapeErrorPart(props: ScrapeErrorPartProps) {
     );
   }
 
+  function handleOnboarding() {
+    setOnboardingCompleted(false);
+    window.location.reload();
+  }
+
   return (
     <ErrorLayout>
       <ErrorContainer>
@@ -118,22 +130,34 @@ export function ScrapeErrorPart(props: ScrapeErrorPartProps) {
             {t("player.scraping.notFound.homeButton")}
           </Button>
           <Button
-            onClick={() => navigate("/discover")}
-            theme="secondary"
+            onClick={() => modal.show()}
+            theme="purple"
             padding="md:px-12 p-2.5"
             className="mt-6"
           >
-            {t("player.scraping.notFound.discoverButton")}
+            {t("player.scraping.notFound.detailsButton")}
           </Button>
         </div>
-        <Button
-          onClick={() => modal.show()}
-          theme="purple"
+        {/* <Button
+          onClick={() => navigate("/discover")}
+          theme="secondary"
           padding="md:px-12 p-2.5"
           className="mt-6"
         >
-          {t("player.scraping.notFound.detailsButton")}
-        </Button>
+          {t("player.scraping.notFound.discoverButton")}
+        </Button> */}
+        {(!isExtensionActiveCached() || !febboxKey) && conf().HAS_ONBOARDING ? (
+          <div className="flex flex-col max-w-md gap-3 items-center py-3">
+            <Paragraph>{t("player.scraping.notFound.onboarding")}</Paragraph>
+            <Button
+              onClick={() => handleOnboarding()}
+              theme="purple"
+              className="w-fit"
+            >
+              {t("player.scraping.notFound.onboardingButton")}
+            </Button>
+          </div>
+        ) : null}
       </ErrorContainer>
       {error ? (
         <ErrorCardInModal

@@ -11,6 +11,7 @@ export interface BookmarkMediaItem {
   type: "show" | "movie";
   updatedAt: number;
   group?: string[];
+  favoriteEpisodes?: string[];
 }
 
 export interface BookmarkUpdateItem {
@@ -21,6 +22,7 @@ export interface BookmarkUpdateItem {
   poster?: string;
   type?: "show" | "movie";
   group?: string[];
+  favoriteEpisodes?: string[];
   action: "delete" | "add";
 }
 
@@ -31,6 +33,13 @@ export interface BookmarkStore {
   addBookmarkWithGroups(meta: PlayerMeta, groups?: string[]): void;
   removeBookmark(id: string): void;
   replaceBookmarks(items: Record<string, BookmarkMediaItem>): void;
+  toggleFavoriteEpisode(
+    showId: string,
+    episodeId: string,
+    showMeta?: { title: string; poster?: string; year?: number },
+  ): void;
+  isEpisodeFavorited(showId: string, episodeId: string): boolean;
+  getFavoriteEpisodes(showId: string): string[];
   clear(): void;
   clearUpdateQueue(): void;
   removeUpdateItem(id: string): void;
@@ -120,6 +129,62 @@ export const useBookmarkStore = create(
         set((s) => {
           s.updateQueue = [...s.updateQueue.filter((v) => v.id !== id)];
         });
+      },
+      toggleFavoriteEpisode(
+        showId: string,
+        episodeId: string,
+        showMeta?: { title: string; poster?: string; year?: number },
+      ) {
+        set((s) => {
+          if (!s.bookmarks[showId]) {
+            // If the show is not bookmarked, create a basic bookmark first
+            // We'll need to get the show metadata from the player store or pass it in
+            s.bookmarks[showId] = {
+              title: showMeta?.title || "Unknown Show",
+              type: "show",
+              poster: showMeta?.poster,
+              year: showMeta?.year,
+              updatedAt: Date.now(),
+              favoriteEpisodes: [],
+            };
+          }
+
+          const bookmark = s.bookmarks[showId];
+          if (!bookmark.favoriteEpisodes) {
+            bookmark.favoriteEpisodes = [];
+          }
+
+          const episodeIndex = bookmark.favoriteEpisodes.indexOf(episodeId);
+          if (episodeIndex > -1) {
+            // Remove from favorites
+            bookmark.favoriteEpisodes.splice(episodeIndex, 1);
+          } else {
+            // Add to favorites
+            bookmark.favoriteEpisodes.push(episodeId);
+          }
+
+          bookmark.updatedAt = Date.now();
+
+          // Add to update queue for syncing
+          updateId += 1;
+          s.updateQueue.push({
+            id: updateId.toString(),
+            action: "add",
+            tmdbId: showId,
+            favoriteEpisodes: bookmark.favoriteEpisodes,
+          });
+        });
+      },
+      isEpisodeFavorited(showId: string, episodeId: string): boolean {
+        const state = useBookmarkStore.getState();
+        const bookmark = state.bookmarks[showId];
+        const isFavorited =
+          bookmark?.favoriteEpisodes?.includes(episodeId) ?? false;
+        return isFavorited;
+      },
+      getFavoriteEpisodes(showId: string): string[] {
+        const bookmark = useBookmarkStore.getState().bookmarks[showId];
+        return bookmark?.favoriteEpisodes ?? [];
       },
     })),
     {

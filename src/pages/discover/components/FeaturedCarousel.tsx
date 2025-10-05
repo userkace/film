@@ -171,7 +171,13 @@ export function FeaturedCarousel({
       if (!hasExtension.current || !currentMedia?.external_ids?.imdb_id) return;
 
       try {
-        const imdbData = await scrapeIMDb(currentMedia.external_ids.imdb_id);
+        const imdbData = await scrapeIMDb(
+          currentMedia.external_ids.imdb_id,
+          undefined,
+          undefined,
+          undefined,
+          currentMedia.type,
+        );
         // Only update if we have both rating and votes as non-null numbers
         if (
           typeof imdbData.imdb_rating === "number" &&

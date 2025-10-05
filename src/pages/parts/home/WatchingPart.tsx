@@ -1,5 +1,5 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { EditButton } from "@/components/buttons/EditButton";
@@ -10,8 +10,6 @@ import { WatchedMediaCard } from "@/components/media/WatchedMediaCard";
 import { useProgressStore } from "@/stores/progress";
 import { shouldShowProgress } from "@/stores/progress/utils";
 import { MediaItem } from "@/utils/mediaTypes";
-
-const LONG_PRESS_DURATION = 700; // 0.7 seconds
 
 export function WatchingPart({
   onItemsChange,
@@ -25,8 +23,6 @@ export function WatchingPart({
   const removeItem = useProgressStore((s) => s.removeItem);
   const [editing, setEditing] = useState(false);
   const [gridRef] = useAutoAnimate<HTMLDivElement>();
-
-  const pressTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const sortedProgressItems = useMemo(() => {
     const output: MediaItem[] = [];
@@ -47,41 +43,6 @@ export function WatchingPart({
     onItemsChange(sortedProgressItems.length > 0);
   }, [sortedProgressItems, onItemsChange]);
 
-  const handleLongPress = () => {
-    // Find the button by ID and simulate a click
-    const editButton = document.getElementById("edit-button-watching");
-    if (editButton) {
-      (editButton as HTMLButtonElement).click();
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent default touch action
-    pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-  };
-
-  const handleTouchEnd = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only trigger long press for left mouse button (button 0)
-    if (e.button === 0) {
-      e.preventDefault(); // Prevent default mouse action
-      pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
   if (sortedProgressItems.length === 0) return null;
 
   return (
@@ -100,14 +61,9 @@ export function WatchingPart({
         {sortedProgressItems.map((v) => (
           <div
             key={v.id}
-            style={{ userSelect: "none" }}
             onContextMenu={(e: React.MouseEvent<HTMLDivElement>) =>
               e.preventDefault()
             }
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
           >
             <WatchedMediaCard
               media={v}

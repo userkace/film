@@ -2,7 +2,12 @@ import { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { TmdbMovie, getLetterboxdLists } from "@/backend/metadata/letterboxd";
+import {
+  CuratedMovieList,
+  getCuratedMovieLists,
+  getMovieDetailsForIds,
+} from "@/backend/metadata/traktApi";
+import { TMDBMovieData } from "@/backend/metadata/types/tmdb";
 import { Icon, Icons } from "@/components/Icon";
 import { WideContainer } from "@/components/layout/WideContainer";
 import { MediaCard } from "@/components/media/MediaCard";
@@ -19,29 +24,44 @@ import { MediaCarousel } from "./components/MediaCarousel";
 
 export function DiscoverMore() {
   const [detailsData, setDetailsData] = useState<any>();
-  const [letterboxdLists, setLetterboxdLists] = useState<any[]>([]);
+  const [curatedLists, setCuratedLists] = useState<CuratedMovieList[]>([]);
+  const [movieDetails, setMovieDetails] = useState<{
+    [listSlug: string]: TMDBMovieData[];
+  }>({});
   const detailsModal = useModal("discover-details");
   const carouselRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const navigate = useNavigate();
   const { lastView } = useDiscoverStore();
   const { isMobile } = useIsMobile();
 
-  // Track overflow states for Letterboxd lists
-  const [overflowStates, setOverflowStates] = useState<{
-    [key: string]: boolean;
-  }>({});
-
   useEffect(() => {
-    const fetchLetterboxdLists = async () => {
+    const fetchCuratedLists = async () => {
       try {
-        const response = await getLetterboxdLists();
-        setLetterboxdLists(response.lists);
+        const lists = await getCuratedMovieLists();
+        setCuratedLists(lists);
+
+        // Fetch movie details for each list
+        const details: { [listSlug: string]: TMDBMovieData[] } = {};
+        for (const list of lists) {
+          try {
+            const movies = await getMovieDetailsForIds(list.tmdbIds, 50);
+            if (movies.length > 0) {
+              details[list.listSlug] = movies;
+            }
+          } catch (error) {
+            console.error(
+              `Failed to fetch movies for list ${list.listSlug}:`,
+              error,
+            );
+          }
+        }
+        setMovieDetails(details);
       } catch (error) {
-        console.error("Failed to fetch Letterboxd lists:", error);
+        console.error("Failed to fetch curated lists:", error);
       }
     };
 
-    fetchLetterboxdLists();
+    fetchCuratedLists();
   }, []);
 
   const handleShowDetails = async (media: MediaItem) => {
@@ -67,41 +87,6 @@ export function DiscoverMore() {
       e.preventDefault();
     }
   };
-
-  // Function to check overflow for a carousel
-  const checkOverflow = (element: HTMLDivElement | null, key: string) => {
-    if (!element) {
-      setOverflowStates((prev) => ({ ...prev, [key]: false }));
-      return;
-    }
-
-    const hasOverflow = element.scrollWidth > element.clientWidth;
-    setOverflowStates((prev) => ({ ...prev, [key]: hasOverflow }));
-  };
-
-  // Function to set carousel ref and check overflow
-  const setCarouselRef = (element: HTMLDivElement | null, key: string) => {
-    carouselRefs.current[key] = element;
-
-    // Check overflow after a short delay to ensure content is rendered
-    setTimeout(() => checkOverflow(element, key), 100);
-  };
-
-  // Effect to recheck overflow on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      // Recheck overflow for all carousels
-      Object.keys(carouselRefs.current).forEach((key) => {
-        const element = carouselRefs.current[key];
-        if (element) {
-          checkOverflow(element, key);
-        }
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <SubPageLayout>
@@ -143,9 +128,9 @@ export function DiscoverMore() {
           />
         </div>
 
-        {/* Letterboxd Lists */}
-        {letterboxdLists.map((list) => (
-          <div key={list.listUrl}>
+        {/* Curated Movie Lists */}
+        {curatedLists.map((list) => (
+          <div key={list.listSlug}>
             <div className="flex items-center justify-between ml-2 md:ml-8 mt-2">
               <div className="flex flex-col">
                 <div className="flex items-center gap-4">
@@ -158,11 +143,13 @@ export function DiscoverMore() {
             <div className="relative overflow-hidden carousel-container md:pb-4">
               <div
                 className="grid grid-flow-col auto-cols-max gap-4 pt-0 overflow-x-scroll scrollbar-none rounded-xl overflow-y-hidden md:pl-8 md:pr-8"
-                ref={(el) => setCarouselRef(el, list.listUrl)}
+                ref={(el) => {
+                  carouselRefs.current[list.listSlug] = el;
+                }}
                 onWheel={handleWheel}
               >
                 <div className="md:w-12" />
-                {list.tmdbMovies.map((movie: TmdbMovie) => (
+                {movieDetails[list.listSlug]?.map((movie: TMDBMovieData) => (
                   <div
                     key={movie.id}
                     className="relative mt-4 group cursor-pointer user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
@@ -188,9 +175,8 @@ export function DiscoverMore() {
               </div>
               {!isMobile && (
                 <CarouselNavButtons
-                  categorySlug={list.listUrl}
+                  categorySlug={list.listSlug}
                   carouselRefs={carouselRefs}
-                  hasOverflow={overflowStates[list.listUrl]}
                 />
               )}
             </div>

@@ -21,9 +21,12 @@ export interface SettingsInput {
   forceCompactEpisodeView?: boolean;
   sourceOrder?: string[];
   enableSourceOrder?: boolean;
+  embedOrder?: string[];
+  enableEmbedOrder?: boolean;
   proxyTmdb?: boolean;
   enableLowPerformanceMode?: boolean;
   enableNativeSubtitles?: boolean;
+  enableHoldToBoost?: boolean;
 }
 
 export interface SettingsResponse {
@@ -43,9 +46,12 @@ export interface SettingsResponse {
   enableCarouselView?: boolean;
   sourceOrder?: string[];
   enableSourceOrder?: boolean;
+  embedOrder?: string[];
+  enableEmbedOrder?: boolean;
   proxyTmdb?: boolean;
   enableLowPerformanceMode?: boolean;
   enableNativeSubtitles?: boolean;
+  enableHoldToBoost?: boolean;
 }
 
 export function updateSettings(

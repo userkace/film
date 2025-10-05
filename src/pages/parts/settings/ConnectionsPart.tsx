@@ -30,6 +30,8 @@ import { conf } from "@/setup/config";
 import { useAuthStore } from "@/stores/auth";
 import { usePreferencesStore } from "@/stores/preferences";
 
+import { RegionSelectorPart } from "./RegionSelectorPart";
+
 interface ProxyEditProps {
   proxyUrls: string[] | null;
   setProxyUrls: Dispatch<SetStateAction<string[] | null>>;
@@ -315,7 +317,7 @@ function FebboxKeyEdit({ febboxKey, setFebboxKey }: FebboxKeyProps) {
                           src="https://player.vimeo.com/video/1059834885?h=c3ab398d42&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                           className="absolute top-0 left-0 w-full h-full border border-type-secondary rounded-lg bg-black"
-                          title="P-Stream FED API Setup Tutorial"
+                          title="film.kace.dev FED API Setup Tutorial"
                         />
                       </div>
                       <br />
@@ -349,8 +351,8 @@ function FebboxKeyEdit({ febboxKey, setFebboxKey }: FebboxKeyProps) {
               <p className="text-white font-bold">
                 {t("settings.connections.febbox.tokenLabel", "Token")}
               </p>
-              <div className="flex items-center w-full">
-                <StatusCircle type={statusMap[status]} className="mx-2 mr-4" />
+              <div className="flex items-center w-full gap-4">
+                <StatusCircle type={statusMap[status]} className="mx-2" />
                 <AuthInputBox
                   onChange={(newToken) => {
                     setFebboxKey(newToken);
@@ -360,6 +362,7 @@ function FebboxKeyEdit({ febboxKey, setFebboxKey }: FebboxKeyProps) {
                   passwordToggleable
                   className="flex-grow"
                 />
+                <RegionSelectorPart />
               </div>
               {status === "error" && (
                 <p className="text-type-danger mt-4">

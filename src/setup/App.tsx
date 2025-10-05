@@ -12,6 +12,7 @@ import {
 import { convertLegacyUrl, isLegacyUrl } from "@/backend/metadata/getmeta";
 import { generateQuickSearchMediaUrl } from "@/backend/metadata/tmdb";
 import { NotificationModal } from "@/components/overlays/notificationsModal";
+import { useGlobalKeyboardEvents } from "@/hooks/useGlobalKeyboardEvents";
 import { useOnlineListener } from "@/hooks/usePing";
 import { AboutPage } from "@/pages/About";
 import { AdminPage } from "@/pages/admin/AdminPage";
@@ -100,6 +101,7 @@ export const maintenanceTime = "March 31th 11:00 PM - 5:00 AM EST";
 function App() {
   useHistoryListener();
   useOnlineListener();
+  useGlobalKeyboardEvents();
   const maintenance = false; // Shows maintance page
   const [showDowntime, setShowDowntime] = useState(maintenance);
 

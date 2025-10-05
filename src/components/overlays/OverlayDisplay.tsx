@@ -140,7 +140,7 @@ export function OverlayPortal(props: {
                   clickOutsideDeactivates: true,
                   fallbackFocus: () => document.body,
                   returnFocusOnDeactivate: true,
-                  escapeDeactivates: true,
+                  escapeDeactivates: false, // Let our keyboard handler manage escape
                   preventScroll: true,
                   // Disable the problematic check that causes the matches.call error
                   checkCanFocusTrap: () => Promise.resolve(),

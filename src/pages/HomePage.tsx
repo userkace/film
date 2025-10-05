@@ -73,6 +73,9 @@ export function HomePage() {
   const enableLowPerformanceMode = usePreferencesStore(
     (state) => state.enableLowPerformanceMode,
   );
+  const homeSectionOrder = usePreferencesStore(
+    (state) => state.homeSectionOrder,
+  );
 
   const handleClick = (path: To) => {
     window.scrollTo(0, 0);
@@ -85,6 +88,56 @@ export function HomePage() {
       type: media.type === "movie" ? "movie" : "show",
     });
     showModal("details");
+  };
+
+  const renderHomeSections = () => {
+    const sections = homeSectionOrder.map((section) => {
+      switch (section) {
+        case "watching":
+          return enableCarouselView ? (
+            <WatchingCarousel
+              key="watching"
+              carouselRefs={carouselRefs}
+              onShowDetails={handleShowDetails}
+            />
+          ) : (
+            <WatchingPart
+              key="watching"
+              onItemsChange={setShowWatching}
+              onShowDetails={handleShowDetails}
+            />
+          );
+        case "bookmarks":
+          return enableCarouselView ? (
+            <BookmarksCarousel
+              key="bookmarks"
+              carouselRefs={carouselRefs}
+              onShowDetails={handleShowDetails}
+            />
+          ) : (
+            <BookmarksPart
+              key="bookmarks"
+              onItemsChange={setShowBookmarks}
+              onShowDetails={handleShowDetails}
+            />
+          );
+        default:
+          return null;
+      }
+    });
+
+    if (enableCarouselView) {
+      return (
+        <WideContainer ultraWide classNames="!px-3 md:!px-9">
+          {sections}
+        </WideContainer>
+      );
+    }
+    return (
+      <WideContainer>
+        <div className="flex flex-col gap-8">{sections}</div>
+      </WideContainer>
+    );
   };
 
   return (
@@ -141,32 +194,7 @@ export function HomePage() {
       )}
 
       {/* User Content */}
-      {!search &&
-        (enableCarouselView ? (
-          <WideContainer ultraWide classNames="!px-3 md:!px-9">
-            <WatchingCarousel
-              carouselRefs={carouselRefs}
-              onShowDetails={handleShowDetails}
-            />
-            <BookmarksCarousel
-              carouselRefs={carouselRefs}
-              onShowDetails={handleShowDetails}
-            />
-          </WideContainer>
-        ) : (
-          <WideContainer>
-            <div className="flex flex-col gap-8">
-              <WatchingPart
-                onItemsChange={setShowWatching}
-                onShowDetails={handleShowDetails}
-              />
-              <BookmarksPart
-                onItemsChange={setShowBookmarks}
-                onShowDetails={handleShowDetails}
-              />
-            </div>
-          </WideContainer>
-        ))}
+      {!search && renderHomeSections()}
 
       {/* Under user content */}
       <WideContainer ultraWide classNames="!px-3 md:!px-9">

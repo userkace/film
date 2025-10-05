@@ -151,6 +151,11 @@ export function SettingsPage() {
   const sourceOrder = usePreferencesStore((s) => s.sourceOrder);
   const setSourceOrder = usePreferencesStore((s) => s.setSourceOrder);
 
+  const enableSourceOrder = usePreferencesStore((s) => s.enableSourceOrder);
+  const setEnableSourceOrder = usePreferencesStore(
+    (s) => s.setEnableSourceOrder,
+  );
+
   const enableDiscover = usePreferencesStore((s) => s.enableDiscover);
   const setEnableDiscover = usePreferencesStore((s) => s.setEnableDiscover);
 
@@ -164,11 +169,6 @@ export function SettingsPage() {
 
   const enableImageLogos = usePreferencesStore((s) => s.enableImageLogos);
   const setEnableImageLogos = usePreferencesStore((s) => s.setEnableImageLogos);
-
-  const enableSourceOrder = usePreferencesStore((s) => s.enableSourceOrder);
-  const setEnableSourceOrder = usePreferencesStore(
-    (s) => s.setEnableSourceOrder,
-  );
 
   const proxyTmdb = usePreferencesStore((s) => s.proxyTmdb);
   const setProxyTmdb = usePreferencesStore((s) => s.setProxyTmdb);
@@ -191,6 +191,14 @@ export function SettingsPage() {
   const setEnableLowPerformanceMode = usePreferencesStore(
     (s) => s.setEnableLowPerformanceMode,
   );
+
+  const enableHoldToBoost = usePreferencesStore((s) => s.enableHoldToBoost);
+  const setEnableHoldToBoost = usePreferencesStore(
+    (s) => s.setEnableHoldToBoost,
+  );
+
+  const homeSectionOrder = usePreferencesStore((s) => s.homeSectionOrder);
+  const setHomeSectionOrder = usePreferencesStore((s) => s.setHomeSectionOrder);
 
   const account = useAuthStore((s) => s.account);
   const updateProfile = useAuthStore((s) => s.setAccountProfile);
@@ -243,6 +251,8 @@ export function SettingsPage() {
     enableCarouselView,
     forceCompactEpisodeView,
     enableLowPerformanceMode,
+    enableHoldToBoost,
+    homeSectionOrder,
   );
 
   const availableSources = useMemo(() => {
@@ -300,7 +310,8 @@ export function SettingsPage() {
         state.proxyTmdb.changed ||
         state.enableCarouselView.changed ||
         state.forceCompactEpisodeView.changed ||
-        state.enableLowPerformanceMode.changed
+        state.enableLowPerformanceMode.changed ||
+        state.enableHoldToBoost.changed
       ) {
         await updateSettings(backendUrl, account, {
           applicationLanguage: state.appLanguage.state,
@@ -321,6 +332,7 @@ export function SettingsPage() {
           enableCarouselView: state.enableCarouselView.state,
           forceCompactEpisodeView: state.forceCompactEpisodeView.state,
           enableLowPerformanceMode: state.enableLowPerformanceMode.state,
+          enableHoldToBoost: state.enableHoldToBoost.state,
         });
       }
       if (state.deviceName.changed) {
@@ -348,6 +360,7 @@ export function SettingsPage() {
     setEnableDetailsModal(state.enableDetailsModal.state);
     setEnableImageLogos(state.enableImageLogos.state);
     setSourceOrder(state.sourceOrder.state);
+    setEnableSourceOrder(state.enableSourceOrder.state);
     setAppLanguage(state.appLanguage.state);
     setTheme(state.theme.state);
     setSubStyling(state.subtitleStyling.state);
@@ -359,6 +372,8 @@ export function SettingsPage() {
     setEnableCarouselView(state.enableCarouselView.state);
     setForceCompactEpisodeView(state.forceCompactEpisodeView.state);
     setEnableLowPerformanceMode(state.enableLowPerformanceMode.state);
+    setEnableHoldToBoost(state.enableHoldToBoost.state);
+    setHomeSectionOrder(state.homeSectionOrder.state);
 
     if (state.profile.state) {
       updateProfile(state.profile.state);
@@ -389,6 +404,7 @@ export function SettingsPage() {
     setEnableDetailsModal,
     setEnableImageLogos,
     setSourceOrder,
+    setEnableSourceOrder,
     setAppLanguage,
     setTheme,
     setSubStyling,
@@ -397,11 +413,12 @@ export function SettingsPage() {
     updateProfile,
     logout,
     setBackendUrl,
-    setEnableSourceOrder,
     setProxyTmdb,
     setEnableCarouselView,
     setForceCompactEpisodeView,
     setEnableLowPerformanceMode,
+    setEnableHoldToBoost,
+    setHomeSectionOrder,
   ]);
   return (
     <SubPageLayout>
@@ -452,6 +469,8 @@ export function SettingsPage() {
             setenableSourceOrder={state.enableSourceOrder.set}
             enableLowPerformanceMode={state.enableLowPerformanceMode.state}
             setEnableLowPerformanceMode={state.enableLowPerformanceMode.set}
+            enableHoldToBoost={state.enableHoldToBoost.state}
+            setEnableHoldToBoost={state.enableHoldToBoost.set}
           />
         </div>
         <div id="settings-appearance" className="mt-28">
@@ -471,6 +490,8 @@ export function SettingsPage() {
             setEnableCarouselView={state.enableCarouselView.set}
             forceCompactEpisodeView={state.forceCompactEpisodeView.state}
             setForceCompactEpisodeView={state.forceCompactEpisodeView.set}
+            homeSectionOrder={state.homeSectionOrder.state}
+            setHomeSectionOrder={state.homeSectionOrder.set}
             enableLowPerformanceMode={state.enableLowPerformanceMode.state}
           />
         </div>

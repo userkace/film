@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -39,12 +39,11 @@ interface BookmarksCarouselProps {
   onShowDetails?: (media: MediaItem) => void;
 }
 
-const LONG_PRESS_DURATION = 500; // 0.5 seconds
 const MAX_ITEMS_PER_SECTION = 20; // Limit items per section
 
 function MediaCardSkeleton() {
   return (
-    <div className="relative mt-4 group cursor-default user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
+    <div className="relative mt-4 group cursor-default rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
       <div className="animate-pulse">
         <div className="w-full aspect-[2/3] bg-mediaCard-hoverBackground rounded-lg" />
         <div className="mt-2 h-4 bg-mediaCard-hoverBackground rounded w-3/4" />
@@ -57,7 +56,7 @@ function MoreBookmarksCard() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative mt-4 group cursor-pointer user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
+    <div className="relative mt-4 group cursor-pointer rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
       <Link to="/bookmarks" className="block">
         <Flare.Base className="group -m-[0.705em] h-[20rem] hover:scale-95 transition-all rounded-xl bg-background-main duration-300 hover:bg-mediaCard-hoverBackground tabbable">
           <Flare.Light
@@ -92,20 +91,8 @@ export function BookmarksCarousel({
   let isScrolling = false;
   const [editing, setEditing] = useState(false);
   const removeBookmark = useBookmarkStore((s) => s.removeBookmark);
-  const pressTimerRef = useRef<NodeJS.Timeout | null>(null);
   const backendUrl = useBackendUrl();
   const account = useAuthStore((s) => s.account);
-
-  // Create refs for overflow detection
-  const groupedCarouselRefs = useRef<{
-    [key: string]: HTMLDivElement | null;
-  }>({});
-  const regularCarouselRef = useRef<HTMLDivElement | null>(null);
-
-  // Track overflow state for each section
-  const [overflowStates, setOverflowStates] = useState<{
-    [key: string]: boolean;
-  }>({});
 
   // Group order editing state
   const groupOrder = useGroupOrderStore((s) => s.groupOrder);
@@ -308,41 +295,6 @@ export function BookmarksCarousel({
     }
   };
 
-  const handleLongPress = () => {
-    // Find the button by ID and simulate a click
-    const editButton = document.getElementById("edit-button-bookmark");
-    if (editButton) {
-      (editButton as HTMLButtonElement).click();
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent default touch action
-    pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-  };
-
-  const handleTouchEnd = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only trigger long press for left mouse button (button 0)
-    if (e.button === 0) {
-      e.preventDefault(); // Prevent default mouse action
-      pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
   const handleEditGroupOrder = () => {
     // Initialize with current order or default order
     if (groupOrder.length === 0) {
@@ -375,49 +327,6 @@ export function BookmarksCarousel({
         .saveGroupOrderToBackend(backendUrl, account);
     }
   };
-
-  // Function to check overflow for a carousel
-  const checkOverflow = (element: HTMLDivElement | null, key: string) => {
-    if (!element) {
-      setOverflowStates((prev) => ({ ...prev, [key]: false }));
-      return;
-    }
-
-    const hasOverflow = element.scrollWidth > element.clientWidth;
-    setOverflowStates((prev) => ({ ...prev, [key]: hasOverflow }));
-  };
-
-  // Function to set carousel ref and check overflow
-  const setCarouselRef = (element: HTMLDivElement | null, key: string) => {
-    // Set the ref for the main carousel refs
-    carouselRefs.current[key] = element;
-
-    // Set the ref for overflow detection
-    if (key === "bookmarks") {
-      regularCarouselRef.current = element;
-    } else {
-      groupedCarouselRefs.current[key] = element;
-    }
-
-    // Check overflow after a short delay to ensure content is rendered
-    setTimeout(() => checkOverflow(element, key), 100);
-  };
-
-  // Effect to recheck overflow on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      // Recheck overflow for all carousels
-      Object.keys(carouselRefs.current).forEach((key) => {
-        const element = carouselRefs.current[key];
-        if (element) {
-          checkOverflow(element, key);
-        }
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [carouselRefs]);
 
   const categorySlug = "bookmarks";
   const SKELETON_COUNT = 10;
@@ -462,7 +371,9 @@ export function BookmarksCarousel({
                 <div
                   id={`carousel-${section.group}`}
                   className="grid grid-flow-col auto-cols-max gap-4 pt-0 overflow-x-scroll scrollbar-none rounded-xl overflow-y-hidden md:pl-8 md:pr-8"
-                  ref={(el) => setCarouselRef(el, section.group || "bookmarks")}
+                  ref={(el) => {
+                    carouselRefs.current[section.group || "bookmarks"] = el;
+                  }}
                   onWheel={handleWheel}
                 >
                   <div className="md:w-12" />
@@ -472,15 +383,10 @@ export function BookmarksCarousel({
                     .map((media) => (
                       <div
                         key={media.id}
-                        style={{ userSelect: "none" }}
                         onContextMenu={(e: React.MouseEvent<HTMLDivElement>) =>
                           e.preventDefault()
                         }
-                        onTouchStart={handleTouchStart}
-                        onTouchEnd={handleTouchEnd}
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        className="relative mt-4 group cursor-pointer user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
+                        className="relative mt-4 group cursor-pointer rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
                       >
                         <WatchedMediaCard
                           key={media.id}
@@ -503,7 +409,6 @@ export function BookmarksCarousel({
                   <CarouselNavButtons
                     categorySlug={section.group || "bookmarks"}
                     carouselRefs={carouselRefs}
-                    hasOverflow={overflowStates[section.group || "bookmarks"]}
                   />
                 )}
               </div>
@@ -538,7 +443,9 @@ export function BookmarksCarousel({
               <div
                 id={`carousel-${categorySlug}`}
                 className="grid grid-flow-col auto-cols-max gap-4 pt-0 overflow-x-scroll scrollbar-none rounded-xl overflow-y-hidden md:pl-8 md:pr-8"
-                ref={(el) => setCarouselRef(el, categorySlug)}
+                ref={(el) => {
+                  carouselRefs.current[categorySlug] = el;
+                }}
                 onWheel={handleWheel}
               >
                 <div className="md:w-12" />
@@ -549,15 +456,10 @@ export function BookmarksCarousel({
                       .map((media) => (
                         <div
                           key={media.id}
-                          style={{ userSelect: "none" }}
                           onContextMenu={(
                             e: React.MouseEvent<HTMLDivElement>,
                           ) => e.preventDefault()}
-                          onTouchStart={handleTouchStart}
-                          onTouchEnd={handleTouchEnd}
-                          onMouseDown={handleMouseDown}
-                          onMouseUp={handleMouseUp}
-                          className="relative mt-4 group cursor-pointer user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
+                          className="relative mt-4 group cursor-pointer rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
                         >
                           <WatchedMediaCard
                             key={media.id}
@@ -585,7 +487,6 @@ export function BookmarksCarousel({
                 <CarouselNavButtons
                   categorySlug={categorySlug}
                   carouselRefs={carouselRefs}
-                  hasOverflow={overflowStates[categorySlug]}
                 />
               )}
             </div>

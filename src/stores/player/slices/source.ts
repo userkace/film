@@ -12,6 +12,7 @@ import { ValuesOf } from "@/utils/typeguard";
 
 export const playerStatus = {
   IDLE: "idle",
+  RESUME: "resume",
   SCRAPING: "scraping",
   PLAYING: "playing",
   SCRAPE_NOT_FOUND: "scrapeNotFound",
@@ -76,6 +77,7 @@ export interface SourceSlice {
   status: PlayerStatus;
   source: SourceSliceSource | null;
   sourceId: string | null;
+  embedId: string | null;
   qualities: SourceQuality[];
   audioTracks: AudioTrack[];
   currentQuality: SourceQuality | null;
@@ -96,6 +98,7 @@ export interface SourceSlice {
   setMeta(meta: PlayerMeta, status?: PlayerStatus): void;
   setCaption(caption: Caption | null): void;
   setSourceId(id: string | null): void;
+  setEmbedId(id: string | null): void;
   enableAutomaticQuality(): void;
   redisplaySource(startAt: number): void;
   setCaptionAsTrack(asTrack: boolean): void;
@@ -128,6 +131,7 @@ export function metaToScrapeMedia(meta: PlayerMeta): ScrapeMedia {
 export const createSourceSlice: MakeSlice<SourceSlice> = (set, get) => ({
   source: null,
   sourceId: null,
+  embedId: null,
   qualities: [],
   audioTracks: [],
   captionList: [],
@@ -143,6 +147,11 @@ export const createSourceSlice: MakeSlice<SourceSlice> = (set, get) => ({
     set((s) => {
       s.status = playerStatus.PLAYING;
       s.sourceId = id;
+    });
+  },
+  setEmbedId(id) {
+    set((s) => {
+      s.embedId = id;
     });
   },
   setStatus(status: PlayerStatus) {

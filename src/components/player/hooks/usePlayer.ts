@@ -54,6 +54,7 @@ export function usePlayer() {
     status,
     shouldStartFromBeginning,
     setShouldStartFromBeginning,
+    setStatus,
     setMeta(m: PlayerMeta, newStatus?: PlayerStatus) {
       setMeta(m, newStatus);
     },

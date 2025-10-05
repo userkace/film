@@ -58,8 +58,7 @@ function testProxy(url: string) {
 }
 
 export async function testFebboxKey(febboxKey: string | null): Promise<Status> {
-  const BASE_URL = "https://febbox.andresdev.org";
-  const febboxApiTestUrl = `${BASE_URL}/movie/950396`;
+  const febboxApiTestUrl = `https://fed-api.pstream.mov/movie/tt13654226`;
 
   if (!febboxKey) {
     return "unset";
@@ -95,7 +94,7 @@ export async function testFebboxKey(febboxKey: string | null): Promise<Status> {
       }
 
       const data = (await response.json()) as any;
-      if (!data || !data.sources) {
+      if (!data || !data.streams) {
         console.error("Invalid response format from Febbox API:", data);
         attempts += 1;
         if (attempts === maxAttempts) {
@@ -107,14 +106,12 @@ export async function testFebboxKey(febboxKey: string | null): Promise<Status> {
         continue;
       }
 
-      const isVIPLink =
-        Array.isArray(data.sources) &&
-        data.sources.some((source: any) => {
-          if (typeof source?.file === "string") {
-            return source.file.toLowerCase().includes("vip");
-          }
-          return false;
-        });
+      const isVIPLink = Object.values(data.streams).some((link: any) => {
+        if (typeof link === "string") {
+          return link.toLowerCase().includes("vip");
+        }
+        return false;
+      });
 
       if (isVIPLink) {
         console.log("VIP link found, returning success");

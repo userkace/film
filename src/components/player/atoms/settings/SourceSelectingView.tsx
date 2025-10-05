@@ -29,6 +29,7 @@ export function EmbedOption(props: {
   routerId: string;
 }) {
   const { t } = useTranslation();
+  const currentEmbedId = usePlayerStore((s) => s.embedId);
   const unknownEmbedName = t("player.menus.sources.unknownOption");
 
   const embedName = useMemo(() => {
@@ -45,7 +46,12 @@ export function EmbedOption(props: {
   );
 
   return (
-    <SelectableLink loading={loading} error={errored} onClick={run}>
+    <SelectableLink
+      loading={loading}
+      error={errored}
+      onClick={run}
+      selected={props.embedId === currentEmbedId}
+    >
       <span className="flex flex-col">
         <span>{embedName}</span>
       </span>

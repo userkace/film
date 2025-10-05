@@ -106,16 +106,18 @@ export function DetailsContent({ data, minimal = false }: DetailsContentProps) {
           undefined,
           undefined,
           formattedLanguage,
+          data.type,
         );
         // Transform the data to match the expected format
         if (
-          typeof imdbMetadata.imdb_rating === "number" &&
-          typeof imdbMetadata.votes === "number"
+          (typeof imdbMetadata.imdb_rating === "number" &&
+            typeof imdbMetadata.votes === "number") ||
+          imdbMetadata.trailer_url
         ) {
           setImdbData({
             rating: imdbMetadata.imdb_rating,
             votes: imdbMetadata.votes,
-            trailer_url: imdbMetadata.trailer_url || null,
+            trailer_url: imdbMetadata.trailer_url,
           });
         } else {
           setImdbData(null);

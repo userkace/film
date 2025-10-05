@@ -1,4 +1,6 @@
+import { getMediaDetails } from "./tmdb";
 import { MWMediaType } from "./types/mw";
+import { TMDBContentTypes, TMDBMovieData } from "./types/tmdb";
 
 export interface TraktLatestResponse {
   tmdb_ids: number[];
@@ -38,6 +40,13 @@ export interface TraktDiscoverResponse {
 export interface TraktNetworkResponse {
   type: string;
   platforms: string[];
+  count: number;
+}
+
+export interface CuratedMovieList {
+  listName: string;
+  listSlug: string;
+  tmdbIds: number[];
   count: number;
 }
 
@@ -115,6 +124,115 @@ export const getDiscoverContent = () =>
 // Network content
 export const getNetworkContent = (tmdbId: string) =>
   fetchFromTrakt<TraktNetworkResponse>(`/network/${tmdbId}`);
+
+// Curated movie lists (replacing Letterboxd functionality)
+export const getNarrativeMovies = () => fetchFromTrakt("/narrative");
+export const getTopMovies = () => fetchFromTrakt("/top");
+export const getLifetimeMovies = () => fetchFromTrakt("/lifetime");
+export const getNeverHeardMovies = () => fetchFromTrakt("/never");
+export const getLGBTQContent = () => fetchFromTrakt("/LGBTQ");
+export const getMindfuckMovies = () => fetchFromTrakt("/mindfuck");
+export const getTrueStoryMovies = () => fetchFromTrakt("/truestory");
+export const getGreatestTVShows = () => fetchFromTrakt("/greatesttv");
+
+// Get all curated movie lists
+export const getCuratedMovieLists = async (): Promise<CuratedMovieList[]> => {
+  const listConfigs = [
+    {
+      name: "Letterboxd Top 250 Narrative Feature Films",
+      slug: "narrative",
+      endpoint: "/narrative",
+    },
+    {
+      name: "1001 Greatest Movies of All Time",
+      slug: "top",
+      endpoint: "/top",
+    },
+    {
+      name: "1001 Movies You Must See Before You Die",
+      slug: "lifetime",
+      endpoint: "/lifetime",
+    },
+    {
+      name: "Great Movies You May Have Never Heard Of",
+      slug: "never",
+      endpoint: "/never",
+    },
+    {
+      name: "LGBT Movies/Shows",
+      slug: "LGBTQ",
+      endpoint: "/LGBTQ",
+    },
+    {
+      name: "Best Mindfuck Movies",
+      slug: "mindfuck",
+      endpoint: "/mindfuck",
+    },
+    {
+      name: "Based on a True Story Movies",
+      slug: "truestory",
+      endpoint: "/truestory",
+    },
+    {
+      name: "Rolling Stone's 100 Greatest TV Shows",
+      slug: "greatesttv",
+      endpoint: "/greatesttv",
+    },
+  ];
+
+  const lists: CuratedMovieList[] = [];
+
+  for (const config of listConfigs) {
+    try {
+      const response = await fetchFromTrakt(config.endpoint);
+      lists.push({
+        listName: config.name,
+        listSlug: config.slug,
+        tmdbIds: response.tmdb_ids.slice(0, 30), // Limit to first 30 items
+        count: Math.min(response.count, 30), // Update count to reflect the limit
+      });
+    } catch (error) {
+      console.error(`Failed to fetch ${config.name}:`, error);
+    }
+  }
+
+  return lists;
+};
+
+// Fetch movie details for multiple TMDB IDs
+export const getMovieDetailsForIds = async (
+  tmdbIds: number[],
+  limit: number = 50,
+): Promise<TMDBMovieData[]> => {
+  const limitedIds = tmdbIds.slice(0, limit);
+  const movieDetails: TMDBMovieData[] = [];
+
+  // Process in smaller batches to avoid overwhelming the API
+  const batchSize = 10;
+  for (let i = 0; i < limitedIds.length; i += batchSize) {
+    const batch = limitedIds.slice(i, i + batchSize);
+    const batchPromises = batch.map(async (id) => {
+      try {
+        const details = await getMediaDetails(
+          id.toString(),
+          TMDBContentTypes.MOVIE,
+        );
+        return details as TMDBMovieData;
+      } catch (error) {
+        console.error(`Failed to fetch movie details for ID ${id}:`, error);
+        return null;
+      }
+    });
+
+    const batchResults = await Promise.all(batchPromises);
+    const validResults = batchResults.filter(
+      (result): result is TMDBMovieData => result !== null,
+    );
+    movieDetails.push(...validResults);
+  }
+
+  return movieDetails;
+};
 
 // Type conversion utilities
 export function convertToMediaType(type: TraktContentType): MWMediaType {

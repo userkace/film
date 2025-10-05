@@ -169,6 +169,10 @@ export function PlayerPart(props: PlayerPartProps) {
           </Player.LeftSideControls>
           <div className="flex items-center space-x-3">
             <Player.Episodes inControl={inControl} />
+            <Player.SkipEpisodeButton
+              inControl={inControl}
+              onChange={props.onMetaChange}
+            />
             {status === playerStatus.PLAYING ? (
               <>
                 <Player.Pip />

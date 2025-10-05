@@ -67,6 +67,14 @@ export const EDITOR_PICKS_MOVIES = shuffleArray([
   { id: 18971, type: "movie" }, // Rosencrantz and Guildenstern Are Dead
   { id: 26388, type: "movie" }, // Buried
   { id: 152601, type: "movie" }, // Her
+  { id: 11886, type: "movie" }, // Robin Hood
+  { id: 1362, type: "movie" }, // The Hobbit 1977
+  { id: 578, type: "movie" }, // Jaws
+  { id: 78, type: "movie" }, // Blade Runner
+  { id: 348, type: "movie" }, // Alien
+  { id: 198184, type: "movie" }, // Chappie
+  { id: 405774, type: "movie" }, // Bird Box
+  { id: 333339, type: "movie" }, // Ready Player One
 ]);
 
 export const EDITOR_PICKS_TV_SHOWS = shuffleArray([
@@ -86,6 +94,17 @@ export const EDITOR_PICKS_TV_SHOWS = shuffleArray([
   { id: 93405, type: "show" }, // Squid Game
   { id: 87108, type: "show" }, // Chernobyl
   { id: 105248, type: "show" }, // Cyberpunk: Edgerunners
+  { id: 82738, type: "show" }, // IRODUKU: The World in Colors
+  { id: 615, type: "show" }, // Futurama
+  { id: 4625, type: "show" }, // The New Batman Adventures
+  { id: 513, type: "show" }, // Batman Beyond
+  { id: 110948, type: "show" }, // The Snoopy Show
+  { id: 110492, type: "show" }, // Peacemaker
+  { id: 125988, type: "show" }, // Silo
+  { id: 87917, type: "show" }, // For All Mankind
+  { id: 42009, type: "show" }, // Black Mirror
+  { id: 86831, type: "show" }, // Love, Death & Robots
+  { id: 261579, type: "show" }, // Secret Level
 ]);
 
 /**

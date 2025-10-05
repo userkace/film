@@ -2,11 +2,15 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export type Region =
-  | "us-east"
-  | "us-west"
-  | "south"
-  | "asia"
-  | "europe"
+  | "dallas"
+  | "portland"
+  | "new-york"
+  | "paris"
+  | "hong-kong"
+  | "kansas"
+  | "sydney"
+  | "singapore"
+  | "mumbai"
   | "unknown";
 
 interface RegionStore {
@@ -32,18 +36,22 @@ export const useRegionStore = create<RegionStore>()(
     }),
     {
       name: "__MW::region",
-      version: 4,
+      version: 8,
     },
   ),
 );
 
 // Coordinates for each proxy server region
 const regionCoordinates = [
-  { region: "us-east" as Region, lat: 40.4173, lon: -82.9071 }, // Ohio, US
-  { region: "us-west" as Region, lat: 37.7749, lon: -122.4194 }, // California, US
-  { region: "south" as Region, lat: -23.5505, lon: -46.6333 }, // São Paulo, BR
-  { region: "asia" as Region, lat: -33.8688, lon: 151.2093 }, // Sydney, Australia
-  { region: "europe" as Region, lat: 51.5074, lon: -0.1278 }, // London, UK
+  { region: "dallas" as Region, lat: 32.7767, lon: -96.797 }, // Dallas, TX, US
+  { region: "portland" as Region, lat: 45.5152, lon: -122.6784 }, // Portland, OR, US
+  { region: "new-york" as Region, lat: 40.7128, lon: -74.006 }, // New York, NY, US
+  { region: "paris" as Region, lat: 48.8566, lon: 2.3522 }, // Paris, France
+  { region: "hong-kong" as Region, lat: 22.3193, lon: 114.1694 }, // Hong Kong
+  { region: "kansas" as Region, lat: 39.0997, lon: -94.5786 }, // Kansas City, MO, US
+  { region: "sydney" as Region, lat: -33.8688, lon: 151.2093 }, // Sydney, Australia
+  { region: "singapore" as Region, lat: 1.3521, lon: 103.8198 }, // Singapore
+  { region: "mumbai" as Region, lat: 19.076, lon: 72.8777 }, // Mumbai, India
 ];
 
 // Haversine formula

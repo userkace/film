@@ -35,6 +35,7 @@ async function syncBookmarks(
           },
           tmdbId: item.tmdbId,
           group: item.group,
+          favoriteEpisodes: item.favoriteEpisodes,
         });
         continue;
       }

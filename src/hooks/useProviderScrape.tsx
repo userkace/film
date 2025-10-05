@@ -155,6 +155,8 @@ export function useScrape() {
 
   const preferredSourceOrder = usePreferencesStore((s) => s.sourceOrder);
   const enableSourceOrder = usePreferencesStore((s) => s.enableSourceOrder);
+  const preferredEmbedOrder = usePreferencesStore((s) => s.embedOrder);
+  const enableEmbedOrder = usePreferencesStore((s) => s.enableEmbedOrder);
 
   const startScraping = useCallback(
     async (media: ScrapeMedia) => {
@@ -163,7 +165,11 @@ export function useScrape() {
         startScrape();
         const baseUrlMaker = makeProviderUrl(providerApiUrl);
         const conn = await connectServerSideEvents<RunOutput | "">(
-          baseUrlMaker.scrapeAll(media),
+          baseUrlMaker.scrapeAll(
+            media,
+            enableSourceOrder ? preferredSourceOrder : undefined,
+            enableEmbedOrder ? preferredEmbedOrder : undefined,
+          ),
           ["completed", "noOutput"],
         );
         conn.on("init", initEvent);
@@ -183,6 +189,8 @@ export function useScrape() {
         media,
         // Only pass sourceOrder if enableSourceOrder is true
         sourceOrder: enableSourceOrder ? preferredSourceOrder : undefined,
+        // Only pass embedOrder if enableEmbedOrder is true
+        embedOrder: enableEmbedOrder ? preferredEmbedOrder : undefined,
         events: {
           init: initEvent,
           start: startEvent,
@@ -203,6 +211,8 @@ export function useScrape() {
       startScrape,
       preferredSourceOrder,
       enableSourceOrder,
+      preferredEmbedOrder,
+      enableEmbedOrder,
     ],
   );
 

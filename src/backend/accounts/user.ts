@@ -35,6 +35,7 @@ export interface BookmarkResponse {
     type: "show" | "movie";
   };
   group: string[];
+  favoriteEpisodes?: string[];
   updatedAt: string;
 }
 
@@ -64,6 +65,7 @@ export function bookmarkResponsesToEntries(responses: BookmarkResponse[]) {
     const item: BookmarkMediaItem = {
       ...bookmark.meta,
       group: bookmark.group.length > 0 ? bookmark.group : undefined,
+      favoriteEpisodes: bookmark.favoriteEpisodes,
       updatedAt: new Date(bookmark.updatedAt).getTime(),
     };
     return [bookmark.tmdbId, item] as const;

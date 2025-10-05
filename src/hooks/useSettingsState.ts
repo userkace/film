@@ -65,6 +65,8 @@ export function useSettingsState(
   enableCarouselView: boolean,
   forceCompactEpisodeView: boolean,
   enableLowPerformanceMode: boolean,
+  enableHoldToBoost: boolean,
+  homeSectionOrder: string[],
 ) {
   const [proxyUrlsState, setProxyUrls, resetProxyUrls, proxyUrlsChanged] =
     useDerived(proxyUrls);
@@ -174,6 +176,18 @@ export function useSettingsState(
     resetEnableLowPerformanceMode,
     enableLowPerformanceModeChanged,
   ] = useDerived(enableLowPerformanceMode);
+  const [
+    enableHoldToBoostState,
+    setEnableHoldToBoostState,
+    resetEnableHoldToBoost,
+    enableHoldToBoostChanged,
+  ] = useDerived(enableHoldToBoost);
+  const [
+    homeSectionOrderState,
+    setHomeSectionOrderState,
+    resetHomeSectionOrder,
+    homeSectionOrderChanged,
+  ] = useDerived(homeSectionOrder);
 
   function reset() {
     resetTheme();
@@ -199,6 +213,8 @@ export function useSettingsState(
     resetEnableCarouselView();
     resetForceCompactEpisodeView();
     resetEnableLowPerformanceMode();
+    resetEnableHoldToBoost();
+    resetHomeSectionOrder();
   }
 
   const changed =
@@ -223,7 +239,9 @@ export function useSettingsState(
     proxyTmdbChanged ||
     enableCarouselViewChanged ||
     forceCompactEpisodeViewChanged ||
-    enableLowPerformanceModeChanged;
+    enableLowPerformanceModeChanged ||
+    enableHoldToBoostChanged ||
+    homeSectionOrderChanged;
 
   return {
     reset,
@@ -337,6 +355,16 @@ export function useSettingsState(
       state: enableLowPerformanceModeState,
       set: setEnableLowPerformanceModeState,
       changed: enableLowPerformanceModeChanged,
+    },
+    enableHoldToBoost: {
+      state: enableHoldToBoostState,
+      set: setEnableHoldToBoostState,
+      changed: enableHoldToBoostChanged,
+    },
+    homeSectionOrder: {
+      state: homeSectionOrderState,
+      set: setHomeSectionOrderState,
+      changed: homeSectionOrderChanged,
     },
   };
 }

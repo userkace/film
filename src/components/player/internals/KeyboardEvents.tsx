@@ -5,6 +5,7 @@ import { useVolume } from "@/components/player/hooks/useVolume";
 import { useOverlayRouter } from "@/hooks/useOverlayRouter";
 import { useOverlayStack } from "@/stores/interface/overlayStack";
 import { usePlayerStore } from "@/stores/player/store";
+import { usePreferencesStore } from "@/stores/preferences";
 import { useSubtitleStore } from "@/stores/subtitles";
 import { useEmpheralVolumeStore } from "@/stores/volume";
 import { useWatchPartyStore } from "@/stores/watchParty";
@@ -26,6 +27,7 @@ export function KeyboardEvents() {
   const setShowDelayIndicator = useSubtitleStore(
     (s) => s.setShowDelayIndicator,
   );
+  const enableHoldToBoost = usePreferencesStore((s) => s.enableHoldToBoost);
 
   const [isRolling, setIsRolling] = useState(false);
   const volumeDebounce = useRef<ReturnType<typeof setTimeout> | undefined>();
@@ -69,6 +71,7 @@ export function KeyboardEvents() {
     speedIndicatorTimeoutRef,
     boostTimeoutRef,
     isPendingBoostRef,
+    enableHoldToBoost,
   });
 
   useEffect(() => {
@@ -97,6 +100,7 @@ export function KeyboardEvents() {
       speedIndicatorTimeoutRef,
       boostTimeoutRef,
       isPendingBoostRef,
+      enableHoldToBoost,
     };
   }, [
     setShowVolume,
@@ -118,6 +122,7 @@ export function KeyboardEvents() {
     isInWatchParty,
     setSpeedBoosted,
     setShowSpeedIndicator,
+    enableHoldToBoost,
   ]);
 
   useEffect(() => {
@@ -159,8 +164,12 @@ export function KeyboardEvents() {
         if (next) dataRef.current.display?.setPlaybackRate(next);
       }
 
-      // Handle spacebar press for play/pause and hold for 2x speed - disabled in watch party
-      if (k === " " && !dataRef.current.isInWatchParty) {
+      // Handle spacebar press for play/pause and hold for 2x speed - disabled in watch party or when hold to boost is disabled
+      if (
+        k === " " &&
+        !dataRef.current.isInWatchParty &&
+        dataRef.current.enableHoldToBoost
+      ) {
         // Skip if a button is targeted
         if (
           evt.target &&
@@ -216,8 +225,11 @@ export function KeyboardEvents() {
         }, 300); // 300ms delay before boost takes effect
       }
 
-      // Handle spacebar press for play/pause only in watch party mode
-      if (k === " " && dataRef.current.isInWatchParty) {
+      // Handle spacebar press for simple play/pause when hold to boost is disabled or in watch party mode
+      if (
+        k === " " &&
+        (!dataRef.current.enableHoldToBoost || dataRef.current.isInWatchParty)
+      ) {
         // Skip if a button is targeted
         if (
           evt.target &&
@@ -302,8 +314,12 @@ export function KeyboardEvents() {
     const keyupEventHandler = (evt: KeyboardEvent) => {
       const k = evt.key;
 
-      // Handle spacebar release - only handle speed boost logic when not in watch party
-      if (k === " " && !dataRef.current.isInWatchParty) {
+      // Handle spacebar release - only handle speed boost logic when not in watch party and hold to boost is enabled
+      if (
+        k === " " &&
+        !dataRef.current.isInWatchParty &&
+        dataRef.current.enableHoldToBoost
+      ) {
         // If we haven't applied the boost yet but were about to, cancel it
         if (dataRef.current.isPendingBoostRef.current) {
           dataRef.current.isPendingBoostRef.current = false;

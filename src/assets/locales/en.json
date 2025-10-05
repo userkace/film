@@ -324,6 +324,15 @@
       "69": {
         "default": "Up for something spicy?",
         "extra": ["Happy 69 day 😘!"]
+      },
+      "halloween": {
+        "default": "What spooky movie would you like to watch this Halloween?",
+        "extra": [
+          "Happy Halloween! 🎃👻",
+          "Boo! 👻",
+          "Trick or treat! 🍬",
+          "It's the Great Pumpkin, Charlie Brown!"
+        ]
       }
     }
   },
@@ -630,14 +639,17 @@
         "showMore": "Show more",
         "showLess": "Show less",
         "markAsWatched": "Mark as watched",
-        "markAsUnwatched": "Mark as unwatched"
+        "markAsUnwatched": "Mark as unwatched",
+        "markAsFavorite": "Mark as favorite",
+        "favorites": "Favorites",
+        "noFavorites": "No favorite episodes yet. Star episodes to add them to your favorites!"
       },
       "playback": {
         "speedLabel": "Playback speed",
         "title": "Playback settings",
         "disabled": "(Disabled in watch party)",
-        "speedBoosted": "Playback speed boosted to 2x",
-        "speedUnboosted": "Playback speed reset to {{speed}}x"
+        "speedBoosted": "2x",
+        "speedUnboosted": "{{speed}}x"
       },
       "quality": {
         "automaticLabel": "Automatic quality",
@@ -740,6 +752,12 @@
       "next": "Next episode",
       "nextSeason": "Next season"
     },
+    "resume": {
+      "title": "Continue watching?",
+      "description": "This episode is {{percentage}}% watched",
+      "resume": "Resume",
+      "restart": "Restart"
+    },
     "playbackError": {
       "badge": "Playback error",
       "errors": {
@@ -767,7 +785,9 @@
         "homeButton": "Go home",
         "discoverButton": "Discover more",
         "text": "We have searched through our providers and cannot find the media you are looking for! We do not host the media and have no control over what is available. Please click 'Show details' below for more details.",
-        "title": "We couldn't find that"
+        "title": "We couldn't find that",
+        "onboarding": "More sources might be avalible using the extension or febbox token!",
+        "onboardingButton": "Do setup again"
       },
       "extensionFailure": {
         "badge": "Extension disabled",
@@ -930,7 +950,9 @@
         "forest": "Forest",
         "wolverine": "Wolverine",
         "popsicle": "Popsicle",
-        "hulk": "Hulk"
+        "hulk": "Hulk",
+        "autumn": "Autumn",
+        "skyrealm": "SkyRealm"
       },
       "title": "Appearance",
       "options": {
@@ -952,7 +974,13 @@
         "carouselViewLabel": "Carousel view",
         "forceCompactEpisodeView": "Force compact episode view",
         "forceCompactEpisodeViewDescription": "Force the episode carousel in the player to use the \"classic\" compact vertical view. Disabled by default.",
+        "homeSectionOrder": "Home section order",
+        "homeSectionOrderDescription": "Drag and drop to reorder the watching and bookmarks sections on your homepage. Group order can be editied from the home page.",
         "forceCompactEpisodeViewLabel": "Compact episodes"
+      },
+      "sections": {
+        "watching": "Currently Watching",
+        "bookmarks": "Bookmarks"
       }
     },
     "connections": {
@@ -1019,9 +1047,15 @@
       "lowPerformanceMode": "Low performance/bandwidth mode",
       "lowPerformanceModeDescription": "Optimizes the application for slower connections and devices by disabling bandwidth-heavy features. This mode reduces data usage and improves performance while keeping the core search and watch functionality intact. ",
       "lowPerformanceModeLabel": "Low performance mode",
+      "holdToBoost": "Hold to boost speed",
+      "holdToBoostDescription": "Hold spacebar or touch and hold the screen to temporarily increase playback speed to 2x. Release to return to previous speed.",
+      "holdToBoostLabel": "Enable hold to boost",
       "sourceOrder": "Reordering sources",
       "sourceOrderDescription": "Drag and drop to reorder sources. This will determine the order in which sources are checked for the media you are trying to watch. If a source is greyed out, it means the <bold>extension</bold> is required for that source. <br><br> <strong>(The default order is best for most users)</strong>",
-      "sourceOrderEnableLabel": "Custom source order"
+      "sourceOrderEnableLabel": "Custom source order",
+      "embedOrder": "Reordering embeds",
+      "embedOrderDescription": "Drag and drop to reorder embeds. This will determine the order in which embeds are checked for the media you are trying to watch. <br><br> <strong>(The default order is best for most users)</strong>",
+      "embedOrderEnableLabel": "Custom embed order"
     },
     "reset": "Reset",
     "save": "Save",

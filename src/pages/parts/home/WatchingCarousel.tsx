@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { EditButton } from "@/components/buttons/EditButton";
@@ -18,11 +18,9 @@ interface WatchingCarouselProps {
   onShowDetails?: (media: MediaItem) => void;
 }
 
-const LONG_PRESS_DURATION = 500; // 0.5 seconds
-
 function MediaCardSkeleton() {
   return (
-    <div className="relative mt-4 group cursor-default user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
+    <div className="relative mt-4 group cursor-default rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto">
       <div className="animate-pulse">
         <div className="w-full aspect-[2/3] bg-mediaCard-hoverBackground rounded-lg" />
         <div className="mt-2 h-4 bg-mediaCard-hoverBackground rounded w-3/4" />
@@ -40,10 +38,6 @@ export function WatchingCarousel({
   let isScrolling = false;
   const [editing, setEditing] = useState(false);
   const removeItem = useProgressStore((s) => s.removeItem);
-  const pressTimerRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Track overflow state
-  const [hasOverflow, setHasOverflow] = useState(false);
 
   const { isMobile } = useIsMobile();
 
@@ -90,73 +84,6 @@ export function WatchingCarousel({
   const categorySlug = "continue-watching";
   const SKELETON_COUNT = 10;
 
-  const handleLongPress = () => {
-    // Find the button by ID and simulate a click
-    const editButton = document.getElementById("edit-button-watching");
-    if (editButton) {
-      (editButton as HTMLButtonElement).click();
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent default touch action
-    pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-  };
-
-  const handleTouchEnd = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only trigger long press for left mouse button (button 0)
-    if (e.button === 0) {
-      e.preventDefault(); // Prevent default mouse action
-      pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
-  // Function to check overflow for the carousel
-  const checkOverflow = (element: HTMLDivElement | null) => {
-    if (!element) {
-      setHasOverflow(false);
-      return;
-    }
-
-    const hasHorizontalOverflow = element.scrollWidth > element.clientWidth;
-    setHasOverflow(hasHorizontalOverflow);
-  };
-
-  // Function to set carousel ref and check overflow
-  const setCarouselRef = (element: HTMLDivElement | null) => {
-    carouselRefs.current[categorySlug] = element;
-
-    // Check overflow after a short delay to ensure content is rendered
-    setTimeout(() => checkOverflow(element), 100);
-  };
-
-  // Effect to recheck overflow on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      const element = carouselRefs.current[categorySlug];
-      if (element) {
-        checkOverflow(element);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [carouselRefs, categorySlug]);
-
   if (itemsLength === 0) return null;
 
   return (
@@ -178,7 +105,9 @@ export function WatchingCarousel({
         <div
           id={`carousel-${categorySlug}`}
           className="grid grid-flow-col auto-cols-max gap-4 pt-0 overflow-x-scroll scrollbar-none rounded-xl overflow-y-hidden md:pl-8 md:pr-8"
-          ref={setCarouselRef}
+          ref={(el) => {
+            carouselRefs.current[categorySlug] = el;
+          }}
           onWheel={handleWheel}
         >
           <div className="md:w-12" />
@@ -187,15 +116,10 @@ export function WatchingCarousel({
             ? items.map((media) => (
                 <div
                   key={media.id}
-                  style={{ userSelect: "none" }}
                   onContextMenu={(e: React.MouseEvent<HTMLDivElement>) =>
                     e.preventDefault()
                   }
-                  onTouchStart={handleTouchStart}
-                  onTouchEnd={handleTouchEnd}
-                  onMouseDown={handleMouseDown}
-                  onMouseUp={handleMouseUp}
-                  className="relative mt-4 group cursor-pointer user-select-none rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
+                  className="relative mt-4 group cursor-pointer rounded-xl p-2 bg-transparent transition-colors duration-300 w-[10rem] md:w-[11.5rem] h-auto"
                 >
                   <WatchedMediaCard
                     key={media.id}
@@ -219,7 +143,6 @@ export function WatchingCarousel({
           <CarouselNavButtons
             categorySlug={categorySlug}
             carouselRefs={carouselRefs}
-            hasOverflow={hasOverflow}
           />
         )}
       </div>

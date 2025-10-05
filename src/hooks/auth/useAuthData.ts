@@ -62,6 +62,9 @@ export function useAuthData() {
   const setEnableNativeSubtitles = usePreferencesStore(
     (s) => s.setEnableNativeSubtitles,
   );
+  const setEnableHoldToBoost = usePreferencesStore(
+    (s) => s.setEnableHoldToBoost,
+  );
 
   const login = useCallback(
     async (
@@ -185,6 +188,10 @@ export function useAuthData() {
       if (settings.enableNativeSubtitles !== undefined) {
         setEnableNativeSubtitles(settings.enableNativeSubtitles);
       }
+
+      if (settings.enableHoldToBoost !== undefined) {
+        setEnableHoldToBoost(settings.enableHoldToBoost);
+      }
     },
     [
       replaceBookmarks,
@@ -207,6 +214,7 @@ export function useAuthData() {
       setFebboxKey,
       setEnableLowPerformanceMode,
       setEnableNativeSubtitles,
+      setEnableHoldToBoost,
     ],
   );
 

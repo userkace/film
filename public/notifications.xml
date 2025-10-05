@@ -5,8 +5,148 @@
     <link>https://pstream.mov</link>
     <description>Site updates and important notifications for P-Stream users</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Jul 2025 21:53:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 29 Sep 2025 18:00:00 MST</lastBuildDate>
     <atom:link href="https://pstream.mov/notifications.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <guid>notification-042</guid>
+      <title>P-Stream v5.1.3 released!</title>
+      <description>New features and improvements in this update:
+
+- Added favorite episodes! Every episode now has a bookmark icon that can be toggled to sort your episodes into a new Favorites section! It's like a special season of just your picks!
+- Watching and bookmark sections can be reordered - You can drag and drop sort the watching section to be under your bookmarks. (Groups can be reordered from the home page)
+- Removed the hold to edit bookmarks/watching feature
+- Added small skip episode button to player - Quickly skip to the next episode without opening the episode menu
+- Close any modal with ESC key
+- Added "Autumn" theme
+- New easter egg -not exactly easter...
+- Various bug fixes and improvements
+
+Enjoy the new features!
+
+Also, P-Stream now has a SimpleX community! Feel free to join if you want to stay away from the prying eyes of Discord. Press the link below.</description>
+      <link>https://smp10.simplex.im/g#C1oMmXt1lMPqDZAs9Rne4SQ-LhvpwNv2UDLR8RA1zos</link>
+      <pubDate>Mon, 29 Sep 2025 18:00:00 MST</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-041</guid>
+      <title>Firefox Extension is back in the store!</title>
+      <description>The Firefox extension is back in the store! You can now update it to the latest version.
+
+You’ll need to REPLACE the old one with this one to get future updates. But the old one will also work fine, it’ll just have a warning. HAVING BOTH BREAKS THE SITE, so pick one!
+
+Sorry again!
+(link below)
+      </description>
+      <link>https://addons.mozilla.org/addon/pstream-extension/</link>
+      <pubDate>Wed, 10 Sep 2025 13:00:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-040</guid>
+      <title>Extension issue for Firefox!</title>
+      <description>If you're using Firefox with the P-Stream extension, you may have noticed that it says updates are unavailable and that the extension is violating policies. Yikes!
+
+Heres what happened: I accidently deleted my Firefox account that had the P-Stream extension. 
+The extension did NOT violate any policies, it was just deleted. For some it says that when it gets removed.
+
+I just created a new account and re-submitted it, so it should be back in the store soon. I'll post here when it is.
+Just to clarify, the extension is still working perfectly fine, it's just the updates that are not working. When the extension is back in the store, you can update it to the latest version.
+
+The whole story behind me accidentally deleting my Firefox account is on our Discord server, feel free to ask there! (link below)
+
+I apologize for the inconvenience!</description>
+      <link>https://discord.gg/7z6znYgrTG</link>
+      <pubDate>Mon, 08 Sep 2025 16:00:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-039</guid>
+      <title>Help support P-Stream!</title>
+      <description>If you enjoy P-Stream, please consider donating to help maintain it!
+
+We're looking at a new server, but we need your help! If a couple people could chip in and cover the $20 (per month) that would be much appreciated. There is only one ad on the site, and we want to keep it that way!
+
+It will improve uptime for FED API and faster EU streams, another proxy which we desperately need.
+
+If you are interested in donating, please check the link below!
+      </description>
+      <link>https://rentry.co/h5mypdfs</link>
+      <pubDate>Sat, 06 Sep 2025 14:42:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-038</guid>
+      <title>New subtitle source badges!</title>
+      <description>There's now a quick way to see the source of a subtitle on the external subtitle selection menu!
+
+In addition to the new badges, there's now a new subtitle source: Febbox! Thanks to Nemo for helping P-Stream fetch subtitles from Febbox without needing to set up the Febbox token! It also allows for the subtitles to be used on any source!
+      </description>
+      <pubDate>Tue, 26 Aug 2025 21:50:00 MST</pubDate>
+      <category>feature</category>
+    </item>
+
+    <item>
+      <guid>notification-037</guid>
+      <title>P-Stream v5.1.1 released!</title>
+      <description>Minor updates to fix bugs and add some QoL features.
+
+- Now anyone can watch trailers on the details modal! A custom proxy or the extension no longer required. (Other IMDb info still requires the extension or proxy)
+- Added a resume watching page.
+- Added checks and label to see what embed a source is currently on. (e.x. fox for xprime)
+- Updated curated movie lists and editor picks!
+- Added an onboarding reminder for content that is not found but there are other sources that may have it.
+- Using a custom subtitle source with no baked in ads.
+- Fixed a broken URL issue caused by the Dood source.
+- Fixed 2x boost overlay sizing.
+- Fixed speed boost not working on mobile.
+- Other bug fixes!
+
+P.S. I wanted to highlight TrinityHades, a community member, who is working on adding Safari support to the P-Stream extension! It's not quire ready yet but soon mac users will be able to use the extension to watch P-Stream on Safari!
+      </description>
+      <pubDate>Sun, 24 Aug 2025 22:37:00 MST</pubDate>
+      <category>update</category>
+    </item>
+
+    <item>
+      <guid>notification-036</guid>
+      <title>Some sources are currently down</title>
+      <description>Some sources are currently down. We are aware of the issue and are working to resolve it. 
+Unfortunatly, many sources needed to be disabled due to them showing NSFW content and xprime is experiencing a temporary outage.
+
+I recommend you set up the febbox token to get access to FED API and CIA API, the best sources at the moment. You can find the febbox token setting at the botton of the settings page!
+
+If you are interested in adding a new source to P-Stream, I recently created a new guide for it! Check the link below.</description>
+      <link>https://providers.pstream.mov/in-depth/development</link>
+      <pubDate>Sat, 16 Aug 2025 11:12:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
+    <item>
+      <guid>notification-033</guid>
+      <title>Clarifying current source issues</title>
+      <description>I wanted to appologize for some recent issues with FED API and Vidify. 
+Firstly, I wanted to note that P-Stream does not host or control any of the content. Everything is streamed from third party sources.
+
+Vidify:
+You may have noticed (hopefully not) that Vidify has been showing some NSFW content. This is due to protections they have to prevent us from using them as a source.
+This should now be resolved, and hopefully prevented in the future.
+
+
+FED API:
+We’re aware of the issues with FED API and are looking into it. However, the problem is with febbox, not the FED API scraper.
+Once FED API gets the link from febbox it’s entirely out of our control. There’s not much we can do, but maybe there’s something we can find to answer why this is happening and hopefully prevent it.
+Please be patient. I suggest using another source, or use the “open in” download option to stream the febbox mp4 within the player of your choice! 
+      </description>
+      <pubDate>Sat, 09 Aug 2025 8:10:00 MST</pubDate>
+      <category>announcement</category>
+    </item>
+
 
     <item>
       <guid>notification-032</guid>

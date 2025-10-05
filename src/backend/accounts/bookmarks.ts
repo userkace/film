@@ -16,6 +16,7 @@ export interface BookmarkInput {
   tmdbId: string;
   meta: BookmarkMetaInput;
   group?: string[];
+  favoriteEpisodes?: string[];
 }
 
 export function bookmarkMediaToInput(
@@ -31,6 +32,7 @@ export function bookmarkMediaToInput(
     },
     tmdbId,
     group: item.group,
+    favoriteEpisodes: item.favoriteEpisodes,
   };
 }
 

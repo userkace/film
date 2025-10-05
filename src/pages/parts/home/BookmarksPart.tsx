@@ -1,5 +1,5 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { EditButton } from "@/components/buttons/EditButton";
@@ -30,8 +30,6 @@ function parseGroupString(group: string): { icon: UserIcons; name: string } {
   return { icon: UserIcons.BOOKMARK, name: group };
 }
 
-const LONG_PRESS_DURATION = 700; // 0.7 seconds
-
 export function BookmarksPart({
   onItemsChange,
   onShowDetails,
@@ -51,8 +49,6 @@ export function BookmarksPart({
   const [tempGroupOrder, setTempGroupOrder] = useState<string[]>([]);
   const backendUrl = useBackendUrl();
   const account = useAuthStore((s) => s.account);
-
-  const pressTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const items = useMemo(() => {
     let output: MediaItem[] = [];
@@ -219,38 +215,6 @@ export function BookmarksPart({
     onItemsChange(items.length > 0);
   }, [items, onItemsChange]);
 
-  const handleLongPress = () => {
-    // Find the button by ID and simulate a click
-    const editButton = document.getElementById("edit-button-bookmark");
-    if (editButton) {
-      (editButton as HTMLButtonElement).click();
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent default touch action
-    pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-  };
-
-  const handleTouchEnd = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent default mouse action
-    pressTimerRef.current = setTimeout(handleLongPress, LONG_PRESS_DURATION);
-  };
-
-  const handleMouseUp = () => {
-    if (pressTimerRef.current) {
-      clearTimeout(pressTimerRef.current);
-      pressTimerRef.current = null;
-    }
-  };
-
   const handleEditGroupOrder = () => {
     // Initialize with current order or default order
     if (groupOrder.length === 0) {
@@ -323,14 +287,9 @@ export function BookmarksPart({
                 {section.items.map((v) => (
                   <div
                     key={v.id}
-                    style={{ userSelect: "none" }}
                     onContextMenu={(e: React.MouseEvent<HTMLDivElement>) =>
                       e.preventDefault()
                     }
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                    onMouseDown={handleMouseDown}
-                    onMouseUp={handleMouseUp}
                   >
                     <WatchedMediaCard
                       media={v}
@@ -371,14 +330,9 @@ export function BookmarksPart({
               {section.items.map((v) => (
                 <div
                   key={v.id}
-                  style={{ userSelect: "none" }}
                   onContextMenu={(e: React.MouseEvent<HTMLDivElement>) =>
                     e.preventDefault()
                   }
-                  onTouchStart={handleTouchStart}
-                  onTouchEnd={handleTouchEnd}
-                  onMouseDown={handleMouseDown}
-                  onMouseUp={handleMouseUp}
                 >
                   <WatchedMediaCard
                     media={v}

@@ -21,6 +21,7 @@ export interface ErrorDebugInfo {
   player: {
     status: string;
     sourceId: string | null;
+    embedId: string | null;
     currentQuality: string | null;
     meta: {
       title: string;
@@ -120,6 +121,7 @@ export function gatherErrorDebugInfo(error: any): ErrorDebugInfo {
     player: {
       status: playerStore.status,
       sourceId: playerStore.sourceId,
+      embedId: (playerStore as any).embedId ?? null,
       currentQuality: playerStore.currentQuality,
       meta: playerStore.meta
         ? {
@@ -210,6 +212,7 @@ export function formatErrorDebugInfo(info: ErrorDebugInfo): string {
     `=== PLAYER STATE ===`,
     `Status: ${info.player.status}`,
     `Source ID: ${info.player.sourceId || "null"}`,
+    `Embed ID: ${info.player.embedId || "null"}`,
     `Quality: ${info.player.currentQuality || "null"}`,
     info.player.meta
       ? [

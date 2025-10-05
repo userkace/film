@@ -1,6 +1,6 @@
 {
-  "name": "Film",
-  "short_name": "Film",
+  "name": "film.kace.dev",
+  "short_name": "film.kace.dev",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#120f1d",

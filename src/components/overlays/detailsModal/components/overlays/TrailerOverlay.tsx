@@ -12,14 +12,23 @@ export function TrailerOverlay({ trailerUrl, onClose }: TrailerOverlayProps) {
         className="relative w-[90%] max-w-6xl aspect-video"
         onClick={(e) => e.stopPropagation()}
       >
-        <video
-          className="w-full h-full object-contain"
-          autoPlay
-          controls
-          playsInline
-        >
-          <source src={trailerUrl} type="video/mp4" />
-        </video>
+        {trailerUrl.includes("youtube.com/embed") ? (
+          <iframe
+            src={trailerUrl}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            className="w-full h-full object-contain"
+            autoPlay
+            controls
+            playsInline
+          >
+            <source src={trailerUrl} type="video/mp4" />
+          </video>
+        )}
 
         {/* Close Button */}
         <button
